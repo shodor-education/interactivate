@@ -1,1 +1,54 @@
-
+---
+title: Home Page
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html title=page.title %}
+    <link rel="stylesheet" href="/css/home.css">
+    <script>
+      function changeMouseoverImage(id) {
+        var mouseoverImgs = document.getElementsByClassName("mouseover-img");
+        for (var i = 0; i < mouseoverImgs.length; i++) {
+          mouseoverImgs[i].style.display = "none";
+        }
+        document.getElementById("mouseover-" + id).style.display = "block";
+      }
+    </script>
+  </head>
+  <body>
+    {% include header.html title=page.title hide-h1="True" %}
+    <main>
+      <section id="main-top-section">
+        <img src="images/main-left-img.gif" alt="Three hexagons: one showing a graph of f(x) = sin((x^2)/2), one showing a histogram, and one showing a Sierpinski triangle"/><!--
+     --><img src="images/main-img-map.gif" alt="Image map for site navigation" usemap="#main-img-map"/>
+        <map name="main-img-map">
+            {% for subdirectory in site.data.subdirectories %}
+            {% if subdirectory.main-img-map-coords %}
+            <area shape="poly" coords="{{subdirectory.main-img-map-coords}}" href="{{subdirectory.name}}" onmouseover="changeMouseoverImage('{{subdirectory.name}}');" onmouseout="changeMouseoverImage('goals');">
+            {% endif %}
+            {% endfor %}
+            <area alt="Shodor logo" shape="rect" coords="20,217,333,249" href="http://shodor.org/">
+        </map>
+      </section>
+      <section id="main-bottom-section">
+        <div>
+          <img id="mouseover-goals" class="mouseover-img" src="images/mouseover-goals.gif" alt="The goals of Interactivate are the creation, collection, evaluation, and dissemination of interactive courseware for exploration in science and mathematics."/>
+          {% for subdirectory in site.data.subdirectories %}
+          {% if subdirectory.description %}
+          <img id="mouseover-{{subdirectory.name}}" class="mouseover-img" src="images/mouseover-{{subdirectory.name}}.gif" alt="{{subdirectory.description}}"/>
+          {% endif %}
+          {% endfor %}
+          <nav id="additional-links" aria-label="Additional Links">
+            <p>
+              <a href="sitemap">Site Map</a> |
+              <a href="guide">Guide to Interactivate</a>
+            </p>
+          </ul>
+        </div>
+        <a href="activities/JuliaSets/"><img src="images/featured-julia-sets.jpeg" alt="Featured Activity"/></a>
+      </section>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>
