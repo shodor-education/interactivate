@@ -11,7 +11,17 @@ h2 {
   margin: 0;
   padding-left: 5px;
 }
-h3 {
+.activity-section {
+  background-color: #F8F9FF;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  display: flex;
+  padding: 5px;
+}
+.activity-section:not(:last-child) {
+  border-bottom: 1px dashed gray;
+}
+.activity-section a {
   display: inline-block;
   font-family: sans-serif;
   font-size: 11pt;
@@ -19,14 +29,25 @@ h3 {
   line-height: 120%;
   margin: 0;
 }
-.activity-section {
-  background-color: #F8F9FF;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  padding: 5px;
-}
 .activity-section a:link,
 .activity-section a:visited {
   color: #2661C3;
   text-decoration: underline;
+}
+.activity-section img {
+  border: 1px solid rgb(217, 217, 217);
+}
+.activity-description-and-topics {
+  margin-left: 20px;
+}
+.activity-description-and-topics p {
+  font-family: sans-serif;
+  font-size: 11pt;
+  line-height: 130%;
+  margin: 0;
+}
+.activity-description-and-topics p.activity-topics {
+  color: gray;
+  font-size: 10pt;
+  margin-top: 15px;
 }
