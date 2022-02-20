@@ -1,0 +1,37 @@
+---
+---
+#noscript-message {
+  background-color: white;
+  border: 1px solid red;
+  color: red;
+  font-family: sans-serif;
+  left: 50%;
+  margin-left: -11em;
+  padding: 4px;
+  position: absolute;
+  width: 22em;
+}
+
+#tabs-nav {
+  background-color: white;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  padding-top: 15px;
+}
+
+#tabs {
+  float: left;
+  margin-top: 1px;
+}
+
+.tab-section {
+  background: url('{{ "images/folder-bg.gif" | relative_url }}');
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+}
+
+#right-of-tabs {
+  background: url('{{ "images/activity/tabs-bg.gif" | relative_url }}') repeat-x 0 bottom;
+  border-bottom: 1px solid black;
+  height: 31px;
+}
