@@ -6,12 +6,20 @@ title: Activities
   <head>
     {% include head.html title=page.title %}
     <link rel="stylesheet" href="{{ '/css/activities.css' | relative_url }}">
+    <script src="{{ '/js/activities.js' | relative_url }}"></script>
   </head>
   <body>
     {% include header.html title=page.title %}
     <main>
+      <nav id="subjects-nav" aria-label="Subjects">
+        {% for subject in site.data.subjects %}
+        <a href="javascript:selectSubject('{{ subject }}');"/>{{ subject }}</a>
+        &nbsp;&bull;&nbsp;
+        {% endfor %}
+        <a class="bold" href="javascript:selectSubject('all');"/>Show All</a>
+      </nav>
       {% for subject in site.data.subjects %}
-      <section class="subject-section">
+      <section id="subject-section-{{ subject }}" class="subject-section">
         {% assign activities-in-subject = site.data.activities | where: "subjects", subject %}
         <h2>{{ subject }} ({{ activities-in-subject | size }})</h2>
         {% for activity in activities-in-subject %}

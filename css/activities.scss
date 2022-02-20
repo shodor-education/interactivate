@@ -1,6 +1,9 @@
 ---
 ---
-h2 {
+.bold {
+  font-weight: bold;
+}
+h2, #subjects-nav {
   background-color: #2661C3;
   border: 1px solid black;
   color: white;
@@ -10,6 +13,14 @@ h2 {
   line-height: 150%;
   margin: 0;
   padding-left: 5px;
+}
+#subjects-nav {
+  border-bottom: 0;
+  font-weight: normal;
+}
+#subjects-nav a:link,
+#subjects-nav a:visited {
+  color: white;
 }
 .activity-section {
   background-color: #F8F9FF;
