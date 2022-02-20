@@ -1,0 +1,27 @@
+---
+title: Activities
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html title=page.title %}
+    <link rel="stylesheet" href="/css/activities.css">
+  </head>
+  <body>
+    {% include header.html title=page.title %}
+    <main>
+      {% for primary-subject in site.data.primary-subjects %}
+      <section class="subject-section">
+        {% assign activities-in-primary-subject = site.data.activities | where: "primary-subjects", primary-subject %}
+        <h2>{{ primary-subject }} ({{ activities-in-primary-subject | size }})</h2>
+        {% for activity in activities-in-primary-subject %}
+        <section class="activity-section">
+          <a href="/activities/{{ activity.short-name }}"><h3>{{ activity.name }}</h3></a>
+        </section>
+        {% endfor %}
+      </section>
+      {% endfor %}
+    </main>
+    {% include footer.html %}
+  </body>
+</html>

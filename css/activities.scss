@@ -1,0 +1,32 @@
+---
+---
+h2 {
+  background-color: #2661C3;
+  border: 1px solid black;
+  color: white;
+  font-family: sans-serif;
+  font-size: 11pt;
+  font-weight: bold;
+  line-height: 150%;
+  margin: 0;
+  padding-left: 5px;
+}
+h3 {
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 11pt;
+  font-weight: bold;
+  line-height: 120%;
+  margin: 0;
+}
+.activity-section {
+  background-color: #F8F9FF;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding: 5px;
+}
+.activity-section a:link,
+.activity-section a:visited {
+  color: #2661C3;
+  text-decoration: underline;
+}

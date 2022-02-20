@@ -1,0 +1,12 @@
+- name: 3D Transmographer
+  primary-subjects:
+    - Algebra
+    - Calculus
+    - Geometry
+    - Graphs
+  short-name: 3DTransmographer
+- name: Advanced Fire
+  primary-subjects:
+    - Modeling
+    - Probability
+    - Statistics

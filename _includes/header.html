@@ -1,0 +1,21 @@
+<header>
+  <div id="logo-bar">
+    <a id="header-logo" href="/"><img src="/images/header-logo.gif" alt="Interactivate logo"/></a>
+    <select class="v-center">
+      <option>Jump To:</option>
+      {% for subdirectory in site.data.subdirectories %}
+      <option>{{ subdirectory.name | capitalize }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  {% unless include.hide-h1 %}
+  <h1>{{ include.title }}</h1>
+  {% endunless %}
+  <nav id="breadcrumb" aria-label="Breadcrumbs">
+    <p>
+      <a href="http://shodor.org">Shodor</a> ▸
+      <a href="/">Interactivate</a> ▸
+      {{ include.title }}
+    </p>
+  </nav>
+</header>
