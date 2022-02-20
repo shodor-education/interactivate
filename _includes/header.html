@@ -1,6 +1,6 @@
 <header>
   <div id="logo-bar">
-    <a id="header-logo" href="/"><img src="/images/header-logo.gif" alt="Interactivate logo"/></a>
+    <a id="header-logo" href="{{ site.url }}"><img src=" {{ 'images/header-logo.gif' | relative_url }}" alt="Interactivate logo"/></a>
     <select class="v-center">
       <option>Jump To:</option>
       {% for subdirectory in site.data.subdirectories %}
@@ -13,8 +13,8 @@
   {% endunless %}
   <nav id="breadcrumb" aria-label="Breadcrumbs">
     <p>
-      <a href="http://shodor.org">Shodor</a> ▸
-      <a href="/">Interactivate</a> ▸
+      <a href="{{ site.url }}">Shodor</a> ▸
+      <a href="{{ site.baseurl }}">Interactivate</a> ▸
       {{ include.title }}
     </p>
   </nav>

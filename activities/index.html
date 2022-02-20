@@ -5,7 +5,7 @@ title: Activities
 <html>
   <head>
     {% include head.html title=page.title %}
-    <link rel="stylesheet" href="/css/activities.css">
+    <link rel="stylesheet" href="{{ '/css/activities.css' | relative_url }}">
   </head>
   <body>
     {% include header.html title=page.title %}
@@ -16,7 +16,7 @@ title: Activities
         <h2>{{ primary-subject }} ({{ activities-in-primary-subject | size }})</h2>
         {% for activity in activities-in-primary-subject %}
         <section class="activity-section">
-          <a href="/activities/{{ activity.short-name }}"><h3>{{ activity.name }}</h3></a>
+          <a href="{{ '/activities/' | append: activity.short-name | relative_url }}"><h3>{{ activity.name }}</h3></a>
         </section>
         {% endfor %}
       </section>
