@@ -1,12 +1,18 @@
 -- Download activity SDR data
-select concat_ws(
-  "\r",
-  concat("- name: \"", TitleTV.`entry`, "\""),
-  concat("  audiences:\r    - \"", group_concat(distinct AudienceTV.`entry` order by AudienceTV.`entry` separator "\"\r    - \"" ), "\""),
-  concat("  description: \"", replace(DescriptionTV.`entry`, "\"", "\\\""), "\""),
-  concat("  short-name: \"", substring_index(substring_index(UrlTV.`entry`, '/', -2), '/', 1), "\""),
-  concat("  subjects:\r    - \"", group_concat(distinct SubjectTV.`entry` order by SubjectTV.`entry` separator "\"\r    - \"" ), "\""),
-  concat("  topics:\r    - \"", group_concat(distinct TopicTV.`entry` order by TopicTV.`entry` separator "\"\r    - \"" ), "\"")
+select concat(
+  concat(substring_index(substring_index(UrlTV.`entry`, '/', -2), '/', 1), ".html\r"),
+  "---\r",
+  concat_ws(
+    "\r",
+    concat("audiences:\r  - \"", group_concat(distinct AudienceTV.`entry` order by AudienceTV.`entry` separator "\"\r  - \"" ), "\""),
+    concat("description: \"", replace(DescriptionTV.`entry`, "\"", "\\\""), "\""),
+    "layout: activity",
+    concat("short-name: \"", substring_index(substring_index(UrlTV.`entry`, '/', -2), '/', 1), "\""),
+    concat("subjects:\r  - \"", group_concat(distinct SubjectTV.`entry` order by SubjectTV.`entry` separator "\"\r  - \"" ), "\""),
+    concat("title: \"", TitleTV.`entry`, "\""),
+    concat("topics:\r  - \"", group_concat(distinct TopicTV.`entry` order by TopicTV.`entry` separator "\"\r  - \"" ), "\"")
+  ),
+  "\r---"
 )
 from SDRProject
 left join SDRProjectField on SDRProjectField.`projectId` = SDRProject.`id`

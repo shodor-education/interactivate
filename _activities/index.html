@@ -20,7 +20,7 @@ title: Activities
       </nav>
       {% for subject in site.data.subjects %}
       <section id="subject-section-{{ subject }}" class="subject-section">
-        {% assign activities-in-subject = site.data.activities | where: "subjects", subject %}
+        {% assign activities-in-subject = site.activities | where: "subjects", subject %}
         <h2>{{ subject }} ({{ activities-in-subject | size }})</h2>
         {% for activity in activities-in-subject %}
         <section class="activity-section">

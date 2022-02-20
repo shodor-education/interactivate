@@ -1,2 +1,5 @@
 url: https://shodor-education.github.io/
 baseurl: /interactivate
+collections:
+  activities:
+    output: true
