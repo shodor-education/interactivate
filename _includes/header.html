@@ -1,10 +1,10 @@
 <header>
   <div id="logo-bar">
     <a id="header-logo" href="{{ site.baseurl }}"><img src=" {{ 'images/header-logo.gif' | relative_url }}" alt="Interactivate logo"/></a>
-    <select class="v-center">
-      <option>Jump To:</option>
+    <select class="v-center" onchange="jumpTo(event);">
+      <option disabled selected>Jump To:</option>
       {% for subdirectory in site.data.subdirectories %}
-      <option>{{ subdirectory.name | capitalize }}</option>
+      <option data-subdirectory="{{ subdirectory.name | relative_url }}">{{ subdirectory.name | capitalize }}</option>
       {% endfor %}
     </select>
   </div>
