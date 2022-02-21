@@ -1,5 +1,5 @@
 var parameters = "width=800\n"
-			  + "height=740\n"
+			  + "height=530\n"
 			  + "title=Fire: Estimating Percent\n"
 			  + "activityid=2220\n"
 			  + "debug=false\n"
