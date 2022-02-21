@@ -1,0 +1,126 @@
+var parameters = "width=650\n"
+			   + "height=600\n"
+			   + "title=Venn Diagram\n"
+			   + "activityid=526";
+
+// this is the data file for the vdiagram applet
+// you can enter 3 circled or 2 circled vdiagrams
+// enter the parameters in the following order:
+// parameter 1-  3 or 2: the number of circles in vdiagram
+// if 3 then: enter the three titles for the circles
+//            enter the object in question (Enter commas in the problem itself as "&")
+//			enter the circle it belongs in(1-8)
+//			  4= circles 1 and 2
+//			  5= circles 2 and 3
+//			  6= circles 3 and 1
+//			  7 = circles 1,2 and 3
+//			  8 = empty set
+//			enter diffculty level (1 = easy, 2 = medium, 3 = hard)
+// if 2 then: enter the two titles for the circles
+//           then the object in question
+//           then the circle it belongs in (1-4)
+//                    1: circle 1
+//                    2: circle 2
+//                    3: union of circles 1 and 2
+//                    4: empty set
+//			enter diffculty level (1 = easy, 2 = medium, 3 = hard)
+var listTxtContents = "2,odd numbers,prime numbers,5,3,1\n"
+	+ "2,odd numbers,natural numbers,2,2,1\n"
+	+ "2,perfect squares,odd numbers,81,3,1\n"
+	+ "2,even numbers,perfect squares,9,2,1\n"
+	+ "2,even numbers,prime numbers,13,2,1\n"
+	+ "2,natural numbers,even numbers,-3,4,1\n"
+	+ "2,prime numbers,even numbers,63,4,1\n"
+	+ "2,factors of 36,multiples of 36,12,1,1\n"
+	+ "2,factors of 42,even numbers,1,1,1\n"
+	+ "2,multiples of 3,factors of 18,6,3,1\n"
+	+ "2,multiples of 5,even numbers,11,4,1\n"
+	+ "2,multiples of 3,multiples of 4,18,1,1\n"
+	+ "2,multiples of 4,perfect squares,64,3,1\n"
+	+ "2,factors of 24,prime numbers,3,3,1\n"
+	+ "2,factors of 15,prime numbers,3,3,1\n"
+	+ "2,odd numbers,factors of 12,8,4,1\n"
+	+ "2,prime numbers,factors of 18,9,2,1\n"
+	+ "2,factors of 16,perfect squares,8,1,1\n"
+	+ "2,factors of 13,prime numbers,8,4,1\n"
+	+ "2,odd numbers,factors of 22,11,3,1\n"
+	+ "2,prime numbers,factors of 21,21,2,1\n"
+	+ "2,multiples of 4,factors of 32,7,4,1\n"
+	+ "2,factors of 20,even numbers,5,1,1\n"
+	+ "2,factors of 22,prime numbers,11,3,1\n"
+	+ "2,multiples of 8,factors of 24,3,2,1\n"
+	+ "2,multiples of 6,factors of 48,12,3,1\n"
+	+ "2,factors of 6,prime numbers,1,1,1\n"
+	+ "2,factors of 24,multiples of 3,9,2,1\n"
+	+ "2,factors of 22,even numbers,7,4,1\n"
+	+ "2,perfect squares,multiples of 3,27,2,1\n"
+	+ "2,perfect square,odd number,121,3,1\n"
+	+ "2,quadrilaterals,regular polygons,an equilateral triangle,2,1\n"
+	+ "2,rectangles,rhombuses,a square,3,1\n"
+	+ "2,hexagons,regular polygons,a circle,4,1\n"
+	+ "2,regular polygons,kites,a square,3,2\n"
+	+ "2,perfect cubes,perfect squares,64,3,2\n"
+	+ "2,multiples of 3,perfect cubes,81,1,2\n"
+	+ "2,multiples of 7,perfect squares,196,3,2\n"
+	+ "2,factors of 27,factors of 48,12,2,2\n"
+	+ "2,factors of 36,prime numbers,4,1,2\n"
+	+ "2,factors of 64,multiples of 4,6,4,2\n"
+	+ "2,factors of 144,prime numbers,6,1,2\n"
+	+ "2,multiples of 14,perfect squares,68,4,2\n"
+	+ "2,fractions equal to 1/3,reduced fractions,3/12,4,2\n"
+	+ "2,unreduced fractions,fractions equal to 0.25,2/8,3,2\n"
+	+ "2,improper fractions,fractions equal to 215%,2/3,4,2\n"
+	+ "2,fractions equal to 50%,fractions in reduced form,2/6,4,2\n"
+	+ "2,fractions equal to 150%,mixed numbers,3/2,1,2\n"
+	+ "2,fractions equal to 1.25,improper fraction,4/3,2,2\n"
+	+ "3,even numbers,perfect squares,multiples of 3,27,3,2\n"
+	+ "3,odd numbers,multiples of 5,factors of 20,4,3,2\n"
+	+ "3,multiples of 7,even numbers,perfect squares,49,6,2\n"
+	+ "3,prime numbers,factors of 24,odd numbers,7,6,2\n"
+	+ "3,factors of 16,perfect squares,multiples of 8,7,8,2\n"
+	+ "3,even numbers,perfect squares,multiples of 5,90,6,2\n"
+	+ "3,multiples of 4,multiples of 3,multiples of 5,60,7,2\n"
+	+ "3,multiples of 3,perfect squares,odd numbers,27,6,2\n"
+	+ "3,factors of 68,prime numbers,odd numbers,5,5,2\n"
+	+ "3,perfect squares,factors of 36,odd numbers,3,5,2\n"
+	+ "3,multiples of 12,factors of 36,perfect squares,24,1,2\n"
+	+ "3,factors of 8,multiples of 2,perfect squares,4,7,2\n"
+	+ "3,multiples of 3,factors of 15,multiples of 5,41,8,2\n"
+	+ "3,multiples of 17,factors of 34,odd numbers,2,2,2\n"
+	+ "3,factors of 48,multiples of 8,multiples of 6,1,1,2\n"
+	+ "3,factors of 28,factors of 35,prime numbers,14,1,2\n"
+	+ "3,multiples of 13,factors of 26,odd numbers,26,4,2\n"
+	+ "3,perfect cubes,factors of 24,multiples of 8,4,2,2\n"
+	+ "2,y>x,First Quadrant,(3&4),3,3\n"
+	+ "2,y=(1/2)x+3,y=2x+1,(0&3),1,3\n"
+	+ "2,y=3x+4,y=-3,(4&-3),2,3\n"
+	+ "2,y=-2x,y=3x+1,(3&-5),4,3\n"
+	+ "2,x=4,y=-x,(3&3),4,3\n"
+	+ "2,y=|x|,y=2,(-4&2),2,3\n"
+	+ "2,y=x+4,y=2x-1,(4&-1),4,3\n"
+	+ "2,y=2x+3,y=3x,(3&9),3,3\n"
+	+ "2,y=|x|+2,y=-x+2,(3&5),1,3\n"
+	+ "2,conic sections,closed plane figures,a circle,3,3\n"
+	+ "2,fractions equal to 1.05,improper fractions,22/20,2,3\n"
+	+ "3,fractions equal to 130%,improper fractions,reduced fractions,130/100,4,3\n"
+	+ "3,factors of 24,Fibonacci numbers,multiples of 3,6,6,3\n"
+	+ "3,multiples of 24,factors of 144,perfect squares,36,5,3\n"
+	+ "3,factors of 64,factors of 36,perfect squares,16,6,3\n"
+	+ "3,perfect cubes,factors of 729,perfect squares,36,3,3\n"
+	+ "3,Fibonacci numbers,factors of 14,prime numbers,14,2,3\n"
+	+ "3,factors of 70,prime numbers,factors of 15,10,1,3\n"
+	+ "3,multiples of 5,factors of 60,odd numbers,10,4,3\n"
+	+ "3,factors of 84,multiples of 7,prime numbers,21,4,3\n"
+	+ "3,factors of 110,prime numbers,Fibonacci numbers,55,6,3\n"
+	+ "3,factors of 225,multiples of 45,odd numbers,30,8,3\n"
+	+ "3,multiples of 17,factors of 68,multiples of 2,34,7,3\n"
+	+ "3,perfect squares,multiples of 8,factors of 144,49,1,3\n"
+	+ "3,perfect cubes,factors of 64,powers of 2,32,5,3\n"
+	+ "3,factors of 57,multiples of 19,perfect cubes,27,3,3\n"
+	+ "3,multiples of 6,factors of 72,perfect squares,8,2,3\n"
+	+ "3,equiangular polygons,non-equilateral polygons,quadrilaterals,a scalene triangle,2,3\n"
+	+ "3,equiangular polygons,non-equilateral polygons,quadrilaterals,a square,6,3\n"
+	+ "3,proper fractions,unreduced fractions,expressible as a repeating decimal,5/15,7,3\n"
+	+ "2,improper fractions,expressible as a repeating decimal,11/9,3,3\n"
+	+ "2,unreduced fractions,expressible as a repeating decimal,12/3,1,3\n"
+	+ "2,proper fractions,expressible as a repeating decimal,1/40,1,3";

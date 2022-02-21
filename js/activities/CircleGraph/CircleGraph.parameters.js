@@ -1,0 +1,10 @@
+var parameters = "width=800\n"
+	+ "height=625\n"
+	+ "title=Circle Graph\n"
+	+ "activityid=445\n"
+	+ "name0=How I divide my 24 hour day\n"
+	+ "data0=7, school /2, eat /2, play outside /3, watch tv /8, sleep /1, chores /1, homework\n"
+	+ "name1=2006 U.S. Government Spending (in millions)\n"
+	+ "data1=586.1, Social Security /804.1, Defense and Foreign Affairs /670.9, Medicare and Medicaid /243.7, Interest on Debt /63.6, Administration of Justice and General Government /114.9, Education and Technology /76.9, Transportation /26.8, Community and Regional Development /61.2, Natural resources and the Environment\n" 
+	+ "name2=Experimental results in a coin toss\n"
+	+ "data2=1, H /3, T /2, H /2, T /1, H /1, T /1, H /1, T";

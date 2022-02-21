@@ -4,9 +4,83 @@
   background-color: white;
   padding-top: 40px;
 }
+
 #appletContent {
   margin: 0 auto;
 }
+
+/* From http://css-tricks.com/almanac/properties/u/user-select/
+ */
+canvas, .noTextHighlight, .gwt-MenuItem {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+
+.center {
+	text-align: center;
+}
+
+.falseWrap {
+	word-wrap: break-word;
+}
+
+.gwt-Button {
+    white-space: nowrap;
+}
+
+.gwt-MenuBarPopup {
+	background-color: white;
+}
+
+.gwt-MenuItem, .gwt-MenuItem * {
+  cursor: pointer;
+}
+
+.gwt-MenuItem {
+	cursor: pointer;
+	background-color: rgb(192,192,192);
+	padding: 7px;
+	border-radius: 5px;
+}
+
+.gwt-MenuItem:hover {
+	background-color: rgb(107, 107, 107);
+}
+
+.gwt-PopupPanel {
+	background-color: white;
+	border-style:solid;
+}
+
+/* Glass behind modal popup panels.
+ * From http://code.google.com/p/google-web-toolkit-incubator/wiki/GlassPanel
+ */
+.gwt-PopupPanelGlass {
+    background-color: lightgray !important;
+    filter: alpha(opacity = 80) !important; /* IE */
+    opacity: 0.8 !important; /* non-IE */
+}
+
+/* Disable spinners on NumInputs -- this is only an issue on computer */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.left {
+	text-align: left;
+}
+
+.moveCursor {
+	cursor: move;
+}
+
 #noscript-message {
   background-color: white;
   border: 1px solid red;
@@ -17,6 +91,16 @@
   padding: 4px;
   position: absolute;
   width: 22em;
+}
+
+.right {
+	text-align: right;
+}
+
+#right-of-tabs {
+  background: url('{{ "images/activity/tabs-bg.gif" | relative_url }}') repeat-x 0 bottom;
+  border-bottom: 1px solid black;
+  height: 31px;
 }
 
 #tabs-nav {
@@ -38,8 +122,12 @@
   min-height: 65px;
 }
 
-#right-of-tabs {
-  background: url('{{ "images/activity/tabs-bg.gif" | relative_url }}') repeat-x 0 bottom;
-  border-bottom: 1px solid black;
-  height: 31px;
+textarea {
+	resize: none;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+
+.trueWrap {
+	word-wrap: normal;
 }
