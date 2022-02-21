@@ -1,5 +1,12 @@
 ---
 ---
+#activity-section {
+  background-color: white;
+  padding-top: 40px;
+}
+#appletContent {
+  margin: 0 auto;
+}
 #noscript-message {
   background-color: white;
   border: 1px solid red;
@@ -25,9 +32,10 @@
 }
 
 .tab-section {
-  background: url('{{ "images/folder-bg.gif" | relative_url }}');
+  background: url('{{ "images/folder-bg.gif" | relative_url }}') repeat-x;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
+  min-height: 65px;
 }
 
 #right-of-tabs {
