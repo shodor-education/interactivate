@@ -1,5 +1,5 @@
 var parameters = "width=800\n"
-	+ "height=600\n"
+	+ "height=650\n"
 	+ "title=Arithmetic Four\n"
 	+ "activityid=938\n"
 	+ "debug=false\n"

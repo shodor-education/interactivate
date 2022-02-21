@@ -1,5 +1,5 @@
 var parameters = "width=730\n"
-			   + "height=770\n"
+			   + "height=1050\n"
 			   + "title=Cross Sections\n"
 			   + "activityid=1502";
 

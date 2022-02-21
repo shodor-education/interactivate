@@ -7,4 +7,4 @@ var imageFileNames =
 
 var parameters = 
   "width=750\n" +
-  "height=500\n";
+  "height=550\n";

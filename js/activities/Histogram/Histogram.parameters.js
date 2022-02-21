@@ -1,6 +1,6 @@
 var parameters =
 	"width=1000\n" +
-	"height=750\n" +
+	"height=770\n" +
 	"title=Histogram\n" +
 	"activityid=476\n" +
 	"useScrollBar=true\n" +

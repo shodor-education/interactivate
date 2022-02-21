@@ -1,5 +1,5 @@
 var parameters = "width=835\n"
-			   + "height=700\n"
+			   + "height=720\n"
 			   + "title=Shape Sorter\n"
 			   + "activityid=854";
 

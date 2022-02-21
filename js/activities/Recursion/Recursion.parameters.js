@@ -1,5 +1,5 @@
 var parameters = "width=900\n"
-	+ "height=450\n"
+	+ "height=480\n"
 	+ "linked=false\n"
 	+ "allow1LetterParams=false\n"
 	+ "initValsAreParams=false";

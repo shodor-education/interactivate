@@ -1,5 +1,5 @@
 var parameters = "width=800\n"
-	+ "height=880\n"
+	+ "height=1050\n"
 	+ "title=Bargraph\n"
 	+ "activityid=434\n"
 	+ "name0=How I divide my 24 hour day\n"

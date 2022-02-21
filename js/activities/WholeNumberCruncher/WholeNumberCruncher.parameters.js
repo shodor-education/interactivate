@@ -1,5 +1,5 @@
 var parameters = "width=700\n"
-	+ "height=700\n"
+	+ "height=450\n"
 	+ "title=Whole Number Cruncher\n"
 	+ "activityid=528\n"
 	+ "interactivate=true\n"

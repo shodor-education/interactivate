@@ -15,6 +15,9 @@
     <p>
       <a href="{{ site.url }}">Shodor</a> ▸
       <a href="{{ site.baseurl }}">Interactivate</a> ▸
+      {% if include.additional-breadcrumb-link and include.additional-breadcrumb-title %}
+      <a href="{{ include.additional-breadcrumb-link | relative_url }}">{{ include.additional-breadcrumb-title }}</a> ▸
+      {% endif %}
       {{ include.title }}
     </p>
   </nav>

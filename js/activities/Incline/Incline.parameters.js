@@ -1,5 +1,5 @@
 var parameters = "width=800\n"
-			   + "height=500\n"
+			   + "height=520\n"
 			   + "title=Incline\n"
 			   + "activityId=3000\n"
 			   + "format=oneWindow";

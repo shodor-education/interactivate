@@ -1,5 +1,5 @@
 var parameters = "width=800\n"
-	+ "height=600\n"
+	+ "height=620\n"
 	+ "title=Slopeslider\n"
 	+ "activityid=510\n"
 	+ "function=x\n"

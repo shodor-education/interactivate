@@ -3,3 +3,5 @@ baseurl: /interactivate
 collections:
   activities:
     output: true
+include:
+  - _3dtransmographer

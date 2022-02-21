@@ -27,10 +27,10 @@ title: Activities
           {% assign activity-href = '/activities/' | append: activity.short-name | relative_url %}
           <div class="activity-links">
             <div>
-              <a href="{{ activity-href }}"><img src="{{ 'images/activities/' | append: activity.short-name | append: '.gif' | relative_url }}" alt="Screenshot of {{ activity.name }} activity" width="152"/></a>
+              <a href="{{ activity-href }}"><img src="{{ 'images/activities/' | append: activity.short-name | append: '.gif' | relative_url }}" alt="Screenshot of {{ activity.title }} activity" width="152"/></a>
             </div>
             <div>
-              <a href="{{ activity-href }}">{{ activity.name }}</a>
+              <a href="{{ activity-href }}">{{ activity.title }}</a>
             </div>
           </div>
           <div class="activity-description-and-topics">
