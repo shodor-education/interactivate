@@ -5,3 +5,5 @@ collections:
     output: true
 include:
   - _3dtransmographer
+exclude:
+  - exclude

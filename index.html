@@ -20,8 +20,8 @@ title: Home Page
     {% include header.html title=page.title hide-h1="True" %}
     <main>
       <section id="main-top-section">
-        <img src="{{ 'images/main-left-img.gif' | relative_url }}" alt="Three hexagons: one showing a graph of f(x) = sin((x^2)/2), one showing a histogram, and one showing a Sierpinski triangle"/><!--
-     --><img src="{{ 'images/main-img-map.gif' | relative_url }}" alt="Image map for site navigation" usemap="#main-img-map"/>
+        <img src="{{ 'img/main-left-img.gif' | relative_url }}" alt="Three hexagons: one showing a graph of f(x) = sin((x^2)/2), one showing a histogram, and one showing a Sierpinski triangle"/><!--
+     --><img src="{{ 'img/main-img-map.gif' | relative_url }}" alt="Image map for site navigation" usemap="#main-img-map"/>
         <map name="main-img-map">
             {% for subdirectory in site.data.subdirectories %}
             {% if subdirectory.main-img-map-coords %}
@@ -33,10 +33,10 @@ title: Home Page
       </section>
       <section id="main-bottom-section">
         <div>
-          <img id="mouseover-goals" class="mouseover-img" src="{{ 'images/mouseover-goals.gif' | relative_url }}" alt="The goals of Interactivate are the creation, collection, evaluation, and dissemination of interactive courseware for exploration in science and mathematics."/>
+          <img id="mouseover-goals" class="mouseover-img" src="{{ 'img/mouseover-goals.gif' | relative_url }}" alt="The goals of Interactivate are the creation, collection, evaluation, and dissemination of interactive courseware for exploration in science and mathematics."/>
           {% for subdirectory in site.data.subdirectories %}
           {% if subdirectory.description %}
-          <img id="mouseover-{{ subdirectory.name }}" class="mouseover-img" src="{{ 'images/mouseover-' | append: subdirectory.name | append: '.gif' | relative_url }}" alt="{{ subdirectory.description }}"/>
+          <img id="mouseover-{{ subdirectory.name }}" class="mouseover-img" src="{{ 'img/mouseover-' | append: subdirectory.name | append: '.gif' | relative_url }}" alt="{{ subdirectory.description }}"/>
           {% endif %}
           {% endfor %}
           <nav id="additional-links" aria-label="Additional Links">
@@ -46,7 +46,7 @@ title: Home Page
             </p>
           </ul>
         </div>
-        <a href="{{ 'activities/JuliaSets/' | relative_url }}"><img src="{{ 'images/activities/featured/JuliaSets.jpeg' | relative_url }}" alt="Featured Activity"/></a>
+        <a href="{{ 'activities/JuliaSets/' | relative_url }}"><img src="{{ 'img/activities/featured/JuliaSets.jpeg' | relative_url }}" alt="Featured Activity"/></a>
       </section>
     </main>
     {% include footer.html %}

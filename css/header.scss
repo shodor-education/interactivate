@@ -1,7 +1,7 @@
 ---
 ---
 body {
-  background: url('{{ "images/body-bg.gif" | relative_url }}');
+  background: url('{{ "img/body-bg.gif" | relative_url }}');
   background-color: #D5D5D5;
   background-repeat: repeat-x;
   margin: 0;
@@ -33,7 +33,7 @@ h1 {
   padding-left: 10px;
 }
 header {
-  background: url('{{ "images/header-bg.gif" | relative_url }}');
+  background: url('{{ "img/header-bg.gif" | relative_url }}');
   border-left: 1px solid gray;
   border-right: 1px solid gray;
 }

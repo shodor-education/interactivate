@@ -12,14 +12,17 @@
     <main>
       <nav id="tabs-nav" aria-label="Learner, Activity, Help, and Instructor tabs">
         <div id="tabs">
-          <a href="javascript:selectTab('learner-section');"><img id="learner-img" src="{{ 'images/activity/learner.gif' | relative_url }}"/></a><!--
-       --><a href="javascript:selectTab('activity-section');"><img id="activity-img" src="{{ 'images/activity/activity-selected.gif' | relative_url }}"/></a><!--
-       --><a href="javascript:selectTab('help-section');"><img id="help-img" src="{{ 'images/activity/help.gif' | relative_url }}"/></a><!--
-       --><a href="javascript:selectTab('instructor-section');"><img id="instructor-img" src="{{ 'images/activity/instructor.gif' | relative_url }}"/></a>
+          <a href="javascript:selectTab('learner-section');"><img id="learner-img" src="{{ 'img/activity/learner.gif' | relative_url }}"/></a><!--
+       --><a href="javascript:selectTab('activity-section');"><img id="activity-img" src="{{ 'img/activity/activity-selected.gif' | relative_url }}"/></a><!--
+       --><a href="javascript:selectTab('help-section');"><img id="help-img" src="{{ 'img/activity/help.gif' | relative_url }}"/></a><!--
+       --><a href="javascript:selectTab('instructor-section');"><img id="instructor-img" src="{{ 'img/activity/instructor.gif' | relative_url }}"/></a>
         </div>
         <div id="right-of-tabs"></div>
       </nav>
       <section id="learner-section" class="tab-section">
+        <div>
+          <h2>What is {{ page.title }}?</h2>
+        </div>
       </section>
       <section id="activity-section" class="tab-section">
         <noscript>

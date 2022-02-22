@@ -81,6 +81,20 @@ input[type=number]::-webkit-outer-spin-button {
   display: none;
 }
 
+#learner-section > div {
+  margin: 15px;
+  margin-top: 0;
+  padding-top: 15px;
+}
+
+#learner-section h2 {
+  border-bottom: 1px solid gray;
+  font-family: georgia, serif;
+  font-size: 17pt;
+  font-weight: normal;
+  margin: 0;
+}
+
 .left {
 	text-align: left;
 }
@@ -106,7 +120,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #right-of-tabs {
-  background: url('{{ "images/activity/tabs-bg.gif" | relative_url }}') repeat-x 0 bottom;
+  background: url('{{ "img/activity/tabs-bg.gif" | relative_url }}') repeat-x 0 bottom;
   border-bottom: 1px solid black;
   height: 31px;
 }
@@ -124,7 +138,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .tab-section {
-  background: url('{{ "images/folder-bg.gif" | relative_url }}') repeat-x;
+  background: url('{{ "img/folder-bg.gif" | relative_url }}') repeat-x;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
   min-height: 65px;
