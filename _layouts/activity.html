@@ -5,19 +5,22 @@
   <head>
     {% include head.html title=page.title %}
     <link rel="stylesheet" href="{{ 'css/activity.css' | relative_url }}"/>
+    <script src="{{ 'js/selectTab.js' | relative_url }}"></script>
   </head>
   <body>
     {% include header.html title=page.title additional-breadcrumb-link="activities" additional-breadcrumb-title="Activities" %}
     <main>
       <nav id="tabs-nav" aria-label="Learner, Activity, Help, and Instructor tabs">
         <div id="tabs">
-          <a href="javascript:selectTab('learner');"><img src="{{ 'images/activity/learner.gif' | relative_url }}"/></a><!--
-       --><a href="javascript:selectTab('activity');"><img src="{{ 'images/activity/activity-selected.gif' | relative_url }}"/></a><!--
-       --><a href="javascript:selectTab('help');"><img src="{{ 'images/activity/help.gif' | relative_url }}"/></a><!--
-       --><a href="javascript:selectTab('instructor');"><img src="{{ 'images/activity/instructor.gif' | relative_url }}"/></a>
+          <a href="javascript:selectTab('learner-section');"><img id="learner-img" src="{{ 'images/activity/learner.gif' | relative_url }}"/></a><!--
+       --><a href="javascript:selectTab('activity-section');"><img id="activity-img" src="{{ 'images/activity/activity-selected.gif' | relative_url }}"/></a><!--
+       --><a href="javascript:selectTab('help-section');"><img id="help-img" src="{{ 'images/activity/help.gif' | relative_url }}"/></a><!--
+       --><a href="javascript:selectTab('instructor-section');"><img id="instructor-img" src="{{ 'images/activity/instructor.gif' | relative_url }}"/></a>
         </div>
         <div id="right-of-tabs"></div>
       </nav>
+      <section id="learner-section" class="tab-section">
+      </section>
       <section id="activity-section" class="tab-section">
         <noscript>
           <div id="noscript-message">
@@ -30,6 +33,10 @@
         <script src="{{ 'js/activities/copyrightYear.js' | relative_url }}"></script>
         <script src="{{ 'js/activities/' | append: page.short-name | append: '/' | append: page.short-name | append: '.parameters.js' | relative_url }}"></script>
         <script src="{{ 'js/activities/' | append: page.short-name | append: '/' | append: page.gwt-dir | append: '/' | append: page.gwt-dir | append: '.nocache.js' | relative_url }}"></script>
+      </section>
+      <section id="help-section" class="tab-section">
+      </section>
+      <section id="instructor-section" class="tab-section">
       </section>
     </main>
     {% include footer.html %}
