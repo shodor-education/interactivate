@@ -1,10 +1,16 @@
-baseurl: /interactivate
+baseurl: "/interactivate"
 collections:
   activities:
     output: true
+defaults:
+ - scope:
+     path: ""
+     type: "activities"
+   values:
+     layout: "activity"
 exclude:
-  - exclude
+  - "exclude"
 include:
-  - _3dtransmographer
-tab-img-dir: img/activities/tabs/
-url: https://shodor-education.github.io/
+  - "_3dtransmographer"
+tab-img-dir: "img/activities/tabs/"
+url: "https://shodor-education.github.io/"
