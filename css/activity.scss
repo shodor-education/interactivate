@@ -2,156 +2,155 @@
 ---
 @use 'main';
 
-#activity-section {
-  background-color: white;
-  padding-top: 40px;
-  text-align: center;
-}
-
-#appletContent {
-  background-color: white;
-  margin: 0 auto;
-}
-
-/* From http://css-tricks.com/almanac/properties/u/user-select/
- */
-canvas, .noTextHighlight, .gwt-MenuItem {
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-	outline: none;
-	-webkit-tap-highlight-color: rgba(255,255,255,0);
-}
-
-.center {
-	text-align: center;
-}
-
-.falseWrap {
-	word-wrap: break-word;
-}
-
-.gwt-Button {
-    white-space: nowrap;
-}
-
-.gwt-MenuBarPopup {
-	background-color: white;
-}
-
-.gwt-MenuItem, .gwt-MenuItem * {
-  cursor: pointer;
-}
-
-.gwt-MenuItem {
-	cursor: pointer;
-	background-color: rgb(192,192,192);
-	padding: 7px;
-	border-radius: 5px;
-}
-
-.gwt-MenuItem:hover {
-	background-color: rgb(107, 107, 107);
-}
-
-.gwt-PopupPanel {
-	background-color: white;
-	border-style:solid;
-}
-
-/* Glass behind modal popup panels.
- * From http://code.google.com/p/google-web-toolkit-incubator/wiki/GlassPanel
- */
-.gwt-PopupPanelGlass {
-    background-color: lightgray !important;
-    filter: alpha(opacity = 80) !important; /* IE */
-    opacity: 0.8 !important; /* non-IE */
-}
-
-/* Disable spinners on NumInputs -- this is only an issue on computer */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-#learner-section,
-#help-section,
-#instructor-section {
-  background-color: white;
-  display: none;
-}
-
-#learner-section > div {
-  margin: 0 15px;
-  padding-top: 15px;
-}
-
-#learner-section h2 {
-  border-bottom: 1px solid gray;
-  font-family: georgia, serif;
-  font-size: 17pt;
-  font-weight: normal;
-  margin: 0;
-}
-
-.left {
-	text-align: left;
-}
-
-.moveCursor {
-	cursor: move;
-}
-
-#noscript-message {
-  background-color: white;
-  border: 1px solid red;
-  color: red;
-  font-family: sans-serif;
-  left: 50%;
-  margin-left: -11em;
-  padding: 4px;
-  position: absolute;
-  width: 22em;
-}
-
-.right {
-	text-align: right;
-}
-
-#right-of-tabs {
-  background: url('{{ site.tab-img-dir | append: "tabs-bg.gif" | relative_url }}') repeat-x 0 bottom;
-  border-bottom: 1px solid black;
-  height: 31px;
-}
-
 #tabs-nav {
   background-color: white;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
   padding-top: 15px;
-}
 
-#tabs {
-  float: left;
-  margin-top: 1px;
+  #tabs {
+    float: left;
+    margin-top: 1px;
+  }
+
+  #right-of-tabs {
+    background: url('{{ site.tab-img-dir | append: "tabs-bg.gif" | relative_url }}') repeat-x 0 bottom;
+    border-bottom: 1px solid black;
+    height: 31px;
+  }
 }
 
 .tab-section {
   background: url('{{ "img/folder-bg.gif" | relative_url }}') repeat-x;
+  background-color: white;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
+  display: none;
+  font-size: 11pt;
+  line-height: 120%;
   min-height: 65px;
-}
 
-textarea {
-	resize: none;
-	outline: none;
-	-webkit-tap-highlight-color: rgba(255,255,255,0);
-}
+  &#learner-section {
+    & > div {
+      margin: 0 15px;
+      padding: 20px 0;
+    }
 
-.trueWrap {
-	word-wrap: normal;
+    h2 {
+      border-bottom: 1px solid gray;
+      font-family: georgia, serif;
+      font-size: 17pt;
+      font-weight: normal;
+      margin: 0;
+      padding-bottom: 3px;
+    }
+  }
+
+  &#activity-section {
+    display: block;
+    padding-top: 40px;
+    text-align: center;
+
+    #noscript-message {
+      background-color: white;
+      border: 1px solid red;
+      color: red;
+      font-family: sans-serif;
+      left: 50%;
+      margin-left: -11em;
+      padding: 4px;
+      position: absolute;
+      width: 22em;
+    }
+
+    #appletContent {
+      background-color: white;
+      margin: 0 auto;
+
+      /* From http://css-tricks.com/almanac/properties/u/user-select/ */
+      canvas, .noTextHighlight, .gwt-MenuItem {
+          -moz-user-select: none;
+          -khtml-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        outline: none;
+        -webkit-tap-highlight-color: rgba(255,255,255,0);
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .falseWrap {
+        word-wrap: break-word;
+      }
+
+      .gwt-Button {
+          white-space: nowrap;
+      }
+
+      .gwt-MenuBarPopup {
+        background-color: white;
+      }
+
+      .gwt-MenuItem, .gwt-MenuItem * {
+        cursor: pointer;
+      }
+
+      .gwt-MenuItem {
+        cursor: pointer;
+        background-color: rgb(192,192,192);
+        padding: 7px;
+        border-radius: 5px;
+      }
+
+      .gwt-MenuItem:hover {
+        background-color: rgb(107, 107, 107);
+      }
+
+      .gwt-PopupPanel {
+        background-color: white;
+        border-style:solid;
+      }
+
+      /* Glass behind modal popup panels.
+       * From http://code.google.com/p/google-web-toolkit-incubator/wiki/GlassPanel
+       */
+      .gwt-PopupPanelGlass {
+          background-color: lightgray !important;
+          filter: alpha(opacity = 80) !important; /* IE */
+          opacity: 0.8 !important; /* non-IE */
+      }
+
+      /* Disable spinners on NumInputs -- this is only an issue on computer */
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+      }
+
+      .left {
+        text-align: left;
+      }
+
+      .moveCursor {
+        cursor: move;
+      }
+
+      .right {
+        text-align: right;
+      }
+
+      textarea {
+        resize: none;
+        outline: none;
+        -webkit-tap-highlight-color: rgba(255,255,255,0);
+      }
+
+      .trueWrap {
+        word-wrap: normal;
+      }
+    }
+  }
 }

@@ -1,5 +1,7 @@
 ---
 ---
+@use 'main';
+
 body {
   background: url('{{ "img/body-bg.gif" | relative_url }}');
   background-color: #D5D5D5;
