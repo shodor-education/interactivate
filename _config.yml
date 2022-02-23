@@ -1,9 +1,10 @@
-url: https://shodor-education.github.io/
 baseurl: /interactivate
 collections:
   activities:
     output: true
-include:
-  - _3dtransmographer
 exclude:
   - exclude
+include:
+  - _3dtransmographer
+tab-img-dir: img/activities/tabs/
+url: https://shodor-education.github.io/

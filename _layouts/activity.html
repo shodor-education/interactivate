@@ -12,10 +12,10 @@
     <main>
       <nav id="tabs-nav" aria-label="Learner, Activity, Help, and Instructor tabs">
         <div id="tabs">
-          <a href="javascript:selectTab('learner-section');"><img id="learner-img" src="{{ 'img/activity/learner.gif' | relative_url }}"/></a><!--
-       --><a href="javascript:selectTab('activity-section');"><img id="activity-img" src="{{ 'img/activity/activity-selected.gif' | relative_url }}"/></a><!--
-       --><a href="javascript:selectTab('help-section');"><img id="help-img" src="{{ 'img/activity/help.gif' | relative_url }}"/></a><!--
-       --><a href="javascript:selectTab('instructor-section');"><img id="instructor-img" src="{{ 'img/activity/instructor.gif' | relative_url }}"/></a>
+          <a href="javascript:selectTab('learner-section');"><img id="learner-img" src="{{ site.tab-img-dir | append: 'learner.gif' | relative_url }}"/></a><!--
+       --><a href="javascript:selectTab('activity-section');"><img id="activity-img" src="{{ site.tab-img-dir | append: 'activity-selected.gif' | relative_url }}"/></a><!--
+       --><a href="javascript:selectTab('help-section');"><img id="help-img" src="{{ site.tab-img-dir | append: 'help.gif' | relative_url }}"/></a><!--
+       --><a href="javascript:selectTab('instructor-section');"><img id="instructor-img" src="{{ site.tab-img-dir | append: 'instructor.gif' | relative_url }}"/></a>
         </div>
         <div id="right-of-tabs"></div>
       </nav>

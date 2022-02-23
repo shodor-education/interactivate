@@ -1,5 +1,7 @@
 ---
 ---
+@use 'main';
+
 #activity-section {
   background-color: white;
   padding-top: 40px;
@@ -120,7 +122,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #right-of-tabs {
-  background: url('{{ "img/activity/tabs-bg.gif" | relative_url }}') repeat-x 0 bottom;
+  background: url('{{ site.tab-img-dir | append: "tabs-bg.gif" | relative_url }}') repeat-x 0 bottom;
   border-bottom: 1px solid black;
   height: 31px;
 }
