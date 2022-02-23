@@ -1,0 +1,20 @@
+<section class="list-page-category-section">
+  <nav aria-label="{{ include.category-label | capitalize }} filter">
+    {% for item in include.categories %}
+    <a href="javascript:selectCategoryItem('{{ include.category-label }}', '{{ item }}');"/>{{ item }}</a>
+    &nbsp;&bull;&nbsp;
+    {% endfor %}
+    <a class="bold" href="javascript:selectCategoryItem('{{ include.category-label }}', 'all');"/>Show All</a>
+  </nav>
+  {% for item in include.categories %}
+  <section id="{{ include.category-label }}-section-{{ item }}" class="{{ include.category-label }}-section">
+    {% assign list-items = include.list | where: include.list-item-key, item %}
+    <h2>{{ item }} ({{ list-items | size }})</h2>
+    {% for list-item in list-items %}
+    <section class="list-item-section">
+      {% include list-page-sections/activity-section.html activity=list-item %}
+    </section>
+    {% endfor %}
+  </section>
+  {% endfor %}
+</section>

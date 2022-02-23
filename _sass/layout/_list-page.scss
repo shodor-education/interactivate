@@ -3,15 +3,12 @@
 
   padding: 5px 0;
 
-  #subjects-section,
-  #audience-section {
+  .list-page-category-section {
     border: 1px solid black;
     margin: 5px;
     margin-top: 0;
-  }
 
-  #subjects-section {
-    #subjects-nav,
+    nav,
     h2 {
       background-color: #2661C3;
       border-bottom: 1px solid black;
@@ -23,7 +20,7 @@
       padding-left: 5px;
     }
 
-    #subjects-nav {
+    nav {
       font-weight: normal;
 
       a:link,
@@ -32,7 +29,7 @@
       }
     }
 
-    .activity-section {
+    .list-item-section {
       background-color: #F8F9FF;
       display: flex;
       padding: 5px;
