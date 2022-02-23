@@ -5,12 +5,18 @@ collections:
     output: true
   list-pages:
     output: true
+    permalink: /:name
 defaults:
  - scope:
      path: ""
      type: "activities"
    values:
      layout: "activity"
+ - scope:
+     path: ""
+     type: "list-pages"
+   values:
+     layout: "list-page"
 exclude:
   - "exclude"
 include:

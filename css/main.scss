@@ -7,6 +7,7 @@ $img-dir-url: {{ 'img' | relative_url }};
 @import 'layout/folder-section';
 @import 'layout/footer';
 @import 'layout/header';
+@import 'layout/list-page';
 @import 'pages/activities';
 @import 'pages/activity';
 @import 'pages/home';

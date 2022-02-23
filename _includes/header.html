@@ -9,7 +9,7 @@
     </select>
   </div>
   {% unless include.hide-h1 %}
-  <h1>{{ include.title }}</h1>
+  <h1>{{ page.title }}</h1>
   {% endunless %}
   <nav id="breadcrumb" aria-label="Breadcrumbs">
     <p>
@@ -18,7 +18,7 @@
       {% if include.additional-breadcrumb-link and include.additional-breadcrumb-title %}
       <a href="{{ include.additional-breadcrumb-link | relative_url }}">{{ include.additional-breadcrumb-title }}</a> ▸
       {% endif %}
-      {{ include.title }}
+      {{ page.title }}
     </p>
   </nav>
 </header>
