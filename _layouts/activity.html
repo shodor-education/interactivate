@@ -4,18 +4,17 @@
 <html>
   <head>
     {% include head.html title=page.title %}
-    <link rel="stylesheet" href="{{ 'css/activity.css' | relative_url }}"/>
     <script src="{{ 'js/selectTab.js' | relative_url }}"></script>
   </head>
   <body>
     {% include header.html title=page.title additional-breadcrumb-link="activities" additional-breadcrumb-title="Activities" %}
-    <main>
+    <main id="activity-main">
       <nav id="tabs-nav" aria-label="Learner, Activity, Help, and Instructor tabs">
         <div id="tabs">
-          <a href="javascript:selectTab('learner-section');"><img id="learner-img" src="{{ site.tab-img-dir | append: 'learner.gif' | relative_url }}"/></a><!--
-       --><a href="javascript:selectTab('activity-section');"><img id="activity-img" src="{{ site.tab-img-dir | append: 'activity-selected.gif' | relative_url }}"/></a><!--
-       --><a href="javascript:selectTab('help-section');"><img id="help-img" src="{{ site.tab-img-dir | append: 'help.gif' | relative_url }}"/></a><!--
-       --><a href="javascript:selectTab('instructor-section');"><img id="instructor-img" src="{{ site.tab-img-dir | append: 'instructor.gif' | relative_url }}"/></a>
+          {% include activity-tab.html name="learner" %}<!--
+       -->{% include activity-tab.html name="activity" selected=true %}<!--
+       -->{% include activity-tab.html name="help" %}<!--
+       -->{% include activity-tab.html name="instructor" %}
         </div>
         <div id="right-of-tabs"></div>
       </nav>

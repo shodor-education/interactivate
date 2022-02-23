@@ -1,0 +1,16 @@
+footer {
+  background-color: #1F7248;
+  color: white;
+  padding: 10px;
+  position: relative;
+
+  a:visited,
+  a:link {
+    color: white;
+    text-decoration: underline;
+  }
+ 
+  #footer-logos {
+    right: 5px;
+  }
+}

@@ -1,8 +1,9 @@
+## Uncomment below for live, comment out for local dev
 #baseurl: "/interactivate"
 collections:
   activities:
     output: true
-  subdirectories:
+  list-pages:
     output: true
 defaults:
  - scope:
@@ -14,5 +15,9 @@ exclude:
   - "exclude"
 include:
   - "_3dtransmographer"
-tab-img-dir: "img/activities/tabs/"
+## Uncomment two lines below for live, comment out for local dev
+#sass:
+#  style: compressed
+tab-img-dir: "img/activities/tabs"
+## Uncomment below for live, comment out for local dev
 #url: "https://shodor-education.github.io/"

@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.h-center {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.v-center {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}

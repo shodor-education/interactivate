@@ -1,15 +1,12 @@
 ---
 ---
-body {
-  font-family: sans-serif;
-}
+$img-dir-url: {{ 'img' | relative_url }};
 
-.bold {
-  font-weight: bold;
-}
-
-.h-center {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-}
+@import 'base';
+@import 'layout/body';
+@import 'layout/folder-section';
+@import 'layout/footer';
+@import 'layout/header';
+@import 'pages/activities';
+@import 'pages/activity';
+@import 'pages/home';

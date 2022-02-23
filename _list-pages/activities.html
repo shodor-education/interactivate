@@ -10,13 +10,12 @@ title: "Activities"
 <html>
   <head>
     {% include head.html title=page.title %}
-    <link rel="stylesheet" href="{{ '/css/activities.css' | relative_url }}">
     <script src="{{ '/js/selectSubject.js' | relative_url }}"></script>
   </head>
   <body>
     {% include header.html title=page.title %}
-    <main>
-      <div>
+    <main id="activities-main">
+      <section id="subjects-section">
         <nav id="subjects-nav" aria-label="Subjects">
           {% for subject in site.data.subjects %}
           <a href="javascript:selectSubject('{{ subject }}');"/>{{ subject }}</a>
@@ -53,7 +52,7 @@ title: "Activities"
           {% endfor %}
         </section>
         {% endfor %}
-      </div>
+      </section>
     </main>
     {% include footer.html %}
   </body>

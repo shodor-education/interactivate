@@ -1,0 +1,47 @@
+header {
+  background: url('#{$img-dir-url}/header-bg.gif');
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+
+  #logo-bar {
+    height: 54px;
+    position: relative;
+
+    #header-logo {
+      display: inline-block;
+      height: 54px;
+      width: 80%;
+    }
+  }
+
+  h1 {
+    background-color: white;
+    font-family: georgia, serif;
+    font-size: 20pt;
+    font-weight: normal;
+    margin: 0;
+    padding: 2px;
+    padding-left: 10px;
+  }
+
+  #breadcrumb {
+    background-color: white;
+    color: gray;
+    font-family: helvetica, sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-top: 2px;
+
+    p {
+      margin: 0;
+
+      a:visited,
+      a:link {
+        color: gray;
+        text-decoration: underline;
+      }
+    }
+  }
+}

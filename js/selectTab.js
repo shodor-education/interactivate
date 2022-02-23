@@ -8,6 +8,6 @@ function selectTab(sectionId) {
     sections[i].style.display = isSelected ? "block" : "none";
     var tabName = sections[i].id.replace("-section", "");
     document.getElementById(tabName + "-img").src
-      = imgDir + tabName + (isSelected ? "-selected" : "" ) + ".gif";
+      = imgDir + "/" + tabName + (isSelected ? "-selected" : "" ) + ".gif";
   }
 }
