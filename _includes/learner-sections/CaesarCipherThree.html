@@ -1,0 +1,31 @@
+<p>
+  This activity allows the user to experiment with decoding messages using modular arithmetic.
+  Modular arithmetic has been used for years as a means of encoding messages. The letters of the
+  alphabet are coded as: 
+  <div class="center">
+    A B C D ... Z 
+  </div>
+  <div class="center">
+    0 1 2 3 ... 25
+  </div>
+  and then the numbers are changed via an affine (linear) transformation to new, coded numbers.
+  The coding function has the form: 
+</p>
+<p>
+  <div class="center">
+    Y = A * X + B 
+  </div>
+  where X is the uncoded number, A is the multiplier, B is the constant (both A and B are known
+  to allies, but unknown to enemies) and Y is the calculated, coded number. The arithmetic is
+  done mod 26 to ensure that we get numbers back that can be translated back to letters before
+  sending the coded message. 
+</p>
+<p>
+  This method of coding messages is ancient. In fact, Caesar is said to have liked to use the
+  cipher with A = 1 and B = 3. This method of coding is fun to play with, but easy to crack, as
+  can be seen from this activity. 
+</p>
+<p>
+  Modern coding techniques still make use of modular arithmetic, but in a highly sophisticated
+  way. 
+</p>

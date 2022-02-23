@@ -1,0 +1,25 @@
+<p>
+  Clock time can be thought of as a type of 
+  <a href="{{ '/dictionary/m' | relative_url }}">modular arithmetic</a>. Modular arithmetic is used when we only want to consider the first N natural numbers, for
+  some finite number N. There are two cases to consider when we add or multiply numbers in this
+  situation: 
+</p>
+<ol>
+  <li>
+    When we add or multiply two numbers and the result is less than N, the final answer is just
+    the number resulting from the addition or multiplication. 
+  </li>
+  <li>
+    When we add or multiply two numbers and the result is more than N, the final answer is found
+    by thinking of the numbers as looping back to the beginning, i.e., N = 0, N + 1 = 1, N + 2 =
+    2, etc. 
+  </li>
+</ol>
+<p>
+  We can think of clocks this way. For our usual clock, we think of the typical dial, except
+  with 12 = 0. So 13 hours after 0 o'clock is 1 o'clock (13 = 12+1 which is 1 on the dial). 
+</p>
+<p>
+  A clock with 5 hours works the same way: 17 hours after 0 o'clock is 2 o'clock (17 = 5 + 12 =
+  10 + 7 = 15 + 2 which is 2 on the dial). 
+</p>

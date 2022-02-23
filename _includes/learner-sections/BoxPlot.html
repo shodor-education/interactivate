@@ -1,0 +1,112 @@
+<p>
+  This activity allows the user to explore maximum, minimum, median, upper quartile, lower
+  quartile, and outliers. 
+</p>
+<ul>
+  <li>
+    <strong>maximum</strong> is the largest value in the data set. 
+  </li>
+  <li>
+    <strong>minimum</strong> is the smallest value in the data set. 
+  </li>
+  <li>
+    <strong>median</strong> is a measure of the center. It is the middle value in a list of numbers sorted from least
+    to greatest. If the list has an odd number of entries, the median is the middle entry in the
+    list after sorting. If the list has an even number of entries, the median is equal to the
+    sum of the two middle numbers (after sorting) divided by two. 
+  </li>
+  <li>
+    <strong>upper quartile</strong> The median splits the data into two parts: the upper portion and the lower portion. The
+    upper quartile is the median of the upper half of the data. 
+  </li>
+  <li>
+    <strong>lower quartile</strong> is the median of the lower half of the data. 
+  </li>
+  <li>
+    <strong>interquartile range</strong> is the difference between the upper and lower quartiles and is often abbreviated as IQR. 
+  </li>
+  <li>
+    <strong>outlier</strong> is a point in the data set that is much farther from the median than most other points.
+    Outliers are classified as extreme or not. Extreme outliers are data points that are either
+    smaller than the lower quartile minus 3*IQR or greater than the upper quartile plus 3*IQR.
+    In other words, extreme outliers are more than 3*IQR away from the box of the box plot. The
+    non-extreme outliers are less than or equal to 3*IQR away from the box, but more than
+    1.5*IQR away from the box. 
+  </li>
+</ul>
+<p>
+  *Note: There are two ways of finding the lower and upper quartiles (Q1 and Q3, respectively),
+  and neither way is standard. To learn more, see the 
+  <a href="{{ '/discussions/BoxPlot' | relative_url }}">discussion on box plots</a>. 
+</p>
+<p>
+  To draw a box plot you must first sort the data from least to greatest, then you must find the
+  median of the entire set of data. Now you must find the median of the upper and lower halves
+  of the data; remember, these medians are called the upper and lower quartiles. Draw a number
+  line starting with the minimum and ending with the maximum. Then plot the median, upper
+  quartile, and the lower quartile on the number line. Finally, draw a box around the upper and
+  lower quartile points and divide the box in two parts at the median. The portion of the number
+  line that is not inside the box is sometimes called the whiskers. 
+</p>
+<p>
+  Sometimes, you may have one or more data points that are relatively far away from the rest of
+  the points in your data set. A point that is much farther from the median than the other
+  points are is called an outlier. To see what outliers look like in a box plot, look at the
+  2006 Gas Mileage by Car Size data in the activity. If you check the "uncover outliers" box,
+  the applet will display the outliers for that data set. Note that normal outliers will be
+  displayed in the same color as their accompanying box plot, while extreme outliers will be
+  displayed in black. 
+</p>
+<p>
+  To calculate where the ends of the whiskers go, subtract the lower quartile from the upper
+  quartile to get the interquartile range, and then multiply that by 1.5. For the left-hand
+  whisker, subtract the number you just got from the lower quartile and for the right-hand
+  whisker, add the number you found to the upper quartile. This tells you where the whiskers
+  will go. 
+</p>
+<p>
+  Sometimes, calculating the range this way will cause the whiskers to extend beyond the maximum
+  or minimum points in the data in which case, the whiskers are shortened so that they end right
+  at the maximum or minimum points. 
+</p>
+<p>
+  Using the 2006 Gas Mileage by Car Size data again, where Q1 = 19 and Q3 = 24, the calculation
+  of the range would be: 
+</p>
+<div class="center">
+  <p>
+    24 - 19 = 5 
+  </p>
+  <p>
+    5 * 1.5 = 7.5 
+  </p>
+  <p>
+    19 - 7.5 = 11.5; left-hand whisker 
+  </p>
+  <p>
+    24 + 7.5 = 31.5; right-hand whisker 
+  </p>
+</div>
+<p>
+  Therefore, the range is 11.5 to 31.5. However, the minimum data point in the activity is 17,
+  so the lower whisker is drawn at 17. If "uncover outliers" is checked, the upper whisker will
+  be drawn at 31.5, uncovering three outliers at 48, 45, and 40. If "uncover outliers" is
+  unchecked, the upper whisker will simply be drawn at the maximum point in the data set, 48. 
+</p>
+<p>
+  References for data sets: 
+</p>
+<ul>
+  <li>
+    <strong>Amount Spent Per Student</strong> is from the U.S. Census Bureau, Public Education Finance: 2005. 
+  </li>
+  <li>
+    <strong>2006 Gas Mileage by Car Size</strong> is from the U.S. Department of Energy and U.S. Environment Protection Agency, 2007. 
+  </li>
+  <li>
+    <strong>NBA Team Payrolls</strong> is from the website of Inside Hoops, 2005. 
+  </li>
+  <li>
+    <strong>College's 2004 ACT Scores</strong> is from the Western Interstate Commission for Higher Education, 2007. 
+  </li>
+</ul>

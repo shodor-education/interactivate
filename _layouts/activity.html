@@ -22,6 +22,8 @@
       <section id="learner-section" class="tab-section">
         <div>
           <h2>What is {{ page.title }}?</h2>
+          {% capture learner-section-url %}{{ "learner-sections/" | append: page.short-name | append: ".html" }}{% endcapture %}
+          {% include {{ learner-section-url }} %}
         </div>
       </section>
       <section id="activity-section" class="tab-section">

@@ -1,0 +1,361 @@
+<p>
+  This activity allows the user to graph up to three recursive equations at one time. 
+</p>
+<p>
+  In a recursive equation, each value u 
+  <sub>
+    n 
+  </sub>
+  depends on the value before it u 
+  <sub>
+    n-1 
+  </sub>
+  . The n is just a counting number to keep track of which value comes after which. So the
+  initial value is said to be u 
+  <sub>
+    0 
+  </sub>
+  where n=0. The next value is u 
+  <sub>
+    1 
+  </sub>
+  , the next u 
+  <sub>
+    2 
+  </sub>
+  and so on. Once the initial value is established, some computation is performed to it
+  producing the value for u 
+  <sub>
+    1 
+  </sub>
+  . The same computation is then performed to u 
+  <sub>
+    1 
+  </sub>
+  to produce u 
+  <sub>
+    2 
+  </sub>
+  , which then produces u 
+  <sub>
+    3 
+  </sub>
+  and so on. 
+</p>
+<p>
+  For example let's look at the recursive equation u 
+  <sub>
+    n 
+  </sub>
+  = u 
+  <sub>
+    n-1 
+  </sub>
+  + 2 with the initial value u 
+  <sub>
+    0 
+  </sub>
+  =0. To find u 
+  <sub>
+    1 
+  </sub>
+  we use the equation and take n to equal 1. So u 
+  <sub>
+    1 
+  </sub>
+  = u 
+  <sub>
+    1-1 
+  </sub>
+  + 2 = u 
+  <sub>
+    0 
+  </sub>
+  + 2 = 0 + 2 = 2. Therefore u 
+  <sub>
+    1 
+  </sub>
+  = 2. To find u 
+  <sub>
+    2 
+  </sub>
+  we use the value of u 
+  <sub>
+    1 
+  </sub>
+  to find u 
+  <sub>
+    2 
+  </sub>
+  = u 
+  <sub>
+    1 
+  </sub>
+  + 2 = 2 + 2 = 4. 
+</p>
+<p>
+  In this activity the user must write a recursive equation involving u 
+  <sub>
+    n 
+  </sub>
+  equal to some computation to u 
+  <sub>
+    n-1 
+  </sub>
+  (ie u 
+  <sub>
+    n 
+  </sub>
+  = u 
+  <sub>
+    n-1 
+  </sub>
+  + 2). The initial values u 
+  <sub>
+    0 
+  </sub>
+  must also be specified. adjusted by the user to understand their role in the graph of the
+  equation. This activity uses the first 10 iterations of the equations to make up the points of
+  the graph. On the graph the points are connected enabling the user to view the overall trend
+  of each graph. The user may then flip through each equation on the graph and view the value at
+  each graphed point. 
+</p>
+<p>
+  When we normally think of an equation, we think of something like y = 2*x, where you plug in
+  any value for x and receive a unique y value. Notice to receive a value, no previous value
+  needs to be calculated. This is not the case in a recursive equation. A recursive relationship
+  simply means that each value of the function is determined by the previous value. 
+</p>
+<p>
+  In recursive equations, each value is determined by the previous value. An initial number is
+  needed in order for first value to be found. So the initial value is placed into the equation
+  to get the first value. Then that first value is inputted into the equation to get the second
+  value and so on. This process will occur up until the number of iterations that the user has
+  specified. 
+</p>
+<p>
+  For example, let's use the recursive equation u 
+  <sub>
+    n 
+  </sub>
+  = u 
+  <sub>
+    n-1 
+  </sub>
+  + 2. We must also specify the initial value, which we will set as u 
+  <sub>
+    0 
+  </sub>
+  = 0. Let's compare these results to that of the function f(x) = 2*x: 
+</p>
+<p>
+  <table class="center">
+    <tr>
+      <td>
+        <strong>
+         u 
+          <sub>
+            n 
+          </sub>
+          = u 
+          <sub>
+            n-1 
+          </sub>
+          + 2 
+        </strong>
+      </td>
+      <td>
+        <strong>f(x) = 2 * x</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table class="center">
+          <tr>
+            <td>
+              <table>
+                <tr>
+                  <td>
+                    u 
+                    <sub>
+                      0 
+                    </sub>= 0 
+                    <br />
+                    u 
+                    <sub>
+                      1 
+                    </sub>
+                    = 2 
+                    <br />
+                    u 
+                    <sub>
+                      2 
+                    </sub>
+                    = 4 
+                    <br />
+                    u 
+                    <sub>
+                      3 
+                    </sub>
+                    = 6 
+                    <br />
+                    u 
+                    <sub>
+                      4 
+                    </sub>
+                    = 8 
+                    <br />
+                    u 
+                    <sub>
+                      5 
+                    </sub>
+                    = 10 
+                    <br />
+                    u 
+                    <sub>
+                      6 
+                    </sub>
+                    = 12 
+                    <br />
+                    u 
+                    <sub>
+                      7 
+                    </sub>
+                    = 14 
+                    <br />
+                    u 
+                    <sub>
+                      8 
+                    </sub>
+                    = 16 
+                    <br />
+                    u 
+                    <sub>
+                      9 
+                    </sub>
+                    = 18 
+                    <br />
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td>
+              <div class="center">
+                <img src="{{ 'img/activities/learner/Recursion-learner-1.jpg' | relative_url }}" />
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <div class="center">
+          <img src="{{ 'img/activities/learner/Recursion-learner-2.jpg' | relative_url }}" />
+        </div>
+      </td>
+    </tr>
+  </table>
+</p>
+<p>
+  Notice that this graph is similar to that of that of the function f(x) = 2*x. If you start
+  plugging in the integer values 0-5 into the function f(x) = 2*x, you receive the exact values
+  of the recursive equation u 
+  <sub>
+    n 
+  </sub>= u 
+  <sub>
+    n-1 
+  </sub>
+  + 2. Why is this the case? Let's look at the values for the 3rd position on the graph. For the
+  function: f(3) = 2*3 = 6. Remember the recursive equation u 
+  <sub>
+    n 
+  </sub>
+  = u 
+  <sub>
+    n-1 
+  </sub>
+  + 2. Then u 
+  <sub>
+    3 
+  </sub>
+  = u 
+  <sub>
+    2 
+  </sub>
+  + 2. But what is the value for u 
+  <sub>
+    2 
+  </sub>
+  ? Well u 
+  <sub>
+    2 
+  </sub>
+  = u 
+  <sub>
+    1 
+  </sub>
+  + 2. So u 
+  <sub>
+    3 
+  </sub>
+  = (u 
+  <sub>
+    1 
+  </sub>
+  + 2) + 2. And u 
+  <sub>
+    1 
+  </sub>
+  = u 
+  <sub>
+    0 
+  </sub>
+  + 2. Then u 
+  <sub>
+    3 
+  </sub>
+  = ((u 
+  <sub>
+    0 
+  </sub>
+  + 2) + 2) + 2. Since we know that u 
+  <sub>
+    0 
+  </sub>
+  = 0, we can calculate the value. u 
+  <sub>
+    3 
+  </sub>
+  = ((0 + 2) + 2) + 2 = 6. We are adding 2 three times. This is the same as 2*3 which was the
+  value for the function.for an x number of times. So there is a direct relationship between the
+  linear function and the recursive function. 
+</p>
+<p>
+  Recursive equations are important to understand because they occur in many everyday
+  situations. Many of these occurrences involve recursive equations more complicated than the
+  one that we just investigated. The non-recursive function is not always so easy to derive. A
+  common recursive equation is one involving compounding interest. Let's use an example. Sally
+  initially puts $1000 into a savings account that gives her .07% interest every year. This
+  means each new year she would receive an additional .07% of what she had the previous year.
+  This situation can be represented in the formula: u 
+  <sub>
+    n 
+  </sub>
+  = u 
+  <sub>
+    n-1 
+  </sub>
+  * (1 + .0007). Where u 
+  <sub>
+    0 
+  </sub>
+  = 1000. The number of iterations would be the number of years she had her money in this
+  savings account. 
+</p>
+<p>
+  This graphing activity may be used for real world examples such as compounding interest. Also
+  the activity can be used for all kinds of recursive equations. Since the activity creates a
+  graph, the user becomes able to compare the equations to more familiar equations. Furthermore,
+  the user is able to connect the abstract ideas of recursion to a concrete visual graph. 
+</p>
+<p />
