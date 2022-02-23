@@ -30,6 +30,11 @@
   line-height: 120%;
   min-height: 65px;
 
+  a:link,
+  a:visited {
+    color: #2661C3;
+  }
+
   &#learner-section {
     & > div {
       margin: 0 15px;
@@ -43,6 +48,10 @@
       font-weight: normal;
       margin: 0;
       padding-bottom: 3px;
+    }
+
+    img {
+      padding: 1em;
     }
   }
 
