@@ -23,7 +23,7 @@ title: "Home Page"
         <img src="{{ 'img/main-left-img.gif' | relative_url }}" alt="Three hexagons: one showing a graph of f(x) = sin((x^2)/2), one showing a histogram, and one showing a Sierpinski triangle"/><!--
      --><img src="{{ 'img/main-img-map.gif' | relative_url }}" alt="Image map for site navigation" usemap="#main-img-map"/>
         <map name="main-img-map">
-            {% for subdirectory in site.data.subdirectories %}
+            {% for subdirectory in site.subdirectories %}
             {% if subdirectory.main-img-map-coords %}
             <area shape="poly" coords="{{ subdirectory.main-img-map-coords }}" href="{{ subdirectory.name | relative_url }}" onmouseover="changeMouseoverImage('{{ subdirectory.name }}');" onmouseout="changeMouseoverImage('goals');">
             {% endif %}
@@ -34,7 +34,7 @@ title: "Home Page"
       <section id="main-bottom-section">
         <div>
           <img id="mouseover-goals" class="mouseover-img" src="{{ 'img/mouseover-goals.gif' | relative_url }}" alt="The goals of Interactivate are the creation, collection, evaluation, and dissemination of interactive courseware for exploration in science and mathematics."/>
-          {% for subdirectory in site.data.subdirectories %}
+          {% for subdirectory in site.subdirectories %}
           {% if subdirectory.description %}
           <img id="mouseover-{{ subdirectory.name }}" class="mouseover-img" src="{{ 'img/mouseover-' | append: subdirectory.name | append: '.gif' | relative_url }}" alt="{{ subdirectory.description }}"/>
           {% endif %}
