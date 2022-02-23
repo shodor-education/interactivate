@@ -6,6 +6,7 @@ collections:
   list-pages:
     output: true
     permalink: /:name
+    sort_by: jump-to-index
 defaults:
  - scope:
      path: ""
