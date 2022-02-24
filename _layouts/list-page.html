@@ -9,9 +9,16 @@
   <body>
     {% include header.html title=page.title %}
     <main id="list-page-main">
-      {% include list-page-category-section.html list=site.activities 
-        category-label="subject" categories=site.data.subjects 
-        list-item-key="subjects" %}
+      {% for category in page.categories %}
+        {% assign list-items = site[page.name] %}
+        {% assign category-items = site.data[category] %}
+        {% include list-page-category-section.html
+          category-items=category-items
+          category-label=category
+          item-name=page.item-name
+          list-items=list-items
+        %}
+      {% endfor %}
     </main>
     {% include footer.html %}
   </body>

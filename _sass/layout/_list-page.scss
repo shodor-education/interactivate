@@ -5,8 +5,13 @@
 
   .list-page-category-section {
     border: 1px solid black;
+    display: none;
     margin: 5px;
     margin-top: 0;
+
+    &:first-child {
+      display: block;
+    }
 
     nav,
     h2 {
