@@ -3,10 +3,16 @@
 collections:
   activities:
     output: true
-  list-pages:
+  audience-catalogs:
+    output: true
+    permalink: /:name/byAudience
+  catalogs:
     output: true
     permalink: /:name
     sort_by: jump-to-index
+  subject-catalogs:
+    output: true
+    permalink: /:name/bySubject
 defaults:
  - scope:
      path: ""
@@ -15,9 +21,19 @@ defaults:
      layout: "activity"
  - scope:
      path: ""
-     type: "list-pages"
+     type: "audience-catalogs"
    values:
-     layout: "list-page"
+     layout: "audience-catalog"
+ - scope:
+     path: ""
+     type: "catalogs"
+   values:
+     layout: "catalog"
+ - scope:
+     path: ""
+     type: "subject-catalogs"
+   values:
+     layout: "subject-catalog"
 exclude:
   - "exclude"
 include:

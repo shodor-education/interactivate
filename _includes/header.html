@@ -3,8 +3,8 @@
     <a id="header-logo" href="{{ site.baseurl }}"><img src=" {{ 'img/header-logo.gif' | relative_url }}" alt="Interactivate logo"/></a>
     <select class="v-center" onchange="jumpTo(event);">
       <option disabled selected>Jump To:</option>
-      {% for list-page in site.list-pages %}
-      <option data-list-page="{{ list-page.name | relative_url }}">{{ list-page.name | capitalize }}</option>
+      {% for catalog in site.catalogs %}
+      <option data-catalog="{{ catalog.name | relative_url }}">{{ catalog.name | capitalize }}</option>
       {% endfor %}
     </select>
   </div>

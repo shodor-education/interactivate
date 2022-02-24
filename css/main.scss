@@ -4,10 +4,10 @@ $img-dir-url: {{ 'img' | relative_url }};
 
 @import 'base';
 @import 'layout/body';
-@import 'layout/folder-section';
+@import 'layout/folder';
 @import 'layout/footer';
 @import 'layout/header';
-@import 'layout/list-page';
+@import 'layout/catalog';
 @import 'pages/activities';
 @import 'pages/activity';
 @import 'pages/home';

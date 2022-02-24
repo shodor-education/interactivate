@@ -18,7 +18,7 @@
   }
 
   .tab-section {
-    @extend .folder-section;
+    @extend .folder;
 
     display: none;
     font-size: 11pt;

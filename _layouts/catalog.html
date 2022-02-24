@@ -1,0 +1,40 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+    <script src="{{ '/js/selectCatalogCategory.js' | relative_url }}"></script>
+  </head>
+  <body>
+    {% include header.html title=page.title %}
+    <main id="catalog-main">
+      {% assign categories-list = site.data[layout.categories-list-name] %}
+      {% assign catalog-items = site[page.name] %}
+      {% if catalog-items %}
+         {% assign catalog-items = catalog-items | sort: "title" %}
+      {% endif %}
+      {% assign catalog = site.catalogs | where: "name", page.name | first %}
+      <!-- Fieldset will go here -->
+      <nav aria-label="Filter by {{ layout.categories-list-name-singular }}">
+        {% for category in categories-list %}
+        <a href="javascript:selectCatalogCategory('{{ category | replace: ' ', '_' }}');"/>{{ category }}</a>
+        &nbsp;&bull;&nbsp;
+        {% endfor %}
+        <a class="bold" href="javascript:selectCatalogCategory('all');"/>Show All</a>
+      </nav>
+      {% for category in categories-list %}
+      <section id="category-section-{{ category | replace: ' ', '_' }}" class="category-section">
+        {% assign category-items = catalog-items | where: layout.categories-list-name, category %}
+        <h2>{{ category }} ({{ category-items | size }})</h2>
+        {% for catalog-item in category-items %}
+        <section class="catalog-item">
+          {% include catalog-items/{{ catalog.item-name }}-catalog-item.html catalog-item=catalog-item %}
+        </section>
+        {% endfor %}
+      </section>
+      {% endfor %}
+    </main>
+    {% include footer.html %}
+  </body>
+</html>
