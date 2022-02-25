@@ -23,9 +23,6 @@ defaults:
       path: ""
       type: "audience-catalogs"
     values:
-      categories-list-name: "audiences"
-      categories-list-type: "data"
-      filter-by: "audience"
       layout: "catalog"
   - scope:
       path: ""
@@ -38,10 +35,6 @@ defaults:
     values:
       additional-breadcrumb-link: "dictionary"
       additional-breadcrumb-title: "Dictionary"
-      categories-list-type: "page-title-only"
-      catalog-items-list-name: "dictionary-sections"
-      catalog-items-list-type: "collection"
-      catalog-item-name: "dictionary-term"
       catalog-vars-include-file: "catalog-vars/dictionary-section-catalog-vars.html"
       layout: "catalog"
 exclude:
