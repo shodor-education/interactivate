@@ -7,16 +7,17 @@
     <script src="{{ '/js/selectCatalogCategory.js' | relative_url }}"></script>
   </head>
   <body>
-    {% include header.html title=page.title %}
+    {% include header.html %}
     <main id="catalog-main">
-      {% assign categories-list = site.data[layout.categories-list-name] %}
-      {% assign catalog-items = site[page.name] %}
-      {% if catalog-items %}
-         {% assign catalog-items = catalog-items | sort: "title" %}
+      {% if page.catalog-vars-include-file %}
+        {% assign catalog-vars-include-file = page.catalog-vars-include-file %}
+      {% else %}
+        {% assign catalog-vars-include-file = 'catalog-vars/'
+          | append: page.title | lowercase | append: '-catalog-vars.html' %}
       {% endif %}
-      {% assign catalog = site.catalogs | where: "name", page.name | first %}
+      {% include {{ catalog-vars-include-file }} %}
       <!-- Fieldset will go here -->
-      <nav aria-label="Filter by {{ layout.categories-list-name-singular }}">
+      <nav aria-label="Filter by {{ categories-label }}">
         {% for category in categories-list %}
         <a href="javascript:selectCatalogCategory('{{ category | replace: ' ', '_' }}');"/>{{ category }}</a>
         &nbsp;&bull;&nbsp;
@@ -24,12 +25,12 @@
         <a class="bold" href="javascript:selectCatalogCategory('all');"/>Show All</a>
       </nav>
       {% for category in categories-list %}
-      <section id="category-section-{{ category | replace: ' ', '_' }}" class="category-section">
-        {% assign category-items = catalog-items | where: layout.categories-list-name, category %}
+      <section id="category-section-{{ category | replace: ' ', '_' | lowercase }}" class="category-section">
+        {% assign category-items = catalog-items-list | where_exp: "item", filter-expression %}
         <h2>{{ category }} ({{ category-items | size }})</h2>
         {% for catalog-item in category-items %}
         <section class="catalog-item">
-          {% include catalog-items/{{ catalog.item-name }}-catalog-item.html catalog-item=catalog-item %}
+          {% include catalog-items/{{ catalog-item-name }}-catalog-item.html catalog-item=catalog-item %}
         </section>
         {% endfor %}
       </section>

@@ -24,7 +24,7 @@ title: "Home Page"
         <map name="main-img-map">
             {% for catalog in site.catalogs %}
             {% if catalog.main-img-map-coords %}
-            <area shape="poly" coords="{{ catalog.main-img-map-coords }}" href="{{ catalog.name | relative_url }}" onmouseover="changeMouseoverImage('{{ catalog.name }}');" onmouseout="changeMouseoverImage('goals');">
+            <area shape="poly" coords="{{ catalog.main-img-map-coords }}" href="{{ catalog.title | downcase | relative_url }}" onmouseover="changeMouseoverImage('{{ catalog.title | downcase }}');" onmouseout="changeMouseoverImage('goals');">
             {% endif %}
             {% endfor %}
             <area alt="Shodor logo" shape="rect" coords="20,217,333,249" href="{{ site.url }}">
@@ -35,7 +35,7 @@ title: "Home Page"
           <img id="mouseover-goals" class="mouseover-img" src="{{ 'img/mouseover-goals.gif' | relative_url }}" alt="The goals of Interactivate are the creation, collection, evaluation, and dissemination of interactive courseware for exploration in science and mathematics."/>
           {% for catalog in site.catalogs %}
           {% if catalog.description %}
-          <img id="mouseover-{{ catalog.name }}" class="mouseover-img" src="{{ 'img/mouseover-' | append: catalog.name | append: '.gif' | relative_url }}" alt="{{ catalog.description }}"/>
+          <img id="mouseover-{{ catalog.title | downcase }}" class="mouseover-img" src="{{ 'img/mouseover-' | append: catalog.title | downcase | append: '.gif' | relative_url }}" alt="{{ catalog.description }}"/>
           {% endif %}
           {% endfor %}
           <nav id="additional-links" aria-label="Additional Links">

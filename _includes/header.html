@@ -4,7 +4,7 @@
     <select class="v-center" onchange="jumpTo(event);">
       <option disabled selected>Jump To:</option>
       {% for catalog in site.catalogs %}
-      <option data-catalog="{{ catalog.name | relative_url }}">{{ catalog.name | capitalize }}</option>
+      <option data-catalog="{{ catalog.title | downcase | relative_url }}">{{ catalog.title }}</option>
       {% endfor %}
     </select>
   </div>
@@ -15,8 +15,8 @@
     <p>
       <a href="{{ site.url }}">Shodor</a> ▸
       <a href="{{ site.baseurl }}">Interactivate</a> ▸
-      {% if include.additional-breadcrumb-link and include.additional-breadcrumb-title %}
-      <a href="{{ include.additional-breadcrumb-link | relative_url }}">{{ include.additional-breadcrumb-title }}</a> ▸
+      {% if layout.additional-breadcrumb-link and layout.additional-breadcrumb-title %}
+      <a href="{{ layout.additional-breadcrumb-link | relative_url }}">{{ layout.additional-breadcrumb-title }}</a> ▸
       {% endif %}
       {{ page.title }}
     </p>
