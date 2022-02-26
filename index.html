@@ -34,8 +34,8 @@ title: "Home Page"
         <div>
           <img id="mouseover-goals" class="mouseover-img" src="{{ 'img/mouseover-goals.gif' | relative_url }}" alt="The goals of Interactivate are the creation, collection, evaluation, and dissemination of interactive courseware for exploration in science and mathematics."/>
           {% for catalog in site.catalogs %}
-          {% if catalog.description %}
-          <img id="mouseover-{{ catalog.title | downcase }}" class="mouseover-img" src="{{ 'img/mouseover-' | append: catalog.title | downcase | append: '.gif' | relative_url }}" alt="{{ catalog.description }}"/>
+          {% if catalog.home-page-description %}
+          <img id="mouseover-{{ catalog.title | downcase }}" class="mouseover-img" src="{{ 'img/mouseover-' | append: catalog.title | downcase | append: '.gif' | relative_url }}" alt="{{ catalog.home-page-description }}"/>
           {% endif %}
           {% endfor %}
           <nav id="additional-links" aria-label="Additional Links">

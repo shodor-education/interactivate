@@ -15,6 +15,15 @@
         {% assign catalog-vars-include-file = 'catalog-vars/' | append: page.title | downcase | append: '-catalog-vars.html' %}
       {% endif %}
       {% include {{ catalog-vars-include-file }} %}
+      {% if page.page-description %}
+        {% if page.page-description-relative-url %}
+          {% assign relative-url = page.page-description-relative-url | relative_url %}
+          {% assign page-description = page.page-description | replace: "RELATIVE_URL", relative-url %}
+        {% else %}
+          {% assign page-description = page.page-description %}
+        {% endif %}
+      <p id="page-description">{{ page-description }}</p>
+      {% endif %}
       {% if page.subject-audience-sorter %}
       <fieldset id="subject-audience-fieldset">
         <input type="radio" id="subject-rb" name="sort-rbs"
