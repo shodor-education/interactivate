@@ -15,22 +15,19 @@ collections:
     permalink: "/dictionary/:name"
 defaults:
   - scope:
-      path: ""
       type: "activities"
     values:
       layout: "activity"
   - scope:
-      path: ""
       type: "audience-catalogs"
     values:
       layout: "catalog"
+      subject-audience-sorter: true
   - scope:
-      path: ""
       type: "catalogs"
     values:
       layout: "catalog"
   - scope:
-      path: ""
       type: "dictionary-sections"
     values:
       additional-breadcrumb-link: "dictionary"
