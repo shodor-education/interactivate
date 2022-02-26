@@ -1,6 +1,6 @@
 {% assign activity = include.catalog-item %}
 {% assign activity-href = '/activities/' | append: activity.short-name | relative_url %}
-<div class="activity-links">
+<div class="activity-links left-column">
   <div>
     <a href="{{ activity-href }}"><img src="{{ 'img/activities/thumbnail/' | append: activity.short-name | append: '.gif' | relative_url }}" alt="Screenshot of {{ activity.title }} activity" width="152"/></a>
   </div>
@@ -8,7 +8,7 @@
     <a href="{{ activity-href }}">{{ activity.title }}</a>
   </div>
 </div>
-<div class="activity-description-and-topics">
+<div class="activity-description-and-topics right-column">
   <p>
     {{ activity.description }}
   </p>

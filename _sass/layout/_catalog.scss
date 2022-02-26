@@ -37,9 +37,15 @@
     }
 
     .catalog-item {
-      background-color: #F8F9FF;
-      display: flex;
       padding: 5px;
+
+      &:nth-child(odd) {
+        background-color: #F3F6FF;
+      }
+
+      &:nth-child(even) {
+        background-color: #F8F9FF;
+      }
 
       &:not(:last-child) {
         border-bottom: 1px dashed gray;
@@ -63,22 +69,14 @@
           border: 1px solid rgb(217, 217, 217);
         }
       }
-    }
 
-    .activity-description-and-topics {
-      margin-left: 20px;
+      .left-column {
+        float: left;
+        width: 240px;
+      }
 
-      p {
-        font-family: sans-serif;
-        font-size: 11pt;
-        line-height: 130%;
-        margin: 0;
-
-        &.activity-topics {
-          color: gray;
-          font-size: 10pt;
-          margin-top: 15px;
-        }
+      .right-column {
+        margin-left: 240px;
       }
     }
   }
