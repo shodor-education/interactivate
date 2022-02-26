@@ -12,23 +12,23 @@
       {% if page.catalog-vars-include-file %}
         {% assign catalog-vars-include-file = page.catalog-vars-include-file %}
       {% else %}
-        {% assign catalog-vars-include-file = 'catalog-vars/'
-          | append: page.title | lowercase | append: '-catalog-vars.html' %}
+        {% assign catalog-vars-include-file = 'catalog-vars/' | append: page.title | downcase | append: '-catalog-vars.html' %}
       {% endif %}
       {% include {{ catalog-vars-include-file }} %}
       <!-- Fieldset will go here -->
       <nav aria-label="Filter by {{ categories-label }}">
         {% for category in categories-list %}
-        <a href="javascript:selectCatalogCategory('{{ category | replace: ' ', '_' }}');"/>{{ category }}</a>
+        <a href="javascript:selectCatalogCategory('{{ category | replace: ' ', '_' | downcase }}');"/>{{ category }}</a>
         &nbsp;&bull;&nbsp;
         {% endfor %}
         <a class="bold" href="javascript:selectCatalogCategory('all');"/>Show All</a>
       </nav>
       {% for category in categories-list %}
-      <section id="category-section-{{ category | replace: ' ', '_' | lowercase }}" class="category-section">
-        {% assign category-items = catalog-items-list | where_exp: "item", filter-expression %}
-        <h2>{{ category }} ({{ category-items | size }})</h2>
-        {% for catalog-item in category-items %}
+      <section id="category-section-{{ category | replace: ' ', '_' | downcase }}" class="category-section">
+        {% assign category-downcase = category | downcase %}
+        {% assign category-items-list = catalog-items-list | where_exp: "item", filter-expression %}
+        <h2>{{ category }} ({{ category-items-list | size }})</h2>
+        {% for catalog-item in category-items-list %}
         <section class="catalog-item">
           {% include catalog-items/{{ catalog-item-name }}-catalog-item.html catalog-item=catalog-item %}
         </section>
