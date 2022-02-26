@@ -12,7 +12,7 @@
       {% if page.catalog-vars-include-file %}
         {% assign catalog-vars-include-file = page.catalog-vars-include-file %}
       {% else %}
-        {% assign catalog-vars-include-file = 'catalog-vars/' | append: page.title | downcase | append: '-catalog-vars.html' %}
+        {% assign catalog-vars-include-file = "catalog-vars/" | append: page.title | downcase | append: "-catalog-vars.html" %}
       {% endif %}
       {% include {{ catalog-vars-include-file }} %}
       {% if page.page-description %}

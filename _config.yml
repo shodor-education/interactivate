@@ -14,8 +14,12 @@ collections:
   dictionary-sections:
     output: true
     permalink: "/dictionary/:name"
+  textbooks:
+    output: true
 defaults:
   - scope:
+      additional-breadcrumb-link: "activities"
+      additional-breadcrumb-title: "Activities"
       type: "activities"
     values:
       layout: "activity"
@@ -34,6 +38,13 @@ defaults:
       additional-breadcrumb-link: "dictionary"
       additional-breadcrumb-title: "Dictionary"
       catalog-vars-include-file: "catalog-vars/dictionary-section-catalog-vars.html"
+      layout: "catalog"
+  - scope:
+      type: "textbooks"
+    values:
+      additional-breadcrumb-link: "textbooks"
+      additional-breadcrumb-title: "Textbooks"
+      catalog-vars-include-file: "catalog-vars/textbook-catalog-vars.html"
       layout: "catalog"
 exclude:
   - "exclude"

@@ -1,9 +1,9 @@
 #!/bin/bash
 
 IFS=''; while read -r LINE; do
-  if [[ "${LINE}" =~ "SHORTNAME::".* ]]; then
+  if [[ "${LINE}" =~ "FILENAME::".* ]]; then
     FILENAME="$(echo "${LINE}" | awk -F '::' '{print $2}').html";
   else
-    echo "${LINE}" | sed 's/^    //' >> ${FILENAME};
+    echo "${LINE}" >> ${FILENAME};
   fi;
-done <tmp;
+done <${1};

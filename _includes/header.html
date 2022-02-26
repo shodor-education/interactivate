@@ -4,7 +4,7 @@
     <select class="v-center" onchange="jumpTo(event);">
       <option disabled selected>Jump To:</option>
       {% for catalog in site.catalogs %}
-      <option data-catalog="{{ catalog.title | downcase | relative_url }}">{{ catalog.title }}</option>
+      <option data-catalog="{{ catalog.url | relative_url }}">{{ catalog.title }}</option>
       {% endfor %}
     </select>
   </div>
