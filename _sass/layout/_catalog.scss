@@ -21,6 +21,7 @@
   nav {
     @extend %category-headings;
 
+    border-bottom: 0;
     font-weight: normal;
 
     a:link,
@@ -30,13 +31,15 @@
   }
 
   .category-section {
-    border-top: 0;
+    border-bottom: 0;
 
     h2 {
       @extend %category-headings;
     }
 
     .catalog-item {
+      column-gap: 15px;
+      display: flex;
       padding: 5px;
 
       &:nth-child(odd) {
@@ -49,6 +52,10 @@
 
       &:not(:last-child) {
         border-bottom: 1px dashed gray;
+      }
+
+      &:last-child {
+        border-bottom: 1px solid black;
       }
 
       a {
@@ -71,12 +78,12 @@
       }
 
       .left-column {
-        float: left;
+        flex-shrink: 0;
         width: 240px;
       }
 
       .right-column {
-        margin-left: 240px;
+        flex-grow: 1;
       }
     }
   }
