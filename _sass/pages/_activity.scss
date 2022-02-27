@@ -21,9 +21,6 @@
     @extend .folder;
 
     display: none;
-    font-size: 11pt;
-    line-height: 120%;
-    min-height: 65px;
 
     a:link,
     a:visited {
@@ -31,6 +28,10 @@
     }
 
     &#learner-section {
+      font-size: 11pt;
+      line-height: 120%;
+      min-height: 65px;
+
       & > div {
         margin: 0 15px;
         padding: 20px 0;
