@@ -14,6 +14,9 @@ collections:
   dictionary-sections:
     output: true
     permalink: "/dictionary/:name"
+  textbook-sections:
+    output: true
+    permalink: "/textbooks/section/:name"
   textbooks:
     output: true
 defaults:
