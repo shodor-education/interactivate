@@ -51,7 +51,7 @@
         {% assign category-items-list = catalog-items-list | where_exp: "item", filter-expression %}
         <h2>{{ category }} ({{ category-items-list | size }})</h2>
         {% for catalog-item in category-items-list %}
-        <section class="catalog-item">
+        <section class="catalog-item {{ catalog-item-name }}-catalog-item">
           {% include catalog-items/{{ catalog-item-name }}-catalog-item.html catalog-item=catalog-item %}
         </section>
         {% endfor %}

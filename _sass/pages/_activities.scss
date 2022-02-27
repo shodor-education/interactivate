@@ -1,14 +1,13 @@
-.activity-description-and-topics {
-  p {
-    font-family: sans-serif;
-    font-size: 11pt;
-    line-height: 130%;
-    margin: 0;
-
-    &.activity-topics {
-      color: gray;
-      font-size: 10pt;
-      margin-top: 15px;
+#catalog-main {
+  .category-section {
+    .catalog-item.activity-catalog-item {
+      .right-column {
+        .activity-topics {
+          color: gray;
+          font-size: 10pt;
+          margin-top: 15px;
+        }
+      }
     }
   }
 }
