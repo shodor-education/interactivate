@@ -18,10 +18,10 @@ collections:
     output: true
 defaults:
   - scope:
-      additional-breadcrumb-link: "activities"
-      additional-breadcrumb-title: "Activities"
       type: "activities"
     values:
+      additional-breadcrumb-link: "activities"
+      additional-breadcrumb-title: "Activities"
       layout: "activity"
   - scope:
       type: "audience-catalogs"
