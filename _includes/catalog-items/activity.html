@@ -1,0 +1,21 @@
+{% assign activity = include.catalog-item %}
+{% assign activity-href = activity.url | relative_url %}
+<div class="activity-links left-column">
+  <div>
+    {% capture img-url %}img/activities/thumbnail/{{ activity.short-name }}.gif{% endcapture %}
+    <a href="{{ activity-href }}"><img src="{{ img-url | relative_url }}" alt="Screenshot of {{ activity.title }} activity" width="152"/></a>
+  </div>
+  <div>
+    <a href="{{ activity-href }}">{{ activity.title }}</a>
+  </div>
+</div>
+<div class="right-column">
+  <p>
+    {{ activity.description }}
+  </p>
+  <p class="activity-topics">
+    <em><strong>Related Topics:</strong>
+    {{ activity.topics | join: ", " }}
+    </em>
+  </p>
+</div>

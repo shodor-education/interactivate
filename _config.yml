@@ -4,6 +4,7 @@ collections:
   activities:
     sort_by: "title"
     output: true
+    permalink: "/activities/:name"
   audience-catalogs:
     output: true
     permalink: "/:name/byAudience"
@@ -19,12 +20,12 @@ collections:
     permalink: "/textbooks/section/:name"
   textbooks:
     output: true
+    permalink: "/textbooks/:name"
 defaults:
   - scope:
       type: "activities"
     values:
-      additional-breadcrumb-link: "activities"
-      additional-breadcrumb-title: "Activities"
+      item-name: "activity"
       layout: "activity"
   - scope:
       type: "audience-catalogs"
@@ -38,16 +39,18 @@ defaults:
   - scope:
       type: "dictionary-sections"
     values:
-      additional-breadcrumb-link: "dictionary"
-      additional-breadcrumb-title: "Dictionary"
-      catalog-vars-include-file: "catalog-vars/dictionary-section-catalog-vars.html"
+      item-name: "dictionary-section"
+      layout: "catalog"
+  - scope:
+      type: "textbook-sections"
+    values:
+      item-name: "textbook-section"
+      page-description: true
       layout: "catalog"
   - scope:
       type: "textbooks"
     values:
-      additional-breadcrumb-link: "textbooks"
-      additional-breadcrumb-title: "Textbooks"
-      catalog-vars-include-file: "catalog-vars/textbook-catalog-vars.html"
+      item-name: "textbook"
       layout: "catalog"
 exclude:
   - "exclude"

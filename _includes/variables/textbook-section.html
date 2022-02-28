@@ -1,0 +1,5 @@
+{% assign textbooks-catalog-in-list = site.catalogs | where: "url", "/textbooks" %}
+{% capture textbook-url %}/textbooks/{{ page.textbook }}{% endcapture %}
+{% assign textbook-in-list = site.textbooks | where: "url", textbook-url %}
+{% assign additional-breadcrumbs = textbooks-catalog-in-list | concat: textbook-in-list %}
+{% assign textbook = textbook-in-list | first %}

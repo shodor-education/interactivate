@@ -1,3 +1,9 @@
+{% if page.item-name %}
+  {% assign page-item-name = page.item-name %}
+{% else %}
+  {% assign page-item-name = page.path | split: "/" | last | split: "." | first %}
+{% endif %}
+{% include variables/{{ page-item-name }}.html %}
 <meta charset="utf-8">
 <title>Interactivate: {{ page.title }}</title>
 <link rel="icon" type="image/ico" href="{{ 'favicon.ico' | relative_url }}">

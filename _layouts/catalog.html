@@ -9,31 +9,13 @@
   <body>
     {% include header.html %}
     <main id="catalog-main">
-      {% if page.catalog-vars-include-file %}
-        {% assign catalog-vars-include-file = page.catalog-vars-include-file %}
-      {% else %}
-        {% assign catalog-vars-include-file = "catalog-vars/" | append: page.title | downcase | append: "-catalog-vars.html" %}
-      {% endif %}
-      {% include {{ catalog-vars-include-file }} %}
       {% if page.page-description %}
-      <p id="page-description">{{ content }}</p>
+      <p id="page-description">{% include page-descriptions/{{ page-item-name }}.html %}</p>
       {% endif %}
       {% if page.subject-audience-sorter %}
       <fieldset id="subject-audience-fieldset">
-        <input type="radio" id="subject-rb" name="sort-rbs"
-          onchange="window.location.href = 'bySubject'"
-          {% if page.collection != "audience-catalogs" %}
-          checked
-          {% endif %}
-        >
-        <label for="subject-rb">Sort by Subject</label><br/>
-        <input type="radio" id="audience-rb" name="sort-rbs"
-          onchange="window.location.href = 'byAudience'"
-          {% if page.collection == "audience-catalogs" %}
-          checked
-          {% endif %}
-        >
-        <label for="audience-rb">Sort by Audience</label><br/>
+        {% include subject-audience-radio-button.html id="subject"  categories-label=categories-label %}
+        {% include subject-audience-radio-button.html id="audience" categories-label=categories-label %}
       </fieldset>
       {% endif %}
       {% if categories-list.size > 1 %}
@@ -52,7 +34,7 @@
         <h2>{{ category }} ({{ category-items-list | size }})</h2>
         {% for catalog-item in category-items-list %}
         <section class="catalog-item {{ catalog-item-name }}-catalog-item">
-          {% include catalog-items/{{ catalog-item-name }}-catalog-item.html catalog-item=catalog-item %}
+          {% include catalog-items/{{ catalog-item-name }}.html catalog-item=catalog-item %}
         </section>
         {% endfor %}
       </section>
