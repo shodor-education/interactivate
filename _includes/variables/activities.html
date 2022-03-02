@@ -1,4 +1,5 @@
-{% assign catalog-item-name = "activity" %}
+{% assign catalog-item-type = "activity" %}
+{% assign catalog-items-list = site.activities %}
 {% if page.collection == "audience-catalogs" %}
   {% assign categories-label = "audience" %}
   {% assign categories-list = site.data.audiences %}
@@ -8,4 +9,3 @@
   {% assign categories-list = site.data.subjects %}
   {% assign filter-expression = "item.subjects contains category" %}
 {% endif %}
-{% assign catalog-items-list = site.activities %}

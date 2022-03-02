@@ -2,9 +2,9 @@
 baseurl: "/interactivate"
 collections:
   activities:
-    sort_by: "title"
     output: true
     permalink: "/activities/:name"
+    sort_by: "title"
   audience-catalogs:
     output: true
     permalink: "/:name/byAudience"
@@ -25,7 +25,7 @@ defaults:
   - scope:
       type: "activities"
     values:
-      item-name: "activity"
+      item-type: "activity"
       layout: "activity"
   - scope:
       type: "audience-catalogs"
@@ -39,18 +39,18 @@ defaults:
   - scope:
       type: "dictionary-sections"
     values:
-      item-name: "dictionary-section"
+      item-type: "dictionary-section"
       layout: "catalog"
   - scope:
       type: "textbook-sections"
     values:
-      item-name: "textbook-section"
-      page-description: true
+      item-type: "textbook-section"
       layout: "catalog"
+      page-description: true
   - scope:
       type: "textbooks"
     values:
-      item-name: "textbook"
+      item-type: "textbook"
       layout: "catalog"
 exclude:
   - "exclude"

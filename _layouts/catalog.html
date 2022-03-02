@@ -10,7 +10,7 @@
     {% include header.html %}
     <main id="catalog-main">
       {% if page.page-description %}
-      <p id="page-description">{% include page-descriptions/{{ page-item-name }}.html %}</p>
+      <p id="page-description">{% include page-descriptions/{{ page-item-type }}.html %}</p>
       {% endif %}
       {% if page.subject-audience-sorter %}
       <fieldset id="subject-audience-fieldset">
@@ -33,8 +33,8 @@
         {% assign category-items-list = catalog-items-list | where_exp: "item", filter-expression %}
         <h2>{{ category }} ({{ category-items-list | size }})</h2>
         {% for catalog-item in category-items-list %}
-        <section class="catalog-item {{ catalog-item-name }}-catalog-item">
-          {% include catalog-items/{{ catalog-item-name }}.html catalog-item=catalog-item %}
+        <section class="catalog-item {{ catalog-item-type }}-catalog-item">
+          {% include catalog-item-types/{{ catalog-item-type }}.html catalog-item=catalog-item %}
         </section>
         {% endfor %}
       </section>

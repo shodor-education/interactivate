@@ -1,9 +1,13 @@
-{% if page.item-name %}
-  {% assign page-item-name = page.item-name %}
+{% assign collection = site.collections | where: "label", page.collection | first %}
+{% if page.item-type %}
+  {% assign page-item-type = page.item-type %}
+{% elsif collection.item-type %}
+  {% assign page-item-type = collection.item-type %}
 {% else %}
-  {% assign page-item-name = page.path | split: "/" | last | split: "." | first %}
+  {% include get-filename.html %}
+  {% assign page-item-type = filename %}
 {% endif %}
-{% include variables/{{ page-item-name }}.html %}
+{% include variables/{{ page-item-type }}.html %}
 <meta charset="utf-8">
 <title>Interactivate: {{ page.title }}</title>
 <link rel="icon" type="image/ico" href="{{ 'favicon.ico' | relative_url }}">

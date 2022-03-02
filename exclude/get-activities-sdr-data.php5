@@ -369,18 +369,8 @@ while ($activity = $activities->fetch_assoc()) {
   );
   echo "\n";
 
-  // TYPE
-  echo strtolower(getTextValueQuotesReplaced(
-    $sdrDbConn,
-    "type",
-    $activity["versionId"],
-    "ActivityType"
-  ));
-  echo "\n";
-
   echo "---\n";
 }
-echo "\n";
 
 ?>
 
