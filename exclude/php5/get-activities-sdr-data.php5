@@ -212,9 +212,49 @@ function getTextValueQuotesReplaced($dbConn, $propertyName, $versionId, $fieldNa
   );
 }
 
+function getRelatedResources($dbConn, $type, $typePlural, $resourceId, $shortnameFilter) {
+  $query = <<<END
+select concat(
+  "related-$typePlural:\\r  - \\"",
+  group_concat(
+    $shortnameFilter
+    order by TitleTV.`entry`
+    separator "\\"\\r  - \\""
+  ), 
+  "\\""
+) as str
+from TSDRelation
+left join SDRVersion on SDRVersion.`cserdId` = if(
+  TSDRelation.`sourceId` = $resourceId,
+  TSDRelation.`destId`,
+  TSDRelation.`sourceId`
+)
+left join SDRVersionFieldValue on SDRVersionFieldValue.`versionId` = SDRVersion.`id`
+left join SDRField on SDRField.`id` = SDRVersionFieldValue.`fieldId`
+left join SDRTextValue on SDRTextValue.`valueId` = SDRVersionFieldValue.`valueId`
+left join SDRVersionFieldValue as UrlVFV on UrlVFV.`versionId` = SDRVersion.`id`
+left join SDRField as UrlF on UrlF.`id` = UrlVFV.`fieldId`
+left join SDRTextValue as UrlTV on UrlTV.`valueId` = UrlVFV.`valueId`
+left join SDRVersionFieldValue as TitleVFV on TitleVFV.`versionId` = SDRVersion.`id`
+left join SDRField as TitleF on TitleF.`id` = TitleVFV.`fieldId`
+left join SDRTextValue as TitleTV on TitleTV.`valueId` = TitleVFV.`valueId`
+where (TSDRelation.`sourceId` = $resourceId or TSDRelation.`destId` = $resourceId)
+and TSDRelation.`version` = "LIVE"
+and SDRVersion.`state` = "live"
+and SDRField.`name` = "Interactivate_Type"
+and SDRTextValue.`entry` = "$type"
+and UrlF.`name` = "Url"
+and TitleF.`name` = "Title"
+END;
+  $results = $dbConn->query($query);
+  $result = $results->fetch_assoc();
+  return $result["str"];
+}
+
 $query = <<<END
-select SDRVersion.`id` as versionId,
-       substring_index(substring_index(UrlTV.`entry`, '/', -2), '/', 1) as shortname
+select SDRVersion.`cserdId` as resourceId,
+       substring_index(substring_index(UrlTV.`entry`, '/', -2), '/', 1) as shortname,
+       SDRVersion.`id` as versionId
 from SDRProject
 left join SDRProjectField on SDRProjectField.`projectId` = SDRProject.`id`
 left join SDRField on SDRField.`id` = SDRProjectField.`fieldId`
@@ -257,6 +297,47 @@ while ($activity = $activities->fetch_assoc()) {
 
   // GWT DIR
   echo "gwt-dir: \"" . $GWT_DIRS[$activity["shortname"]] . "\"\n";
+
+  // RELATED ACTIVITIES
+  $normalShortnameFilter = "substring_index(substring_index(UrlTV.`entry`, '/', -2), '/', 1)";
+  echo getRelatedResources(
+    $sdrDbConn,
+    "Activity",
+    "activities",
+    $activity["resourceId"],
+    $normalShortnameFilter
+  );
+  echo "\n";
+
+  // RELATED DISCUSSIONS
+  echo getRelatedResources(
+    $sdrDbConn,
+    "Discussion",
+    "discussions",
+    $activity["resourceId"],
+    $normalShortnameFilter
+  );
+  echo "\n";
+
+  // RELATED LESSONS
+  echo getRelatedResources(
+    $sdrDbConn,
+    "Lesson",
+    "lessons",
+    $activity["resourceId"],
+    $normalShortnameFilter
+  );
+  echo "\n";
+
+  // RELATED WORKSHEETS
+  echo getRelatedResources(
+    $sdrDbConn,
+    "Worksheet",
+    "worksheets",
+    $activity["resourceId"],
+    "substring_index(UrlTV.`entry`, '/', -1)"
+  );
+  echo "\n";
 
   // SHORTNAME
   echo "shortname: \"$activity[shortname]\"\n";
