@@ -164,65 +164,22 @@ if ($sdrDbConn->connect_error) {
   die("Database connection failed: " . $sdrDbConn->connect_error);
 }
 
-function getTextValue($dbConn, $select, $versionId, $fieldName) {
+function getTextValues($dbConn, $versionId, $fieldName) {
   $query = <<<END
-select $select as str
+select replace(SDRTextValue.`entry`, "\\"", "\\\\\\"") as str
 from SDRVersionFieldValue
 left join SDRField on SDRField.`id` = SDRVersionFieldValue.`fieldId`
 left join SDRTextValue on SDRTextValue.`valueId` = SDRVersionFieldValue.`valueId`
 where SDRVersionFieldValue.`versionId` = $versionId
 and SDRField.`name` = "$fieldName"
+order by SDRTextValue.`entry`
 END;
-  $results = $dbConn->query($query);
-  $result = $results->fetch_assoc();
-  return $result["str"];
+  return $dbConn->query($query);
 }
 
-function getTextValueGroupConcat($dbConn, $propertyName, $versionId, $fieldName) {
-  return getTextValue(
-    $dbConn,
-    "concat(
-       \"$propertyName:\\r  - \\\"\",
-       group_concat(
-         distinct SDRTextValue.`entry`
-         order by SDRTextValue.`entry`
-         separator \"\\\"\\r  - \\\"\"
-       ), 
-       \"\\\"\"
-    )",
-    $versionId,
-    $fieldName
-  );
-}
-
-function getTextValueQuotesReplaced($dbConn, $propertyName, $versionId, $fieldName) {
-  return getTextValue(
-    $dbConn,
-    "concat(
-      \"$propertyName: \\\"\",
-      replace(
-        SDRTextValue.`entry`,
-        \"\\\"\",
-        \"\\\\\\\"\"
-      ),
-      \"\\\"\"
-    )",
-    $versionId,
-    $fieldName
-  );
-}
-
-function getRelatedResources($dbConn, $type, $typePlural, $resourceId, $shortnameFilter) {
+function getRelatedResources($dbConn, $resourceId, $type, $shortnameFilter) {
   $query = <<<END
-select concat(
-  "related-$typePlural:\\r  - \\"",
-  group_concat(
-    $shortnameFilter
-    order by TitleTV.`entry`
-    separator "\\"\\r  - \\""
-  ), 
-  "\\""
-) as str
+select $shortnameFilter as str
 from TSDRelation
 left join SDRVersion on SDRVersion.`cserdId` = if(
   TSDRelation.`sourceId` = $resourceId,
@@ -245,10 +202,9 @@ and SDRField.`name` = "Interactivate_Type"
 and SDRTextValue.`entry` = "$type"
 and UrlF.`name` = "Url"
 and TitleF.`name` = "Title"
+order by TitleTV.`entry`
 END;
-  $results = $dbConn->query($query);
-  $result = $results->fetch_assoc();
-  return $result["str"];
+  return $dbConn->query($query);
 }
 
 $query = <<<END
@@ -277,106 +233,137 @@ $activities = $sdrDbConn->query($query);
 while ($activity = $activities->fetch_assoc()) {
   echo "FILENAME::$activity[shortname]\n---\n";
 
+  // ALIGNED TEXTBOOK SECTIONS
+  echo "aligned-textbook-sections:\n";
+  $query = <<<END
+select TSDTextbookAlignment.`sectionId` as sectionId
+from TSDTextbookAlignment
+where TSDTextbookAlignment.`version` = "LIVE"
+and TSDTextbookAlignment.`resourceId` = $activity[resourceId]
+order by TSDTextbookAlignment.`sectionId`
+END;
+  $results = $sdrDbConn->query($query);
+  while ($result = $results->fetch_assoc()) {
+    echo "  - \"$result[sectionId]\"\n";
+  }
+
   // AUDIENCES
-  echo getTextValueGroupConcat(
+  echo "audiences:\n";
+  $results = getTextValues(
     $sdrDbConn,
-    "audiences",
     $activity["versionId"],
     "Interactivate_Audience"
   );
-  echo "\n";
+  while ($result = $results->fetch_assoc()) {
+    echo "  - \"$result[str]\"\n";
+  }
 
   // DESCRIPTION
-  echo getTextValueQuotesReplaced(
+  echo "description: \"";
+  $results = getTextValues(
     $sdrDbConn,
-    "description",
     $activity["versionId"],
     "Description"
   );
-  echo "\n";
+  $result = $results->fetch_assoc();
+  echo "$result[str]\"\n";
 
   // GWT DIR
   echo "gwt-dir: \"" . $GWT_DIRS[$activity["shortname"]] . "\"\n";
 
   // RELATED ACTIVITIES
   $normalShortnameFilter = "substring_index(substring_index(UrlTV.`entry`, '/', -2), '/', 1)";
-  echo getRelatedResources(
+  echo "related-activities:\n";
+  $results = getRelatedResources(
     $sdrDbConn,
-    "Activity",
-    "activities",
     $activity["resourceId"],
+    "Activity",
     $normalShortnameFilter
   );
-  echo "\n";
+  while ($result = $results->fetch_assoc()) {
+    echo "  - \"$result[str]\"\n";
+  }
 
   // RELATED DISCUSSIONS
-  echo getRelatedResources(
+  echo "related-discussions:\n";
+  $results = getRelatedResources(
     $sdrDbConn,
-    "Discussion",
-    "discussions",
     $activity["resourceId"],
+    "Discussion",
     $normalShortnameFilter
   );
-  echo "\n";
+  while ($result = $results->fetch_assoc()) {
+    echo "  - \"$result[str]\"\n";
+  }
 
   // RELATED LESSONS
-  echo getRelatedResources(
+  echo "related-lessons:\n";
+  $results = getRelatedResources(
     $sdrDbConn,
-    "Lesson",
-    "lessons",
     $activity["resourceId"],
+    "Lesson",
     $normalShortnameFilter
   );
-  echo "\n";
+  while ($result = $results->fetch_assoc()) {
+    echo "  - \"$result[str]\"\n";
+  }
 
   // RELATED WORKSHEETS
-  echo getRelatedResources(
+  echo "related-worksheets:\n";
+  $results = getRelatedResources(
     $sdrDbConn,
-    "Worksheet",
-    "worksheets",
     $activity["resourceId"],
+    "Worksheet",
     "substring_index(UrlTV.`entry`, '/', -1)"
   );
-  echo "\n";
+  while ($result = $results->fetch_assoc()) {
+    echo "  - \"$result[str]\"\n";
+  }
 
   // SHORTNAME
   echo "short-name: \"$activity[shortname]\"\n";
 
   // SUBJECTS
-  echo getTextValueGroupConcat(
+  echo "subjects:\n";
+  $results = getTextValues(
     $sdrDbConn,
-    "subjects",
     $activity["versionId"],
     "Primary_Subject"
   );
-  echo "\n";
+  while ($result = $results->fetch_assoc()) {
+    echo "  - \"$result[str]\"\n";
+  }
 
   // TITLE
-  echo getTextValueQuotesReplaced(
+  echo "title: \"";
+  $results = getTextValues(
     $sdrDbConn,
-    "title",
     $activity["versionId"],
     "Title"
   );
-  echo "\n";
+  $result = $results->fetch_assoc();
+  echo "$result[str]\"\n";
 
   // TOPICS
-  echo getTextValueGroupConcat(
+  echo "topics:\n";
+  $results = getTextValues(
     $sdrDbConn,
-    "topics",
     $activity["versionId"],
     "Related_Subject"
   );
-  echo "\n";
+  while ($result = $results->fetch_assoc()) {
+    echo "  - \"$result[str]\"\n";
+  }
 
   // TYPE
-  echo strtolower(getTextValueQuotesReplaced(
+  echo "type: \"";
+  $results = getTextValues(
     $sdrDbConn,
-    "type",
     $activity["versionId"],
     "ActivityType"
-  ));
-  echo "\n";
+  );
+  $result = $results->fetch_assoc();
+  echo strtolower($result["str"]) . "\"\n";
 
   echo "---\n";
 }
