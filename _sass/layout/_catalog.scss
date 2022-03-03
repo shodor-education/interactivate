@@ -99,15 +99,15 @@
         flex-shrink: 0;
         line-height: 120%;
         width: 240px;
-
-        &.textbook-section-left-column {
-          width: initial;
-        }
       }
 
       .right-column {
         flex-grow: 1;
         line-height: 130%;
+      }
+
+      .single-column {
+        width: initial;
       }
     }
   }

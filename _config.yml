@@ -18,6 +18,7 @@ collections:
   standards-grade-bands:
     output: true
     permalink: "/standards/organization/:name"
+    sort_by: "index"
   standards-objectives:
     output: true
     permalink: "/standards/organization/objective/:name"
