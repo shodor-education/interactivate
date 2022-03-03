@@ -22,6 +22,7 @@ collections:
   standards-objectives:
     output: true
     permalink: "/standards/organization/objective/:name"
+    sort_by: "description"
   textbook-sections:
     output: true
     permalink: "/textbooks/section/:name"
@@ -58,6 +59,7 @@ defaults:
     values:
       item-type: "standards-objective"
       layout: "catalog"
+      page-description: true
       title: "Aligned Resources"
   - scope:
       type: "textbook-sections"
