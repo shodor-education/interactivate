@@ -1,3 +1,2 @@
-<div class="single-column">
-  <a href="{{ include.catalog-item.url | relative_url }}">{{ include.catalog-item.title }}</a>
-</div>
+{% include catalog-item-types/simple-single-column-link.html
+  catalog-item=include.catalog-item text=include.catalog-item.title %}

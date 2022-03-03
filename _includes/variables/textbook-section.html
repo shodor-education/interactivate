@@ -1,19 +1,5 @@
-{% assign textbooks-catalog-in-list = site.catalogs | where: "url", "/textbooks" %}
-{% capture textbook-url %}/textbooks/{{ page.textbook }}{% endcapture %}
-{% assign textbook-in-list = site.textbooks | where: "url", textbook-url %}
-{% assign additional-breadcrumbs = textbooks-catalog-in-list | concat: textbook-in-list %}
-{% assign catalog-item-type = "aligned-resource" %}
-{% include get-filename.html %}
-{% capture where-exp %}item.aligned-textbook-sections contains '{{ filename }}'{% endcapture %}
-{% assign catalog-items-list = "" | split: "" %}
-{% assign aligned-collections = "lessons,activities,discussions,worksheets" | split: "," %}
-{% for aligned-collection in aligned-collections %}
-  {% assign aligned-collection-items = site[aligned-collection] | where_exp: "item", where-exp %}
-  {% if aligned-collection-items %}
-    {% assign catalog-items-list = catalog-items-list | concat: aligned-collection-items %}
-  {% endif %}
-{% endfor %}
-{% assign categories-label = "resource type" %}
-{% assign categories-list = "Lesson,Activity,Discussion,Worksheet" | split: "," %}
-{% assign filter-expression = "item.item-type == category-downcase" %}
-{% assign textbook = textbook-in-list | first %}
+{% capture parent-url %}/textbooks/{{ page.textbook }}{% endcapture %}
+{% include variables/aligned-resources-catalog.html grandparent-url="/textbooks"
+  parent-catalog="textbooks" parent-url=parent-url
+  resource-align-property="aligned-textbook-sections" %}
+{% assign textbook = parent-catalog-in-list | first %}

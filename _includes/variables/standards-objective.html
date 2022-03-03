@@ -1,21 +1,5 @@
-{% assign standards-catalog-in-list = site.catalogs | where: "url", "/standards" %}
-{% capture grade-band-url %}/standards/organization/{{ page.grade-band }}{% endcapture %}
-{% assign grade-band-in-list = site.standards-grade-bands | where: "url", grade-band-url %}
-{% assign additional-breadcrumbs = standards-catalog-in-list | concat: grade-band-in-list %}
-{% assign catalog-item-type = "aligned-resource" %}
-{% include get-filename.html %}
-{% capture where-exp %}item.aligned-standards-objectives contains '{{ filename }}'{% endcapture %}
-{% assign catalog-items-list = "" | split: "" %}
-{% assign categories-str = "" %}
-{% assign aligned-collections = "lessons,activities,discussions,worksheets" | split: "," %}
-{% for aligned-collection in aligned-collections %}
-  {% assign aligned-collection-items = site[aligned-collection] | where_exp: "item", where-exp %}
-  {% if aligned-collection-items %}
-    {% assign catalog-items-list = catalog-items-list | concat: aligned-collection-items %}
-    {% assign categories-str = categories-str | append: aligned-collection | capitalize | append: "," %}
-  {% endif %}
-{% endfor %}
-{% assign categories-list = categories-str | split: "," %}
-{% assign categories-label = "resource type" %}
-{% assign filter-expression = "item.collection == category-downcase" %}
-{% assign grade-band = grade-band-in-list | first %}
+{% capture parent-url %}/standards/organization/{{ page.grade-band }}{% endcapture %}
+{% include variables/aligned-resources-catalog.html grandparent-url="/standards"
+  parent-catalog="standards-grade-bands" parent-url=parent-url
+  resource-align-property="aligned-standards-objectives" %}
+{% assign grade-band = parent-catalog-in-list | first %}
