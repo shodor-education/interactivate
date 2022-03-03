@@ -177,7 +177,7 @@ END;
   return $dbConn->query($query);
 }
 
-function getRelatedResources($dbConn, $resourceId, $type, $shortnameFilter) {
+function getRelatedResources($dbConn, $propertyName, $resourceId, $type, $shortnameFilter) {
   $query = <<<END
 select $shortnameFilter as str
 from TSDRelation
@@ -204,7 +204,13 @@ and UrlF.`name` = "Url"
 and TitleF.`name` = "Title"
 order by TitleTV.`entry`
 END;
-  return $dbConn->query($query);
+  $results = $dbConn->query($query);
+  if ($results->num_rows > 0) {
+    echo "related-$propertyName:\n";
+    while ($result = $results->fetch_assoc()) {
+      echo "  - \"$result[str]\"\n";
+    }
+  }
 }
 
 $query = <<<END
@@ -233,8 +239,23 @@ $activities = $sdrDbConn->query($query);
 while ($activity = $activities->fetch_assoc()) {
   echo "FILENAME::$activity[shortname]\n---\n";
 
+  // ALIGNED STANDARDS OBJECTIVES
+  $query = <<<END
+select TSDStandardAlignment.`objectiveId` as objectiveId
+from TSDStandardAlignment
+where TSDStandardAlignment.`version` = "LIVE"
+and TSDStandardAlignment.`resourceId` = $activity[resourceId]
+order by TSDStandardAlignment.`objectiveId`
+END;
+  $results = $sdrDbConn->query($query);
+  if ($results->num_rows > 0) {
+    echo "aligned-standards-objectives:\n";
+    while ($result = $results->fetch_assoc()) {
+      echo "  - \"$result[objectiveId]\"\n";
+    }
+  }
+
   // ALIGNED TEXTBOOK SECTIONS
-  echo "aligned-textbook-sections:\n";
   $query = <<<END
 select TSDTextbookAlignment.`sectionId` as sectionId
 from TSDTextbookAlignment
@@ -243,8 +264,11 @@ and TSDTextbookAlignment.`resourceId` = $activity[resourceId]
 order by TSDTextbookAlignment.`sectionId`
 END;
   $results = $sdrDbConn->query($query);
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[sectionId]\"\n";
+  if ($results->num_rows > 0) {
+    echo "aligned-textbook-sections:\n";
+    while ($result = $results->fetch_assoc()) {
+      echo "  - \"$result[sectionId]\"\n";
+    }
   }
 
   // AUDIENCES
@@ -273,52 +297,40 @@ END;
 
   // RELATED ACTIVITIES
   $normalShortnameFilter = "substring_index(substring_index(UrlTV.`entry`, '/', -2), '/', 1)";
-  echo "related-activities:\n";
-  $results = getRelatedResources(
+  getRelatedResources(
     $sdrDbConn,
+    "activities",
     $activity["resourceId"],
     "Activity",
     $normalShortnameFilter
   );
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[str]\"\n";
-  }
 
   // RELATED DISCUSSIONS
-  echo "related-discussions:\n";
-  $results = getRelatedResources(
+  getRelatedResources(
     $sdrDbConn,
+    "discussions",
     $activity["resourceId"],
     "Discussion",
     $normalShortnameFilter
   );
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[str]\"\n";
-  }
 
   // RELATED LESSONS
-  echo "related-lessons:\n";
-  $results = getRelatedResources(
+  getRelatedResources(
     $sdrDbConn,
+    "lessons",
     $activity["resourceId"],
     "Lesson",
     $normalShortnameFilter
   );
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[str]\"\n";
-  }
 
   // RELATED WORKSHEETS
-  echo "related-worksheets:\n";
-  $results = getRelatedResources(
+  getRelatedResources(
     $sdrDbConn,
+    "worksheets",
     $activity["resourceId"],
     "Worksheet",
     "substring_index(UrlTV.`entry`, '/', -1)"
   );
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[str]\"\n";
-  }
 
   // SHORTNAME
   echo "short-name: \"$activity[shortname]\"\n";
@@ -356,14 +368,16 @@ END;
   }
 
   // TYPE
-  echo "type: \"";
   $results = getTextValues(
     $sdrDbConn,
     $activity["versionId"],
     "ActivityType"
   );
-  $result = $results->fetch_assoc();
-  echo strtolower($result["str"]) . "\"\n";
+  if ($results->num_rows > 0) {
+    echo "type: \"";
+    $result = $results->fetch_assoc();
+    echo strtolower($result["str"]) . "\"\n";
+  }
 
   echo "---\n";
 }

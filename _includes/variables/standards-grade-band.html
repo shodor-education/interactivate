@@ -1,0 +1,7 @@
+{% assign additional-breadcrumbs = site.catalogs | where: "url", "/standards" %}
+{% assign catalog-item-type = "standards-objective" %}
+{% include get-filename.html %}
+{% assign catalog-items-list = site.standards-objectives | where: "grade-band", filename %}
+{% assign categories-label = "category" %}
+{% assign categories-list = page.standards-categories %}
+{% assign filter-expression = "item.standards-category == category" %}

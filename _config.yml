@@ -15,6 +15,12 @@ collections:
   dictionary-sections:
     output: true
     permalink: "/dictionary/:name"
+  standards-grade-bands:
+    output: true
+    permalink: "/standards/organization/:name"
+  standards-objectives:
+    output: true
+    permalink: "/standards/organization/objective/:name"
   textbook-sections:
     output: true
     permalink: "/textbooks/section/:name"
@@ -41,6 +47,17 @@ defaults:
     values:
       item-type: "dictionary-section"
       layout: "catalog"
+  - scope:
+      type: "standards-grade-bands"
+    values:
+      item-type: "standards-grade-band"
+      layout: "catalog"
+  - scope:
+      type: "standards-objectives"
+    values:
+      item-type: "standards-objective"
+      layout: "catalog"
+      title: "Aligned Resources"
   - scope:
       type: "textbook-sections"
     values:
