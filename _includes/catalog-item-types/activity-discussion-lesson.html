@@ -12,12 +12,14 @@
   </div>
 </div>
 <div class="right-column">
-  <p>
+  <p class="description">
     {{ item.description }}
   </p>
-  <p class="topics">
-    <em><strong>Related Topics:</strong>
-    {{ item.topics | join: ", " }}
-    </em>
-  </p>
+  {% if categories-label != "audience" %}
+  {% include catalog-item-tags.html name="Audiences" list=item.audiences %}
+  {% endif %}
+  {% if categories-label != "subject" %}
+  {% include catalog-item-tags.html name="Primary Subjects" list=item.subjects %}
+  {% endif %}
+  {% include catalog-item-tags.html name="Related Topics" list=item.topics %}
 </div>

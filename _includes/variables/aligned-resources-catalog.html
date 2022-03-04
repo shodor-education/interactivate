@@ -1,6 +1,5 @@
 {% assign grandparent-catalog-in-list = site.catalogs
   | where: "url", include.grandparent-url %}
-
 {% assign parent-catalog-in-list = site[include.parent-catalog]
   | where: "url", include.parent-url %}
 {% assign additional-breadcrumbs = grandparent-catalog-in-list

@@ -121,10 +121,13 @@
           @extend %dictionary-text;
         }
 
-        .topics {
+        .description:not(:last-child) {
+          margin-bottom: 15px;
+        }
+
+        .tags {
           color: gray;
           font-size: 10pt;
-          margin-top: 15px;
         }
       }
 
