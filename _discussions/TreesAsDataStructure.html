@@ -1,0 +1,172 @@
+---
+audiences:
+  - "Grades 6-8"
+  - "Grades 9-12"
+  - "Undergraduate"
+description: "Questions about games with more than two dice lead to discussion of trees as another kind of data structure."
+short-name: "TreesAsDataStructure"
+subjects:
+  - "Discrete"
+  - "Probability"
+title: "Trees as Data Structures"
+topics:
+  - "combinatorics"
+  - "dimension"
+  - "events"
+  - "exponents"
+  - "fair"
+  - "logarithm"
+  - "multiples"
+  - "outcomes"
+  - "probability"
+  - "probability tree"
+  - "tree diagram"
+---
+    <p>
+      <span class="mentor">Mentor:</span> Here is one more game to play and study. Players roll 3 four-sided dice. Player 1 wins if the
+      sum of the dice numbers is 3, 4, 5, 6 or 12; Player 2 wins if the sum is 7, 8, 9, 10 or 11. Is
+      the game fair?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Now I know that there are many possible ways to get the same sum. We used tables to count the
+      possibilities for two dice. We can't use the table anymore, because it only has two... what do
+      you call them?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Dimensions. We can make a table with three dimensions or more, but it will be hard to use by
+      hand. By the way, computers can deal with tables of hundreds of dimensions. What else can we
+      do? Let me write the first quarter of the list of all the combinations, the part where the
+      first die shows 1. It will be a boring task....
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/TreesAsDataStructure-discussion-1.gif' | relative_url }}" />
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Could we somehow get rid of all the repetitions? I mean, can we write one big fat "1" instead
+      of sixteen little 1's?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Why not? If we do that, we will obtain a structure called
+      <em>a tree</em>. Can you guess why even before we make the pictures? Here is the picture that shows how this
+      part of the tree for our problem is constructed. There will be 3 more parts for the rest of
+      the possible numbers on the first die. You can build them yourself.
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TreesAsDataStructure-discussion-1.gif' | relative_url }}" />
+      </div>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TreesAsDataStructure-discussion-3.gif' | relative_url }}" />
+      </div>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TreesAsDataStructure-discussion-4.gif' | relative_url }}" />
+      </div>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TreesAsDataStructure-discussion-5.gif' | relative_url }}" />
+      </div>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TreesAsDataStructure-discussion-6.gif' | relative_url }}" />
+      </div>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TreesAsDataStructure-discussion-7.gif' | relative_url }}" />
+      </div>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TreesAsDataStructure-discussion-8.gif' | relative_url }}" />
+      </div>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TreesAsDataStructure-discussion-9.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Do you see why it is called a tree?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Because it looks like a tree lying on its side. We can add some "leaves" and write stuff on
+      them. I will write the sum of the dice numbers:
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/TreesAsDataStructure-discussion-10.gif' | relative_url }}" />
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Do you see how the tree can help us count outcomes?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Well, it is useful for counting the total number of outcomes. There are four "trunks" (for
+      the possible numbers on the first die), and each has four "branches" (for the possible numbers
+      on the second die), and each has four "twigs" (for the possible numbers on the third die). An
+      outcome is formed as we go from a trunk to a brunch to a twig. There are as many outcomes as
+      there are twigs: 4*4*4=64. Wow! It sounds like an old puzzle!
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Now look at all the "leaves" and find out if the game is fair. What is the probability of
+      each player winning?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Player 1 only has a winning probability of 21/64, whereas Player 2 has a winning probability
+      of 43/64. This game is not fair.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> How many possible outcomes are there if you have three coins? (2*2*2=8) If you have a coin
+      and two six-sided dice? (2*6*6=72) How many outcomes are there if you have four
+      coins?(2*2*2*2=16) Five six-sided dice(6*6*6*6*6)? By the way, if I do not feel like writing
+      the numbers so many times, can I write the same thing much shorter: 6*6*6*6*6=6
+      <sup> 5 </sup> It reads: "Six to the power of five." Computer folks type it as 6^5, because it is faster
+      than switching to the superscript.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> I do not want to actually draw all these huge trees!
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> A tree for the four coin problem would not be all that bad. Can you draw it? Observe that at
+      each time the tree "branches," there are exactly two branches (for heads and tails on the next
+      coin). Trees of that sort are called
+      <em>binary trees</em>. They are very common in computational science, and even in nature:
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TreesAsDataStructure-discussion-11.jpg' | relative_url }}" />
+      </div>
+      <em>Mathematician on a binary tree. Photograph by Dmitri Droujkov.</em>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Here is a riddle for you. If we have a full binary tree (no branches are cut off) that has 8
+      smallest branches, how many "levels of branching in two" are there? In other words, if we were
+      playing with coins, how many coins would you need to produce 8 outcomes?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Let us see. The last branching happens when 4 branches became 8:
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TreesAsDataStructure-discussion-12.gif' | relative_url }}" />
+      </div> The branching before that happens when 2 branches become 4:
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TreesAsDataStructure-discussion-13.gif' | relative_url }}" />
+      </div> and the very first one is when a single branch becomes 2:
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TreesAsDataStructure-discussion-14.gif' | relative_url }}" />
+      </div> So we have three levels of branching.
+      <span class="mentor">Mentor:</span> When you find out the number of branchings from the number of the last branches, it is called
+      a computing logarithm, and the number of branchings is called a
+      <strong>logarithm</strong>. There is a special sign for it:
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TreesAsDataStructure-discussion-15.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> In the original example with 3 four-sided dice, there were 64 "smallest branches," but each
+      branching was splitting in four. That means:
+      <strong>log4 64=3</strong>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Exactly, and
+      <strong> 4^3=64</strong>. By the way, where else have you seen trees like that?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> In NCAA tournaments!
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Now you can easily translate the following question into mathematical language: "If there are
+      64 teams in a tournament, how many rounds do they need to play to determine a winner?"
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> The question is so much shorter in math language!
+      <strong>log2 64=? </strong>
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> The answer is 6.
+    </p>

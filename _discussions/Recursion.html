@@ -1,0 +1,235 @@
+---
+audiences:
+  - "Grades 6-8"
+  - "Grades 9-12"
+  - "Undergraduate"
+description: "Discusses the idea of recursion as it pertains to fractals and sequences."
+short-name: "Recursion"
+subjects:
+  - "Algebra"
+  - "Discrete"
+  - "Geometry"
+  - "Number and Operations"
+title: "Recursion"
+topics:
+  - "fractals"
+  - "generator"
+  - "initiator"
+  - "iteration"
+  - "recursion"
+  - "recursive functions"
+  - "sequences"
+---
+    <p>
+      <span class="mentor">Student:</span> Tell me about
+      <a href="{{ '/dictionary/r' | relative_url }}">recursion</a>. Is it the same as iteration or not?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Recursion is a special kind of
+      <a href="{{ '/dictionary/i' | relative_url }}">iteration</a>. Here's the idea: With a recursion we are given starting information and a rule for how to
+      use it to get new information. Then we repeat the rule using the new information as though it
+      were the starting information.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So we have a loop? What comes out of the rule goes back into the rule for the next iteration?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> That's a good way to think about it. Here's a classic example of a recursion which cranks out
+      a sequence of numbers called the
+      <a href="{{ '/dictionary/f' | relative_url }}">Fibonacci Numbers</a>:
+    </p>
+    <p>
+      <img class="h-center" src="{{ 'img/discussions/Recursion-discussion-1.gif' | relative_url }}" />
+    </p>
+    <p>
+      Here we have starting information and a rule for generating a new value. The n increases by
+      one each time, so we can ask questions like
+      <em>find the ninth fibonacci number</em>. We are given two starting values since each new value is calculated from the two previous
+      ones. Try generating the ninth number.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Let's see. The first numbers are 1 and 1, as given. The rule says to take the two previous
+      numbers and add them to get the new number, so I would get:
+    </p>
+    <p>
+      <table class="h-center">
+        <tr>
+          <td>
+            n = 3:
+          </td>
+          <td>
+            1 + 1
+          </td>
+          <td>
+            =
+          </td>
+          <td>
+            2
+          </td>
+        </tr>
+        <tr>
+          <td>
+            n = 4:
+          </td>
+          <td>
+            1 + 2
+          </td>
+          <td>
+            =
+          </td>
+          <td>
+            3
+          </td>
+        </tr>
+        <tr>
+          <td>
+            n = 5:
+          </td>
+          <td>
+            2 + 3
+          </td>
+          <td>
+            =
+          </td>
+          <td>
+            5
+          </td>
+        </tr>
+        <tr>
+          <td>
+            n = 6:
+          </td>
+          <td>
+            3 + 5
+          </td>
+          <td>
+            =
+          </td>
+          <td>
+            8
+          </td>
+        </tr>
+        <tr>
+          <td>
+            n = 7:
+          </td>
+          <td>
+            5 + 8
+          </td>
+          <td>
+            =
+          </td>
+          <td>
+            13
+          </td>
+        </tr>
+        <tr>
+          <td>
+            n = 8:
+          </td>
+          <td>
+            8 + 13
+          </td>
+          <td>
+            =
+          </td>
+          <td>
+            21
+          </td>
+        </tr>
+        <tr>
+          <td>
+            n = 9:
+          </td>
+          <td>
+            13 + 21
+          </td>
+          <td>
+            =
+          </td>
+          <td>
+            34
+          </td>
+        </tr>
+      </table>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Good! Now let's consider the
+      <a href="{{ '/dictionary/f' | relative_url }}">fractal</a> examples we have seen so far. For fractals, the starting information is called the initiator,
+      the rule for iterating is called the generator:
+    </p>
+    <p>
+      <table class="h-center">
+        <tr>
+          <td>
+            Fractal
+          </td>
+          <td>
+            Initiator
+          </td>
+          <td>
+            Generator
+          </td>
+          <td>
+            After Several Iterations
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="{{ '/activities/HilbertCurve' | relative_url }}">Hilbert Curve</a>
+          </td>
+          <td>
+            Straight line segment
+          </td>
+          <td>
+            <img src="{{ 'img/discussions/Recursion-discussion-2.gif' | relative_url }}" />
+          </td>
+          <td>
+            <div class="h-center">
+              <img src="{{ 'img/discussions/Recursion-discussion-3.png' | relative_url }}" />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="{{ '/activities/AnotherHilbertCurve' | relative_url }}">Another Hilbert Curve</a>
+          </td>
+          <td>
+            Straight line segment
+          </td>
+          <td>
+            <img src="{{ 'img/discussions/Recursion-discussion-4.gif' | relative_url }}" />
+          </td>
+          <td>
+            <div class="h-center">
+              <img src="{{ 'img/discussions/Recursion-discussion-5.png' | relative_url }}" />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="{{ '/activities/KochSnowflake' | relative_url }}">Kock's Snowflake</a>
+          </td>
+          <td>
+            Triangle
+          </td>
+          <td>
+            <img src="{{ 'img/discussions/Recursion-discussion-6.gif' | relative_url }}" />
+            <div class="h-center">
+              Each Side of Triangle
+            </div>
+          </td>
+          <td>
+            <div class="h-center">
+              <img src="{{ 'img/discussions/Recursion-discussion-7.png' | relative_url }}" />
+            </div>
+          </td>
+        </tr>
+      </table>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So in each of these, we have the starting stage and the rule for moving to the next stage.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Yes!
+    </p>

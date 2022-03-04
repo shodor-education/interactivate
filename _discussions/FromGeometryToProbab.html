@@ -1,0 +1,255 @@
+---
+audiences:
+  - "Grades 6-8"
+  - "Grades 9-12"
+description: "Leads the idea of probability from counting chances to measuring proportions of areas."
+short-name: "FromGeometryToProbab"
+subjects:
+  - "Discrete"
+  - "Geometry"
+  - "Probability"
+title: "From Geometry to Probability"
+topics:
+  - "angles"
+  - "area"
+  - "circles"
+  - "counting"
+  - "degrees"
+  - "estimation"
+  - "events"
+  - "expected value"
+  - "experimental probability"
+  - "fair"
+  - "geometric probability"
+  - "geometry"
+  - "probability"
+  - "right angle"
+  - "spinner"
+  - "theoretical probability"
+  - "theoretical value"
+  - "volume"
+---
+    <p>
+      Making spinners and doing probability experiments with them can be a lot of fun even for
+      people who can solve problems without hands-on activities. Discarded CDs make good spinners.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> In the game we will study, players make a spinner, then agree on what each of them wins if
+      his or her color is chosen. For example:
+    </p>
+    <p>
+      <img class="h-center" src="{{ 'img/discussions/FromGeometryToProbab-discussion-1.gif' | relative_url }}" />
+    </p>
+    <p>
+      <strong>Player 1</strong> wins 10 points when the spinner stops at yellow.
+    </p>
+    <p>
+      <strong>Player 2</strong> wins 16 points when the spinner stops at blue.
+    </p>
+    <p>
+      <strong>Player 3</strong> wins 24 points when the spinner stops at red.
+    </p>
+    <p>
+      Is the game fair? How can you tell?
+    </p>
+    <p>
+      What are the chances of each player winning points in one spin?
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> Players 2 and 3 have the same chances of winning. Player 1 has twice as many chances.
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> Player 1 "owns" half the spinner, and Players 2 and 3 each "own" a quarter of the spinner. If
+      we want to express their probability of winning in mathematical language, we can write:
+    </p>
+    <p>
+      P (Player 1 winning) = 1/2 = .5 or 50%
+    </p>
+    <p>
+      P (Player 2 winning) = 1/4 = .25 or 25%
+    </p>
+    <p>
+      P (Player 3 winning) = 1/4 = .25 or 25%
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> If the game is played many times, which player do you expect to gain more points?
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> I think Player 2 will win about as many games as Player 3, but Player 3 gets more points each
+      time.... I expect Player 3 to win more points than Player 2.
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> Let us use "the one hundred experiments trick" to compare players to Player 1. In one hundred
+      experiments, we can expect:
+    </p>
+    <div class="h-center">
+      <p>
+        Player 1 to win 10 points 1/2 of 100 times, or to win 10*1/2*100 = 500 points,
+      </p>
+      <p>
+        on the average 10*1/2*100/100 = 10*1/2 = 5 points per spin.
+      </p>
+      <p>
+        Player 2 to win 16 points 1/4 of 100 times, or to win 16*1/4*100 = 400 points,
+      </p>
+      <p>
+        on the average 16*1/4*100/100 = 16*1/4 = 4 points per spin.
+      </p>
+      <p>
+        Player 3 to win 24 points 1/4 of all times, on the average 24*1/4 = 6 points per spin.
+      </p>
+    </div>
+    <p>
+      <span class="mentor">Student 1:</span> Now I can see that Player 3 is better off than the rest of them!
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Can you change the number of points each player gets to make the game fair? If Player 1 gets
+      4 points, how many points should Player 2 and Player 3 get to make the game fair? What if
+      Player 1 gets 20 points? What if Player 1 gets N points? This N means we do not know exactly
+      how many he gets. We are just looking for the connection between the number of points Player 1
+      gets and the numbers Players 2 and 3 get.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Let us see... Players 2 and 3 are expected to win about half as many games as Player 1, so
+      they have to get twice as many points every time they win. That makes 2*N for each of them.
+    </p>
+    <p>
+      <hr />
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Let us look at a different spinner, something like this:
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/FromGeometryToProbab-discussion-2.gif' | relative_url }}" class="h-center" />
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> How do we measure each player's chances now?
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> It would be nice if we could measure each player's "slice" exactly. How would you do it?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> People measure things by comparing them with standard units. You can say that a show is 25
+      minutes long, a tree is 12 meters high, or a dog weighs 23 kilograms. We can use certain units
+      to measure each player's "slice," or
+      <a href="{{ '/dictionary/s' | relative_url }}">sector</a>, of the spinner. Before we start, please tell me what is different and what is the same about
+      these three spinners:
+    </p>
+    <p class="h-center">
+      <img src="{{ 'img/discussions/FromGeometryToProbab-discussion-2.gif' | relative_url }}" />
+      <img src="{{ 'img/discussions/FromGeometryToProbab-discussion-4.gif' | relative_url }}" />
+      <img src="{{ 'img/discussions/FromGeometryToProbab-discussion-5.gif' | relative_url }}" />
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> It does not matter for the game which of the spinners is used. The chances of each color
+      being chosen are the same.
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> The angles of each color are the same.
+    </p>
+    <p>
+      <img class="h-center" src="{{ 'img/discussions/FromGeometryToProbab-discussion-6.gif' | relative_url }}" />
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Traditionally, people measure angles in special units called "
+      <a href="{{ '/dictionary/d' | relative_url }}">degrees</a>." These units were chosen in such a way that the following easy-to-measure angle is 90
+      degrees:
+    </p>
+    <p>
+      <img class="h-center" src="{{ 'img/discussions/FromGeometryToProbab-discussion-7.gif' | relative_url }}" />
+    </p>
+    <p>
+      This angle is called a
+      <a href="{{ '/dictionary/r' | relative_url }}">right angle</a>. A third of the right angle is 30 degrees, for example, and so on. There is a useful tool
+      that can be used to measure angles. It is called a
+      <a href="{{ '/dictionary/p' | relative_url }}">protractor</a> . It has units for degrees, much like a ruler has units for centimeters or inches. You can
+      measure an angle by aligning the bottom of the protractor with one side of the angle, placing
+      it so that the center of the protractor is at the vertex of the angle:
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/FromGeometryToProbab-discussion-8.gif' | relative_url }}" class="h-center" />
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> The whole circle's angle is 360 degrees, because there are four right angles in it:
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/FromGeometryToProbab-discussion-9.gif' | relative_url }}" class="h-center" />
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> It means that each player has as many chances as his angle has degrees, out of the total of
+      360 chances.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> What angle will give you a 1/3 probability of winning?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> A third of 360 degrees, or 120 degrees.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> You can make some spinners for the game and find the exact chances of each player winning by
+      measuring angles. Make the game fair by choosing how many points each player wins. Then play
+      the game many times and see if the chances and actual winnings are close to what you
+      predicted.
+    </p>
+    <p>
+      <strong>From Probability to Geometry</strong>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> In the spinner game above we used geometry (measuring angles) to find the probability of each
+      player winning. Can you think of other examples where we can measure something and determine
+      the chances of some particular outcome happening?
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> We can measure area. Suppose we drop something on a surface and find the chances of it
+      hitting a specific part of the surface.
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> Yes, for example, what are the chances that a meteorite hitting the Earth will land in water?
+      We need to know the total area of the Earth and the total area of the oceans, seas, lakes and
+      rivers to answer that question.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Can you think of an example using volume?
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> OK. We are working in a gold mine. We have a load of regular sand mixed with gold sand. What
+      are the chances that a grain we choose is made of gold? We will have to measure the volume of
+      gold in the sand to find the answer.
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> To do that, you will need to get all the gold out. After that, who will care about the
+      chances? The sand will not be mixed anymore, and you won't mix it just to repeat the
+      experiment!
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Maybe the manager who has to decide if it makes any sense to refine the next load of sand
+      will care about the chances? Your question leads us right into the topic of how people can use
+      probability to answer questions about geometrical measurements. Suppose you want to measure
+      how much gold is in your sand. To do that exactly, you will have to extract all the gold. What
+      if it is not worth it? What would you do?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> I would take a few buckets of sand and find exactly how much gold is in them. If a third of
+      the sand in the buckets is gold, then about a third of all the sand is also gold.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> So you would randomly choose some sand and find the probability of finding gold in it. Let us
+      see if probability can help us measure the angles on spinners. If you do not have a
+      protractor, how can you use the probability to
+      <a href="{{ '/dictionary/e' | relative_url }}">estimate</a> the yellow, blue and red angles on this spinner?
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/FromGeometryToProbab-discussion-2.gif' | relative_url }}" class="h-center" />
+    </p>
+    <p>
+      <span class="mentor">Student:</span> I can spin it many times and record which color is chosen each time. If the yellow is chosen
+      65% of the time, then the yellow angle is about 65% of the circle, or 360*.65 = 234 degrees.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Will it be an exact measurement or an
+      <a href="{{ '/dictionary/e' | relative_url }}">estimate</a>?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> An estimate.
+    </p>
+    <p />

@@ -1,0 +1,579 @@
+---
+audiences:
+  - "Grades 6-8"
+  - "Grades 9-12"
+description: "Introduces the notion of using modular arithmetic to encode messages."
+short-name: "CryptographyCipher"
+subjects:
+  - "Algebra"
+  - "Discrete"
+  - "Number and Operations"
+title: "Cryptography and Ciphers"
+topics:
+  - "addition"
+  - "affine cipher"
+  - "arithmetic"
+  - "cipher"
+  - "cryptography"
+  - "decipher"
+  - "division"
+  - "encrypt"
+  - "factors"
+  - "inverse"
+  - "modular"
+  - "multiples"
+  - "multiplication"
+  - "shift cipher"
+  - "subtraction"
+---
+    <p>
+      <span class="mentor">Student:</span> I really understood the explanation of
+      <a href="{{ '/dictionary/m' | relative_url }}">modular arithmetic</a>.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Good. Did you know that this kind of mathematics is used in defending the United States and
+      other countries during wars and other times when there is information that has to be kept
+      confidential?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> How would someone use modular arithmetic during a war?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> It was used during the U.S. Civil War in the 1860's, and even thousands of years before that,
+      in Caesar's Roman Empire. People who wanted to communicate with allies but not their enemies
+      would send encrypted messages back and forth.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> What is an encrypted message?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Encrypted messages take the letters and numbers of a message and transform them into a
+      different series of letters and numbers that do not make sense unless you know the code to
+      unscramble them.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> And if you do know the code?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Then you get to read the secret message. Amazingly complex scrambling procedures can stump
+      highly trained people and even computers. Right now I would like to talk about some simple
+      ciphers, so you can practice the basic idea.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> What is a cipher?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> A cipher is the method by which you encrypt a message. The ones that I want to teach you have
+      to do with numerical operations: multiplication, division, addition and subtraction, so we
+      must first create a numerical alphabet by assigning numbers, beginning with zero, to each
+      letter of our English alphabet.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So A would be 0, B would be 1 ..... like this:
+    </p>
+    <p>
+      <table class="h-center">
+        <tr>
+          <td>
+            <pre>
+              A   B   C   D   ...   Z
+            </pre>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+              0   1   2   3   ...   25
+            </pre>
+          </td>
+        </tr>
+      </table>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Good. Most ciphers use modular arithmetic during some steps of the encryption and decryption
+      process. We have used the numbers 0 through 25 to represent 26 English letters, so we will use
+      mod 26 in all of our cipher examples.
+    </p>
+    <p>
+      Let's begin with what is called a shift cipher. First we must translate our message into our
+      numerical alphabet. For example, the code name 'James' looks like this:
+      <table class="h-center">
+        <tr>
+          <td>
+            <pre>
+              J  A   M   E   S
+            </pre>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+              9  0  12   4  18
+            </pre>
+          </td>
+        </tr>
+      </table>
+    </p>
+    <p>
+      Now choose the number you want to shift by.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Let's choose 7.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> We need to remember this number, which we will call the 'B-shift' value, to both cipher and
+      later *de*cipher the message. We now 'shift' our cipher by adding B to each of the numbers
+      from our code word like this:
+      <pre>
+      <div class="h-center">
+       J =  9 + 7 = 16
+       A =  0 + 7 =  7
+       M = 12 + 7 = 19
+       E =  4 + 7 = 11
+       S = 18 + 7 = 25
+      </div>
+      </pre>
+    </p>
+    <p>
+      Now you have :
+      <pre>
+      <div class="h-center">
+      16  7  19  11  25
+        </div>
+      </pre>
+    </p>
+    <p>
+      We can now translate the numbers back into letters using our numerical alphabet. The name
+      'James' encrypted with a B-shift of 7 is:
+      <pre>
+        <div class="h-center">
+          Q  H  T  L  Z
+        </div>
+        </pre>
+    </p>
+    <p>
+      Now try another example, the phrase 'is a spy' using the same B-shift.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So first we translate the code words into the numerical alphabet like this:
+      <div class="h-center">
+        <pre>
+          I  S    A    S  P  Y
+        </pre>
+      </div>
+      <div class="h-center">
+        <pre>
+          8 18    0   18 15 24
+        </pre>
+      </div>
+    </p>
+    <p>
+      Then we add the B-shift to each number,
+    </p>
+    <p>
+      <pre>
+      <div class="h-center">
+        I =  8 + 7 = 15
+        S = 18 + 7 = 25
+        A =  0 + 7 =  7
+        S = 18 + 7 = 25
+        P = 15 + 7 = 22
+        Y = 24 + 7 = 31
+        </div>
+      </pre>
+    </p>
+    <p>
+      and then I translate back to letters, so 15 is P, 25 is Z, 7 is H, 25 is Z again, and 22 is W,
+      but what is 31?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Maybe mod 26 might be useful?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Right! 31 mod 26 is 5, which corresponds to F, so 'S P Y' becomes 'Z W F'!
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Now if you wanted to send the message 'James is a spy.' to someone, but didn't want everyone
+      (like James!) to be able to read the message, you could send the message 'Qhtlz pz h zwf.'. A
+      good cryptographer, however, might use the size of the words and your punctuation to help them
+      figure out your cipher and your secret message! For example, what English words have only one
+      letter?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> 'I', like 'I went to the store' and 'a' as in 'for a loaf of bread'. But 'I' would be
+      capitalized, so 'h' in our code would have to be an 'a'!
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Good! That's exactly how a cryptographer would do it as well. We don't want just anyone to
+      figure out our cipher, so we make it harder by removing punctuation and grouping the letters
+      in 'words' that are usually five letters long, so our message might look something like this:
+      <div class="h-center">
+        <pre>
+          QHTLZ PZHZW F
+        </pre>
+      </div>
+    </p>
+    <p>
+      In order for someone to translate the message, they would have to use our cipher backwards.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So first they would translate the letters into numbers again, so QHTLZ would again be
+      <div class="h-center">
+        <pre>
+          16  7 19 11 25
+        </pre>
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> But in order to solve the cipher they would also need to know that we used a B-shift of 7...
+    </p>
+    <p>
+      <span class="mentor">Student:</span> ...which, working backwards we would need to subtract! So 16 - 7 = 9, which is 'J', 7 - 7 =
+      0, which is 'A', and so on... Neat!
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> What about the last letter?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> F becomes 5, 5 minus 7 is negative 2 ! What happened?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> You forgot to reverse the 'mod 26' calculation. If you remember, the mod 26 operation made us
+      subtract a multiple of 26, in this case just 26*1 = 26. Try adding it back.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Negative 2 plus 26 is 24, which translates to Y. Good, that makes sense.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Shift ciphers can also work in the opposite order, where you subtract the B-shift first when
+      you are encrypting and then add it back when you are decrypting.
+    </p>
+    <p>
+      Let's try another kind of cipher. It is called a multiplication cipher. It is similar to the
+      shift cipher, except that you multiply and divide instead of add and subtract. Choose an easy
+      example word for us to use.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> How about S I M P L E which in the numerical alphabet is
+      <div class="h-center">
+        <pre>
+          18 8 12 15 11 4
+        </pre>
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Good. We'll use the number 7 again, but this time we will call it 'A' so as not confuse it
+      with the shift. Now multiply the numeric alphabet letters each by the 'A-multiplier':
+      <pre>
+      <div class="h-center">
+                S = 18 * 7 = 126
+      	        I  = 8 * 7 =  56
+           	M = 12 * 7 =  84
+           	P = 15 * 7 = 105
+           	L = 11 * 7 =  77
+           	E =  4 * 7 =  28
+           	</div>
+      </pre>
+    </p>
+    <p>
+      The numbers are too big for our numeric alphabet, so we need to use mod 26 again.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> All right.
+      <div class="h-center">
+        <pre>
+                         126 mod 26:  126/26 = 4 with remainder 22, so 22
+           	         56 mod 26:  56/26 = 2 with remainder  4, so  4
+           	 84 mod 26:  3 with remainder  6, so  6
+           	105 mod 26:  4 with remainder  1, so  1
+           	 77 mod 26:  2 with remainder 25, so 25
+           	 28 mod 26:  1 with remainder  2, so  2
+      </pre>
+      </div>
+    </p>
+    <p>
+      So the encrypted message is W E G B Z C. That was 'simple'!
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Perhaps, but now how do you decrypt it?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Hmmm... Working backwards, W is 22. Divide by our 'A-multiplier' is 22 over 7 which is three
+      remainder one... What do I do with that!?!
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> There's the hard part! Before we divide we need to reverse the 'mod 26' operation again. As
+      before, let's add 26 and then see if the division works.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Okay. 22 + 26 = 48, which is not evenly divisible by 7.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Try a few more times.
+    </p>
+    <p>
+      <span class="mentor">Student:</span>
+      <pre>
+      <div class="h-center">
+                48 + 26 = 74, no.
+           	64 + 26 = 100, no.
+           	90 + 26 = 126, divided by 7 is 18, yes.
+           	</div>
+      </pre>
+    </p>
+    <p>
+      That works, because 18 is our original letter 'S', but that's not really so simple anymore.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> There is another method. Try this: multiply each of your numerical alphabet code numbers by
+      fifteen and then mod 26.
+    </p>
+    <p>
+      <span class="mentor">Student:</span>
+      <pre>
+      <div class="h-center">
+                W is 22, times 15 is 330, mod 26 is 18, which is 'S'
+           	E is  4, times 15 is  60, mod 26 is  8, which is 'I'
+           	 G is  6, times 15 is  90, mod 26 is 12, which is 'M'
+           	 B is  1, times 15 is  15, mod 26 is 15, which is 'P'
+           	Z is 25, times 15 is 375, mod 26 is 11, which is 'L'
+           	 C is  2, times 15 is  30, mod 26 is  4, which is 'E'.
+           	</div>
+      </pre>
+    </p>
+    <p>
+      That worked, but where did the 15 come from?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Modular arithmetic is not quite the same as regular arithmetic. In regular arithmetic the
+      inverse of a multiplier A would be 1/A, for example 7 and the fraction 1/7th. In modular
+      arithmetic a multiplier will only have an inverse if the multiplier (for example 7), and the
+      modular base (in our case, 26) have no common factors greater than one! The modular inverse -
+      we will call it A' (A-prime) - will be a whole number that also has no common factors with the
+      modular base. 7 and 15 are modular inverses in mod 26.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Is there a way to figure out what the modular inverse of a number is?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Just as in real arithmetic, a number and it's inverse will multiply in modular arithmetic to
+      give you 1, so (A * A') mod 26 = 1. Start by making a list of multiples of 26, and then add
+      one to each of them.
+    </p>
+    <p>
+      <span class="mentor">Student:</span>
+      <div class="h-center">
+        <pre>
+                26 * 1 =  26, plus one is  27
+           	  26 * 2 =  52, plus one is  53
+           	 26 * 3 =  78, plus one is  79
+           	26 * 4 = 104, plus one is 105
+           	26 * 5 = 130, plus one is 131
+           	26 * 6 = 156, plus one is 157
+           	    26 * 7 = 182, plus one is 183 ...
+      </pre>
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> That should be enough. Now we know that all of those numbers, mod 26 is equal to 1. Are any
+      of those numbers evenly divisible by seven?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Yes, 105 divided by 7 is ... 15!
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> What if we wanted to use the multiplier 9 instead? Does 9 have an inverse?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Hmmm. 27 divided by 9 is 3, so 9 and 3 are modular inverses, right?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> In mod 26, yes. If we used a different modulus, different numbers would have different
+      inverses, and some would not have any inverses at all.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Like when they share a common factor with 26, right? Why is that?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Let's see why by using the number 6, which shares the factor 2 with 26. Here are some letters
+      encoded by multiplying by 6:
+      <div class="h-center">
+        <pre>
+                A is  0, times 6 =  0, mod 26 =  0
+           	B is  1, times 6 =  6, mod 26 =  6
+           	 C is  2, times 6 = 12, mod 26 = 12
+           	D is  3, times 6 = 18, mod 26 = 18
+           	E is  4, times 6 = 24, mod 26 = 24
+           	F is  5, times 6 = 30, mod 26 =  4
+           	...
+           	 M is 12, times 6 = 72, mod 26 = 20
+           	N is 13, times 6 = 78, mod 26 =  0
+           	0 is 14, times 6 = 84, mod 26 =  6
+           	P is 15, times 6 = 90, mod 26 = 12
+      </pre>
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> But A and N are coded the same, as are B and O, and C and P. Does this pattern continue?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Yes. Because 26 and 6 share the factor of two, each number will represent two letters. We
+      cannot reverse the process because we would not know which of the two letters to select. This
+      happens when the number we try to use as a multiplier shares a factor with 26.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So it won't happen with 5, but it will happen with 13?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Try it!
+    </p>
+    <p>
+      <span class="mentor">Student:</span>
+      <pre>
+      <div class="h-center">
+                A  0   0
+           	 B  5   13
+           	C  10  0
+           	 D  15  13
+           	E  20  0
+           	 F  25  13
+           	G  4   0
+           	 H  9   13
+           	I  14  0
+           	 J  19  13
+           	K  24  0
+           	 L  3   13
+           	M  8   0
+           	 N  13  13
+           	0  18  0
+           	 P  23  13
+           	Q  2   0
+           	 R  7   13
+           	S  12  0
+           	 T  17  13
+           	U  22  0
+           	 V  1   13
+           	X  6   0
+           	 Y  11  13
+           	Z  16  0
+           	</div>
+      </pre>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> For a common factor of 13 there are thirteen letter possibilities for each number, like you
+      said! So 13 doesn't have an inverse, but 5 does.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Look back at your 'multiples of 26 plus one' list and see if you can find it.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Okay... 27... 53... 79... 105! 105 divided by 5 is 21 so 5 and 21 are inverses in mod 26. So
+      for mod 26 we have 7 with 15, 5 with 21, and 3 with 9, are there any others?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Yes. These pairs all work for mod 26, but remember they won't apply to another system with a
+      different number of letters!
+      <pre>
+      <div class="h-center">
+        1 is it's own inverse
+        3 and 9
+        5 and 21
+        7 and 15
+        11 and 19
+        17 and 23
+        25 is also it's own inverse
+        </div>
+      </pre>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> How hard can ciphers get?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> There are ciphers that stump even the best programmers with the newest computers. It has to
+      be that way in order to be able to stay ahead of the technology of the opposition. I am sure
+      that as technology gets better and faster, ciphers do the same. The ciphers we have been
+      covering were some of the first, dating to way before we had computers. In fact, Caesar liked
+      to use the shift cipher with 3 as the shift.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> I bet the newer ones have a lot of really hard math in them.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Yes they do. Let's move on to the last cipher we are going to talk about. It is called an
+      affine cipher. Affine means linear, so this cipher takes on the same form as a line:
+      <div class="h-center">
+        <p>
+          (A*x + B) mod 26
+        </p>
+      </div>
+      <p />
+      <p>
+        With this, you must have both the A-multiplier and B-shift to decode the message. Note that
+        if A = 1 you have a normal shift cipher, and when B = 0 you have a multiplication cipher.
+        Again here the greatest common factor for A and 26 has to be 1, in order to have a way to
+        decode the message.
+      </p>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Can we use 7 again?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Okay, let's use that for our A and we can use 5 for our B.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So if I let someone know my A and B and what type of cipher then they can decrypt the
+      message.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Right. Let's practice with the word 'chair'.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Let me try. The first step is
+      <div class="h-center">
+        <p>
+          C H A I R ---- 2 7 0 8 17
+        </p>
+      </div>
+      <p>
+        Now we have (7*x +5) mod 26, so:
+      </p>
+      <div class="h-center">
+        <pre>
+        7*2 + 5 =  19, mod 26 = 19 which is T
+        7*7 + 5 =  54, mod 26 =  2 which is C
+        7*0 + 5 =   5, mod 26 =  5 which is F
+        7*8 + 5 =  61, mod 26 =  9 which is J
+        7*17 +5 = 124, mod 26 = 20 which is U
+      </pre>
+      </div>
+    </p>
+    <p>
+      The encrypted message is T C F J U.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Very good. Now to work in reverse, so we should subtract the 5 and then multiply by our
+      modular inverse, which we remember for 7 in mod 26 is 15.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So,
+      <div class="h-center">
+        <pre>
+        T = 19:  15*(19-5) mod 26  = 210 mod 26 = 2
+          C =  2:  15*( 2-5) mod 26  = -45 mod 26 = ??
+        F =  5:  15*( 5-5) mod 26  =   0 mod 26 = 0
+        J =  9:  15*( 9-5) mod 26  =  60 mod 26 = 8
+         U = 20:  15*(20-5) mod 26  = 225 mod 26 = 17
+      </pre>
+      </div>
+    </p>
+    <p>
+      Wait! How do I mod a negative number like -45?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Just like a positive number, so that -45 mod 26 = -19, but then you add 26 to make the result
+      positive, so that -45 mod 26 = -19 + 26 = 7.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So the final decoded answer is 2 7 0 8 17, which gives: CHAIR. Cool!
+    </p>
+    <p />

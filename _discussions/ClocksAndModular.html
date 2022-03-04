@@ -1,0 +1,106 @@
+---
+audiences:
+  - "Grades 3-5"
+  - "Grades 6-8"
+  - "Grades 9-12"
+description: "Shows how modular arithmetic can be thought of as clock arithmetic."
+short-name: "ClocksAndModular"
+subjects:
+  - "Discrete"
+  - "Geometry"
+  - "Number and Operations"
+title: "Clocks and Modular Arithmetic"
+topics:
+  - "arithmetic"
+  - "division"
+  - "integers"
+  - "modular"
+  - "pattern"
+  - "remainders"
+  - "time"
+  - "whole numbers"
+---
+    <p>
+      <span class="mentor">Student:</span> How do time and
+      <a href="{{ '/dictionary/m' | relative_url }}">modular arithmetic</a> relate to each other?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Modular arithmetic deals with repetitive cycles of numbers and remainders. The time you use
+      everyday is a cycle of 12 hours, divided up into a cycle of 60 minutes
+    </p>
+    <p>
+      <span class="mentor">Student:</span> And those are divided into cycles of 60 seconds.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Correct. Let's talk about the 12 hour cycle. Every time you pass 12 you start over with 1
+      again. This is mod 12 arithmetic. Let's set up a picture.
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/ClocksAndModular-discussion-1.jpg' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      Make the circle read 0 through 11, so there are 12 hours total. To figure out the answer to a
+      modular math question (in this case mod 12), begin at zero and count the number specified in
+      the problem. The number you land on is the answer. Why don't you try 16 mod 12 on the circle I
+      have provided.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> It would be 4. 16 mod 12 equals 4. I get it, but why not number around the circle from 1 to
+      12?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> First, your answer is right! Second, the reason we label the circle from 0 around to 11 will
+      become clear in a minute. Let's try another. Now, what is 155 mod 12?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> That will take awhile.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Are there any easier ways to do this? Do you notice any patterns?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> I don't think that I am following you.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> This is how it is tied to what we already know about
+      <a href="{{ '/dictionary/r' | relative_url }}">remainders</a>, and why we number from 0 to 11 instead of from 1 to 12. Look at what you did above. Isn't 16
+      mod 12 the same as the remainder when you divide 16 by 12?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So, 16/12 = 1 remainder 4. The answer is four.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Yes! So, we really want to label around the circle with every possible number we can get as a
+      remainder when we divide by 12. That would be everything between 0 and 11 inclusive! Now, what
+      is 155 mod 12?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> 155 divided by 12 is 12 with 11 left over. 155 mod 12 equals 11.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Correct! You have the idea now.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> That seems easy.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Now tell me how things would change if you used seconds?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> The
+      <a href="{{ '/dictionary/m' | relative_url }}">modulus</a> would change to 60 and it would be the same with minutes.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Let's practice one like this. What is 254 mod 60?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> That would be 14 since 254/60 = 4 remainder 14.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Good. You would deal with different sorts of time the same way. Military time is on a 24 hour
+      cycle and that would mod 24. There are 12 months in a year so that one would also be mod 12.
+      Just remember that modular arithmetic can be done with any finite repeating cycle. Can you
+      think of any others?
+    </p>

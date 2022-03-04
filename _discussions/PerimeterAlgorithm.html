@@ -1,0 +1,105 @@
+---
+audiences:
+  - "Grades 3-5"
+  - "Grades 6-8"
+description: "Introduces a method for finding perimeters of irregular shapes on a grid."
+short-name: "PerimeterAlgorithm"
+subjects:
+  - "Geometry"
+title: "Perimeter Algorithm"
+topics:
+  - "addition"
+  - "algorithm"
+  - "arithmetic"
+  - "geometry"
+  - "length"
+  - "multiplication"
+  - "perimeter"
+  - "rectangles"
+  - "width"
+---
+    <p>
+      <span class="mentor">Student:</span> Is there a way to calculate the perimeter of these random shapes without having to count
+      everything?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Yes there is, let's look at an example. The first step is to "box" the object in. Then count
+      the length and width of "the box."
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/PerimeterAlgorithm-discussion-1.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> For this example the length is 4 and the width is 5.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Now, lets find the perimeter of "the box." Perimeter is the distance around "the box," which
+      is:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/PerimeterAlgorithm-discussion-2.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> For this example the perimeter is two times four plus two times five.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Yes it is. Now remember that me must multiply first and then add according to the order of
+      operations. So the perimeter of "the box" is eight plus ten, which equals eighteen.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Now we know what the perimeter of "the box" is, but what does that have to do with the
+      perimeter of the object?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> They are the same!
+    </p>
+    <p>
+      <span class="mentor">Student:</span> No way they are the same. That doesn't make any sense.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> It makes sense if you look at the picture as the number of perimeter lines per row and
+      column. Then numbers in blue are the perimeter lines of the object in that column or row and
+      the red numbers are the number of perimeter lines of "the box".
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/PerimeterAlgorithm-discussion-3.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      Now you can see that the perimeter of "the box" is actually the perimeter of the object.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Cool, does that trick work for all shapes?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> No this trick does not work for shapes that fold back on themselves. Adding one block to our
+      example makes the trick not work. Can anyone figure out what makes our trick fail?
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/PerimeterAlgorithm-discussion-4.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Before you said that we should look at the picture as the number of perimeter lines per row
+      and column. In this picture, the number of perimeter lines of the shape does not match the
+      number of perimeter lines of "the box."
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Great Job! In the first column there are four shape perimeter lines and the box only has two.
+      So the perimeter of the object is two more than the perimeter of "the box." So the perimeter
+      of the shape is eighteen plus two, which is twenty.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So when the picture folds on itself, we have to scan the columns and the rows to see how many
+      extra perimeter lines there are. Then we just add that to the perimeter of the box.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Good job! Now lets play with the
+      <a href="{{ '/activities/PerimeterExplorer' | relative_url }}">Perimeter Explorer </a> applet and see how well our method works.
+    </p>

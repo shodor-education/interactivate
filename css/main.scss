@@ -9,4 +9,5 @@ $img-dir-url: {{ 'img' | relative_url }};
 @import 'layout/header';
 @import 'pages/activity';
 @import 'pages/catalog';
+@import 'pages/discussion';
 @import 'pages/home';

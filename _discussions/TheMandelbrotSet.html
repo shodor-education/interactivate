@@ -1,0 +1,95 @@
+---
+audiences:
+  - "Grades 6-8"
+  - "Grades 9-12"
+  - "Undergraduate"
+description: "Shows how the set of all Julia Sets are used to create the classic Mandelbrot fractal."
+short-name: "TheMandelbrotSet"
+subjects:
+  - "Discrete"
+  - "Geometry"
+  - "Number and Operations"
+title: "The Mandelbrot Set"
+topics:
+  - "circles"
+  - "complex number"
+  - "dimension"
+  - "fractals"
+  - "geometry"
+  - "iteration"
+  - "julia set"
+  - "mandelbrot set"
+  - "pattern"
+  - "self-similarity"
+  - "sets"
+  - "symmetry"
+---
+    <p>
+      <span class="mentor">Student:</span> So, I've played with
+      <a href="{{ '/activities/JuliaSets' | relative_url }}"> Julia Sets</a> and found some really cool pictures, but none of them were that Mandelbrot set! How do I get
+      that?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> The
+      <a href="{{ '/dictionary/m' | relative_url }}">Mandelbrot set</a> was discovered much later than
+      <a href="{{ '/dictionary/j' | relative_url }}">Julia sets</a>. Julia and Fatou were looking at Julia sets right after World War I, but until computers came
+      along and got easier to program -- in the 1960s and 1970s -- mathematicians didn't know much
+      about what Julia sets looked like and how many different kinds there were. In the 1970s,
+      Benoit Mandelbrot was interested in looking at highly irregular forms in geometry, such as
+      coastlines, mountain range shapes, and coral formations, and looked again at Julia sets with
+      the aid of a computer.
+      <ul>
+        <li>
+          Julia Sets can be
+          <a href="{{ '/dictionary/f' | relative_url }}">fractals</a>, in that they have fractional dimension and
+          <a href="{{ '/dictionary/s' | relative_url }}">self-similarity</a>.
+        </li>
+        <li>
+          Julia Sets are either all one piece -- like the circle for Z^2 + (0,0) -- or completely
+          dust -- like the dots we get for Z^2 + (1/2,0).
+        </li>
+        <li>
+          There is a pattern to which Julia sets are all one piece and which are dust. We only have
+          to look at what happens to the point (0,0) when we iterate: If (0,0) escapes, then the
+          Julia set is dust, if (0,0) doesn't escape, then the Julia set is connected.
+        </li>
+      </ul>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So where does the Mandelbrot set fit in?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Take the set of all functions f(Z) = Z^2 + C and look at all of the possible C points and
+      their Julia sets. If the Julia set is connected color the C point black, if the Julia set is
+      dust, don't color the C point. Here's what you get:
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TheMandelbrotSet-discussion-1.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So if its Julia set is connected, C is in the set?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> That's right. People have made the picture even more beautiful by adding colors to the points
+      outside the set. Most people add colors by making the points different colors depending on how
+      many iterations it takes for the (0,0) point to get out of the circle of radius 2 -- remember
+      that this is how we tell that the Julia set is dust. Try experimenting with the
+      <a href="{{ '/activities/TheMandelbrotSet' | relative_url }}">Mandelbrot Set</a> yourself!
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So how is the Mandelbrot set related to fractals? I know many of the Julia sets are fractals.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> The Mandelbrot set is fractal. Look at its edges! They are very complicated. And they have
+      self-similarity -- try zooming in using the
+      <a href="{{ '/activities/TheMandelbrotSet' | relative_url }}">Mandelbrot Set</a> .
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So the Mandelbrot set is really a picture of how all the Julia sets for f(Z) = Z^2 + C
+      behave?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Yes! There are other Mandelbrot sets too. For example, we might consider looking at f(Z) =
+      Z^3 + C instead. It is neat to see how the 3rd power -- or other powers for that matter --
+      changes the Julia sets and the Mandelbrot set!
+    </p>

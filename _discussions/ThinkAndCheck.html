@@ -1,0 +1,77 @@
+---
+audiences:
+  - "Grades 6-8"
+  - "Grades 9-12"
+description: "Some problems are tricky; probability theory provides unique ways to check solutions."
+short-name: "ThinkAndCheck"
+subjects:
+  - "Probability"
+title: "Think and Check!"
+topics:
+  - "conditional probability"
+  - "experimental probability"
+  - "monty hall"
+  - "probability simulation"
+---
+    <p>
+      <span class="mentor">Student:</span> The problems like Monty Hall and the three box puzzle are designed to get on people's nerves!
+      You would think the answers are obvious, but the experiments give different numbers!
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> In the Three Boxes game, each box contains two chips: the first has two red chips, the second
+      has two green chips, and the third has one red and one green chip. We do not know which box
+      contains which chips. We take one chip out of a box without looking inside, and it turns out
+      green. What are the chances, theoretically speaking, that the second one is also green?
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> There is only one box out of three that has two green chips, so the probability should be
+      <strong>1/3</strong>.
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> We know that the first chip was green. There are only two boxes for which it is possible. One
+      of them has two green chips, so the probability is
+      <strong>1/2</strong>.
+    </p>
+    <p>
+      <span class="mentor">Student 3:</span> Wait, we have played the game on the computer many times. The experimental probability was
+      getting closer and closer to
+      <strong>2/3</strong>.
+    </p>
+    <p>
+      <span class="mentor">Student 4:</span> It makes sense: there are three situations when the first chip is green: it may be either one
+      of the two chips from the box with two green chips, or the green chip from the box with one
+      green and one red chip. In two of these situations, the second chip in the box is also green,
+      so we have two winning outcomes out of three.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> What about the Monty Hall problem? The game simulates a well-known game show situation that
+      used to happen on the Monty Hall game show. A player is given the choice of three doors.
+      Behind one door is the Grand Prize (a car and a cruise); behind the other two doors, booby
+      prizes (pigs). The player picks a door, and the host peeks behind the doors and opens one of
+      the remaining doors. There is a booby prize behind the open door. The host offers the player
+      either to stay with the door that was chosen at the beginning, or to switch to the remaining
+      closed door. Which strategy (to switch or to stay) gives you a better chance of winning in the
+      long run?
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> All the doors are the same, so when only two doors with one prize are left, the chances of
+      winning when you select any one of them are the same:
+      <strong>1/2</strong>.
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> The probability of a prize being behind any one of the three doors is 1/3, so it does not
+      matter whether you switch or stay: the chances of winning will be
+      <strong>1/3</strong>.
+    </p>
+    <p>
+      <span class="mentor">Student 3:</span> But the experiments give us the probability of winning of
+      <strong>1/3</strong> with staying and
+      <strong>2/3</strong> with switching. It makes some sense: when you choose a door at the beginning, the probability
+      of picking the prize is clearly 1/3, and the probability of the prize being behind the other
+      two doors is 2/3. When Monty opens one of the other doors, the probability of 2/3
+      "concentrates" in the second door that remains closed.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> It is always a good idea to check your theory with experiments, when possible. Luckily, it is
+      quite easy to do for most probability problems if we can use computers.
+    </p>

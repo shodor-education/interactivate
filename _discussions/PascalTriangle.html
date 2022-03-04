@@ -1,0 +1,361 @@
+---
+audiences:
+  - "Grades 6-8"
+  - "Grades 9-12"
+description: "Introduces Pascal's Triangle in terms of probability."
+short-name: "PascalTriangle"
+subjects:
+  - "Discrete"
+  - "Probability"
+title: "Pascal's Triangle"
+topics:
+  - "algebra"
+  - "binomial"
+  - "coefficient"
+  - "combinatorics"
+  - "fractals"
+  - "infinity"
+  - "integers"
+  - "multiplication"
+  - "pascal's triangle"
+  - "pascals triangle"
+  - "permutation"
+  - "probability"
+  - "whole numbers"
+---
+    <p>
+      <span class="mentor">Student:</span> So you say we're going to look for familiar
+      <a href="{{ '/dictionary/f' | relative_url }}">fractals</a> in Pascal's Triangle. What is Pascal's Triangle??
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Well, let's look at a simple problem that Pascal was interested in (in the seventeenth
+      century). It involves probability and chance, concepts which Pascal helped to develop. Here's
+      the problem:
+    </p>
+    <p>
+      <em>What are the chances that a family of X children will have Y girls? </em>
+    </p>
+    <p>
+      Let's look at a few possible values of X and Y. Here's a table:
+    </p>
+    <p>
+      <table class="center prettyTable">
+        <tr>
+          <td>
+            Number of Children
+          </td>
+          <td>
+            Number of Girls
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>
+            X = 0
+          </td>
+          <td>
+            Y = 0
+          </td>
+          <td>
+            The chances are 1 out of 1 in this trival case, because if we know that there are no
+            children, we know there are no girls. We don't have to check Y = 1 or anything else
+            since one or more girls in a family of no children is nonsensical.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            X = 1
+          </td>
+          <td>
+            Y = 0
+          </td>
+          <td>
+            Let's see; if we know there is 1 child, then it is either a girl or a boy. So, the
+            chances are 1 out of 2 the child is a girl -- and the same for a boy.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            X = 1
+          </td>
+          <td>
+            Y = 1
+          </td>
+          <td>
+            Same as the last: one child, one girl: 1 out of 2. We don't have to check Y = 2 or
+            higher because that can't happen.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            X = 2
+          </td>
+          <td>
+            Y = 0
+          </td>
+          <td>
+            Now it gets more interesting! With two children we can have no girls (so two boys), an
+            older girl and a younger boy, a younger girl and an older boy, or two girls. All the
+            possibilities can be summarized as: BB, BG, GB, GG. The chances that there are no girls
+            (Y = 0) is 1 out of 4.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            X = 2
+          </td>
+          <td>
+            Y = 1
+          </td>
+          <td>
+            We summarized the situation above. One girl happens 2 out of 4 times.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            X = 2
+          </td>
+          <td>
+            Y = 2
+          </td>
+          <td>
+            Again, look at the cases above. Two girls happens 1 out of 4 times. As before, we're
+            done with families of 2 children because Y = 3 would be impossible.
+          </td>
+        </tr>
+      </table>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> It seems that we need to look at all the possible ways kids can line up in a family to find
+      the answer.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Good! Can you show what happens for 3 children?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Let's see; How can 3 children happen?
+    </p>
+    <p>
+      <div class="h-center">
+        <pre>
+          BBB   GBB   GGB   GGG
+   	     BGB   GBG
+                      BBG   BGG
+        </pre>
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Good! Let's put these numbers in a table, where the directions for reading the table are: row
+      number is number of children and column number is number of girls. We'll leave the impossible
+      entries blank.
+    </p>
+    <p>
+      <table class="h-center">
+        <tr>
+          <th>
+            <pre />
+          </th>
+          <th>
+            0
+          </th>
+          <th>
+            1
+          </th>
+          <th>
+            2
+          </th>
+          <th>
+            3
+          </th>
+          <th>
+            4
+          </th>
+          <th>
+            5
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <strong>0</strong>
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>1</strong>
+          </td>
+          <td>
+            1
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>2</strong>
+          </td>
+          <td>
+            1
+          </td>
+          <td>
+            2
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>3</strong>
+          </td>
+          <td>
+            1
+          </td>
+          <td>
+            3
+          </td>
+          <td>
+            3
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>4</strong>
+          </td>
+          <td>
+            1
+          </td>
+          <td>
+            4
+          </td>
+          <td>
+            6
+          </td>
+          <td>
+            4
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>5</strong>
+          </td>
+          <td>
+            1
+          </td>
+          <td>
+            5
+          </td>
+          <td>
+            10
+          </td>
+          <td>
+            10
+          </td>
+          <td>
+            5
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+      </table>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Each number in this table is the number of ways that many girls can happen? So the second 10
+      in row 5 means that there are 10 different ways to have three girls in 5 children?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Yes. Can you find all of these arrangements?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Let's see;
+      <div class="h-center">
+        <pre>
+        GGGBB   GGBGB   GGBBG   GBGBG
+   	  GBBGG   BGGGB   BFGBG   BGGGB
+        </pre>
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Very Good! Now, can you tell me -- without writing out all of the arrangements -- what row 6
+      would look like? Here's a big hint. Rewrite the table as a triangle, and look at how each
+      number is
+    </p>
+    <p>
+      related to the two above it:
+      <div class="h-center">
+        <pre>
+                                1
+   	                    1       1
+   	                1       2       1
+   	            1       3       3       1
+   	        1       4       6       4       1
+   	    1       5       10      10      5       1
+        </pre>
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Cool! The next row should be 1, 6, 15, 20, 15, 6, 1 -- you just add the two above.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Exactly. This is Pascal's Triangle. We really should call it Zhu Shijie's Triangle, since
+      Zhu, a Chinese mathematician from the fourteenth century, discovered it three hundred years
+      before Pascal.
+    </p>
+    <p>
+      There are many interesting number patterns in this triangle. Try
+      <a href="{{ '/activities/ColoringMultiples' | relative_url }}">Coloring Multiples</a> and
+      <a href="{{ '/activities/ColoringRemainder' | relative_url }}">Coloring Remainders</a> .
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So Pascal's Triangle is used for calculating the chances of having a certain number of girls
+      in a family?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> That is just one of many uses.
+    </p>
+    <p>
+      <ul>
+        <li>
+          In
+          <a href="{{ '/dictionary/c' | relative_url }}">combinatorics</a> and counting, we can use these numbers whenever we need to know the number of ways we can
+          choose Y things from a group of X things. For example, if we need to choose 3 people to
+          work on a problem together and we have 5 people to choose from, there are "5 choose 3" or
+          10 different ways to do this -- Using the fifth row, third entry in the triangle. This is
+          the same idea as for the "number of girls in a family" problem.
+        </li>
+        <li>
+          In algebra, we can use these numbers to figure out what a binomial raised to a power will
+          be. Suppose we are taking (A + B) and raising it to the power 5. How does this work? We
+          need to remember that the power 5 can be thought of as repeated multiplication, so we must
+          find
+        </li>
+      </ul>
+    </p>
+    <p>
+      (A + B)(A + B)(A + B)(A + B)(A + B)
+    </p>
+    <p>
+      This would be a mess to do, since we would have to use the distributive property over and over
+      again. BUT!!! Pascal showed how his triangle gives the numbers needed to write this out after
+      multiplication. The power is 5 so use row 5 to get:
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/PascalTriangle-discussion-1.gif' | relative_url }}" />
+    </p>
+    <p>
+      See how the
+      <a href="{{ '/dictionary/c' | relative_url }}">coefficients</a> (that's the math term for the numbers in front of the letters in the expression) are just the
+      numbers from row 5 of the triangle? So we write the power combinations in order (think of the
+      "number of girls" problem) all A's (no B's), 4 A's (1 B), three A's, etc., up to no A's and
+      then use the table for the coefficients.
+    </p>

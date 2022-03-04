@@ -1,0 +1,291 @@
+---
+audiences:
+  - "Grades 6-8"
+  - "Grades 9-12"
+description: "Computing exact probabilities for the Racing Game leads to the formula for the probability of simultaneous events."
+short-name: "ProbabilityOfSimulta"
+subjects:
+  - "Discrete"
+  - "Probability"
+title: "Probability of Simultaneous Events"
+topics:
+  - "divisors"
+  - "events"
+  - "experimental probability"
+  - "fractions"
+  - "independent"
+  - "multiplication"
+  - "outcomes"
+  - "percentages"
+  - "probability"
+  - "theoretical probability"
+---
+    <p>
+      <span class="mentor">Mentor:</span> Let us look at a game using two players and one six-sided die. The first player moves when
+      the die rolls a 1 or 2, and the second one moves when the die rolls a 3, 4, 5, or 6. The
+      player who reaches the finish first wins. The finish is just two steps from the start.
+      <strong>What is the probability of each player winning?</strong> This problem is somewhat like a Russian doll,a set of dolls of decreasing sizes placed one
+      inside another: it has problems within problems. After you solve it, you will see why. The
+      best way to start is to find the experimental probability, that is, to play the game many
+      times to see how often each player wins. You might want to combine the results of several
+      people to save time on experiments, or use a computer. How often do you expect each player to
+      win, in theory?
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> The first one will win in about 1/3 of all the games, and the second one in about 2/3 of all
+      the games.
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> Wait, what about the two steps? And the results we saw when we tried the game did not show us
+      that.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> As you can see from the experiments, the second player wins more often than two thirds of the
+      games, and the first player wins less often than one third of the games. Why do you think this
+      is? Let us make a little investigation into the circumstances when the first player wins. For
+      example, the first player can win by making two moves in a row. Are there other ways the first
+      player can win? Let us look at the event when the first player makes two moves in a row and
+      wins. What is the probability of that event? To answer that question, let us think of the die.
+      For the event to happen, it has to roll a 1 or 2 the first time, and then a 1 or 2 again the
+      second time. Each time the probability of rolling a 1 or 2 is 1/3. We can count the outcomes
+      using a
+      <strong>table</strong>. The event: "The first player makes two steps in a row" means that the roll is a 1 or 2 the
+      first time (the probability of that is 1/3), and 1 or 2 the second time (the probability of
+      that is also 1/3). What is the probability of the event? As usual, we use the formula:
+    </p>
+    <p>
+      <strong>PROBABILITY OF WINNING </strong>=
+    </p>
+    <p>
+      <img class="h-center" src="{{ 'img/discussions/ProbabilityOfSimulta-discussion-1.gif' | relative_url }}" />
+    </p>
+    <p>
+      To count the outcomes, we can use a table with all possible numbers for the die on the first
+      roll and on the second roll:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/ProbabilityOfSimulta-discussion-2.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      As you can see, the event: "The first player makes two steps in a row" contains 4 outcomes out
+      of 36, so the probability of that event is 4/36 = 1/9. Note that the probability of the first
+      player making each step is 1/3, and 1/9 = 1/3 * 1/3. Is it a coincidence? Why?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Let us look at several more examples to investigate this "coincidence." To separate the
+      examples from our main discussion, we will use an eight-sided die for them.
+    </p>
+    <p>
+      <img class="h-center" src="{{ 'img/discussions/ProbabilityOfSimulta-discussion-3.gif' | relative_url }}" />
+    </p>
+    <p>
+      Suppose we roll an eight-sided die. There are several events we will discuss:
+    </p>
+    <p>
+      <strong>Event A</strong>={6, 7, or 8 shows when we roll the die}
+    </p>
+    <p>
+      <strong>Event B</strong>={2 or 3 shows when we roll the die}
+    </p>
+    <p>
+      <strong>Event C</strong>={5 shows when we roll the die}
+    </p>
+    <p>
+      <strong>Event AA</strong>={we roll the die twice, and get 6, 7, or 8 both times}
+    </p>
+    <p>
+      <strong>Event BB</strong>={we roll the die twice, and get 2 or 3 both times}
+    </p>
+    <p>
+      <strong>Event CC</strong>={we roll the die twice, and get 5 both times}
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> What is the probability of each of these events?
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> Event A happens in three out of eight chances, so P(A)=3/8=.375 or 37.5%.
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> P(B)=2/8=1/4=.25 or 25%
+    </p>
+    <p>
+      <span class="mentor">Student 3:</span> P(C)=1/8=.125 or 12.5%
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> What about the double-letter events? We will use a table:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/ProbabilityOfSimulta-discussion-4.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Let us see. P(A)=3/8, and P(AA)=9/64=3/8*3/8. It happens again! Why?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> There are 3 outcomes in Event A out of the total of 8. When we roll the die twice (or roll
+      two dice, which is the same), what is the total number of outcomes?
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> We talked about that before! There are 8*8=64 outcomes.
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> By the same logic, Event AA contains 3*3=9 outcomes. What we get is 3*3 out of 8*8, which
+      means a probability of
+    </p>
+    <p>
+      3*3/8*8 = 3/8 * 3/8.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Let us use pictures, or geometry, to see the same thing. When we calculate P(A), we look at
+      "length units" and see 3 units out of 8, but when we calculate P(AA), we look at "area units"
+      and see 9=3*3 units out of 64=8*8, because we "squared" everything:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/ProbabilityOfSimulta-discussion-5.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Use the tables to check if the same rule of probabilities multiplication for simultaneous
+      independent events holds for BB and CC. Draw your own table and color it to check the rule for
+      the "mixed" events:
+    </p>
+    <p>
+      <strong>Event AB</strong>={we roll the die twice and get 6, 7, or 8 first time, and 2 or 3 the second time}
+    </p>
+    <p>
+      <strong>Event BC</strong>={we roll the die twice and get 2 or 3 the first time, and 5 the second time}
+    </p>
+    <p>
+      and so on.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> We use the word "independent" for a good reason. Let us imagine for a moment that two rolls
+      of the die are not independent: that the second time we always get the same number as the
+      first time. What is P(AA) (the probability of the Event AA) in this case? Is it different from
+      what we computed before? Does the multiplication rule work here?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> In this case, P(AA) is the same as P(A). The rule does not work.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Can you say the rule in mathematical language?
+    </p>
+    <p>
+      <span class="mentor">Student:</span>
+      <strong>If we have two independent events, the probability of them happening at the same time is equal
+      to the product of the probabilities of each event.</strong> I can write it, too:
+    </p>
+    <p>
+      <strong> P(A intersect B)=P(A)*P(B) </strong>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Would it work for three events? What is the probability of
+    </p>
+    <p>
+      Event AAA={we roll the die three times and get 6, 7 or 8 each time}?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> It should work for any number of events. So
+    </p>
+    <p>
+      P(AAA)=3/8*3/8*3/8
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> Let us return to the game we were talking about. Now I see how complex it is. For example,
+      the first player can win if the players make steps in any of the following ways:
+    </p>
+    <p>
+      <strong> first-first</strong>
+    </p>
+    <p>
+      <strong>first-second-first</strong>
+    </p>
+    <p>
+      <strong>second-first-first.</strong>
+    </p>
+    <p>
+      To find the probability of each of these ways, we can use the multiplication rule. Now I see
+      why the problem is like a Russian doll!
+    </p>
+    <p>
+      <img class="h-center" src="{{ 'img/discussions/ProbabilityOfSimulta-discussion-6.jpg' | relative_url }}" />
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> Let us see.... The first player moves when the die rolls 1 or 2, so
+    </p>
+    <p>
+      P(first player takes a step)=1/3, and
+    </p>
+    <p>
+      P(second player takes a step)=2/3.
+    </p>
+    <p>
+      Now
+    </p>
+    <p>
+      P(first, first)=1/3*1/3=1/9
+    </p>
+    <p>
+      P(first-second-first)=1/3*2/3*1/3=2/27
+    </p>
+    <p>
+      P(second-first-first)=2/3*1/3*1/3=2/27
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> Any of these events can happen, so we should add their chances to find the chance of the
+      first player winning. Whew! What a long problem.
+    </p>
+    <p>
+      P(first player winning)=1/9+2/27+2/27=7/27=.2593 (with four-digits-after-the point precision),
+      or 25.93%.
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> This is less than 1/3, because 1/3=.3333.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> What about the second player? You can find his probability of winning the easy way or the
+      hard way. Can you see both ways?
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> The hard way is to compute the probabilities of all the events when the second player
+      wins.... It is going to take a very long time to figure this out!
+    </p>
+    <p>
+      Student 2. The easy way is to notice that if the second player wins, the first player does not
+      win. That is, their chances of winning should add up to 1 (or 100%), because one of them does
+      win! So we can easily compute:
+    </p>
+    <p>
+      P(second player winning) = 1 - P(first player winning) = 1 - 7/27 = 20/27 = .7407
+    </p>
+    <p>
+      or, speaking in percents, 74.07%.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Are these numbers the same as the experimental probabilities you obtained by playing the game
+      many times?
+    </p>
+    <p>
+      Students: Not exactly the same, but very close.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> What if instead of two steps we had ten steps? What do you think would happen to
+      probabilities?
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> I would not want to find the exact answer to that one!
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> You can use computer experiments to estimate the answer. If you run the program many times,
+      the proportion of each player's winning will get close to the probability of winning.
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> The first player would almost never win.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Play it several times and see for yourself.
+    </p>

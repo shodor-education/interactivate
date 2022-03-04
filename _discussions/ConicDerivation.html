@@ -1,0 +1,354 @@
+---
+audiences:
+  - "Grades 9-12"
+description: "Aids in the understanding of the geometric and algebraic derivations of conic sections."
+short-name: "ConicDerivation"
+subjects:
+  - "Algebra"
+  - "Geometry"
+title: "Conic Derivation"
+topics:
+  - "circles"
+  - "conic section"
+  - "ellipse"
+  - "hyperbola"
+  - "parabola"
+  - "pre-calculus"
+---
+  <p>
+    <span class="mentor">Student:</span> I understand the concepts behind Conic Sections, but how can I graph them algebraically? Are
+    there equations to memorize?
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> You certainly can just memorize the equations, but they're pretty complicated and all four look
+    just similar enough to be confusing. I bet you will have an easier time of it if you derive the
+    equations yourself.
+  </p>
+  <p>
+    <span class="mentor">Student:</span> It would be nice to understand the meanings behind these equations. That way, if I forget the
+    equations on a test, I can derive them again without any trouble.
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Exactly! Let's start with the simplest equation, the circle. What is the geometric definition
+    of a circle (not the definition involving conic sections)?
+  </p>
+  <p>
+    <span class="mentor">Student:</span> A circle is all points that are a certain distance,
+    <em>r</em>, from a single point.
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Right, so you could say that the distance from any point to the center is always the same.
+    Could you use the Pythagorean Theorem to calculate that distance?
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Well, we could draw lines from the center of the circle to the edges, and then turn them into
+    right triangles to calculate their length, like this:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-1.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Very good! Now, if we say that the center of the circle is at some point (h, k), could you come
+    up with an equation for the radius,
+    <em>r</em> ?
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Well, we would first have to find the length of each of the sides. The length of the horizontal
+    side would be the difference in
+    <em>x</em>-values between the center and the point on the circle, so it would be
+    <em>x</em> -
+    <em>h</em>. In the same way, the length of the vertical side would be the difference in
+    <em>y</em>-values, or
+    <em>y</em> -
+    <em>k</em>.
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Good! So what, then, is the length of the radius?
+  </p>
+  <p>
+    <span class="mentor">Student:</span> The length of the radius is
+    <em>r&sup2;</em> =
+    <em>a&sup2;</em> +
+    <em>b&sup2;</em>, so it would be:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-2.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Precisely! Now what happens if we use a different point on the circle?
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Obviously,
+    <em>x</em> and
+    <em>y</em> are different, but the center of the circle (h, k) remains the same, as does the radius
+    <em>r</em>, so wouldn't it just have the same equation as the first point?
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Absolutely! Your equation is actually the general equation for a circle with radius
+    <em>r</em> and center (h, k).
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Wow! Are the equations of the other three conic sections also defined from their geometric
+    definitions?
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Yes; in fact, this is how the equations originally came about. Let's try the equation of an
+    ellipse next. But before we do so, let's rearrange the equation of the circle a little, dividing
+    both sides by
+    <em>r&sup2;</em>:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-3.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Now if we look at this graph of a circle, can you tell me the length of the horizontal axis, in
+    terms of
+    <em>r</em>?
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-4.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Of course, it's just the diameter, which is 2
+    <em>r</em>.
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Good, but now can you check your work algebraically?
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Well, if
+    <em>y</em> =
+    <em>k</em>, then the equation simplifies to:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-5.png' | relative_url }}" class="h-center" />
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-6.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Uh-oh, I think your forgetting something about taking the square root...
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Oh yeah, I need to include:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-7.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Yes, in this case the plus or minus sign is particularly important, because both points are on
+    the circle.
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Right, because then the distance between the two points is
+    <em>r</em> - (-
+    <em>r</em>) = 2
+    <em>r</em>, which is the length of the horizontal axis.
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Good! Now, can you find the length of the vertical axis algebraically?
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Sure, where
+    <em>x</em> =
+    <em>h</em>, the equation would just simplify to:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-8.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Which gives a length of 2
+    <em>r</em>, just like the horizontal axis.
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> You're absolutely right. For a circle, all diameters are equal, so both the
+    <em>x</em> -
+    <em>h</em> and
+    <em>y</em> -
+    <em>k</em> terms are divided by
+    <em>r&sup2;</em>, where 2
+    <em>r</em> is the length of any axis. But what if we are dealing with an ellipse?
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-9.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Hmm, an ellipse is basically a circle where one axis is longer than the other, so instead of
+    dividing both the
+    <em>x</em> and
+    <em>y</em> terms by
+    <em>r&sup2;</em>, perhaps we could divide them by
+    <em>a&sup2;</em> and
+    <em>b&sup2;</em>, so that we have 2
+    <em>a</em> for a horizontal axis and 2
+    <em>b</em> for a vertical axis:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-10.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Exactly! Then if
+    <em>y</em> =
+    <em>k</em>, we would have
+    <em>x</em> -
+    <em>h</em> =
+    <em>&plusmn;a</em>, and if
+    <em>x</em> =
+    <em>h</em>, we would have
+    <em>y</em> -
+    <em>k</em> =
+    <em>&plusmn;b</em>.
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Now, let's look at a hyperbola. Even though its graph looks very different from that of a
+    circle or ellipse, I bet you can figure out what the equation is just from the geometric
+    definition.
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Well, since a hyperbola is defined as all points such that the
+    <em>difference</em> between their distances to two foci is the same, it's basically an ellipse that is turned
+    inside out.
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Correct. In fact, if you graph an ellipse and a hyperbola on the same graph (with the same
+    constants) you get something like this:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-11.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Student:</span> In that case, I guess the equation would just be:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-12.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="h-center">or</span>
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-13.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Precisely! I'm glad you remembered that the subtraction could go both ways. In fact, those
+    equations define a horizontally-opening hyperbola and a vertically-opening hyperbola,
+    respectively.
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Oh, that makes sense. Now what about a parabola? Is it related to the others?
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Geometrically, of course, a parabola is defined as a set of points equidistant from a focus and
+    a directrix. So, using the Pythagorean Theorem again, if the vertex of the parabola is at (h, k)
+    then this equation seems to make sense...
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-14.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Can you check and see if this works?
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Well, the equation can be simplified:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-14.png' | relative_url }}" class="h-center" />
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-16.png' | relative_url }}" class="h-center" />
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-17.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Wait a minute! That can't be right - that is the equation of a vertical line.
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Indeed, that isn't right. What could be wrong with my original equation?
+  </p>
+  <p>
+    <span class="mentor">Student:</span> I think that the (y - k)&sup2; on the left can't be the same as the (y - k)&sup2; on the right:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-18.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Good thinking! The directrix and the focus are not the same
+    <em>vertical</em> distance from each point, so they shouldn't have the same term in the equation. Now that we
+    have the correct equation, what can we do to solve this equation for
+    <em>y</em>?
+  </p>
+  <p>
+    <span class="mentor">Student:</span> It looks like we'll have to F.O.I.L. the two
+    <em>y</em>-terms...
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-19.png' | relative_url }}" class="h-center" />
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-20.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Great! Now it looks like we can solve for the
+    <em>y</em>-term to get the following equation:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-21.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    But this equation is way too complicated! How can this equation be simplified a bit?
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Hmm...I don't see any way to simplify the term with
+    <em>x</em> since we have four different variables, but the other term can be factored to get:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-22.png' | relative_url }}" class="h-center" />
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-23.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Precisely! Now if we let
+    <em>x</em> =
+    <em>h</em>, then what do we get? Remember that the distance from any point on the parabola to the focus
+    and directrix must be the same.
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Since the
+    <em>x</em>-distance is zero, the
+    <em>y</em>-distance to the focus and directrix must be equal. We get that
+    <em>y</em> is the average of
+    <em>p</em> and
+    <em>q</em>, so
+    <em>y</em> is halfway in between the focus and the directrix. Therefore,
+    <em>y</em> must be the vertex of the parabola!
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Yes indeed! The
+    <em>y</em>-coordinate of the vertex is just the average of the
+    <em>y</em>-values of the focus and directrix:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-24.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Cool, so what can we do with the other part of the equation?
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> If we assume that the vertex of the parabola is at (0, 0), can you simplify the equation?
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Well, for the vertex to be halfway in between the focus and the directrix we must have
+    <em>p</em> = -
+    <em>q</em>. Therefore, the equation is:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-25.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Precisely! For any parabola,
+    <em>q</em> is the distance from the focus or the directrix to the vertex. What would happen if the center
+    was at (h, k) instead of (0, 0)?
+  </p>
+  <p>
+    <span class="mentor">Student:</span> Hmm, since we're just moving the graph around, the distance between the focus/directrix and the
+    vertex,
+    <em>q</em>, should stay the same. Therefore, would the equation just be:
+  </p>
+  <p>
+    <img src="{{ 'img/discussions/ConicDerivation-discussion-26.png' | relative_url }}" class="h-center" />
+  </p>
+  <p>
+    <span class="mentor">Mentor:</span> Exactly, you now have the general equation for a parabola!
+  </p>
+

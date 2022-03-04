@@ -1,0 +1,227 @@
+---
+audiences:
+  - "Grades 3-5"
+  - "Grades 6-8"
+  - "Grades 9-12"
+description: "Introduction of elementary set operations through internet searching."
+short-name: "InternetSearchAndSet"
+subjects:
+  - "Discrete"
+  - "Number and Operations"
+title: "Internet Search and Set Operations"
+topics:
+  - "counting"
+  - "graph theory"
+  - "intersection"
+  - "outcomes"
+  - "sets"
+  - "union"
+  - "venn diagram"
+---
+    <p>
+      <span class="mentor">Student:</span>I was doing an Internet search for information about soccer. I put the word
+      <strong>soccer</strong> in a keyword search, and got about 160,000 results. That's too many!
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/InternetSearchAndSet-discussion-1.gif' | relative_url }}" />
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> What do you want to know about soccer?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> I want to find some information about college soccer teams. Oh, let me try
+      <strong>soccer team</strong> as a phrase. I will use quotation marks to find only those Web pages where the two words
+      appear next to each other. There are about 30,000 results for that!
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/InternetSearchAndSet-discussion-2.gif' | relative_url }}" />
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Let us try again. This time, we will try to get the pages that contain both the word
+      <strong>college</strong> and the phrase
+      <strong>soccer team</strong> . Do you know how to do it?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Yes, it's not hard. I just have to put plus signs before each word or phrase. Oh, this is
+      better. About 10,000 results.
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/InternetSearchAndSet-discussion-3.gif' | relative_url }}" />
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> This kind of refined search can help you a lot! How many results do you predict for the
+      search for "college"?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> A lot! A million, maybe? Let me try. Wow! 1,563,571 links. I guess the numbers can be
+      different with different search engines, though.
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/InternetSearchAndSet-discussion-4.gif' | relative_url }}" />
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> There is an interesting mathematical model for the searches you just did. Let us draw a
+      picture with two ovals, one for
+      <strong>college</strong> search results, another for
+      <strong>soccer team</strong> results. If you'll excuse me, I won't draw all million and a half links for
+      <strong>college</strong> and won't even try to keep the proportions between the two
+      <strong>sets</strong> of links:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/InternetSearchAndSet-discussion-5.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Oh, I see. When we do a search using plus signs, we only get documents that contain both
+      <strong>college</strong> and
+      <strong>soccer team.</strong>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> In mathematics, this operation is called the
+      <a href="{{ '/dictionary/i' | relative_url }}">intersection of sets</a>. Do you see why?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> I can see it on the picture! It is harder to express it in words, though.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> That's why mathematicians are so fond of pictures. By the way, there is a special picture, or
+      sign, for this operation. The signs in scientific language are often used to write (and read)
+      faster. Let us use
+      <strong>C</strong> for
+      <strong>college</strong>, and
+      <strong>ST</strong> for
+      <strong>soccer team</strong>. Then the documents you found on your last search would contain
+      <strong>C</strong> and ST, or using the special sign,
+    </p>
+    <p>
+      C
+      <img src="{{ 'img/discussions/InternetSearchAndSet-discussion-6.gif' | relative_url }}" /> ST
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/InternetSearchAndSet-discussion-6.gif' | relative_url }}" />
+    </p>
+    <p>
+      stands for
+      <strong>and</strong>. Easy enough. But let us return to our search. 10,000 links is still too much!
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Let us force the search to be even more specific. Are you interested in college soccer teams
+      from around the world, or not?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> I only want to check on the teams from the USA. So, I am going to refine the search even
+      more. This time, I am looking for the documents that contain
+      <strong>all</strong> of the words:
+      <strong>college</strong>,
+      <strong>soccer team</strong>, and
+      <strong>USA</strong>. I am using plus signs again:
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/InternetSearchAndSet-discussion-8.gif' | relative_url }}" />
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Can you draw a picture for your search, as we did before? Such pictures are called
+      <a href="{{ '/dictionary/v' | relative_url }}">Venn diagrams</a>.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Sure. I will only use the first letters for the links. This time, I will have three...
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span>
+      <a href="{{ '/dictionary/s' | relative_url }}">Sets</a>.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Right, sets. One set for each word or phrase I used. By the way, I got about 1300 documents
+      this time, because the search engine only selected those of the 10,000 documents with
+      <strong>college</strong> and
+      <strong>soccer team</strong> in them that also contained
+      <strong>USA</strong>. There are a lot of documents that have the word
+      <strong>USA</strong>, and a lot that have the word
+      <strong>college</strong>, and a lot that have the phrase
+      <strong>soccer team</strong>, but a much smaller number of documents contain all three!
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/InternetSearchAndSet-discussion-9.gif' | relative_url }}" />
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> So here we have the
+      <strong>intersection of three sets</strong>: the set of documents that have the phrase
+      <strong>soccer team</strong>, the set of documents that contain the word
+      <strong>USA</strong>, and the set of documents that contain the word
+      <strong>college</strong>. We can write it using the symbol for
+      <a href="{{ '/dictionary/i' | relative_url }}">intersection</a>:
+    </p>
+    <p>
+      C
+      <img src="{{ 'img/discussions/InternetSearchAndSet-discussion-6.gif' | relative_url }}" /> ST
+      <img src="{{ 'img/discussions/InternetSearchAndSet-discussion-6.gif' | relative_url }}" /> USA
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> By the way, can you highlight on the diagram what happens if you search for
+      <strong>college</strong>,
+      <strong>soccer team</strong> and
+      <strong>USA</strong> without using plus signs?
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/InternetSearchAndSet-discussion-12.gif' | relative_url }}" />
+    </p>
+    <p>
+      <span class="mentor">Student:</span> I will see the documents that have at least one of these words. There should be a lot of
+      documents that do! Here is the picture for that:
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/InternetSearchAndSet-discussion-13.gif' | relative_url }}" />
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> This operation is called the
+      <a href="{{ '/dictionary/u' | relative_url }}">union of sets</a>. There is a special sign for that, of course:
+    </p>
+    <p>
+      C U ST U USA
+    </p>
+    <p>
+      means that we are talking about all the documents that contain the word
+      <strong>college</strong> or the word
+      <strong>USA</strong> or the phrase
+      <strong>soccer team</strong>.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> The last search option I would like to discuss is using the minus sign. Suppose you want to
+      search for documents that contain
+      <strong>soccer team</strong> but not
+      <strong>college</strong>...
+    </p>
+    <p>
+      <span class="mentor">Student:</span> If I want that, I will use the plus sign in front of soccer team and minus sign in front of
+      college:
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/InternetSearchAndSet-discussion-14.gif' | relative_url }}" />
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Can you draw a Venn diagram for that, highlighting the parts we will find?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Sure:
+    </p>
+    <p>
+      <img src="{{ 'img/discussions/InternetSearchAndSet-discussion-15.gif' | relative_url }}" />
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Now tell me, what is the special sign mathematicians use for this one:
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> It reads: "The difference between sets." Here:
+    </p>
+    <p>
+      <strong>ST \ C</strong>
+    </p>
+    <p>
+      It reads: "The difference between the set of documents that have
+      <strong>soccer team</strong> and the set of documents that have
+      <strong>college</strong>."
+    </p>

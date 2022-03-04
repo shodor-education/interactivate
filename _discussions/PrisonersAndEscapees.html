@@ -1,0 +1,288 @@
+---
+audiences:
+  - "Grades 6-8"
+  - "Grades 9-12"
+  - "Undergraduate"
+description: "Defines the notion of prisoners and escapees as they pertain to iterative functions. A prisoner ultimately changes to a constant while escapees iterate to infinity."
+short-name: "PrisonersAndEscapees"
+subjects:
+  - "Discrete"
+  - "Geometry"
+  - "Number and Operations"
+title: "Prisoners and Escapees--Julia Sets"
+topics:
+  - "chaos"
+  - "complex number"
+  - "escape"
+  - "fractals"
+  - "geometry"
+  - "infinity"
+  - "iteration"
+  - "julia set"
+  - "mandelbrot set"
+  - "pattern"
+  - "planes"
+  - "prisoner"
+  - "radius"
+  - "recursion"
+  - "sets"
+---
+    <p>
+      <span class="mentor">Student:</span> So the
+      <a href="{{ '/dictionary/m' | relative_url }}">Mandelbrot Set</a> is made up of
+      <a href="{{ '/dictionary/j' | relative_url }}">Julia Sets</a>, which are prisoner sets. What is a
+      <a href="{{ '/dictionary/p' | relative_url }}">prisoner</a>?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> That is a simplified description, but you have all the main ideas. Let's talk about
+      <a href="{{ '/dictionary/p' | relative_url }}">prisoners</a> and
+      <a href="{{ '/dictionary/e' | relative_url }}">escapees</a>, and Gaston Julia and Pierre Fatou.
+    </p>
+    <p>
+      After World War I, Julia and Fatou were interested in iterating two variable (or complex)
+      equations using
+      <a href="{{ '/dictionary/r' | relative_url }}">recursion</a>. They chose an equation and iterated it using various starting points. Mathematicians call
+      this sort of problem a
+      <em>dynamical system </em>. They found that if you looked at different starting points, different behaviors would
+      emerge. Let's look at the simplest interesting case:
+    </p>
+    <p>
+      f(Z) = Z^2 + C
+    </p>
+    <p>
+      where C is any point (complex number) inside the circle of radius 2. We are only interested in
+      those points because that is where we will be looking for the Mandelbrot set eventually.
+    </p>
+    <p>
+      Here's an experiment to try: Let C = (0,0) and start with the point (0,1). What happens?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Let's see;
+    </p>
+    <p>
+      <table class="h-center">
+        <tr>
+          <td>
+            Z = (0,1)
+          </td>
+          <td>
+            f(0,1) = (0,1)^2 + (0,0) = (-1,0) + (0,0) = (-1,0)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Z = (-1,0)
+          </td>
+          <td>
+            f(-1,0) = (-1,0)^2 + (0,0) = (1,0) + (0,0) = (1,0)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Z = (1,0)
+          </td>
+          <td>
+            f(1,0) = (1,0)^2 + (0,0) = (1,0) + (0,0) = (1,0)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Z = (1,0)
+          </td>
+          <td>
+            f(1,0) = (1,0)^2 + (0,0) = (1,0) + (0,0) = (1,0)
+          </td>
+        </tr>
+      </table>
+    </p>
+    <p>
+      I don't need to go any further; I get stuck at (1, 0).
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> That's right. Try another starting point: (1,1) with the same C = (0,0).
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Let's see;
+    </p>
+    <p>
+      <table class="h-center">
+        <tr>
+          <td>
+            Z = (1,1)
+          </td>
+          <td>
+            f(1,1) = (1,1)^2 + (0,0) = (0,2) + (0,0) = (0,2)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Z = (0,2)
+          </td>
+          <td>
+            f(0,2) = (0,2)^2 + (0,0) = (-4,0) + (0,0) = (-4,0)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Z = (-4,0)
+          </td>
+          <td>
+            f(-4,0) = (-4,0)^2 + (0,0) = (16,0) + (0,0) = (16,0)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Z = (16,0)
+          </td>
+          <td>
+            f(16,0) = (16,0)^2 + (0,0) = (256,0) + (0,0) = (256,0)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Z = (256,0)
+          </td>
+          <td>
+            f(256,0) = (256,0)^2 + (0,0) = (65536,0) + (0,0) = (65536,0)
+          </td>
+        </tr>
+      </table>
+    </p>
+    <p>
+      I don't need to go any further; the first number will just get bigger with each iteration.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Good. Actually, mathematics tells us that when the point gets outside of the circle of radius
+      2, it must "escape." So, you didn't have to go as far as you did to tell.
+    </p>
+    <p>
+      Now try one more starting point: (1/2,1/2)
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Let's see;
+    </p>
+    <p>
+      <table class="h-center">
+        <tr>
+          <td>
+            Z = (1/2,1/2)
+          </td>
+          <td>
+            f(1/2,1/2) = (1/2,1/2)^2 + (0,0) = (0,1/2) + (0,0) = (0,1/2)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Z = (0,1/2)
+          </td>
+          <td>
+            f(0,1/2) = (0,1/2)^2 + (0,0) = (-1/4,0) + (0,0) = (-1/4,0)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Z = (-1/4,0)
+          </td>
+          <td>
+            f(-1/4,0) = (-1/4,0)^2 + (0,0) = (1/16,0) + (0,0) = (1/16,0)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Z = (1/16,0)
+          </td>
+          <td>
+            f(1/16,0) = (1/16,0)^2 + (0,0) = (1/256,0) + (0,0) = (1/256,0)
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Z = (1/256,0)
+          </td>
+          <td>
+            f(1/256,0) = (1/256,0)^2 + (0,0) = (1/65536,0) + (0,0) = (1/65536,0)
+          </td>
+        </tr>
+      </table>
+    </p>
+    <p>
+      I don't need to go any further; the first number will just get closer to 0 with each
+      iteration.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> That's right! Now you have seen all of the ideas needed to understand prisoners and escapees.
+      The three behaviors above are exactly what Julia and Fatou noticed about all kinds of
+      functions of the form Z^2 + C. The iterations either:
+    </p>
+    <p>
+      <ul>
+        <li>
+          Get closer and closer to 0 -- we say they
+          <em>approach 0 </em>. These are the
+          <strong>prisoners</strong>.
+        </li>
+        <li>
+          Get larger and larger -- we say they
+          <em>
+           approach
+            <a href="{{ '/dictionary/i' | relative_url }}">infinity</a>
+          </em>
+          <strong>escapees</strong>.
+        </li>
+        <li>
+          Get trapped -- these points are the boundary points between the prisoners and escapees.
+          The set of all of these points for a function is called the
+          <em>Julia Set</em>.
+        </li>
+      </ul>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So for the function f(Z) = Z^2 + (0,0) the point (1,1) is an escapee, the point (1/2,1/2) is
+      a prisoner and the point (0,1) is in the middle between?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Yes! It turns out that for the function f(Z) = Z^2 + (0,0), the Julia set is the circle of
+      radius 1 centered at (0,0). Every point inside the circle is a prisoner, every point outside
+      the circle is an escapee, and every point on the circle is neither!
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Surely this isn't some sort of fractal?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> You're right. BUT! change the C to something other than (0,0) and you get really weird Julia
+      sets. Try iterating a few different f(Z) = Z^2 + C functions using the
+      <a href="{{ '/activities/TwoVariableFunction' | relative_url }}">Two Variable Function Pump</a> and then have a look at some Julia sets using the
+      <a href="{{ '/activities/JuliaSets' | relative_url }}">Julia Set Builder</a> . In the Julia set builder, the black set is the prisoner set and the colors around the
+      prisoners are the escapees. The colors are chosen depending on how many iterations it took the
+      starting point to get out of the circle of radius 2 -- which guarantees that it escapes.
+    </p>
+    <p>
+      Some of the more famous Julia sets are:
+    </p>
+    <p>
+      <ul>
+        <li>
+          C = (-1,0)
+        </li>
+        <li>
+          C = (0,-1) -- the Dendrite
+        </li>
+        <li>
+          C = (1/2, 0)
+        </li>
+        <li>
+          C = (-0.1, 0.8) -- the Rabbit
+        </li>
+        <li>
+          C = (.36, .1) -- the Dragon
+        </li>
+      </ul>
+    </p>
+    <p>
+      One last comment: Julia sets are
+      <a href="{{ '/dictionary/c' | relative_url }}">chaotic</a> as well as fractal! The iterates for the points in the Julia set (the border between
+      prisoners and escapees) jump around in very irregular ways, and if we change to another point
+      close by in the Julia set, the behavior can be completely different. Remember that this is
+      exactly what chaos was: Small changes in the starting point can produce large changes in the
+      results. Again we see how something chaotic ends up having a predictable overall pattern!
+    </p>

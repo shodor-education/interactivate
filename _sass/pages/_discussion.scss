@@ -1,0 +1,9 @@
+#discussion-main {
+  @extend .folder;
+
+  padding: 5px 15px;
+
+  .mentor {
+    font-weight: bold;
+  }
+}

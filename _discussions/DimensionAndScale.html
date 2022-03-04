@@ -1,0 +1,138 @@
+---
+audiences:
+  - "Grades 6-8"
+  - "Grades 9-12"
+  - "Undergraduate"
+description: "Discusses fractal dimension, how that dimension relates to scale, and the formula needed to calculate the fractal dimension of an object."
+short-name: "DimensionAndScale"
+subjects:
+  - "Geometry"
+  - "Number and Operations"
+title: "Dimension and Scale"
+topics:
+  - "dimension"
+  - "exponents"
+  - "fractals"
+  - "length"
+  - "lines"
+  - "pattern"
+  - "scale"
+  - "self-similarity"
+  - "squares"
+---
+    <p>
+      <span class="mentor">Student:</span> I know what dimensions are:
+      <ul>
+        <li>
+          Points have dimension 0
+        </li>
+        <li>
+          Lines have dimension 1
+        </li>
+        <li>
+          Plane figures like squares have dimension 2
+        </li>
+        <li>
+          Solid volumes like cubes have dimension 3
+        </li>
+      </ul>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Good! What can we learn from these statements? Let's start with a line, since points are not
+      so interesting as far as
+      <a href="{{ '/dictionary/f' | relative_url }}">fractals</a> go.
+    </p>
+    <p>
+      Lines have length, but no width or height, so we can measure them in 1 dimension only. Because
+      of this we say:
+    </p>
+    <p>
+      The Euclidean dimension of a line is 1.
+    </p>
+    <p>
+      Consider the line segment below:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/DimensionAndScale-discussion-1.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      Now let's build similar line segments at a smaller scale. We'll use a scale factor of 4 (the
+      large segment is 4 times longer than the small ones).
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/DimensionAndScale-discussion-2.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      Notice that we can get 4
+      <a href="{{ '/dictionary/s' | relative_url }}">"self similar"</a> line segments out of the original line segment at this scale factor. So: Dimension = 1, Scale
+      = 4, and Number of self-similar objects = 4.
+    </p>
+    <p>
+      You try this for a square (plane figure).
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Ok: The Euclidean dimension of a square is 2 because we can measure the length and the
+      height, but there's no thickness. Consider the square below:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/DimensionAndScale-discussion-3.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      Now let's build similar squares at a smaller scale. We'll use a scale factor of 3 (the side of
+      the large square is 3 times longer than the small ones).
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/DimensionAndScale-discussion-4.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      Notice that we can get 9 "self-similar" squares out of the original square at this scale
+      factor. So: Dimension = 2, Scale = 3, and Number of self-similar objects = 9.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Let's do a cube (solid) together: The Euclidean dimension of a cube is 3 since we can measure
+      the length, width and height. Consider the cube below:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/DimensionAndScale-discussion-5.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      Now let's build similar cubes at a smaller scale. We'll use a scale factor of 2 (the side of
+      the large cube is 2 times longer than the small ones).
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/DimensionAndScale-discussion-6.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      Notice that we can get 8 "self-similar" cubes out of the original cube at this scale factor.
+      So: Dimension = 3, Scale = 2, and Number of self-similar objects = 8.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> What pattern do you see here?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Dimension, Scale and Number of copies seems to follow:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/DimensionAndScale-discussion-7.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Good!
+      <strong>Fractals are objects that have fractional dimensions!</strong> To see this we need to learn about finding D when we know S and N -- this is not trivial
+      since D is in the exponent. We need to talk about
+      <a href="{{ '/discussions/ExponentsAndLogarith' | relative_url }}">Exponents and Logarithms</a> .
+    </p>
+    <p />

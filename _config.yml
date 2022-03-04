@@ -15,6 +15,14 @@ collections:
   dictionary-sections:
     output: true
     permalink: "/dictionary/:name"
+  discussions:
+    output: true
+    permalink: "/discussion/:name"
+    sort_by: "title"
+  lessons:
+    output: true
+    permalink: "/lessons/:name"
+    sort_by: "title"
   standards-grade-bands:
     output: true
     permalink: "/standards/organization/:name"
@@ -48,6 +56,16 @@ defaults:
       type: "dictionary-sections"
     values:
       item-type: "dictionary-section"
+      layout: "catalog"
+  - scope:
+      type: "discussions"
+    values:
+      item-type: "discussion"
+      layout: "discussion"
+  - scope:
+      type: "lessons"
+    values:
+      item-type: "lesson"
       layout: "catalog"
   - scope:
       type: "standards-grade-bands"

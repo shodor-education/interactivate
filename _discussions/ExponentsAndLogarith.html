@@ -1,0 +1,245 @@
+---
+audiences:
+  - "Grades 9-12"
+  - "Undergraduate"
+description: "Gives an introduction to the concept of a logarithms and shows how logs can be used to calculate fractal dimension."
+short-name: "ExponentsAndLogarith"
+subjects:
+  - "Algebra"
+  - "Geometry"
+  - "Number and Operations"
+title: "Exponents and Logarithms"
+topics:
+  - "dimension"
+  - "estimation"
+  - "exponents"
+  - "fractals"
+  - "logarithm"
+  - "multiplication"
+---
+    <p>
+      <span class="mentor">Student:</span> So to find the dimension of a
+      <a href="{{ '/dictionary/f' | relative_url }}">fractal</a> I need to solve S
+      <sup>D</sup>=N for
+      <em>D</em>. How do I do this?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> We need to use some mathematical manipulation to either guess at the exponent D or move D out
+      of the exponent. Let's try guessing first. What can you tell me about the size of D for the
+      <a href="{{ '/activities/KochSnowflake' | relative_url }}">Koch Snowflake</a> ?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Let's see; the number of pieces we replace the original line segment with is 4, and they are
+      each 1/3 of the original segment long, so S = 3 and N = 4.
+    </p>
+    <p>
+      <div class="centerText">
+        <img src="{{ 'img/discussions/ExponentsAndLogarith-discussion-1.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      What power of 3 gives 4? Well 3
+      <sup> 1 </sup>= 3 and 3
+      <sup> 2 </sup> = 9, so D must be somewhere between 1 and 2.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Where between 1 and 2? Let's use our calculators and make a table.
+    </p>
+    <p>
+      <table class="h-center">
+        <tr>
+          <td>
+            D = 1.5
+          </td>
+          <td>
+            3
+            <sup> D </sup> = 5.196152 -- Too big
+          </td>
+        </tr>
+        <tr>
+          <td>
+            D = 1.3
+          </td>
+          <td>
+            3
+            <sup> D </sup> = 4.171168 -- Too big
+          </td>
+        </tr>
+        <tr>
+          <td>
+            D = 1.2
+          </td>
+          <td>
+            3
+            <sup> D </sup> = 3.737193 -- Too small
+          </td>
+        </tr>
+        <tr>
+          <td>
+            D = 1.25
+          </td>
+          <td>
+            3
+            <sup> D </sup> = 3.948222 -- Too small but closer!
+          </td>
+        </tr>
+      </table>
+    </p>
+    <p>
+      <span class="mentor">Student:</span> That could take a long time! But at least we know D is somewhere near 1.25.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> There is a more direct way: The answer can be found using a property of
+      <a href="{{ '/dictionary/l' | relative_url }}">logarithms</a>:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/ExponentsAndLogarith-discussion-2.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      What is going on here? We are taking the "log" of both sides of an equation. Rule number 1 for
+      logs: Taking the log of both sides is allowed. Next we are swinging the exponent (b) down in
+      front of the log(a) and multiplying instead of exponentiating. This is rule number 2: Logging
+      an exponent is equal to multiplying the log by the exponent instead.
+    </p>
+    <p>
+      Logs are used so often that most calculators have a button built in to calculate logs. So we
+      simply calculate log(4) / log(3) to get 1.261860!
+    </p>
+    <p>
+      See? The Koch Snowflake is not one dimensional or two dimensional but somewhere in the middle!
+    </p>
+    <p>
+      Try some of these yourself: Fractal Dimensions
+    </p>
+    <p>
+      <span class="mentor">Student:</span> So, did someone invent logs just to find
+      <a href="{{ '/activities/FractalDimensions' | relative_url }}">fractal dimension</a> ?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> No! Logarithms are very old, and until calculators came along and made arithmetic easy, they
+      were used to make multiplying and dividing large numbers faster. John Napier invented them for
+      this very purpose in the early seventeenth century, publishing a book entitled
+      <em>A Description of the Wonderful Law of Logarithms</em> in 1614. Here is the our modern day definition for a log (base 10):
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/ExponentsAndLogarith-discussion-3.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      This says that the log base 10 of y is the power of 10 that is equal to y. Here are some logs
+      we can find in our heads:
+    </p>
+    <p>
+      <table class="h-center">
+        <tr>
+          <td>
+            log(10) = 1
+          </td>
+          <td>
+            because 10
+            <sup> 1 </sup>= 10
+          </td>
+        </tr>
+        <tr>
+          <td>
+            log(100) = 2
+          </td>
+          <td>
+            because 10
+            <sup> 2 </sup> = 100
+          </td>
+        </tr>
+        <tr>
+          <td>
+            log(1/10) = -1
+          </td>
+          <td>
+            because 10
+            <sup> -1 </sup> =1/10
+          </td>
+        </tr>
+      </table>
+    </p>
+    <p>
+      Others are harder. What is log(5)? What power of 10 gives 5? It must be some exponent larger
+      than 0 but smaller than 1. How do we find it? Until we learn some calculus (which is a while
+      from now!) we'll rely on our calculator. Log(5) = 0.698970004.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> You said that logs were used to multiply and divide large numbers. How did that work?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Let's suppose we have two numbers to multiply, say: 1,234,567 and 7,654,321. Let's also
+      suppose that we have a book with a table that we can look up logs in, and we find that
+    </p>
+    <p>
+      <div class="centerText">
+        log(1,234,567) = 6.091515 and log(7,654,321)=6.883907.
+      </div>
+    </p>
+    <p>
+      So to multiply these numbers we can either calculate
+    </p>
+    <p>
+      <p>
+        <div class="centerText">
+          1,234,567 x 7,654,321
+        </div>
+      </p>
+      <p>
+        <div class="centerText">
+          OR
+        </div>
+      </p>
+      <p>
+        <div class="centerText">
+          10
+          <sup> 6.091515 </sup> x 10
+          <sup> 6.883907 </sup> .
+        </div>
+      </p>
+    </p>
+    <p>
+      Which is easier?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Well, I think that the second one might be better since when I have to multiply two powers
+      together and the bases are the same, I add the exponents! So, since 6.091515+6.883907 =
+      12.975422, the answer is 10
+      <sup> 12.975422 </sup> . What do I do with that?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> If we had that table of logs, we could look 12.975422 up in the table and give the answer. We
+      have turned multiplying two large numbers into adding two not so large numbers! Of course,
+      this idea might not be as interesting now that we have calculators to do these multiplications
+      for us. In this case we get 10
+      <sup> 12.975422 </sup> = 9,449,786,575,000.
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Wait! When I do 1,234,567 x 7,654,321 on my calculator, I get 9.449772114E12. Is that the
+      same as 9,449,786,575,000?
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> No, it's not. Let's be very precise here. The logs given above were approximates --
+      log(1,234,567) is
+      <em>about</em> 6.091515 -- so if we multiply numbers out this way, we are getting an estimate of the answer.
+      Your number was in scientific notation; that E12 on the end says to move the decimal point 12
+      spaces right: 9,449,772,114,000 is what your calculator gives. That is also only an estimate.
+      Can you explain how I know that it is not exact?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Well, if I multiply out the two numbers by hand, I know that last digit will be a 7, because
+      the last digit of 1,234,567 is 7 and the last digit of 7,654,321 is 1 -- and 1 x 7 = 7.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Good! I should mention one more thing about logs before we finish up: Using 10 for the base
+      is not the only choice. In fact, any positive number can be used as the base. The most popular
+      are 10, 2 and
+      <em>e</em>.
+      <em>e</em> is a special number that appears in science -- when we use the log base e we call it the
+      <em>Natural Log</em> (ln). Later in science and math classes, you'll find out that e and natural logs are used a
+      lot.
+    </p>

@@ -1,0 +1,167 @@
+---
+audiences:
+  - "Grades 6-8"
+  - "Grades 9-12"
+description: "Discussion of tables as a convenient way to store and count outcomes."
+short-name: "TablesAndCombinatori"
+subjects:
+  - "Discrete"
+  - "Probability"
+title: "Tables and Combinatorics"
+topics:
+  - "arithmetic"
+  - "combinatorics"
+  - "events"
+  - "fair"
+  - "multiplication"
+  - "outcomes"
+  - "table"
+---
+    <p>
+      <span class="mentor">Mentor:</span> A player wins if one of his numbers comes up as the sum of two dice. Player 1 wins if the sum
+      is 4, Player 2 wins if the sum is 5, and player 3 wins if the sum is 6. Is the game fair?
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> It is fair, because each player has one winning number.
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> Wait a minute! There are many ways for each sum to show on the dice. For example, the sum of
+      4 can appear in three ways:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TablesAndCombinatori-discussion-1.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Student 3:</span> We have to count all the cases somehow.
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TablesAndCombinatori-discussion-2.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Right, we do not want to miss any outcomes. Let us make a
+      <strong>list</strong> of all of them. The first number we write will stand for the first die and the second number
+      will represent the second die. It is faster to write only numbers without drawing the dice, of
+      course. We will write all the pairs that start with 1 first, then all the pairs that start
+      with 2, and so on.
+    </p>
+    <div class="h-center">
+      <p>
+        1-1 1-2 1-3 1-4 1-5 1-6
+      </p>
+      <p>
+        2-1 2-2 2-3 2-4 2-5 2-6
+      </p>
+      <p>
+        3-1 3-2 3-3 3-4 3-5 3-6
+      </p>
+      <p>
+        4-1 4-2 4-3 4-4 4-5 4-6
+      </p>
+      <p>
+        5-1 5-2 5-3 5-4 5-5 5-6
+      </p>
+      <p>
+        6-1 6-2 6-3 6-4 6-5 6-6
+      </p>
+    </div>
+    <p>
+      <span class="mentor">Mentor:</span> Now we have all the outcomes listed. Does it help us to decide which player has better
+      chances of winning?
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> Not much. We have to go through the whole list looking for pairs that add up to the winning
+      numbers. It was so boring to write all the numbers like that!
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> I just noticed that there are two errors in the list.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Oops. I guess this way is not very reliable and not much fun. We can
+      <strong>exploit the structure</strong> of the problem by transforming the list into more elegant, economical and clear form:
+      <strong>a table</strong>.
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TablesAndCombinatori-discussion-3.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Figuring out how to transform data lists into a table or tree should only be difficult on
+      your first couple of tries. When you know how to do it, then you can proceed directly to the
+      last step. We can put any additional information that we want into the empty table. Right now,
+      we need the sums of the numbers on the dice to determine which player wins. Can you put the
+      sums into the table?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> My pleasure:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TablesAndCombinatori-discussion-4.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Now it is easy to answer questions about the game. Is it fair?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Nope. Player 1 has 3 winning outcomes, Player 2 has 4 winning outcomes, and Player 3 has 5
+      winning outcomes out of 36. Player 3 will win more often if they play for a long time.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> How did you get 36?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Well, we have a table six by six, so there are 6*6=36 different outcomes for the game.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> The science that studies the numbers of different combinations is called
+      <a href="{{ '/dictionary/c' | relative_url }}">combinatorics</a> (big surprise!) There are many beautiful, interesting problems in combinatorics. We will come
+      across some of them in these probability units. How many different outcomes would there be if
+      we had two coins instead?
+    </p>
+    <p>
+      <span class="mentor">Student:</span> Let us see. Now there are two possibilities for the first coin, heads and tails, and two
+      possibilities for the second coin. That makes 2*2=4 outcomes. We can put the outcomes in a
+      table 2 by 2.
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> What if we had a coin and a six-sided die? (12) If we had a ten-sided and an eight-sided
+      dice? (80) If we had two spinners with numbers from 1 to N and from 1 to M? (N*M) You may have
+      already noticed the rule: we multiply! This is a very famous rule:
+    </p>
+    <p>
+      <strong>If you can choose two things, and there are M choices for the first and N choices for the
+      second, you can have M*N different combinations.</strong>
+    </p>
+    <p>
+      <span class="mentor">Mentor:</span> Can you find some examples of this rule in work?
+    </p>
+    <p>
+      <span class="mentor">Student 1:</span> Say, if you want to choose between a sports car, a van, and a truck, and they can be of four
+      colors, then you'll have 12 possible combinations.
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TablesAndCombinatori-discussion-5.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Student 2:</span> A table can be used here, too. Even little children would understand it:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TablesAndCombinatori-discussion-6.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      <span class="mentor">Student 3:</span> We use the same thing to write multiplication table. Here is the table up to 6:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/discussions/TablesAndCombinatori-discussion-7.gif' | relative_url }}" />
+      </div>
+    </p>
