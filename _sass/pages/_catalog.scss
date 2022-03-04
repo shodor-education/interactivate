@@ -8,6 +8,14 @@
   padding-left: 5px;
 }
 
+%dictionary-text {
+  font-size: 11pt;
+  line-height: 130%;
+  margin: 0;
+  margin-bottom: 15px;
+  min-height: 20px;
+}
+
 #catalog-main {
   @extend .folder;
 
@@ -99,11 +107,25 @@
         flex-shrink: 0;
         line-height: 120%;
         width: 240px;
+
+        &.dictionary-term {
+          @extend %dictionary-text;
+        }
       }
 
       .right-column {
         flex-grow: 1;
         line-height: 130%;
+
+        &.dictionary-definition {
+          @extend %dictionary-text;
+        }
+
+        .topics {
+          color: gray;
+          font-size: 10pt;
+          margin-top: 15px;
+        }
       }
 
       .single-column {

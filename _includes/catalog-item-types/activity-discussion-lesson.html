@@ -1,0 +1,23 @@
+{% assign item = include.catalog-item %}
+{% assign href = item.url | relative_url %}
+<div class="left-column">
+  {% if include.img-url %}
+  <div>
+    <a href="{{ href }}"><img src="{{ img-url | relative_url }}"
+      alt="Screenshot of {{ item.title }}" width="152"/></a>
+  </div>
+  {% endif %}
+  <div>
+    <a href="{{ href }}">{{ item.title }}</a>
+  </div>
+</div>
+<div class="right-column">
+  <p>
+    {{ item.description }}
+  </p>
+  <p class="topics">
+    <em><strong>Related Topics:</strong>
+    {{ item.topics | join: ", " }}
+    </em>
+  </p>
+</div>

@@ -1,11 +1,2 @@
 {% assign catalog-item-type = "activity" %}
-{% assign catalog-items-list = site.activities %}
-{% if page.collection == "audience-catalogs" %}
-  {% assign categories-label = "audience" %}
-  {% assign categories-list = site.data.audiences %}
-  {% assign filter-expression = "item.audiences contains category" %}
-{% else %}
-  {% assign categories-label = "subject" %}
-  {% assign categories-list = site.data.subjects %}
-  {% assign filter-expression = "item.subjects contains category" %}
-{% endif %}
+{% include variables/subject-audience-catalog.html catalog-name="activities" %}
