@@ -1,100 +1,100 @@
-<p>
-  This activity allows the user to investigate the Julia sets associated with functions 
-  <strong>f(Z) = Z^2 + C</strong> for any complex number C=(a,b) in the circle of radius 2. 
-</p>
-<p>
-  To understand Julia sets and ultimately the Mandelbrot set -- the world's most famous fractal
-  -- we need to be able to find the boundary between the prisoner and escapee sets for a
-  particular C. 
-</p>
-<p>
-  An example of a function is: f(Z) = Z^2 + (.5,.5). If we start with the point (0,0) and plug
-  it into the function: 
-</p>
-<p>
-  f(0,0) = (0,0)^2 + (.5,.5) = (0,0) + (.5,.5) = (.5,.5) 
-  <br />
-  f(.5,.5) = (.5,.5)^2 + (.5,.5) = (0,.5) + (.5,.5) = (.5,1) 
-  <br />
-  f(.5,1) = (.5,1)^2 + (.5,.5) = (-.75,1) + (.5,.5) = (-.25,1.5) 
-  <br />
-  f(-.25,1.5) = (-.25,1.5)^2 + (.5,.5) = (-2.1875,-.75) + (.5,.5) = (-1.6875,-.25) 
-  <br />
-  f(-1.6875,-.25) = (-1.6875,-.25)^2 + (.5,.5) = (2.7852,.84375) + (.5,.5) = (3.2852,1.34375) 
-</p>
-<p>
-  Here is a picture: 
-</p>
-<p>
-  <div class="h-center">
-    <img src="{{ 'img/activities/learner/JuliaSets-learner-1.gif' | relative_url }}" />
-  </div>
-</p>
-<p>
-  This is in the escapee set for C=(.5,.5). If we continue this process for lots of points we
-  can get a feel for the picture of the Julia set. For C=(.5,.5) we get: 
-</p>
-<p>
-  <div class="h-center">
-    <img src="{{ 'img/activities/learner/JuliaSets-learner-2.gif' | relative_url }}" />
-  </div>
-</p>
-<p>
-  Notice that there are no black areas on this image. (Black would denote the prisoners.) There 
-  <em>are</em> prisoners, but they are completely scattered around and isolated from each other. This forces
-  the Julia set -- the points that neither are prisoners or escapees -- to be completely
-  disconnected from each other. The other colors on the picture are the escapees, and the
-  different colors denote how quickly the point's orbit jumped out of the circle of radius 2. 
-</p>
-<p>
-  Here's another one with an obvious prisoner set; C = (0,0). 
-</p>
-<p>
-  <div class="h-center">
-    <img src="{{ 'img/activities/learner/JuliaSets-learner-3.gif' | relative_url }}" />
-  </div>
-</p>
-<p>
-  This has a nice big connected set of prisoners -- giving a connected Julia set, the circle of
-  radius 1. Mandelbrot found that these are the only two things that happen, either the Julia
-  set is fractal dust (totally disconnected) or it is one piece. 
-</p>
-<p>
-  Here are a few of the more popular Julia sets: 
-</p>
-<p>
-  C = (-1,0): 
-</p>
-<p>
-  <div class="h-center">
-    <img src="{{ 'img/activities/learner/JuliaSets-learner-4.gif' | relative_url }}" />
-  </div>
-</p>
-<p>
-  C = (-.1,.8): 
-</p>
-<p>
-  <div class="h-center">
-    <img src="{{ 'img/activities/learner/JuliaSets-learner-5.gif' | relative_url }}" />
-  </div>
-</p>
-<p>
-  C = (.5,0): 
-</p>
-<p>
-  <div class="h-center">
-    <img src="{{ 'img/activities/learner/JuliaSets-learner-6.gif' | relative_url }}" />
-  </div>
-</p>
-<p>
-  C = (-.8,.4): 
-</p>
-<p>
-  <div class="h-center">
-    <img src="{{ 'img/activities/learner/JuliaSets-learner-7.gif' | relative_url }}" />
-  </div>
-</p>
-<p>
-  The first two are connected and the last two are fractal dust. This is the basis for the
-  Mandelbrot set. 
-</p>
+    <p>
+      This activity allows the user to investigate the Julia sets associated with functions
+      <strong>f(Z) = Z^2 + C</strong> for any complex number C=(a,b) in the circle of radius 2.
+    </p>
+    <p>
+      To understand Julia sets and ultimately the Mandelbrot set -- the world's most famous fractal
+      -- we need to be able to find the boundary between the prisoner and escapee sets for a
+      particular C.
+    </p>
+    <p>
+      An example of a function is: f(Z) = Z^2 + (.5,.5). If we start with the point (0,0) and plug
+      it into the function:
+    </p>
+    <p>
+      f(0,0) = (0,0)^2 + (.5,.5) = (0,0) + (.5,.5) = (.5,.5)
+      <br />
+      f(.5,.5) = (.5,.5)^2 + (.5,.5) = (0,.5) + (.5,.5) = (.5,1)
+      <br />
+      f(.5,1) = (.5,1)^2 + (.5,.5) = (-.75,1) + (.5,.5) = (-.25,1.5)
+      <br />
+      f(-.25,1.5) = (-.25,1.5)^2 + (.5,.5) = (-2.1875,-.75) + (.5,.5) = (-1.6875,-.25)
+      <br />
+      f(-1.6875,-.25) = (-1.6875,-.25)^2 + (.5,.5) = (2.7852,.84375) + (.5,.5) = (3.2852,1.34375)
+    </p>
+    <p>
+      Here is a picture:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/activities/learner/JuliaSets-learner-1.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      This is in the escapee set for C=(.5,.5). If we continue this process for lots of points we
+      can get a feel for the picture of the Julia set. For C=(.5,.5) we get:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/activities/learner/JuliaSets-learner-2.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      Notice that there are no black areas on this image. (Black would denote the prisoners.) There
+      <em>are</em> prisoners, but they are completely scattered around and isolated from each other. This forces
+      the Julia set -- the points that neither are prisoners or escapees -- to be completely
+      disconnected from each other. The other colors on the picture are the escapees, and the
+      different colors denote how quickly the point's orbit jumped out of the circle of radius 2.
+    </p>
+    <p>
+      Here's another one with an obvious prisoner set; C = (0,0).
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/activities/learner/JuliaSets-learner-3.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      This has a nice big connected set of prisoners -- giving a connected Julia set, the circle of
+      radius 1. Mandelbrot found that these are the only two things that happen, either the Julia
+      set is fractal dust (totally disconnected) or it is one piece.
+    </p>
+    <p>
+      Here are a few of the more popular Julia sets:
+    </p>
+    <p>
+      C = (-1,0):
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/activities/learner/JuliaSets-learner-4.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      C = (-.1,.8):
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/activities/learner/JuliaSets-learner-5.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      C = (.5,0):
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/activities/learner/JuliaSets-learner-6.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      C = (-.8,.4):
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/activities/learner/JuliaSets-learner-7.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      The first two are connected and the last two are fractal dust. This is the basis for the
+      Mandelbrot set.
+    </p>

@@ -1,201 +1,201 @@
-<p>
-  This activity allows the user to see how modular arithmetic has been used for years as a means
-  of encoding messages. The letters of the alphabet are coded as: 
-  <div class="h-center">
-    <em>
-      <strong>Original Letter to Number Equivalencies:</strong>
-    </em>
-    <table class="h-center">
-      <tr>
-        <td>
-          A 
-        </td>
-        <td>
-          B 
-        </td>
-        <td>
-          C 
-        </td>
-        <td>
-          D 
-        </td>
-        <td>
-          E 
-        </td>
-        <td>
-          F 
-        </td>
-        <td>
-          G 
-        </td>
-        <td>
-          H 
-        </td>
-        <td>
-          I 
-        </td>
-        <td>
-          J 
-        </td>
-        <td>
-          K 
-        </td>
-        <td>
-          L 
-        </td>
-        <td>
-          M 
-        </td>
-      </tr>
-      <tr>
-        <td>
-          0 
-        </td>
-        <td>
-          1 
-        </td>
-        <td>
-          2 
-        </td>
-        <td>
-          3 
-        </td>
-        <td>
-          4 
-        </td>
-        <td>
-          5 
-        </td>
-        <td>
-          6 
-        </td>
-        <td>
-          7 
-        </td>
-        <td>
-          8 
-        </td>
-        <td>
-          9 
-        </td>
-        <td>
-          10 
-        </td>
-        <td>
-          11 
-        </td>
-        <td>
-          12 
-        </td>
-      </tr>
-    </table>
-    <table class="h-center">
-      <tr>
-        <td>
-          N 
-        </td>
-        <td>
-          O 
-        </td>
-        <td>
-          P 
-        </td>
-        <td>
-          Q 
-        </td>
-        <td>
-          R 
-        </td>
-        <td>
-          S 
-        </td>
-        <td>
-          T 
-        </td>
-        <td>
-          U 
-        </td>
-        <td>
-          V 
-        </td>
-        <td>
-          W 
-        </td>
-        <td>
-          X 
-        </td>
-        <td>
-          Y 
-        </td>
-        <td>
-          Z 
-        </td>
-      </tr>
-      <tr>
-        <td>
-          13 
-        </td>
-        <td>
-          14 
-        </td>
-        <td>
-          15 
-        </td>
-        <td>
-          16 
-        </td>
-        <td>
-          17 
-        </td>
-        <td>
-          18 
-        </td>
-        <td>
-          19 
-        </td>
-        <td>
-          20 
-        </td>
-        <td>
-          21 
-        </td>
-        <td>
-          22 
-        </td>
-        <td>
-          23 
-        </td>
-        <td>
-          24 
-        </td>
-        <td>
-          25 
-        </td>
-      </tr>
-    </table>
-  </div>
-</p>
-<p>
-  and then the numbers are changed via an affine (linear) transformation to new, coded numbers.
-  The coding function has the form: 
-</p>
-<p>
-  <div class="h-center">
-    Y = A * X + B 
-  </div>
-</p>
-<p>
-  where X is the uncoded number, A is the multiplier, B is the constant (both A and B known to
-  allies, but unknown to enemies) and Y is the calculated, coded number. The arithmetic is done
-  mod 26 to ensure that we get numbers back that can be translated back to letters before
-  sending the coded message. 
-</p>
-<p>
-  This method of coding messages is ancient. In fact, Caesar is said to have liked to use the
-  cipher with A = 1 and B = 3. This method of coding is fun to play with, but easy to crack, as
-  can be seen from this activity. 
-</p>
-<p>
-  Modern coding techniques still make use of modular arithmetic, but in a highly sophisticated
-  way. 
-</p>
+    <p>
+      This activity allows the user to see how modular arithmetic has been used for years as a means
+      of encoding messages. The letters of the alphabet are coded as:
+      <div class="h-center">
+        <em>
+          <strong>Original Letter to Number Equivalencies:</strong>
+        </em>
+        <table class="h-center">
+          <tr>
+            <td>
+              A
+            </td>
+            <td>
+              B
+            </td>
+            <td>
+              C
+            </td>
+            <td>
+              D
+            </td>
+            <td>
+              E
+            </td>
+            <td>
+              F
+            </td>
+            <td>
+              G
+            </td>
+            <td>
+              H
+            </td>
+            <td>
+              I
+            </td>
+            <td>
+              J
+            </td>
+            <td>
+              K
+            </td>
+            <td>
+              L
+            </td>
+            <td>
+              M
+            </td>
+          </tr>
+          <tr>
+            <td>
+              0
+            </td>
+            <td>
+              1
+            </td>
+            <td>
+              2
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              4
+            </td>
+            <td>
+              5
+            </td>
+            <td>
+              6
+            </td>
+            <td>
+              7
+            </td>
+            <td>
+              8
+            </td>
+            <td>
+              9
+            </td>
+            <td>
+              10
+            </td>
+            <td>
+              11
+            </td>
+            <td>
+              12
+            </td>
+          </tr>
+        </table>
+        <table class="h-center">
+          <tr>
+            <td>
+              N
+            </td>
+            <td>
+              O
+            </td>
+            <td>
+              P
+            </td>
+            <td>
+              Q
+            </td>
+            <td>
+              R
+            </td>
+            <td>
+              S
+            </td>
+            <td>
+              T
+            </td>
+            <td>
+              U
+            </td>
+            <td>
+              V
+            </td>
+            <td>
+              W
+            </td>
+            <td>
+              X
+            </td>
+            <td>
+              Y
+            </td>
+            <td>
+              Z
+            </td>
+          </tr>
+          <tr>
+            <td>
+              13
+            </td>
+            <td>
+              14
+            </td>
+            <td>
+              15
+            </td>
+            <td>
+              16
+            </td>
+            <td>
+              17
+            </td>
+            <td>
+              18
+            </td>
+            <td>
+              19
+            </td>
+            <td>
+              20
+            </td>
+            <td>
+              21
+            </td>
+            <td>
+              22
+            </td>
+            <td>
+              23
+            </td>
+            <td>
+              24
+            </td>
+            <td>
+              25
+            </td>
+          </tr>
+        </table>
+      </div>
+    </p>
+    <p>
+      and then the numbers are changed via an affine (linear) transformation to new, coded numbers.
+      The coding function has the form:
+    </p>
+    <p>
+      <div class="h-center">
+        Y = A * X + B
+      </div>
+    </p>
+    <p>
+      where X is the uncoded number, A is the multiplier, B is the constant (both A and B known to
+      allies, but unknown to enemies) and Y is the calculated, coded number. The arithmetic is done
+      mod 26 to ensure that we get numbers back that can be translated back to letters before
+      sending the coded message.
+    </p>
+    <p>
+      This method of coding messages is ancient. In fact, Caesar is said to have liked to use the
+      cipher with A = 1 and B = 3. This method of coding is fun to play with, but easy to crack, as
+      can be seen from this activity.
+    </p>
+    <p>
+      Modern coding techniques still make use of modular arithmetic, but in a highly sophisticated
+      way.
+    </p>

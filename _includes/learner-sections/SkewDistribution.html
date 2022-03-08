@@ -1,63 +1,63 @@
-<p>
-  This activity allows the user to experiment with moving the median away from the mean in a
-  continuous distribution. 
-</p>
-<p>
-  Continuous distributions such as the normal distribution and the lognormal distribution, as
-  well as others like the exponential distribution which are not shown here, occur as the number
-  of trials in an experiment increases toward infinity. That is if you keep measuring, the
-  height of plants over and over again, for a whole field of plants, for years, the resulting 
-  <a href="{{ '/activities/Histogram' | relative_url }}">histogram</a> will start to look more and more like a smooth curve. 
-</p>
-<p>
-  In most cases measurement of natural occurrences gives a normal distribution but not always.
-  The mean, median, and mode can occasionally be different, especially when working with small
-  data sets. Usually when working with large data sets obtained from natural occurances the
-  distribution is normal but there are situations when the data set is large and the mean,
-  median, and mode are different. 
-</p>
-<p>
-  When the median, mean, and mode aren't the same, you have something called a "skew
-  distribution". This applet lets you explore what some different skew distributions can look
-  like. 
-</p>
-<p>
-  If you measure the time it takes your class to run a lap around a track, or weigh a lot of
-  different objects, or measure the heights of many different plants, or something else where
-  all the data are positive numbers, but not constrained much more than that, you'll see a skew
-  distribution. In the case of running the lap, maybe it takes the middle person three minutes.
-  Some people will be faster, but a lot more people will make it around the track in five
-  minutes or more, than those who will finsih in one minute or less. Somebody might take seven
-  minutes, but nobody could finish in -1 minute. So distribution curve will be asymmetrical.
-  Instead of someone being as likely to finish in two minutes less as two minutes more than the
-  average, it might be as likely to get done in half the average time as twice the average time.
-  Similarly, if you plotted the grades in your class, nobody can make better than a perfect
-  score, but there are a lot of people who got scores near to perfect and then fewer and fewer
-  people who got lower and lower grades. 
-</p>
-<p>
-  <strong>Notes to the Teacher on the Lognormal Distribution</strong>
-</p>
-<p>
-  The normal curve has a single shape, essentially, though it can be taller and thinner or
-  shorter and fatter, or it can move left or right along the x-axis. Unlike the normal
-  distribution, the lognormal is considered to be a family of distributions rather than a single
-  one with variable parameters. The lognormal can have much more variation in shape -- it can
-  skew as well. There are many skewed distributions from many families that have the same median
-  and standard deviation. I chose the lognormal because it matches up visually with the normal,
-  is computationally simpler than many other distributions, and is often used in data analysis
-  similar to those where a normal curve might be used. The curve the applet draws is only one of
-  many possibilities. 
-</p>
-<p>
-  The lognormal has only positive values, and the bulge is always on the low side... Each value
-  of median-mean difference (actually the value 'median' accepts) has an associated mean,
-  median, and skewness when associated with a given standard deviation -- it really doesn't have
-  any more 'freedom' than the normal curve, because the change of shape is directly linked to
-  change in location. I mirrored it to give the appearance of negative skewness if the median
-  was moved above the mean, and shifted it to make it sit in the right place (with the mean at
-  zero). What I did was NOT to make an accurate representation of the log normal curve, but to
-  show a kind of distribution which might appear in a real situation where a compounding factor
-  was affecting a normally-distributed variable. It looks trivial and purely mathematical, but I
-  attempted to adhere to science, in which these things are possible, rather than pure math. 
-</p>
+    <p>
+      This activity allows the user to experiment with moving the median away from the mean in a
+      continuous distribution.
+    </p>
+    <p>
+      Continuous distributions such as the normal distribution and the lognormal distribution, as
+      well as others like the exponential distribution which are not shown here, occur as the number
+      of trials in an experiment increases toward infinity. That is if you keep measuring, the
+      height of plants over and over again, for a whole field of plants, for years, the resulting
+      <a href="{{ '/activities/Histogram' | relative_url }}">histogram</a> will start to look more and more like a smooth curve.
+    </p>
+    <p>
+      In most cases measurement of natural occurrences gives a normal distribution but not always.
+      The mean, median, and mode can occasionally be different, especially when working with small
+      data sets. Usually when working with large data sets obtained from natural occurances the
+      distribution is normal but there are situations when the data set is large and the mean,
+      median, and mode are different.
+    </p>
+    <p>
+      When the median, mean, and mode aren't the same, you have something called a "skew
+      distribution". This applet lets you explore what some different skew distributions can look
+      like.
+    </p>
+    <p>
+      If you measure the time it takes your class to run a lap around a track, or weigh a lot of
+      different objects, or measure the heights of many different plants, or something else where
+      all the data are positive numbers, but not constrained much more than that, you'll see a skew
+      distribution. In the case of running the lap, maybe it takes the middle person three minutes.
+      Some people will be faster, but a lot more people will make it around the track in five
+      minutes or more, than those who will finsih in one minute or less. Somebody might take seven
+      minutes, but nobody could finish in -1 minute. So distribution curve will be asymmetrical.
+      Instead of someone being as likely to finish in two minutes less as two minutes more than the
+      average, it might be as likely to get done in half the average time as twice the average time.
+      Similarly, if you plotted the grades in your class, nobody can make better than a perfect
+      score, but there are a lot of people who got scores near to perfect and then fewer and fewer
+      people who got lower and lower grades.
+    </p>
+    <p>
+      <strong>Notes to the Teacher on the Lognormal Distribution</strong>
+    </p>
+    <p>
+      The normal curve has a single shape, essentially, though it can be taller and thinner or
+      shorter and fatter, or it can move left or right along the x-axis. Unlike the normal
+      distribution, the lognormal is considered to be a family of distributions rather than a single
+      one with variable parameters. The lognormal can have much more variation in shape -- it can
+      skew as well. There are many skewed distributions from many families that have the same median
+      and standard deviation. I chose the lognormal because it matches up visually with the normal,
+      is computationally simpler than many other distributions, and is often used in data analysis
+      similar to those where a normal curve might be used. The curve the applet draws is only one of
+      many possibilities.
+    </p>
+    <p>
+      The lognormal has only positive values, and the bulge is always on the low side... Each value
+      of median-mean difference (actually the value 'median' accepts) has an associated mean,
+      median, and skewness when associated with a given standard deviation -- it really doesn't have
+      any more 'freedom' than the normal curve, because the change of shape is directly linked to
+      change in location. I mirrored it to give the appearance of negative skewness if the median
+      was moved above the mean, and shifted it to make it sit in the right place (with the mean at
+      zero). What I did was NOT to make an accurate representation of the log normal curve, but to
+      show a kind of distribution which might appear in a real situation where a compounding factor
+      was affecting a normally-distributed variable. It looks trivial and purely mathematical, but I
+      attempted to adhere to science, in which these things are possible, rather than pure math.
+    </p>

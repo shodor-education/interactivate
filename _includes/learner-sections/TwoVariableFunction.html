@@ -1,118 +1,118 @@
-<p>
-  This activity allows the user to step through plotting a two-variable function, and to judge
-  whether a given starting point is a prisoner or an escapee, in order to understand complex
-  numbers and Julia sets. 
-</p>
-<p>
-  To understand 
-  <a href="{{ '/dictionary/j' | relative_url }}">Julia sets</a> and ultimately the Mandelbrot set -- the world's most famous fractal -- we need to be able to
-  calculate with and plot quadratic functions of complex numbers. The easiest way to think of
-  complex numbers is as an ordered pair of numbers. Functions of these numbers can be described
-  as "input-output machines" as usual, only this time an ordered pair goes in and an ordered
-  pair comes out. 
-</p>
-<p>
-  <div class="h-center">
-    <img src="{{ 'img/activities/learner/TwoVariableFunction-learner-1.gif' | relative_url }}" />
-  </div>
-</p>
-<p>
-  Basic Operations are revised for this new situation as: 
-</p>
-<p>
-  <div class="h-center">
-    <table class="h-center">
-      <tr>
-        <td>
-          Addition of two pairs (+) 
-        </td>
-        <td>
-          Component-wise, i.e., (a,b) + (c,d) = (a+c,b+d) 
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Subtraction of two pairs (-) 
-        </td>
-        <td>
-          Component-wise, i.e., (a,b) - (c,d) = (a-c,b-d) 
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Multiplication by a number (*) 
-        </td>
-        <td>
-          Component-wise, i.e., x * (a,b) = (x*a,x*b) 
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Division by a number (/) 
-        </td>
-        <td>
-          Component-wise, i.e., (a,b) / x = (a/x,b/x) 
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Squaring a number (^2) 
-        </td>
-        <td>
-          (a,b) ^2 = (a^2 - b^2, 2ab) 
-        </td>
-      </tr>
-    </table>
-  </div>
-</p>
-<p>
-  An example of a function is: 
-  <pre>
-    f(Z) = Z^2 + (0.5,0.5)
-  </pre>. We are interested in choosing a starting point, plugging it into the function to get a new
-  point, and then plugging that point back into the function to get another new point, and so
-  on. For example, we can start with the point (0,0) and plug it into the function: 
-</p>
-<p>
-  <pre>
-    f(0,0)  = (0,0)^2 + (0.5,0.5) = (0,0) + (0.5,0.5)= (0.5,0.5)<br />
+    <p>
+      This activity allows the user to step through plotting a two-variable function, and to judge
+      whether a given starting point is a prisoner or an escapee, in order to understand complex
+      numbers and Julia sets.
+    </p>
+    <p>
+      To understand
+      <a href="{{ '/dictionary/j' | relative_url }}">Julia sets</a> and ultimately the Mandelbrot set -- the world's most famous fractal -- we need to be able to
+      calculate with and plot quadratic functions of complex numbers. The easiest way to think of
+      complex numbers is as an ordered pair of numbers. Functions of these numbers can be described
+      as "input-output machines" as usual, only this time an ordered pair goes in and an ordered
+      pair comes out.
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/activities/learner/TwoVariableFunction-learner-1.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      Basic Operations are revised for this new situation as:
+    </p>
+    <p>
+      <div class="h-center">
+        <table class="h-center">
+          <tr>
+            <td>
+              Addition of two pairs (+)
+            </td>
+            <td>
+              Component-wise, i.e., (a,b) + (c,d) = (a+c,b+d)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Subtraction of two pairs (-)
+            </td>
+            <td>
+              Component-wise, i.e., (a,b) - (c,d) = (a-c,b-d)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Multiplication by a number (*)
+            </td>
+            <td>
+              Component-wise, i.e., x * (a,b) = (x*a,x*b)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Division by a number (/)
+            </td>
+            <td>
+              Component-wise, i.e., (a,b) / x = (a/x,b/x)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Squaring a number (^2)
+            </td>
+            <td>
+              (a,b) ^2 = (a^2 - b^2, 2ab)
+            </td>
+          </tr>
+        </table>
+      </div>
+    </p>
+    <p>
+      An example of a function is:
+      <pre>
+        f(Z) = Z^2 + (0.5,0.5)
+      </pre>. We are interested in choosing a starting point, plugging it into the function to get a new
+      point, and then plugging that point back into the function to get another new point, and so
+      on. For example, we can start with the point (0,0) and plug it into the function:
+    </p>
+    <p>
+      <pre>
+        f(0,0)  = (0,0)^2 + (0.5,0.5) = (0,0) + (0.5,0.5)= (0.5,0.5)<br />
  	f(0.5,0.5) = (0.5,0.5)^2 + (0.5,0.5) = (0,0.5) + (0.5,0.5) = (0.5,1)<br />
  	f(0.5,1) = (0.5,1)^2 + (0.5,0.5) = (-0.75,1) + (0.5,0.5) = (-0.25,1.5)<br />
  	f(-0.25,1.5) = (-0.25,1.5)^2 + (0.5,0.5) = (-2.1875,-0.75) + (0.5,0.5) = (-1.6875,-0.25)<br />
  	f(-1.6875,-0.25) = (-1.6875,-0.25)^2 + (0.5,0.5) = (2.7852,0.84375) + (0.5,0.5) = (3.2852,1.34375)
-  </pre>
-</p>
-<p>
-  Here is a picture: 
-</p>
-<p>
-  <div class="h-center">
-    <img src="{{ 'img/activities/learner/TwoVariableFunction-learner-2.gif' | relative_url }}" />
-  </div>
-</p>
-<p>
-  Here the points seem to be jumping around, getting farther away from (0,0) and finally leaving
-  the gray circle of radius 2. We can try other starting points and look at what happens in each
-  situation. There are three things that can happen. The points can: 
-  <ul>
-    <li>
-      Get closer and closer to 0 -- we say they 
-      <strong>approach 0</u>. These are the 
-      <a href="{{ '/dictionary/p' | relative_url }}">prisoners</a>. 
-    </li>
-    <li>
-      Get larger and larger -- we say they 
-      <strong>approach infinity</u>. These are the 
-      <a href="{{ '/dictionary/e' | relative_url }}">escapees</a>. We know that they are escapees if they are further away from the origin than 2 units. 
-    </li>
-    <li>
-      Get trapped -- these points are the boundary points between the prisoners and escapees.
-      The set of all of these points for a function is called the 
-      <strong>Julia Set</strong>. 
-    </li>
-  </ul>
-</p>
-<p>
-  Julia sets are the main building blocks for the Mandelbrot set. We find the Julia sets by
-  looking for the boundary between prisoners and escapees. 
-</p>
+      </pre>
+    </p>
+    <p>
+      Here is a picture:
+    </p>
+    <p>
+      <div class="h-center">
+        <img src="{{ 'img/activities/learner/TwoVariableFunction-learner-2.gif' | relative_url }}" />
+      </div>
+    </p>
+    <p>
+      Here the points seem to be jumping around, getting farther away from (0,0) and finally leaving
+      the gray circle of radius 2. We can try other starting points and look at what happens in each
+      situation. There are three things that can happen. The points can:
+      <ul>
+        <li>
+          Get closer and closer to 0 -- we say they
+          <strong>approach 0</u>. These are the
+          <a href="{{ '/dictionary/p' | relative_url }}">prisoners</a>.
+        </li>
+        <li>
+          Get larger and larger -- we say they
+          <strong>approach infinity</u>. These are the
+          <a href="{{ '/dictionary/e' | relative_url }}">escapees</a>. We know that they are escapees if they are further away from the origin than 2 units.
+        </li>
+        <li>
+          Get trapped -- these points are the boundary points between the prisoners and escapees.
+          The set of all of these points for a function is called the
+          <strong>Julia Set</strong>.
+        </li>
+      </ul>
+    </p>
+    <p>
+      Julia sets are the main building blocks for the Mandelbrot set. We find the Julia sets by
+      looking for the boundary between prisoners and escapees.
+    </p>
