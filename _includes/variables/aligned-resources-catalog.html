@@ -18,8 +18,9 @@
   {% if aligned-collection-items %}
     {% assign catalog-items-list = catalog-items-list
       | concat: aligned-collection-items %}
-    {% assign categories-str = categories-str | append: aligned-collection
-      | capitalize | append: "," %}
+    {% assign aligned-collection-capitalized = aligned-collection | capitalize %}
+    {% assign categories-str = categories-str | append: aligned-collection-capitalized
+      | append: "," %}
   {% endif %}
 {% endfor %}
 {% assign categories-label = "resource type" %}
