@@ -38,12 +38,19 @@
       }
 
       h2 {
-        border-bottom: 1px solid gray;
         font-family: georgia, serif;
         font-size: 17pt;
         font-weight: normal;
         margin: 0;
         padding-bottom: 3px;
+
+        &#what-is {
+          border-bottom: 1px solid gray;
+        }
+
+        &#related-resources {
+          margin-top: 20px;
+        }
       }
 
       img {

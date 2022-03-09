@@ -17,7 +17,7 @@ collections:
     permalink: "/dictionary/:name"
   discussions:
     output: true
-    permalink: "/discussion/:name"
+    permalink: "/discussions/:name"
     sort_by: "title"
   lessons:
     output: true
