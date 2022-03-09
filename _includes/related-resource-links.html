@@ -2,6 +2,6 @@
 {% capture url %}{{ include.url-prefix }}{{ related-resource
   | slugify }}{% endcapture %}
 {% assign resource = include.collection | where: "url", url | first %}
-<li>{{ include.text }} <a href="{{ resource.url
+<li>{{ include.text }} <a href="{{ include.url-prefix | append: related-resource
   | relative_url }}">{{ resource.title }}</a></li>
 {% endfor %}

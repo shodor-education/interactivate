@@ -37,6 +37,9 @@ collections:
   textbooks:
     output: true
     permalink: "/textbooks/:name"
+  worksheets:
+    output: false
+    permalink: "/media/worksheets/:name"
 defaults:
   - scope:
       type: "activities"
@@ -90,6 +93,10 @@ defaults:
     values:
       item-type: "textbook"
       layout: "catalog"
+  - scope:
+      type: "worksheets"
+    values:
+      item-type: "worksheet"
 exclude:
   - "exclude"
 include:
