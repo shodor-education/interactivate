@@ -1,40 +1,14 @@
 <?php
 header("Content-Type: text/plain");
 
-$IMAGE_DIR="lessons";
-$IMAGE_INFIX="lesson";
-$INTERACTIVATE_TYPE="Lesson";
-
-include_once("passwords.php5");
 include_once("helpers.php5");
 
-$lessons = $sdrDbConn->query($query);
+$lessons = getSdrResources("Lesson");
 $files = array();
 while ($lesson = $lessons->fetch_assoc()) {
-  $shortname = $lesson["url"];
-  if (substr($shortname, -1) == "/") {
-    $shortname = substr($shortname, 0, -1);
-  }
-  $shortname = substr($shortname, strrpos($shortname, "/") + 1);
+  $shortname = getShortname($lesson);
   echo "FILENAME::$shortname\n---\n";
-
-  $query = <<<END
-select Version.`content`
-from ResourceLink
-left join Version on Version.`resourceId` = ResourceLink.`childId`
-where ResourceLink.`parentId` = 2204
-and Version.`status` = 3
-and ResourceLink.`shortName` = "$shortname"
-END;
-  $versions = $snap2DbConn->query($query);
-  $version = $versions->fetch_assoc();
-  $json = json_decode($version["content"]);
-
-  // ABSTRACT
-  $abstract = xmlToHtmlWithFiles($json->abstract, $shortname, $files);
-  $files = $abstract[1];
-  $abstract[0] = str_replace("\"", "\\\"", $abstract[0]);
-  echo "abstract: \"$abstract[0]\"\n";
+  $json = getVersionContentJson($shortname, 2204);
 
   // ALIGNED STANDARDS OBJECTIVES
   echoAlignedStandardsObjectives($lesson["resourceId"]);
@@ -42,30 +16,12 @@ END;
   // ALIGNED TEXTBOOK SECTIONS
   echoAlignedTextbookSections($lesson["resourceId"]);
 
-  // ALTERNATE OUTLINE
-  $alternate = xmlToHtmlWithFiles($json->alternate, $shortname, $files);
-  $files = $alternate[1];
-  $alternate[0] = str_replace("\"", "\\\"", $alternate[0]);
-  echo "alternate-outline: \"$alternate[0]\"\n";
-
   // KEY TERMS
   if (isset($json->keyTerms)) {
     echo "key-terms:\n";
     foreach ($json->keyTerms as $term) {
       $term = str_replace("\"", "\\\"", $term);
       echo "  - \"$term\"\n";
-    }
-  }
-
-  // LESSON OUTLINE
-  if (isset($json->sections)) {
-    echo "lesson-outline:\n";
-    foreach ($json->sections as $heading => $content) {
-      echo "  - heading: \"$heading\"\n";
-      $content = xmlToHtmlWithFiles($content, $shortname, $files);
-      $files = $content[1];
-      $content[0] = str_replace("\"", "\\\"", $content[0]);
-      echo "    content: \"$content[0]\"\n";
     }
   }
 
@@ -105,14 +61,25 @@ END;
 
   // SUGGESTED FOLLOW-UP
   if (isset($json->followUpIntro)) {
-    $followUpIntro = xmlToHtmlWithFiles($json->followUpIntro, $shortname, $files);
+    $followUpIntro = xmlToHtmlWithFiles(
+      $json->followUpIntro,
+      $shortname,
+      "lessons",
+      "lesson",
+      $files
+    );
     $files = $followUpIntro[1];
     $followUpIntro[0] = str_replace("\"", "\\\"", $followUpIntro[0]);
     echo "suggested-follow-up: \"$followUpIntro[0]\"\n";
   }
 
   // TEACHER PREPARATION
-  $preps = xmlToHtmlWithFiles($json->preps, $shortname, $files);
+  $preps = xmlToHtmlWithFiles(
+    $json->preps,
+    $shortname,
+    "lessons",
+    "lesson",
+    $files);
   $files = $preps[1];
   $preps[0] = str_replace("\"", "\\\"", $preps[0]);
   echo "teacher-preparation: \"$preps[0]\"\n";

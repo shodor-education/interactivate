@@ -1,26 +1,2 @@
 #lesson-main {
-  @extend .folder;
-
-  font-size: 11pt;
-  line-height: 120%;
-  min-height: 65px;
-  padding: 5px 15px;
-
-  & > div {
-    padding: 20px 0;
-  }
-
-  a:link,
-  a:visited {
-    color: #2661C3;
-  }
-  
-  h2 {
-    border-bottom: 1px solid gray;
-    font-family: georgia, serif;
-    font-size: 17pt;
-    font-weight: normal;
-    margin: 0;
-    padding-bottom: 3px;
-  }
 }

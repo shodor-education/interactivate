@@ -1,11 +1,7 @@
 <?php
 header("Content-Type: text/plain");
 
-include_once("passwords.php5");
-
-$DB_SERVER = "mysql-be-yes-I-really-mean-prod.shodor.org";
-$SDR_DB_NAME = "db_sdr";
-$SDR_DB_USER = "search_sdr";
+include_once("helpers.php5");
 
 function getAlignedResources($dbConn, $propertyName, $objectiveId, $type, $shortnameFilter) {
   $query = <<<END

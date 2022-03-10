@@ -1,21 +1,17 @@
 ---
 layout: default
 ---
-{% assign collection = site.collections | where: "label", page.collection
-  | first %}
-{% if page.item-type %}
-  {% assign page-item-type = page.item-type %}
-{% elsif collection.item-type %}
-  {% assign page-item-type = collection.item-type %}
+{% if page.catalog-type %}
+  {% assign catalog-type = page.catalog-type %}
 {% else %}
-  {% include get-filename.html %}
-  {% assign page-item-type = filename %}
+  {% capture catalog-type %}{{ page.slug }}{% endcapture %}
 {% endif %}
-{% include variables/{{ page-item-type }}.html %}
+{% include catalog-vars/{{ catalog-type }}.html %}
 <main id="catalog-main">
   {% if page.page-description %}
-  <p id="page-description">{% include
-    page-descriptions/{{ page-item-type }}.html %}</p>
+  <p id="page-description">
+    {% include page-descriptions/{{ catalog-type }}.html %}
+  </p>
   {% endif %}
   {% if page.subject-audience-sorter %}
   <fieldset id="subject-audience-fieldset">
@@ -45,7 +41,7 @@ layout: default
     <h2>{{ category }} ({{ category-items-list | size }})</h2>
     {% for catalog-item in category-items-list %}
     <section class="catalog-item {{ catalog-item-type }}-catalog-item">
-      {% include catalog-item-types/{{ catalog-item-type }}.html
+      {% include catalog-items/{{ catalog-item-type }}.html
         catalog-item=catalog-item %}
     </section>
     {% endfor %}

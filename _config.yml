@@ -8,10 +8,6 @@ collections:
   audience-catalogs:
     output: true
     permalink: "/:name/byAudience"
-  catalogs:
-    output: true
-    permalink: "/:name"
-    sort_by: "jump-to-index"
   dictionary-sections:
     output: true
     permalink: "/dictionary/:name"
@@ -23,6 +19,10 @@ collections:
     output: true
     permalink: "/lessons/:name"
     sort_by: "title"
+  main-catalogs:
+    output: true
+    permalink: "/:name"
+    sort_by: "jump-to-index"
   standards-grade-bands:
     output: true
     permalink: "/standards/organization/:name"
@@ -44,7 +44,6 @@ defaults:
   - scope:
       type: "activities"
     values:
-      item-type: "activity"
       layout: "activity"
   - scope:
       type: "audience-catalogs"
@@ -52,51 +51,48 @@ defaults:
       layout: "catalog"
       subject-audience-sorter: true
   - scope:
-      type: "catalogs"
-    values:
-      layout: "catalog"
-  - scope:
       type: "dictionary-sections"
     values:
-      item-type: "dictionary-section"
+      catalog-type: "dictionary-terms"
+      has-additional-breadcrumbs: true
       layout: "catalog"
   - scope:
       type: "discussions"
     values:
-      item-type: "discussion"
       layout: "discussion"
   - scope:
       type: "lessons"
     values:
-      item-type: "lesson"
       layout: "lesson"
+  - scope:
+      type: "main-catalogs"
+    values:
+      layout: "catalog"
   - scope:
       type: "standards-grade-bands"
     values:
-      item-type: "standards-grade-band"
+      catalog-type: "standards-objectives"
       layout: "catalog"
   - scope:
       type: "standards-objectives"
     values:
-      item-type: "standards-objective"
+      catalog-type: "standards-aligned-resources"
+      has-additional-breadcrumbs: true
       layout: "catalog"
       page-description: true
       title: "Aligned Resources"
   - scope:
       type: "textbook-sections"
     values:
-      item-type: "textbook-section"
+      catalog-type: "textbook-aligned-resources"
+      has-additional-breadcrumbs: true
       layout: "catalog"
       page-description: true
   - scope:
       type: "textbooks"
     values:
-      item-type: "textbook"
+      catalog-type: "textbook-sections"
       layout: "catalog"
-  - scope:
-      type: "worksheets"
-    values:
-      item-type: "worksheet"
 exclude:
   - "exclude"
 include:

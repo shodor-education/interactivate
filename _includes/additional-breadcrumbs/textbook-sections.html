@@ -1,0 +1,6 @@
+{% assign textbooks-breadcrumb = site.main-catalogs
+  | where: "slug", "textbooks" %}
+{% assign textbook-breadcrumb = site.textbooks
+  | where: "slug", page.textbook %}
+{% assign additional-breadcrumbs = textbooks-breadcrumb
+  | concat: textbook-breadcrumb %}

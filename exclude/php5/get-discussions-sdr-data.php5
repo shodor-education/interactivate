@@ -1,49 +1,20 @@
 <?php
 header("Content-Type: text/plain");
 
-$IMAGE_DIR="discussions";
-$IMAGE_INFIX="discussion";
-$INTERACTIVATE_TYPE="Discussion";
+include_once("helpers.php5");
 
-include_once("passwords.php5");
-include_once("get-snap2-content-with-images.php5");
-
-$images = array();
-$discussions = $sdrDbConn->query($query);
+$files = array();
+$discussions = getSdrResources("Discussion");
 while ($discussion = $discussions->fetch_assoc()) {
-  echo "FILENAME::$discussion[shortname]\n---\n";
+  $shortname = getShortname($discussion);
+  echo "FILENAME::$shortname\n---\n";
+  $content = getVersionContent($shortname, 2203);
 
   // ALIGNED STANDARDS OBJECTIVES
-  $query = <<<END
-select TSDStandardAlignment.`objectiveId` as objectiveId
-from TSDStandardAlignment
-where TSDStandardAlignment.`version` = "LIVE"
-and TSDStandardAlignment.`resourceId` = $discussion[resourceId]
-order by TSDStandardAlignment.`objectiveId`
-END;
-  $results = $sdrDbConn->query($query);
-  if ($results->num_rows > 0) {
-    echo "aligned-standards-objectives:\n";
-    while ($result = $results->fetch_assoc()) {
-      echo "  - \"$result[objectiveId]\"\n";
-    }
-  }
+  echoAlignedStandardsObjectives($discussion["resourceId"]);
 
   // ALIGNED TEXTBOOK SECTIONS
-  $query = <<<END
-select TSDTextbookAlignment.`sectionId` as sectionId
-from TSDTextbookAlignment
-where TSDTextbookAlignment.`version` = "LIVE"
-and TSDTextbookAlignment.`resourceId` = $discussion[resourceId]
-order by TSDTextbookAlignment.`sectionId`
-END;
-  $results = $sdrDbConn->query($query);
-  if ($results->num_rows > 0) {
-    echo "aligned-textbook-sections:\n";
-    while ($result = $results->fetch_assoc()) {
-      echo "  - \"$result[sectionId]\"\n";
-    }
-  }
+  echoAlignedTextbookSections($discussion["resourceId"]);
 
   // AUDIENCES
   echo "audiences:\n";
@@ -65,9 +36,6 @@ END;
   );
   $result = $results->fetch_assoc();
   echo "$result[str]\"\n";
-
-  // SHORTNAME
-  echo "short-name: \"$discussion[shortname]\"\n";
 
   // SUBJECTS
   echo "subjects:\n";
@@ -103,23 +71,18 @@ END;
 
   echo "---\n";
 
-  $query = <<<END
-select Version.`content`
-from Resource
-left join ResourceLink on ResourceLink.`childId` = Resource.`id`
-left join Version on Version.`id` = Resource.`liveVersionId`
-where Resource.`canonParentId` = 2203
-and ResourceLink.`shortName` = "$discussion[shortname]"
-END;
-  $versions = $snap2DbConn->query($query);
-
-  $images = echoContentAndGetImages(
-    $versions,
-    $discussion["shortname"],
-    $images
+  $result = xmlToHtmlWithFiles(
+    $content,
+    $shortname,
+    "discussions",
+    "discussion",
+    $files
   );
+  $content = $result[0];
+  $files = $result[1];
+  echo "$content\n";
 }
-foreach ($images as $name => $path) {
+foreach ($files as $name => $path) {
   echo "$name,$path\n";
 }
 

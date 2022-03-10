@@ -18,37 +18,14 @@
   }
 
   .tab-section {
-    @extend .folder;
+    @extend .folder-main;
 
     display: none;
 
-    a:link,
-    a:visited {
-      color: #2661C3;
-    }
-
     &#learner-section {
-      font-size: 11pt;
-      line-height: 120%;
-      min-height: 65px;
-
-      & > div {
-        margin: 0 15px;
-        padding: 20px 0;
-      }
-
       h2 {
-        font-family: georgia, serif;
-        font-size: 17pt;
-        font-weight: normal;
-        margin: 0;
-        padding-bottom: 3px;
-
-        &#what-is {
-          border-bottom: 1px solid gray;
-        }
-
         &#related-resources {
+          border-bottom: 0;
           margin-top: 20px;
         }
       }

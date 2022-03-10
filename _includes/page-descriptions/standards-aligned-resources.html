@@ -1,0 +1,5 @@
+{% assign grade-band = site.standards-grade-bands
+  | find: "slug", page.grade-band %}
+{{ grade-band.title }}<br/>
+{{ page.standards-category }}<br/>
+{{ page.description }}<br/>

@@ -1,11 +1,11 @@
 ---
 layout: default
 ---
-<main id="lesson-main">
+<main id="lesson-main" class="folder-main">
   <div>
     <section id="abstract-section">
       <h2>Abstract</h2>
-      {{ page.abstract }}
+      {% include lesson-abstracts/{{ page.slug }}.html %}
     </section>
     <section id="objectives-section">
       <h2>Objectives</h2>

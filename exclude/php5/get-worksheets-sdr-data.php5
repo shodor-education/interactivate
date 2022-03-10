@@ -1,18 +1,11 @@
 <?php
 header("Content-Type: text/plain");
 
-$INTERACTIVATE_TYPE="Worksheet";
+include_once("helpers.php5");
 
-include_once("passwords.php5");
-include_once("connect-to-databases.php5");
-
-$worksheets = $sdrDbConn->query($query);
+$worksheets = getSdrResources("Worksheet");
 while ($worksheet = $worksheets->fetch_assoc()) {
-  $shortname = $worksheet["url"];
-  if (substr($shortname, -1) == "/") {
-    $shortname = substr($shortname, 0, -1);
-  }
-  $shortname = substr($shortname, strrpos($shortname, "/") + 1);
+  $shortname = getShortname($worksheet);
 
   $results = getTextValues(
     $sdrDbConn,
@@ -52,36 +45,10 @@ END;
   echo "FILENAME::$shortname\n---\n";
 
   // ALIGNED STANDARDS OBJECTIVES
-  $query = <<<END
-select TSDStandardAlignment.`objectiveId` as objectiveId
-from TSDStandardAlignment
-where TSDStandardAlignment.`version` = "LIVE"
-and TSDStandardAlignment.`resourceId` = $worksheet[resourceId]
-order by TSDStandardAlignment.`objectiveId`
-END;
-  $results = $sdrDbConn->query($query);
-  if ($results->num_rows > 0) {
-    echo "aligned-standards-objectives:\n";
-    while ($result = $results->fetch_assoc()) {
-      echo "  - \"$result[objectiveId]\"\n";
-    }
-  }
+  echoAlignedStandardsObjectives($worksheet["resourceId"]);
 
   // ALIGNED TEXTBOOK SECTIONS
-  $query = <<<END
-select TSDTextbookAlignment.`sectionId` as sectionId
-from TSDTextbookAlignment
-where TSDTextbookAlignment.`version` = "LIVE"
-and TSDTextbookAlignment.`resourceId` = $worksheet[resourceId]
-order by TSDTextbookAlignment.`sectionId`
-END;
-  $results = $sdrDbConn->query($query);
-  if ($results->num_rows > 0) {
-    echo "aligned-textbook-sections:\n";
-    while ($result = $results->fetch_assoc()) {
-      echo "  - \"$result[sectionId]\"\n";
-    }
-  }
+  echoAlignedTextbookSections($worksheet["resourceId"]);
 
   // AUDIENCES
   echo "audiences:\n";

@@ -1,16 +1,7 @@
 <?php
 header("Content-Type: text/plain");
 
-include_once("passwords.php5");
-
-$DB_SERVER = "mysql-be-yes-I-really-mean-prod.shodor.org";
-$SDR_DB_NAME = "db_sdr";
-$SDR_DB_USER = "search_sdr";
-
-$sdrDbConn = new mysqli($DB_SERVER, $SDR_DB_USER, $SDR_DB_PASS, $SDR_DB_NAME);
-if ($sdrDbConn->connect_error) {
-  die("Database connection failed: " . $sdrDbConn->connect_error);
-}
+include_once("helpers.php5");
 
 $query = <<<END
 select

@@ -17,7 +17,7 @@
           alt="Interactivate logo"/></a>
         <select class="v-center" onchange="jumpTo(event);">
           <option disabled selected>Jump To:</option>
-          {% for catalog in site.catalogs %}
+          {% for catalog in site.main-catalogs %}
           <option data-catalog="{{ catalog.url
             | relative_url }}">{{ catalog.title }}</option>
           {% endfor %}
@@ -30,10 +30,21 @@
         <p>
           <a href="{{ site.url }}">Shodor</a> ▸
           <a href="{{ site.baseurl }}">Interactivate</a> ▸
-          {% for additional-breadcrumb in additional-breadcrumbs %}
-          <a href="{{ additional-breadcrumb.url
-            | relative_url }}">{{ additional-breadcrumb.title }}</a> ▸
-          {% endfor %}
+          {% if page.collection and page.collection != "main-catalogs" %}
+            {% assign catalog-page = site.main-catalogs
+              | find: "slug", page.collection %}
+            {% if catalog-page %}
+              <a href="{{ catalog-page.url | relative_url }}">{{
+                catalog-page.title }}</a> ▸
+            {% endif %}
+          {% endif %}
+          {% if page.has-additional-breadcrumbs %}
+            {% include additional-breadcrumbs/{{ page.collection }}.html %}
+            {% for additional-breadcrumb in additional-breadcrumbs %}
+              <a href="{{ additional-breadcrumb.url
+                | relative_url }}">{{ additional-breadcrumb.title }}</a> ▸
+            {% endfor %}
+          {% endif %}
           {{ page.title }}
         </p>
       </nav>

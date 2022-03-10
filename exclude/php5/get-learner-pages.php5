@@ -1,17 +1,13 @@
 <?php
 header("Content-Type: text/plain");
 
-$IMAGE_DIR="activities/learner";
-$IMAGE_INFIX="learner";
-$INTERACTIVATE_TYPE="Activity";
+include_once("helpers.php5");
 
-include_once("passwords.php5");
-include_once("get-snap2-content-with-images.php5");
-
-$images = array();
-$activities = $sdrDbConn->query($query);
+$files = array();
+$activities = getSdrResources("Activity");
 while ($activity = $activities->fetch_assoc()) {
-  echo "FILENAME::$activity[shortname]\n";
+  $shortname = getShortname($activity);
+  echo "FILENAME::$shortname\n";
 
   $query = <<<END
 select Version.`content`
@@ -21,18 +17,24 @@ left join Resource on Resource.`canonParentId` = Directory.`id`
 left join Version on Version.`id` = Resource.`liveVersionId`
 where Directory.`canonParentId` = 2202
 and Resource.`name` = "learner"
-and DirectoryLink.`shortName` = "$activity[shortname]"
+and DirectoryLink.`shortName` = "$shortname"
 END;
-
   $versions = $snap2DbConn->query($query);
+  $version = $versions->fetch_assoc();
+  $content = $version["content"];
 
-  $images = echoContentAndGetImages(
-    $versions,
-    $activity["shortname"],
-    $images
+  $result = xmlToHtmlWithFiles(
+    $content,
+    $shortname,
+    "activities/learner",
+    "learner",
+    $files
   );
+  $content = $result[0];
+  $files = $result[1];
+  echo "$content\n";
 }
-foreach ($images as $name => $path) {
+foreach ($files as $name => $path) {
   echo "$name,$path\n";
 }
 

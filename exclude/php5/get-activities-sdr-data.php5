@@ -1,15 +1,7 @@
 <?php
 header("Content-Type: text/plain");
 
-include_once("passwords.php5");
 include_once("helpers.php5");
-
-$DB_SERVER = "mysql-be-yes-I-really-mean-prod.shodor.org";
-$SNAP2_DB_NAME = "db_snap";
-$SNAP2_DB_USER = "db_snap_user";
-
-$SDR_DB_NAME = "db_sdr";
-$SDR_DB_USER = "search_sdr";
 
 $GWT_DIRS = array(
   "3DTransmographer" => "_3dtransmographer",
@@ -156,15 +148,6 @@ $GWT_DIRS = array(
   "WholeNumberCruncher" => "numbercruncher"
 );
 
-$snap2DbConn = new mysqli($DB_SERVER, $SNAP2_DB_USER, $SNAP2_DB_PASS, $SNAP2_DB_NAME);
-if ($snap2DbConn->connect_error) {
-  die("Database connection failed: " . $snap2DbConn->connect_error);
-}
-$sdrDbConn = new mysqli($DB_SERVER, $SDR_DB_USER, $SDR_DB_PASS, $SDR_DB_NAME);
-if ($sdrDbConn->connect_error) {
-  die("Database connection failed: " . $sdrDbConn->connect_error);
-}
-
 function getRelatedResources($dbConn, $propertyName, $resourceId, $type, $shortnameFilter) {
   $query = <<<END
 select $shortnameFilter as str
@@ -201,31 +184,10 @@ END;
   }
 }
 
-$query = <<<END
-select SDRVersion.`cserdId` as resourceId,
-       substring_index(substring_index(UrlTV.`entry`, '/', -2), '/', 1) as shortname,
-       SDRVersion.`id` as versionId
-from SDRProject
-left join SDRProjectField on SDRProjectField.`projectId` = SDRProject.`id`
-left join SDRField on SDRField.`id` = SDRProjectField.`fieldId`
-left join SDRFieldValue on SDRFieldValue.`fieldId` = SDRField.`id`
-left join SDRTextValue on SDRTextValue.`valueId` = SDRFieldValue.`valueId`
-left join SDRVersionFieldValue on (SDRVersionFieldValue.`fieldId` = SDRField.`id` and SDRVersionFieldValue.`valueId` = SDRTextValue.`valueId`)
-left join SDRVersion on SDRVersion.`id` = SDRVersionFieldValue.`versionId`
-left join SDRVersionFieldValue as UrlVFV on UrlVFV.`versionId` = SDRVersion.`id`
-left join SDRField as UrlF on UrlF.`id` = UrlVFV.`fieldId`
-left join SDRTextValue as UrlTV on UrlTV.`valueId` = UrlVFV.`valueId`
-where SDRProject.`id` = 3
-and SDRField.`name` = "Interactivate_Type"
-and SDRTextValue.`entry` = "Activity"
-and SDRVersion.`state` = "live"
-and UrlF.`name` = "Url"
-order by UrlTV.`entry`
-END;
-
-$activities = $sdrDbConn->query($query);
+$activities = getSdrResources("Activity");
 while ($activity = $activities->fetch_assoc()) {
-  echo "FILENAME::$activity[shortname]\n---\n";
+  $shortname = getShortname($activity);
+  echo "FILENAME::$shortname\n---\n";
 
   // ALIGNED STANDARDS OBJECTIVES
   echoAlignedStandardsObjectives($activity["resourceId"]);
@@ -255,7 +217,7 @@ while ($activity = $activities->fetch_assoc()) {
   echo "$result[str]\"\n";
 
   // GWT DIR
-  echo "gwt-dir: \"" . $GWT_DIRS[$activity["shortname"]] . "\"\n";
+  echo "gwt-dir: \"" . $GWT_DIRS[$shortname] . "\"\n";
 
   // RELATED ACTIVITIES
   $normalShortnameFilter = "substring_index(substring_index(UrlTV.`entry`, '/', -2), '/', 1)";
@@ -293,9 +255,6 @@ while ($activity = $activities->fetch_assoc()) {
     "Worksheet",
     "substring_index(UrlTV.`entry`, '/', -1)"
   );
-
-  // SHORTNAME
-  echo "short-name: \"$activity[shortname]\"\n";
 
   // SUBJECTS
   echo "subjects:\n";

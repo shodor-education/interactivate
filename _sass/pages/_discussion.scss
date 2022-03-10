@@ -1,16 +1,4 @@
 #discussion-main {
-  @extend .folder;
-  
-  a:link,
-  a:visited {
-    color: #2661C3;
-  }
-
-  font-size: 11pt;
-  line-height: 120%;
-  min-height: 65px;
-  padding: 5px 15px;
-
   .mentor {
     font-weight: bold;
   }
