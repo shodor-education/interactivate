@@ -1,45 +1,54 @@
 ---
+layout: default
 ---
-<!DOCTYPE html>
-<html>
-  <head>
-    {% include head.html %}
-    <script src="{{ '/js/selectCatalogCategory.js' | relative_url }}"></script>
-  </head>
-  <body>
-    {% include header.html %}
-    <main id="catalog-main">
-      {% if page.page-description %}
-      <p id="page-description">{% include page-descriptions/{{ page-item-type }}.html %}</p>
-      {% endif %}
-      {% if page.subject-audience-sorter %}
-      <fieldset id="subject-audience-fieldset">
-        {% include subject-audience-radio-button.html id="subject"  categories-label=categories-label %}
-        {% include subject-audience-radio-button.html id="audience" categories-label=categories-label %}
-      </fieldset>
-      {% endif %}
-      {% if categories-list.size > 1 %}
-      <nav aria-label="Filter by {{ categories-label }}">
-        {% for category in categories-list %}
-        <a href="javascript:selectCatalogCategory('{{ category | replace: ' ', '_' | downcase }}');"/>{{ category }}</a>
-        &nbsp;&bull;&nbsp;
-        {% endfor %}
-        <a class="bold" href="javascript:selectCatalogCategory('all');"/>Show All</a>
-      </nav>
-      {% endif %}
-      {% for category in categories-list %}
-      <section id="category-section-{{ category | replace: ' ', '_' | downcase }}" class="category-section">
-        {% assign category-downcase = category | downcase %}
-        {% assign category-items-list = catalog-items-list | where_exp: "item", filter-expression %}
-        <h2>{{ category }} ({{ category-items-list | size }})</h2>
-        {% for catalog-item in category-items-list %}
-        <section class="catalog-item {{ catalog-item-type }}-catalog-item">
-          {% include catalog-item-types/{{ catalog-item-type }}.html catalog-item=catalog-item %}
-        </section>
-        {% endfor %}
-      </section>
-      {% endfor %}
-    </main>
-    {% include footer.html %}
-  </body>
-</html>
+{% assign collection = site.collections | where: "label", page.collection
+  | first %}
+{% if page.item-type %}
+  {% assign page-item-type = page.item-type %}
+{% elsif collection.item-type %}
+  {% assign page-item-type = collection.item-type %}
+{% else %}
+  {% include get-filename.html %}
+  {% assign page-item-type = filename %}
+{% endif %}
+{% include variables/{{ page-item-type }}.html %}
+<main id="catalog-main">
+  {% if page.page-description %}
+  <p id="page-description">{% include
+    page-descriptions/{{ page-item-type }}.html %}</p>
+  {% endif %}
+  {% if page.subject-audience-sorter %}
+  <fieldset id="subject-audience-fieldset">
+    {% include subject-audience-radio-button.html id="subject"
+      categories-label=categories-label %}
+    {% include subject-audience-radio-button.html id="audience"
+      categories-label=categories-label %}
+  </fieldset>
+  {% endif %}
+  {% if categories-list.size > 1 %}
+  <nav aria-label="Filter by {{ categories-label }}">
+    {% for category in categories-list %}
+    <a href="javascript:selectCatalogCategory('{{ category | replace: ' ', '_'
+      | downcase }}');"/>{{ category }}</a>
+    &nbsp;&bull;&nbsp;
+    {% endfor %}
+    <a class="bold"
+      href="javascript:selectCatalogCategory('all');"/>Show All</a>
+  </nav>
+  {% endif %}
+  {% for category in categories-list %}
+  <section id="category-section-{{ category | replace: ' ', '_' | downcase }}"
+    class="category-section">
+    {% assign category-downcase = category | downcase %}
+    {% assign category-items-list = catalog-items-list
+      | where_exp: "item", filter-expression %}
+    <h2>{{ category }} ({{ category-items-list | size }})</h2>
+    {% for catalog-item in category-items-list %}
+    <section class="catalog-item {{ catalog-item-type }}-catalog-item">
+      {% include catalog-item-types/{{ catalog-item-type }}.html
+        catalog-item=catalog-item %}
+    </section>
+    {% endfor %}
+  </section>
+  {% endfor %}
+</main>

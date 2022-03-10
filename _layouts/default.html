@@ -1,0 +1,54 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Interactivate: {{ page.title }}</title>
+    <link rel="icon" type="image/ico" href="{{ 'favicon.ico' | relative_url }}">
+    <link rel="stylesheet" href="{{ 'css/main.css' | relative_url }}">
+    <script src="{{ 'js/main.js' | relative_url }}"></script>
+  </head>
+  <body>
+    <header>
+      <div id="logo-bar">
+        <a id="header-logo" href="{{ site.baseurl }}"><img
+          src="{{ 'img/header-logo.gif' | relative_url }}"
+          alt="Interactivate logo"/></a>
+        <select class="v-center" onchange="jumpTo(event);">
+          <option disabled selected>Jump To:</option>
+          {% for catalog in site.catalogs %}
+          <option data-catalog="{{ catalog.url
+            | relative_url }}">{{ catalog.title }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      {% unless page.hide-h1 %}
+      <h1>{{ page.title }}</h1>
+      {% endunless %}
+      <nav id="breadcrumb" aria-label="Breadcrumbs">
+        <p>
+          <a href="{{ site.url }}">Shodor</a> ▸
+          <a href="{{ site.baseurl }}">Interactivate</a> ▸
+          {% for additional-breadcrumb in additional-breadcrumbs %}
+          <a href="{{ additional-breadcrumb.url
+            | relative_url }}">{{ additional-breadcrumb.title }}</a> ▸
+          {% endfor %}
+          {{ page.title }}
+        </p>
+      </nav>
+    </header>
+    {{ content }}
+    <footer>
+      &copy; 1994–{{ "now" | date: "%Y" }} <a href="{{ site.url }}">Shodor</a>
+      <img id="footer-logos" class="v-center"
+        src="{{ 'img/footer-logos.gif' | relative_url }}"
+        alt="A resource from CSERD, a pathway portal of NSDL"
+        usemap="#nsdl-logo"/>
+      <map name="nsdl-logo">
+        <area shape="rect" coords="392,2,493,28"
+          href="https://nsdl.oercommons.org/" alt="NSDL" target="_blank">
+      </map>
+    </footer>
+  </body>
+</html>

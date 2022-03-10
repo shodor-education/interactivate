@@ -1,65 +1,55 @@
 ---
+layout: default
 ---
-<!DOCTYPE html>
-<html>
-  <head>
-    {% include head.html %}
-    <script src="{{ 'js/selectTab.js' | relative_url }}"></script>
-  </head>
-  <body>
-    {% include header.html %}
-    <main id="activity-main">
-      <nav id="tabs-nav" aria-label="Learner, Activity, Help, and Instructor tabs">
-        <div id="tabs">
-          {% include activity-tab.html name="learner" %}<!--
-       -->{% include activity-tab.html name="activity" selected=true %}<!--
-       -->{% include activity-tab.html name="help" %}<!--
-       -->{% include activity-tab.html name="instructor" %}
-        </div>
-        <div id="right-of-tabs"></div>
-      </nav>
-      <section id="learner-section" class="tab-section">
-        <div>
-          <h2 id="what-is">What is {{ page.title }}?</h2>
-          {% include learner-sections/{{ page.short-name }}.html %}
-          <h2 id="related-resources">Related Resources</h2>
-          <ul>
-            {% include related-resource-links.html
-              related-resources=page.related-activities
-              url-prefix="/activities/" collection=site.activities
-              text="Activity" %}
-            {% include related-resource-links.html
-              related-resources=page.related-discussions
-              url-prefix="/discussions/" collection=site.discussions
-              text="Discussion about" %}
-            {% include related-resource-links.html
-              related-resources=page.related-worksheets
-              url-prefix="/media/worksheets/" collection=site.worksheets
-              text="Worksheet" %}
-          </ul>
-        </div>
-      </section>
-      <section id="activity-section" class="tab-section">
-        <noscript>
-          <div id="noscript-message">
-            Your web browser must have JavaScript enabled
-            in order for this application to display correctly.
-          </div>
-        </noscript>
-        <div id="appletContent">
-        </div>
-        <script src="{{ 'js/activities/copyrightYear.js' | relative_url }}"></script>
-        {% capture activity-dir %}js/activities/{{ page.short-name }}{% endcapture %}
-        {% capture parameters-js-url %}{{ activity-dir }}/{{ page.short-name }}.parameters.js{% endcapture %}
-        <script src="{{ parameters-js-url | relative_url }}"></script>
-        {% capture nocache-js-url %}{{ activity-dir }}/{{ page.gwt-dir }}/{{ page.gwt-dir }}.nocache.js{% endcapture %}
-        <script src="{{ nocache-js-url | relative_url }}"></script>
-      </section>
-      <section id="help-section" class="tab-section">
-      </section>
-      <section id="instructor-section" class="tab-section">
-      </section>
-    </main>
-    {% include footer.html %}
-  </body>
-</html>
+<main id="activity-main">
+  <nav id="tabs-nav" aria-label="Learner, Activity, Help, and Instructor tabs">
+    <div id="tabs">
+      {% include activity-tab.html name="learner" %}<!--
+   -->{% include activity-tab.html name="activity" selected=true %}<!--
+   -->{% include activity-tab.html name="help" %}<!--
+   -->{% include activity-tab.html name="instructor" %}
+    </div>
+    <div id="right-of-tabs"></div>
+  </nav>
+  <section id="learner-section" class="tab-section">
+    <div>
+      <h2 id="what-is">What is {{ page.title }}?</h2>
+      {% include learner-sections/{{ page.short-name }}.html %}
+      <h2 id="related-resources">Related Resources</h2>
+      <ul>
+        {% include related-resource-links.html
+          related-resources=page.related-activities
+          url-prefix="/activities/" collection=site.activities
+          text="Activity" %}
+        {% include related-resource-links.html
+          related-resources=page.related-discussions
+          url-prefix="/discussions/" collection=site.discussions
+          text="Discussion about" %}
+        {% include related-resource-links.html
+          related-resources=page.related-worksheets
+          url-prefix="/media/worksheets/" collection=site.worksheets
+          text="Worksheet" %}
+      </ul>
+    </div>
+  </section>
+  <section id="activity-section" class="tab-section">
+    <noscript>
+      <div id="noscript-message">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+    <div id="appletContent">
+    </div>
+    <script src="{{ 'js/activities/copyrightYear.js' | relative_url }}"></script>
+    {% capture activity-dir %}js/activities/{{ page.short-name }}{% endcapture %}
+    {% capture parameters-js-url %}{{ activity-dir }}/{{ page.short-name }}.parameters.js{% endcapture %}
+    <script src="{{ parameters-js-url | relative_url }}"></script>
+    {% capture nocache-js-url %}{{ activity-dir }}/{{ page.gwt-dir }}/{{ page.gwt-dir }}.nocache.js{% endcapture %}
+    <script src="{{ nocache-js-url | relative_url }}"></script>
+  </section>
+  <section id="help-section" class="tab-section">
+  </section>
+  <section id="instructor-section" class="tab-section">
+  </section>
+</main>
