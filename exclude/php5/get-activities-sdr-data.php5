@@ -2,6 +2,7 @@
 header("Content-Type: text/plain");
 
 include_once("passwords.php5");
+include_once("helpers.php5");
 
 $DB_SERVER = "mysql-be-yes-I-really-mean-prod.shodor.org";
 $SNAP2_DB_NAME = "db_snap";
@@ -164,19 +165,6 @@ if ($sdrDbConn->connect_error) {
   die("Database connection failed: " . $sdrDbConn->connect_error);
 }
 
-function getTextValues($dbConn, $versionId, $fieldName) {
-  $query = <<<END
-select replace(SDRTextValue.`entry`, "\\"", "\\\\\\"") as str
-from SDRVersionFieldValue
-left join SDRField on SDRField.`id` = SDRVersionFieldValue.`fieldId`
-left join SDRTextValue on SDRTextValue.`valueId` = SDRVersionFieldValue.`valueId`
-where SDRVersionFieldValue.`versionId` = $versionId
-and SDRField.`name` = "$fieldName"
-order by SDRTextValue.`entry`
-END;
-  return $dbConn->query($query);
-}
-
 function getRelatedResources($dbConn, $propertyName, $resourceId, $type, $shortnameFilter) {
   $query = <<<END
 select $shortnameFilter as str
@@ -240,36 +228,10 @@ while ($activity = $activities->fetch_assoc()) {
   echo "FILENAME::$activity[shortname]\n---\n";
 
   // ALIGNED STANDARDS OBJECTIVES
-  $query = <<<END
-select TSDStandardAlignment.`objectiveId` as objectiveId
-from TSDStandardAlignment
-where TSDStandardAlignment.`version` = "LIVE"
-and TSDStandardAlignment.`resourceId` = $activity[resourceId]
-order by TSDStandardAlignment.`objectiveId`
-END;
-  $results = $sdrDbConn->query($query);
-  if ($results->num_rows > 0) {
-    echo "aligned-standards-objectives:\n";
-    while ($result = $results->fetch_assoc()) {
-      echo "  - \"$result[objectiveId]\"\n";
-    }
-  }
+  echoAlignedStandardsObjectives($activity["resourceId"]);
 
   // ALIGNED TEXTBOOK SECTIONS
-  $query = <<<END
-select TSDTextbookAlignment.`sectionId` as sectionId
-from TSDTextbookAlignment
-where TSDTextbookAlignment.`version` = "LIVE"
-and TSDTextbookAlignment.`resourceId` = $activity[resourceId]
-order by TSDTextbookAlignment.`sectionId`
-END;
-  $results = $sdrDbConn->query($query);
-  if ($results->num_rows > 0) {
-    echo "aligned-textbook-sections:\n";
-    while ($result = $results->fetch_assoc()) {
-      echo "  - \"$result[sectionId]\"\n";
-    }
-  }
+  echoAlignedTextbookSections($activity["resourceId"]);
 
   // AUDIENCES
   echo "audiences:\n";

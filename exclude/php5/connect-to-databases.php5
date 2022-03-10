@@ -6,10 +6,6 @@ $SNAP2_DB_USER = "db_snap_user";
 $SDR_DB_NAME = "db_sdr";
 $SDR_DB_USER = "search_sdr";
 
-if (!isset($URL_FILENAME_LOCATION)) {
-  $URL_FILENAME_LOCATION = -2;
-}
-
 $snap2DbConn = new mysqli($DB_SERVER, $SNAP2_DB_USER, $SNAP2_DB_PASS, $SNAP2_DB_NAME);
 if ($snap2DbConn->connect_error) {
   die("Database connection failed: " . $snap2DbConn->connect_error);

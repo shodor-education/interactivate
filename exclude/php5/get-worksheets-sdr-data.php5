@@ -2,7 +2,6 @@
 header("Content-Type: text/plain");
 
 $INTERACTIVATE_TYPE="Worksheet";
-$URL_FILENAME_LOCATION=-1;
 
 include_once("passwords.php5");
 include_once("connect-to-databases.php5");
@@ -29,7 +28,7 @@ while ($worksheet = $worksheets->fetch_assoc()) {
   $snap2ResourceName = str_replace("\\", "", $snap2ResourceName);
   $snap2ResourceName = substr($snap2ResourceName, 0, 64);
   $query = <<<END
-select Version.`content` 
+select Version.`content`
 from ResourceLink
 left join Version on Version.`resourceId` = ResourceLink.`childId`
 where ResourceLink.`parentId` = 2330
@@ -43,7 +42,7 @@ END;
     if (mysqli_num_rows($versions) == 0) {
       continue;
     }
-  } 
+  }
   $version = $versions->fetch_assoc();
   $json = json_decode($version["content"]);
   $path = str_replace("\\", "", $json->doc->path);
