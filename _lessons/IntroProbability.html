@@ -1,0 +1,321 @@
+---
+abstract: "<p>
+  An activity and two discussions of this lesson introduce the concept of probability and the basic
+  set operations that are useful in solving probability problems that involve counting outcomes.
+  This material is the basis of the so-called
+  <strong>naive probability theory</strong>. In contrast with axiomatic probability theory that deals with abstract,
+  <strong>axiom-driven concepts</strong>, the naive theory is built upon intuitive and experimental knowledge.
+</p>"
+aligned-standards-objectives:
+  - "44"
+  - "45"
+  - "95"
+  - "96"
+  - "128"
+  - "139"
+  - "147"
+  - "309"
+  - "314"
+  - "315"
+  - "327"
+  - "333"
+  - "338"
+  - "339"
+  - "377"
+  - "393"
+  - "1949"
+  - "1979"
+  - "1982"
+  - "2275"
+  - "2334"
+  - "2335"
+  - "2336"
+  - "2337"
+  - "2338"
+  - "2339"
+  - "2414"
+  - "2433"
+  - "2452"
+  - "2470"
+  - "2488"
+  - "2567"
+  - "2568"
+  - "2583"
+  - "2589"
+  - "2652"
+  - "2663"
+aligned-textbook-sections:
+  - "269"
+  - "270"
+  - "792"
+  - "841"
+  - "877"
+alternate-outline: "<p>
+  This lesson can be rearranged in several ways.
+  <ul>
+    <li>
+      Combine this lesson with the
+      <a href=\"{{ '/lessons/IdeasLeadProbability' | relative_url }}\">Ideas that Lead to Probability</a> lesson to give students an understanding of randomness and fair choice along with the
+      concepts introduced here in one single lesson
+    </li>
+    <li>
+      Have the students first try playing the
+      <a href=\"{{ '/activities/CrazyChoicesGame' | relative_url }}\">Crazy Choices Game</a> using random number generators and recording their data on the
+      <a href=\"{{ '/media/worksheets/181.pdf' | relative_url }}\">Crazy Choices Game Tally Table</a> and then show them how quickly the computer can run the experiments for them. Point out how
+      the more times the game is run, the closer the results get to the theoretical probability
+    </li>
+    <li>
+      Encourage the students to use colored pencils or pens to illustrate the solutions to the
+      <a href=\"{{ '/media/worksheets/183.pdf' | relative_url }}\">Sample Problems on Set Operations</a>
+    </li>
+    <li>
+      If not used earlier, use the
+      <a href=\"{{ '/discussions/ProbabilityVsStatis' | relative_url }}\">Probability vs. Statistics</a> discussion to demonstrate the difference between these two concepts.
+    </li>
+  </ul>
+</p>"
+key-terms:
+  - "experimental probability"
+  - "output"
+  - "probability"
+  - "theoretical probability"
+lesson-outline:
+  - heading: "Focus and Review"
+    content: "<p>
+  Remind students what has been learned in previous lessons that will be pertinent to this lesson
+  and/or have them begin to think about the words and ideas of this lesson:
+  <ul>
+    <li>
+      In science have any of you ever done an experiment that you thought would turn out one way,
+      but it ended up doing something different?
+    </li>
+  </ul>
+</p>"
+  - heading: "Objectives"
+    content: "<p>
+  Let the students know what it is they will be doing and learning today. Say something like this:
+  <ul>
+    <li>
+      Today, class, we are going to begin learning about probability
+    </li>
+    <li>
+      We are going to use the computers to learn about probability, but please do not turn your
+      computers on until I ask you to. I want to show you a little about this activity first
+    </li>
+  </ul>
+</p>"
+  - heading: "Teacher Input"
+    content: "<p>
+  <ul>
+    <li>
+      In science you do things over and over to make sure you have the correct results. Well, in
+      math you repeat things over and over to make sure your experimental results are as close to
+      the theoretical result as possible. The actual results from your experiments are called
+      statistics. While the possibility you may or may not get a certain result has to do with
+      probability.
+    </li>
+    <li>
+      Lead a discussion, based on the Crazy Choices Game, of
+      <a href=\"{{ '/discussions/ProbabilityAndOutcom' | relative_url }}\">Outcomes and Probability</a> to introduce the ideas of \"outcome\" and \"probability.\"
+    </li>
+    <li>
+      Lead a discussion on
+      <a href=\"{{ '/discussions/ProbabilityVsStatis' | relative_url }}\">Statistics vs. Probability</a>
+    </li>
+  </ul>
+</p>"
+  - heading: "Guided Practice"
+    content: "<p>
+  <ul>
+    <li>
+      Have the Students play the
+      <a href=\"{{ '/activities/CrazyChoicesGame' | relative_url }}\">Crazy Choices Game</a> to show how probabilities can be compared experimentally, and to help students understand the
+      definition of probability.
+    </li>
+    <li>
+      Students can play the game in groups (2-10 people per group) using computer(s) or various
+      random number generating devices (dice, spinners, etc.). The software keeps the necessary
+      statistics:
+      <ol>
+        <li>
+          # number of games played
+        </li>
+        <li>
+          # number of games each player won
+        </li>
+        <li>
+          experimental probability of winning
+        </li>
+      </ol>
+    </li>
+    <li>
+      If students play the game using hands-on materials, they may want to keep track of this data
+      using the
+      <a href=\"{{ '/media/worksheets/181.pdf' | relative_url }}\">Crazy Choices Game Tally Table</a> that can be reproduced for each group of students. Students should play a lot of games
+      (50-100) if they want to obtain reliable statistics. The goal of the game is to determine
+      which player has better chances of winning if players use different devices to determine
+      whether they win. For example, to compare the chances of the player who flips a coin (winning
+      in 1 out of 2 possible outcomes) and the chances of the player who rolls a six-sided die
+      (winning if it rolls a 1 or 2, or in 2 out of 6 possible outcomes)
+    </li>
+    <li>
+      The advantage of the software is that it can simulate many games in a single run. This saves
+      time, and helps students see how experimental probabilities get closer and closer to
+      theoretical probabilities (the Law of Large Numbers)
+    </li>
+    <li>
+      Students can try to answer the following questions individually, in group discussions or in
+      discussion with the mentor. Each group of students can answer the whole set of questions,
+      later sharing their answers and discussing them with other groups in order to refine the
+      definitions and understanding.
+      <ol>
+        <li>
+          In the Crazy Choices Game, each player won in so many outcomes out of so many total
+          outcomes. How can we define an outcome?
+        </li>
+        <li>
+          If the total number of outcomes is the same for all players, it is easy to compare their
+          chances. For example, the player who has four winning numbers on a six-sided die will win
+          twice as often as the player who has two winning numbers. How do we compare the chances of
+          the players if the total number of outcomes is different? Can we do it with experiments?
+          Can we predict the results of the experiments approximately?
+        </li>
+        <li>
+          What happens to experimental probabilities when we collect more and more data on the same
+          game?
+        </li>
+      </ol>
+    </li>
+    <li>
+      Next, initiate a discussion about
+      <a href=\"{{ '/discussions/EventsAndSetOperatio' | relative_url }}\">Events and Set Operations</a>
+    </li>
+  </ul>
+</p>"
+  - heading: "Independent Practice"
+    content: "<p>
+  <ul>
+    <li>
+      Discussions of sets work best when they are based on problems, and when students can draw or
+      use manipulatives to work on the problems. Students can work in small (2-4 people) groups,
+      each group discussing a few problems and trying to answer the following questions in the
+      process. Each group can draw a problem from
+      <a href=\"{{ '/media/worksheets/183.pdf' | relative_url }}\">Sample Problems on Set Operations</a> and then come up with several more of their own problems of the same sort.
+      <ol>
+        <li>
+          What is the union of sets? Can you find out how many elements are in the union if you know
+          how many are in each set? What other things do you need to know to answer that question?
+        </li>
+        <li>
+          What is the intersection of sets?
+        </li>
+        <li>
+          If each set describes an event, what events are described by the union and the
+          intersection?
+        </li>
+      </ol>
+    </li>
+    <li>
+      Students will minimize confusion if they solve a problem or two before attempting to answer
+      the questions. They can start by answering the questions about the problems they solved, and
+      then trying to generalize the answer. After each group works on the questions for a while
+      (with the mentor helping each group as needed), all students can share and discuss their
+      answers to the questions.
+    </li>
+  </ul>
+</p>"
+  - heading: "Closure"
+    content: "<p>
+  You may wish to bring the class back together for a discussion of the findings. Once the students
+  have been allowed to share what they found, summarize the results of the lesson.
+</p>"
+objectives:
+  - "have clarified the definition of probability"
+  - "have learned about outcomes in probability"
+  - "know how to calculate experimental probability"
+student-prerequisites:
+  - category: "Arithmetic"
+    prereqs:
+      - "use addition, subtraction, multiplication and division to solve set operations problems"
+      - "calculate experimental probability when given the formula"
+      - "keep simple records of data"
+  - category: "Technological"
+    prereqs:
+      - "perform basic mouse manipulations such as point, click and drag"
+      - "use a browser for experimenting with the activities"
+subjects:
+  - "Discrete"
+  - "Probability"
+suggested-follow-up: "<p>
+  After these discussions and activities, the students will have a clearer understanding of
+  probability, outcomes, and set operations. If students have not yet seen
+  <a href=\"{{ '/lessons/UnexpectedAnswers' | relative_url }}\">Unexpected Answers</a> have them continue their exploration of probability and observe some unusual examples of
+  probability games. After that, continue with
+  <a href=\"{{ '/lessons/ProbabilityGeometry' | relative_url }}\">Probability and Geometry</a> , which brings to light the subtle difference between defining probability by counting outcomes
+  and defining probability by measuring proportions of geometrical characteristics.
+</p>"
+teacher-preparation: "<p>
+  <ul>
+    <li>
+      Access to a browser
+    </li>
+    <li>
+      pencil and paper
+    </li>
+    <li>
+      <a href=\"{{ '/media/worksheets/13.pdf' | relative_url }}\">Crazy Choices Worksheet</a>
+    </li>
+    <li>
+      In the
+      <a href=\"{{ '/activities/CrazyChoicesGame' | relative_url }}\">Crazy Choices Game</a> if the game is simulated using different random number-generating devices, some of the
+      following will be needed:
+      <ul>
+        <li>
+          dice with various numbers of sides
+        </li>
+        <li>
+          spinners
+        </li>
+        <li>
+          bags of numbered lotto chips, or chips of several colors, or marbles of several colors
+        </li>
+        <li>
+          coins
+        </li>
+      </ul>
+    </li>
+    <li>
+      The
+      <a href=\"{{ '/media/worksheets/181.pdf' | relative_url }}\">Crazy Choices Game Tally Table</a> can be printed for each student or group of students to keep track of their data in the Crazy
+      Choices Game
+    </li>
+    <li>
+      The
+      <a href=\"{{ '/discussions/EventsAndSetOperatio' | relative_url }}\">Events and Sets Operations</a> discussion is best illustrated with color diagrams. Pens, pencils or crayons of 3-5 different
+      colors (a set for each student or each group of students working independently) will help to
+      visualize the ideas and to make problem solving more fun
+    </li>
+  </ul>
+</p>"
+title: "Introduction to the Concept of Probability"
+topics:
+  - "combinatorics"
+  - "comparing"
+  - "counting"
+  - "events"
+  - "experimental probability"
+  - "fractions"
+  - "geometric probability"
+  - "intersection"
+  - "outcomes"
+  - "percents"
+  - "probability"
+  - "probability simulation"
+  - "random number"
+  - "sets"
+  - "statistics"
+  - "theoretical probability"
+  - "trials"
+  - "union"
+  - "venn diagram"
+---

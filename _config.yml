@@ -69,7 +69,7 @@ defaults:
       type: "lessons"
     values:
       item-type: "lesson"
-      layout: "catalog"
+      layout: "lesson"
   - scope:
       type: "standards-grade-bands"
     values:

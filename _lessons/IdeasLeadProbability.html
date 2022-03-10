@@ -1,0 +1,254 @@
+---
+abstract: "<p>
+  The activity and two discussions that make up this lesson introduce ideas that are the basis of
+  probability theory. By using everyday experiences and intuitive understanding, this lesson gives
+  students a gradual introduction to probability.
+</p>"
+aligned-standards-objectives:
+  - "44"
+  - "45"
+  - "95"
+  - "147"
+  - "327"
+  - "333"
+  - "339"
+  - "377"
+  - "393"
+  - "1949"
+  - "1979"
+  - "1982"
+  - "2200"
+  - "2275"
+  - "2334"
+  - "2335"
+  - "2336"
+  - "2337"
+  - "2338"
+  - "2339"
+  - "2414"
+  - "2433"
+  - "2452"
+  - "2470"
+  - "2488"
+  - "2567"
+  - "2589"
+aligned-textbook-sections:
+  - "266"
+  - "267"
+  - "792"
+  - "841"
+  - "877"
+alternate-outline: "<p>
+  This lesson can be rearranged in several ways.
+  <ul>
+    <li>
+      If computers are not available, after describing the game as it is in
+      <a href=\"{{ '/activities/RacingGameWithOneDie' | relative_url }}\">The Racing Game with One Die</a> students can use dice or spinners and a printed copy of
+      <a href=\"{{ '/media/worksheets/193.pdf' | relative_url }}\">The Racing Game Field</a> to record their moves.
+    </li>
+    <li>
+      To go into more depth, use the
+      <a href=\"{{ '/activities/RacingGameWithOneDie' | relative_url }}\">The Racing Game with One Die</a> activity to show that multiple steps increase whatever advantage a player has of winning, and
+      then lead a discussion about the
+      <a href=\"{{ '/discussions/ProbabilityOfSimulta' | relative_url }}\">Probability of simultaneous events</a> to reinforce the idea.
+    </li>
+    <li>
+      If not used earlier, use the
+      <a href=\"{{ '/discussions/ProbabilityVsStatis' | relative_url }}\">Probability vs. Statistics</a> discussion to demonstrate the difference between these two concepts.
+    </li>
+    <li>
+      Combine this lesson with the
+      <a href=\"{{ '/lessons/IntroProbability' | relative_url }}\">Introduction to the Concept of Probability</a> lesson to give students an understanding of outcomes, events, and set operations along with
+      the concepts of randomness and fair choice that are part of this lesson.
+    </li>
+  </ul>
+</p>"
+key-terms:
+  - "experimental probability"
+  - "probability"
+  - "random number generators"
+  - "theoretical probability"
+lesson-outline:
+  - heading: "Focus and Review"
+    content: "<p>
+  Remind students what has been learned in previous lessons that will be pertinent to this lesson
+  and/or have them begin to think about the words and ideas of this lesson:
+</p>
+<p>
+  <ul>
+    <li>
+      If I bet you that we could play a game and that I could win every time, would you believe me?
+    </li>
+    <li>
+      This game is a racing game in which we take turns rolling a six sided die and advancing on the
+      numbers that we each are assigned. I bet you I can assign us an equal quantity of numbers that
+      we move on and no matter how many times we play I will always win.
+    </li>
+    <li>
+      Then tell them that the numbers that you assign yourself are 1, 2, 3, 4, 5, and 6, while the
+      numbers you assign the person who takes you up on your bet are 7, 8, 9, 10, 11, and 12. (If
+      you are only playing with one die then it is impossible to roll anything higher than a 6 so
+      the person assigned 6 -12 will never move).
+    </li>
+    <li>
+      Who thinks this game is fair?
+    </li>
+  </ul>
+</p>"
+  - heading: "Objectives"
+    content: "<p>
+  Let the students know what it is they will be doing and learning today. Say something like this:
+  <ul>
+    <li>
+      Today, class, we are going to begin learning about random number generators and probability.
+    </li>
+    <li>
+      We are going to use the computers to learn about random number generators and probability, but
+      please do not turn your computers on until I ask you to. I want to show you a little about
+      this activity first.
+    </li>
+  </ul>
+</p>"
+  - heading: "Teacher Input"
+    content: "<p>
+  <ul>
+    <li>
+      Lead a discussion about
+      <a href=\"{{ '/discussions/EquallyLikelyChoice' | relative_url }}\">Fair Choice</a>
+    </li>
+    <li>
+      Lead a discussion about
+      <a href=\"{{ '/discussions/RandomNumberGenerato' | relative_url }}\">Random Number Generators</a> . Everybody has some expertise with random choices. This fact allows the following questions
+      to lead to spark a discussion:
+      <ol>
+        <li>
+          \" How can you randomly choose between any given numbers? Can you use some devices to help
+          you with that? What devices?\"
+        </li>
+        <li>
+          \"How do you know if the choice is truly random? How do you know if it is fair?\"
+        </li>
+      </ol>
+    </li>
+  </ul>
+</p>"
+  - heading: "Guided Practice"
+    content: "<p>
+  <ul>
+    <li>
+      Have students can use as
+      <a href=\"{{ '/activities/RacingGameWithOneDie' | relative_url }}\">The Racing Game with One Die</a> an example of a game that is either fair or not. Make sure to adjust the settings on the game
+      so that the race is only one step long. Since the game is used for illustration only, it can
+      be played by each student individually, by groups of students, or by one person who broadcasts
+      it for everybody else to see.
+    </li>
+    <li>
+      Have them discuss different ways that they can make the game fair and not fair.
+    </li>
+  </ul>
+</p>"
+  - heading: "Independent Practice"
+    content: "<p>
+  <ul>
+    <li>
+      Now have the students play
+      <a href=\"{{ '/activities/RacingGameWithOneDie' | relative_url }}\">The Racing Game with One Die</a> Each group of students can come up with their own way of randomly choosing which players move
+      on which rolls
+    </li>
+    <li>
+      Also have them adjust the number of steps in the race and observe the affect it has on the
+      probability that one player will win over the other.
+    </li>
+    <li>
+      You might also challenge the students to find the combination of race length and numbers
+      needed to cause one player to have a specific probability of winning.
+    </li>
+  </ul>
+</p>"
+  - heading: "Closure"
+    content: "<p>
+  <ul>
+    <li>
+      You may wish to bring the class back together for a discussion of the findings. Once the
+      students have been allowed to share what they found, summarize the results of the lesson.
+    </li>
+  </ul>
+</p>"
+objectives:
+  - "have been introduced to the concept of probability"
+  - "have worked with random number generators"
+  - "have learned what it means for a game to be fair"
+student-prerequisites:
+  - category: "Arithmetic"
+    prereqs:
+      - "use addition when working with dice"
+  - category: "Technological"
+    prereqs:
+      - "perform basic mouse manipulations such as point, click and drag"
+      - "use a browser for experimenting with the activities"
+subjects:
+  - "Discrete"
+  - "Probability"
+suggested-follow-up: "<p>
+  After these discussions and activities, the students will have the beginnings of an understanding
+  of probability, randomness and fair choice. The next lesson,
+  <a href=\"{{ '/lessons/UnexpectedAnswers' | relative_url }}\">Unexpected Answers</a>, continues the initial exploration of probability and presents some unusual examples of games
+  that require close examination to determine if they are fair.
+</p>"
+teacher-preparation: "<p>
+  <ul>
+    <li>
+      Access to a browser
+    </li>
+    <li>
+      Copies of the supplemental materials:
+      <ul>
+        <li>
+          A printed copy of the
+          <a href=\"{{ '/media/worksheets/193.pdf' | relative_url }}\">Racing Game Field</a> if they play the Racing Game with One Die without using the computer.
+        </li>
+        <li>
+          <a href=\"{{ '/media/worksheets/102.pdf' | relative_url }}\">Racing Game Worksheet</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      The following objects or their pictures may be used in activities or to illustrate the
+      discussions.
+      <ol>
+        <li>
+          <p>
+            Dice with various numbers of sides.
+          </p>
+          <p>
+            <img src=\"{{ 'img/lessons/IdeasLeadProbability-lesson-1.gif' | relative_url }}\" />
+          </p>
+        </li>
+        <li>
+          Spinners. Bag of lotto pieces with numbers. Lottery machine.
+          <div>
+            <img src=\"{{ 'img/lessons/IdeasLeadProbability-lesson-2.gif' | relative_url }}\" />
+            <img src=\"{{ 'img/lessons/IdeasLeadProbability-lesson-3.gif' | relative_url }}\" />
+            <img src=\"{{ 'img/lessons/IdeasLeadProbability-lesson-4.gif' | relative_url }}\" />
+          </div>
+        </li>
+      </ol>
+    </li>
+  </ul>
+</p>"
+title: "Ideas that Lead to Probability"
+topics:
+  - "circle graph"
+  - "counting"
+  - "events"
+  - "experimental probability"
+  - "fair"
+  - "geometric probability"
+  - "outcomes"
+  - "pie chart"
+  - "probability"
+  - "probability simulation"
+  - "random number"
+  - "spinner"
+  - "theoretical probability"
+---

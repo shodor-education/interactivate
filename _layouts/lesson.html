@@ -1,0 +1,35 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    {% include header.html %}
+    <main id="lesson-main">
+      <div>
+        <section id="abstract-section">
+          <h2>Abstract</h2>
+          {{ page.abstract }}
+        </section>
+        <section id="objectives-section">
+          <h2>Objectives</h2>
+          <p>Upon completion of this lesson, students will:</p>
+          <ul>
+            {% for objective in page.objectives %}
+            <li>{{ objective }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+        <section id="standards-section">
+          <h2>Standards Addressed</h2>
+        </section>
+        <section id="textbooks-section">
+          <h2>Textbooks Aligned</h2>
+        </section>
+      </div>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>

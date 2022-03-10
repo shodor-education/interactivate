@@ -1,0 +1,253 @@
+---
+abstract: "<p>
+  The following lesson is designed to introduce students to definite integrals through limits and
+  Riemann sums. This lesson is best implemented in groups of 2-3 students.
+</p>"
+aligned-standards-objectives:
+  - "387"
+  - "397"
+  - "398"
+  - "964"
+  - "965"
+  - "2007"
+alternate-outline: "<p>
+  This lesson plan can be rearranged in a number of ways:
+  <ul>
+    <li>
+      If only one computer is available, complete the worksheet as a class, allowing student
+      volunteers to complete each section.
+    </li>
+    <li>
+      If time permits, the teacher may wish to introduce the concept of negative integrals by
+      looking at equations that dip below the
+      <em>x</em>-axis.
+    </li>
+  </ul>
+</p>"
+key-terms:
+  - "area"
+  - "average"
+  - "infinity"
+lesson-outline:
+  - heading: "Focus and Review"
+    content: "<p>
+  Conduct a review of limits, infinity, and derivatives to prepare students for the upcoming lesson.
+</p>
+<p>
+  Ask the following questions:
+  <ul>
+    <li>
+      What does it mean to take the limit of a function?
+    </li>
+    <li>
+      Often, at a certain point a function will approach
+      <img src=\"{{ 'img/lessons/InteGreat-lesson-1.png' | relative_url }}\" which=\"medium\" class=\"noPadding\" /> or
+      <img src=\"{{ 'img/lessons/InteGreat-lesson-2.png' | relative_url }}\" which=\"medium\" class=\"noPadding\" /> . Can we sometimes still find the limit? How?
+    </li>
+    <li>
+      How can we find the area under a line, such as
+      <img src=\"{{ 'img/lessons/InteGreat-lesson-3.png' | relative_url }}\" which=\"medium\" class=\"noPadding\" /> ?
+    </li>
+    <li>
+      How do we use limits to find the tangent line or derivative of a function?
+    </li>
+  </ul>
+</p>"
+  - heading: "Objectives"
+    content: "<p>
+  Let the students know what it is they will be doing and learning today. Say something like this:
+  <ul>
+    <li>
+      Today, class, we are going to learn how to find the area under a curve using rectangles and
+      trapezoids. We are going to be working with computers, but please do not turn on your
+      computers just yet. I want to show you something first.
+    </li>
+  </ul>
+</p>"
+  - heading: "Teacher Input"
+    content: "<p>
+  Ask students to calculate the area of a triangle with length 5 and height 5. Then, open
+  <a href=\"{{ '/activities/Graphit' | relative_url }}\">Graphit</a> and graph the line
+  <em>y</em> =
+  <em>x</em>. Ask the following questions:
+  <ul>
+    <li>
+      How could we calculate the area between the function and the
+      <em>x</em>-axis from 0 to 5?
+    </li>
+    <li>
+      Could we use the same sort of triangle to calculate the area under the function from 0 to 10?
+    </li>
+    <li>
+      What shape would the area under the line be from 5 to 10?
+    </li>
+    <li>
+      Can we find the area under any straight line with a trapezoid?
+    </li>
+  </ul>
+</p>
+<p>
+  Next, graph the line
+  <em>y</em> =
+  <em>x</em>^2. Ask the following questions:
+  <ul>
+    <li>
+      Can anyone think of a shape for the area under
+      <em>this</em> curve from 0 to 5?
+    </li>
+    <li>
+      As we said earlier, the area under a line segment is a trapezoid. Given that, is there any way
+      we could divide this curve into a lot of little line segments to find its area?
+    </li>
+  </ul>
+</p>"
+  - heading: "Guided Practice"
+    content: "<p>
+  Open
+  <a href=\"{{ '/activities/Integrate' | relative_url }}\">InteGreat</a> and change the settings to the following:
+  <ul>
+    <li>
+      f(x) = x^2
+    </li>
+    <li>
+      Integrate from 0 to 5
+    </li>
+    <li>
+      Number of Partitions: 1
+    </li>
+    <li>
+      Integration Method: Trapezoid
+    </li>
+  </ul>
+</p>
+<p>
+  <img src=\"{{ 'img/lessons/InteGreat-lesson-1.png' | relative_url }}\" class=\"h-center\" />
+</p>
+<p>
+  Ask the following questions:
+  <ul>
+    <li>
+      Is this straight line a very good approximation of
+      <em>y</em> =
+      <em>x</em>^2 from 0 to 5?
+    </li>
+    <li>
+      [increase the number of partitions to 3] Are these lines a better approximation of
+      <em>y</em> =
+      <em>x</em>^2 from 0 to 5? How can you tell?
+    </li>
+    <li>
+      What do you think will happen if I increase the number of partitions to 10 or more?
+    </li>
+    <li>
+      How could we calculate the area under this curve using these lines?
+    </li>
+    <li>
+      When we worked with derivatives, we said that any curve looks like a straight line if you look
+      at a sufficiently small part of it. Therefore, what would happen to our approximation of the
+      area under the curve as we get more and more line segments, each of which is smaller and
+      smaller?
+    </li>
+  </ul>
+</p>
+<p>
+  Change the integration method to Left Sum, reduce the partitions to 3-5, and ask the following
+  questions:
+  <ul>
+    <li>
+      Since it's much easier to calculate the area of rectangles than trapezoids, could we use these
+      rectangles instead to calculate the area under the curve?
+    </li>
+    <li>
+      [increase the number of partitions to 10] Just looking at it, what can you say about the
+      difference between this method and an equal number of trapezoidal partitions?
+    </li>
+  </ul>
+</p>"
+  - heading: "Independent Practice"
+    content: "<p>
+  Have students work individually or in groups to complete the
+  <a href=\"{{ '/media/worksheets/InteGreat_Worksheet' | relative_url }}\">worksheet</a>. As they do so, ask students to think about the relative merits of the various summation methods.
+</p>"
+  - heading: "Closure"
+    content: "<p>
+  Bring the class back together and discuss what has been learned. Ask the following questions:
+  <ul>
+    <li>
+      Visually, which method of summation seemed to most closely approximate the true value of the
+      function? Why do you think that is?
+    </li>
+    <li>
+      Based on the results of your worksheet, what do you think the area of
+      <em>sin</em>(x) is from 0 to
+      <em>pi</em>?
+    </li>
+    <li>
+      We know from calculus that the exact area of
+      <em>sin</em>(x) from 0 to
+      <em>pi</em> is 2. Which rule gave a sum that was closest to this value at 10 partitions?
+    </li>
+    <li>
+      What about at 50 partitions?
+    </li>
+    <li>
+      How did the error of the various sum types change as the number of partitions increased? Why
+      is that?
+    </li>
+    <li>
+      What do you think would happen as the number of partitions increased towards infinity?
+    </li>
+  </ul>
+</p>"
+objectives:
+  - "understand the use of rectangle and trapezoid sums to approximate area under a curve"
+  - "understand the geometric logic of taking limits of sums"
+  - "understand the geometric logic of integration"
+  - "be able to compare the different methods of curve summation"
+student-prerequisites:
+  - category: "Algebraic"
+    prereqs:
+      - "work with equations more complicated than polynomials"
+  - category: "Geometric"
+    prereqs:
+      - "graph algebraic equations on a coordinate plane"
+      - "find the area of rectangles and trapezoids"
+  - category: "Pre-Calculus"
+    prereqs:
+      - "understand the concept of infinity"
+      - "understand and evaluate limits"
+subjects:
+  - "Algebra"
+  - "Calculus"
+suggested-follow-up: ""
+teacher-preparation: "<p>
+  <ul>
+    <li>
+      Access to a browser
+    </li>
+    <li>
+      Pencil and calculator
+    </li>
+    <li>
+      Copies of supplemental materials:
+      <ul>
+        <li>
+          <a href=\"{{ '/media/worksheets/InteGreat_Worksheet' | relative_url }}\">InteGreat Worksheet</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</p>"
+title: "InteGreat"
+topics:
+  - "area"
+  - "calculus"
+  - "estimation"
+  - "function properties"
+  - "functions"
+  - "graph"
+  - "infinity"
+  - "integral"
+  - "integrate"
+  - "intervals"
+---
