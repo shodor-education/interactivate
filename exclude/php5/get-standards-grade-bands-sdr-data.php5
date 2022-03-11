@@ -17,8 +17,8 @@ $standards_grade_bands = $sdrDbConn->query($query);
 while ($standards_grade_band = $standards_grade_bands->fetch_assoc()) {
   echo "FILENAME::$standards_grade_band[grade_id]\n---\n";
 
-  // STANDARDS CATEGORIES
-  echo "standards-categories:\n";
+  // CATEGORIES
+  echo "categories:\n";
   $query = <<<END
 select trim(trailing from name) as name
 from TSDCategory
@@ -30,8 +30,11 @@ END;
     echo "  - \"$category[name]\"\n";
   }
 
-  // TITLE
-  echo "title: \"$standards_grade_band[org_name]: $standards_grade_band[grade_name]\"\n";
+  // LABEL
+  echo "label: \"$standards_grade_band[grade_name]\"\n";
+
+  // ORGANIZATION
+  echo "organization: \"$standards_grade_band[org_name]\"\n";
 
   echo "---\n";
 }
