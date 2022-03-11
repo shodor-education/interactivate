@@ -16,6 +16,9 @@ while ($lesson = $lessons->fetch_assoc()) {
   // ALIGNED TEXTBOOK SECTIONS
   echoAlignedTextbookSections($lesson["resourceId"]);
 
+  // AUDIENCES
+  echoAudiences($lesson);
+
   // DESCRIPTION
   echoDescription($lesson);
 
