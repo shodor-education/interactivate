@@ -51,50 +51,19 @@ END;
   echoAlignedTextbookSections($worksheet["resourceId"]);
 
   // AUDIENCES
-  echo "audiences:\n";
-  $results = getTextValues(
-    $sdrDbConn,
-    $worksheet["versionId"],
-    "Interactivate_Audience"
-  );
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[str]\"\n";
-  }
+  echoAudiences($worksheet);
 
   // DESCRIPTION
-  echo "description: \"";
-  $results = getTextValues(
-    $sdrDbConn,
-    $worksheet["versionId"],
-    "Description"
-  );
-  $result = $results->fetch_assoc();
-  echo "$result[str]\"\n";
+  echoDescription($worksheet);
 
   // SUBJECTS
-  echo "subjects:\n";
-  $results = getTextValues(
-    $sdrDbConn,
-    $worksheet["versionId"],
-    "Primary_Subject"
-  );
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[str]\"\n";
-  }
+  echoSubjects($worksheet);
 
   // TITLE
   echo "title: \"$title\"\n";
 
   // TOPICS
-  echo "topics:\n";
-  $results = getTextValues(
-    $sdrDbConn,
-    $worksheet["versionId"],
-    "Related_Subject"
-  );
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[str]\"\n";
-  }
+  echoTopics($worksheet);
 
   echo "---\n";
 }

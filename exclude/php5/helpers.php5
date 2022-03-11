@@ -53,13 +53,51 @@ END;
   }
 }
 
+function echoAudiences($resource) {
+  echoSdrArray(
+    "audiences",
+    $resource["versionId"],
+    "Interactivate_Audience"
+  );
+}
+
+function echoDescription($resource) {
+  echoSingleSdrValue(
+    "description",
+    $resource["versionId"],
+    "Description"
+  );
+}
+
+function echoDiscussions($resource) {
+  echo "subjects:\n";
+  $results = getTextValues(
+    $sdrDbConn,
+    $resource["versionId"],
+    "Primary_Subject"
+  );
+  while ($result = $results->fetch_assoc()) {
+    echo "  - \"$result[str]\"\n";
+  }
+}
+
+function echoJsonArray($array, $label) {
+  if (isset($array)) {
+    echo "$label:\n";
+    foreach ($array as $item) {
+      $item = str_replace("\"", "\\\"", $item);
+      echo "  - \"$item\"\n";
+    }
+  }
+}
+
 function echoLessonJsonHtml($property, $customFunc = "") {
   $files = array();
   $lessons = getSdrResources("Lesson");
   while ($lesson = $lessons->fetch_assoc()) {
     $shortname = getShortname($lesson);
     $json = getVersionContentJson($shortname, 2204);
-    if ($json->$property) {
+    if (isset($json->$property) && $json->$property) {
       echo "FILENAME::$shortname\n";
       if ($customFunc) {
         $files = call_user_func(
@@ -85,6 +123,55 @@ function echoLessonJsonHtml($property, $customFunc = "") {
   foreach ($files as $name => $url) {
     echo "$name,$url\n";
   }
+}
+
+function echoSdrArray($label, $versionId, $field) {
+  global $sdrDbConn;
+  echo "$label:\n";
+  $results = getTextValues(
+    $sdrDbConn,
+    $versionId,
+    $field
+  );
+  while ($result = $results->fetch_assoc()) {
+    echo "  - \"$result[str]\"\n";
+  }
+}
+
+function echoSingleSdrValue($label, $versionId, $field) {
+  global $sdrDbConn;
+  echo "$label: \"";
+  $results = getTextValues(
+    $sdrDbConn,
+    $versionId,
+    $field
+  );
+  $result = $results->fetch_assoc();
+  echo "$result[str]\"\n";
+}
+
+function echoSubjects($resource) {
+  echoSdrArray(
+    "subjects",
+    $resource["versionId"],
+    "Primary_Subject"
+  );
+}
+
+function echoTitle($resource) {
+  echoSingleSdrValue(
+    "title",
+    $resource["versionId"],
+    "Title"
+  );
+}
+
+function echoTopics($resource) {
+  echoSdrArray(
+    "topics",
+    $resource["versionId"],
+    "Related_Subject"
+  );
 }
 
 function getPath($snapId) {

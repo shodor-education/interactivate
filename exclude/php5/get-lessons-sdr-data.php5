@@ -16,21 +16,20 @@ while ($lesson = $lessons->fetch_assoc()) {
   // ALIGNED TEXTBOOK SECTIONS
   echoAlignedTextbookSections($lesson["resourceId"]);
 
+  // DESCRIPTION
+  echoDescription($lesson["resourceId"]);
+
   // KEY TERMS
-  if (isset($json->keyTerms)) {
-    echo "key-terms:\n";
-    foreach ($json->keyTerms as $term) {
-      $term = str_replace("\"", "\\\"", $term);
-      echo "  - \"$term\"\n";
-    }
-  }
+  echoJsonArray(
+    $json->keyTerms,
+    "key-terms"
+  );
 
   // OBJECTIVES
-  echo "objectives:\n";
-  foreach ($json->objectives as $objective) {
-    $objective = str_replace("\"", "\\\"", $objective);
-    echo "  - \"$objective\"\n";
-  }
+  echoJsonArray(
+    $json->objectives,
+    "objectives"
+  );
 
   // STUDENT PREREQUISITES
   if (isset($json->prereqs)) {
@@ -49,61 +48,13 @@ while ($lesson = $lessons->fetch_assoc()) {
   }
 
   // SUBJECTS
-  echo "subjects:\n";
-  $results = getTextValues(
-    $sdrDbConn,
-    $lesson["versionId"],
-    "Primary_Subject"
-  );
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[str]\"\n";
-  }
-
-  // SUGGESTED FOLLOW-UP
-  if (isset($json->followUpIntro)) {
-    $followUpIntro = xmlToHtmlWithFiles(
-      $json->followUpIntro,
-      $shortname,
-      "lessons",
-      "lesson",
-      $files
-    );
-    $files = $followUpIntro[1];
-    $followUpIntro[0] = str_replace("\"", "\\\"", $followUpIntro[0]);
-    echo "suggested-follow-up: \"$followUpIntro[0]\"\n";
-  }
-
-  // TEACHER PREPARATION
-  $preps = xmlToHtmlWithFiles(
-    $json->preps,
-    $shortname,
-    "lessons",
-    "lesson",
-    $files);
-  $files = $preps[1];
-  $preps[0] = str_replace("\"", "\\\"", $preps[0]);
-  echo "teacher-preparation: \"$preps[0]\"\n";
+  echoSubjects($lesson);
 
   // TITLE
-  echo "title: \"";
-  $results = getTextValues(
-    $sdrDbConn,
-    $lesson["versionId"],
-    "Title"
-  );
-  $result = $results->fetch_assoc();
-  echo "$result[str]\"\n";
+  echoTitle($lesson);
 
   // TOPICS
-  echo "topics:\n";
-  $results = getTextValues(
-    $sdrDbConn,
-    $lesson["versionId"],
-    "Related_Subject"
-  );
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[str]\"\n";
-  }
+  echoTopics($lesson);
 
   echo "---\n";
 }

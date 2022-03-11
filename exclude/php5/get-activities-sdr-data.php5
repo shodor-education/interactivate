@@ -196,25 +196,10 @@ while ($activity = $activities->fetch_assoc()) {
   echoAlignedTextbookSections($activity["resourceId"]);
 
   // AUDIENCES
-  echo "audiences:\n";
-  $results = getTextValues(
-    $sdrDbConn,
-    $activity["versionId"],
-    "Interactivate_Audience"
-  );
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[str]\"\n";
-  }
+  echoAudiences($activity);
 
   // DESCRIPTION
-  echo "description: \"";
-  $results = getTextValues(
-    $sdrDbConn,
-    $activity["versionId"],
-    "Description"
-  );
-  $result = $results->fetch_assoc();
-  echo "$result[str]\"\n";
+  echoDescription($activity);
 
   // GWT DIR
   echo "gwt-dir: \"" . $GWT_DIRS[$shortname] . "\"\n";
@@ -257,36 +242,13 @@ while ($activity = $activities->fetch_assoc()) {
   );
 
   // SUBJECTS
-  echo "subjects:\n";
-  $results = getTextValues(
-    $sdrDbConn,
-    $activity["versionId"],
-    "Primary_Subject"
-  );
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[str]\"\n";
-  }
+  echoSubjects($activity);
 
   // TITLE
-  echo "title: \"";
-  $results = getTextValues(
-    $sdrDbConn,
-    $activity["versionId"],
-    "Title"
-  );
-  $result = $results->fetch_assoc();
-  echo "$result[str]\"\n";
+  echoTitle($activity);
 
   // TOPICS
-  echo "topics:\n";
-  $results = getTextValues(
-    $sdrDbConn,
-    $activity["versionId"],
-    "Related_Subject"
-  );
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[str]\"\n";
-  }
+  echoTopics($activity);
 
   // TYPE
   $results = getTextValues(
