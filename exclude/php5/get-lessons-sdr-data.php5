@@ -17,17 +17,19 @@ while ($lesson = $lessons->fetch_assoc()) {
   echoAlignedTextbookSections($lesson["resourceId"]);
 
   // DESCRIPTION
-  echoDescription($lesson["resourceId"]);
+  echoDescription($lesson);
 
   // KEY TERMS
   echoJsonArray(
-    $json->keyTerms,
+    $json,
+    "keyTerms",
     "key-terms"
   );
 
   // OBJECTIVES
   echoJsonArray(
-    $json->objectives,
+    $json,
+    "objectives",
     "objectives"
   );
 

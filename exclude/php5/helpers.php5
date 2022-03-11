@@ -81,10 +81,10 @@ function echoDiscussions($resource) {
   }
 }
 
-function echoJsonArray($array, $label) {
-  if (isset($array)) {
+function echoJsonArray($json, $property, $label) {
+  if (isset($json->$property)) {
     echo "$label:\n";
-    foreach ($array as $item) {
+    foreach ($json->$property as $item) {
       $item = str_replace("\"", "\\\"", $item);
       echo "  - \"$item\"\n";
     }
