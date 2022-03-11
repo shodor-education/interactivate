@@ -8,7 +8,7 @@
 {% for aligned-collection in aligned-collections %}
   {% assign aligned-collection-items = site[aligned-collection]
     | where_exp: "item", where-exp %}
-  {% if aligned-collection-items %}
+  {% if aligned-collection-items.size > 0 %}
     {% assign catalog-items-list = catalog-items-list
       | concat: aligned-collection-items %}
     {% assign aligned-collection-capitalized = aligned-collection | capitalize %}
