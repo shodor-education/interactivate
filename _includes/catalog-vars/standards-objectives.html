@@ -1,5 +1,6 @@
 {% assign catalog-item-type = "standards-objective" %}
-{% assign catalog-items-list = site.standards-objectives | where: "grade-band", page.slug %}
+{% assign catalog-items-list = site.standards-objectives
+  | where: "grade-band", page.slug %}
 {% assign categories-label = "category" %}
-{% assign categories-list = page.standards-categories %}
-{% assign filter-expression = "item.standards-category == category" %}
+{% assign categories-list = page.categories %}
+{% assign filter-expression = "item.category == category" %}

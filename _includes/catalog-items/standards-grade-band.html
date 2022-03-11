@@ -1,3 +1,2 @@
-{% capture text %}{{ include.catalog-item.title | split: ": " | last }}{% endcapture %}
 {% include catalog-items/simple-single-column-link.html
-  catalog-item=include.catalog-item text=text %}
+  catalog-item=include.catalog-item text=include.catalog-item.label %}
