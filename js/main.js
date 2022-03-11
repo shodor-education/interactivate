@@ -24,6 +24,17 @@ function selectCatalogCategory(categoryName) {
   }
 }
 
+function selectLessonAlignment(label, evt) {
+  var option = evt.target.options[evt.target.selectedIndex];
+  var sections = document.getElementsByClassName(label + "-section");
+  for (var i = 0; i < sections.length; i++) {
+    var isSelected = (
+      sections[i].id == label + "-section-" + option.dataset[label]
+    );
+    sections[i].style.display = isSelected ? "block" : "none";
+  }
+}
+
 function selectTab(sectionId) {
   var imgDir = "{{ site.tab-img-dir | relative_url }}";
   var sections = document.getElementsByClassName("tab-section");

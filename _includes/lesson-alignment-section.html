@@ -1,0 +1,63 @@
+<section class="alignment-section">
+  {% assign level-4-items-in-level-1 = include.level-4-haystack
+    | where_exp: "level-4-item"
+    , "include.level-4-needle-list contains level-4-item.slug"
+  %}
+  {% assign level-2-id-list = level-4-items-in-level-1
+    | map: include.level-2-key | sort | uniq
+  %}
+  {% assign level-2-items-in-level-1 = include.level-2-list
+    | where_exp: "level-2-item"
+    , "level-2-id-list contains level-2-item.slug"
+  %}
+  {% assign level-1-items = level-2-items-in-level-1
+    | map: include.level-1-key | sort | uniq
+  %}
+  <h2>{{ include.h2 }}</h2>
+  <select
+    onchange="selectLessonAlignment('{{ include.level-1-label }}', event);">
+    <option disabled selected>
+      Please select a {{ include.label }} alignment
+    </option>
+    {% for level-1-item in level-1-items %}
+      <option data-{{ include.level-1-label }}="{{ level-1-item | slugify }}">
+        {{ level-1-item }}
+      </option>
+    {% endfor %}
+  </select>
+  {% for level-1-item in level-1-items %}
+    <section
+      id="{{ include.level-1-label }}-section-{{ level-1-item | slugify }}"
+      class="{{ include.level-1-label }}-section level-1-section">
+      {% assign level-2-items = level-2-items-in-level-1
+        | where: include.level-1-key, level-1-item
+      %}
+      {% for level-2-item in level-2-items %}
+        <section class="level-2-section">
+          <h3>{{ level-2-item[include.level-2-output-property] }}</h3>
+          <ul>
+            {% assign level-4-items-in-level-2 = level-4-items-in-level-1
+             | where: include.level-2-key, level-2-item.slug
+            %}
+            {% assign level-3-items = level-4-items-in-level-2
+              | map: include.level-3-key | sort | uniq
+            %}
+            {% for level-3-item in level-3-items %}
+              <li>
+                <h4>{{ level-3-item }}</h4>
+                <ul>
+                  {% assign level-4-items-in-level-3 = level-4-items-in-level-2
+                    | where: include.level-3-key, level-3-item
+                  %}
+                  {% for level-4-item in level-4-items-in-level-3 %}
+                    <li>{{ level-4-item[include.level-4-output-property] }}</li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endfor %}
+    </section>
+  {% endfor %}
+</section>

@@ -16,11 +16,31 @@ layout: default
         {% endfor %}
       </ul>
     </section>
-    <section id="standards-section">
-      <h2>Standards Addressed</h2>
-    </section>
-    <section id="textbooks-section">
-      <h2>Textbooks Aligned</h2>
-    </section>
+    {% include lesson-alignment-section.html
+      h2="Standards Addressed"
+      label="standards"
+      level-1-label="org"
+      level-1-key="organization"
+      level-2-key="grade-band"
+      level-2-list=site.standards-grade-bands
+      level-2-output-property="label"
+      level-3-key="category"
+      level-4-haystack=site.standards-objectives
+      level-4-needle-list=page.aligned-standards-objectives
+      level-4-output-property="description"
+    %}
+    {% include lesson-alignment-section.html
+      h2="Textbooks Aligned"
+      label="textbook"
+      level-1-label="series"
+      level-1-key="series"
+      level-2-key="textbook"
+      level-2-list=site.textbooks
+      level-2-output-property="book"
+      level-3-key="chapter"
+      level-4-haystack=site.textbook-sections
+      level-4-needle-list=page.aligned-textbook-sections
+      level-4-output-property="title"
+    %}
   </div>
 </main>

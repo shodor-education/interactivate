@@ -1,2 +1,27 @@
 #lesson-main {
+  .alignment-section {
+    margin-bottom: 15px;
+
+    select {
+      margin-bottom: 15px;
+      margin-top: 5px;
+    }
+
+    .level-1-section {
+      background: #F8F8F8;
+      border: 1px solid gray;
+      display: none;
+      padding: 5px;
+
+      h3 {
+        font-size: inherit;
+        margin: 0;
+      }
+
+      h4 {
+        font: inherit;
+        margin: 0;
+      }
+    }
+  }
 }
