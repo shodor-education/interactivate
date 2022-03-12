@@ -32,12 +32,16 @@ layout: default
       href="javascript:selectCatalogCategory('all');"/>Show All</a>
   </nav>
   {% endif %}
+  {% assign no-items = true %}
   {% for category in categories-list %}
   <section id="category-section-{{ category | replace: ' ', '_' | downcase }}"
     class="category-section">
     {% assign category-downcase = category | downcase %}
     {% assign category-items-list = catalog-items-list
       | where_exp: "item", filter-expression %}
+    {% if category-items-list.size > 0 %}
+      {% assign no-items = false %}
+    {% endif %}
     <h2>{{ category }} ({{ category-items-list | size }})</h2>
     {% for catalog-item in category-items-list %}
     <section class="catalog-item {{ catalog-item-type }}-catalog-item">
@@ -45,6 +49,11 @@ layout: default
         catalog-item=catalog-item %}
     </section>
     {% endfor %}
+    {% if no-items %}
+    <section class="catalog-item">
+      <p>No items</p>
+    </section>
+    {% endif %}
   </section>
   {% endfor %}
 </main>
