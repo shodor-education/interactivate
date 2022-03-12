@@ -27,7 +27,8 @@ layout: default
       level-3-key="category"
       level-4-haystack=site.standards-objectives
       level-4-needle-list=page.aligned-standards-objectives
-      level-4-output-property="description" %}
+      level-4-output-property="description"
+    %}
     {% include lesson-alignment-section.html
       h2="Textbooks Aligned"
       label="textbook"
@@ -39,7 +40,26 @@ layout: default
       level-3-key="chapter"
       level-4-haystack=site.textbook-sections
       level-4-needle-list=page.aligned-textbook-sections
-      level-4-output-property="title" %}
+      level-4-output-property="title"
+    %}
+    {% if page.student-prerequisites %}
+      <section id="student-prerequisites-section">
+        <h2>Student Prerequisites</h2>
+        <ul>
+          {% for student-prerequisite in page.student-prerequisites %}
+            <li>
+              <em>{{ student-prerequisite.category }}</em>:
+              Students must be able to:
+              <ul>
+                {% for prereq in student-prerequisite.prereqs %}
+                  <li>{{ prereq }}</li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
     <section id="teacher-preparation-section">
       <h2>Teacher Preparation</h2>
       {% include lesson-teacher-preparations/{{ page.slug }}.html %}
@@ -50,9 +70,11 @@ layout: default
         {% for key-term in page.key-terms %}
           <section class="dictionary-term-section">
             {% assign dictionary-item = site.data.dictionary-items
-              | find: "term", key-term %}
+              | find: "term", key-term
+            %}
             {% include catalog-items/dictionary-term.html
-              catalog-item=dictionary-item %}
+              catalog-item=dictionary-item
+            %}
           </section>
         {% endfor %}
       </section>
