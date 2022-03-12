@@ -50,7 +50,24 @@
                     | where: include.level-3-key, level-3-item
                   %}
                   {% for level-4-item in level-4-items-in-level-3 %}
-                    <li>{{ level-4-item[include.level-4-output-property] }}</li>
+                    <li>
+                      {{ level-4-item[include.level-4-output-property] }}
+                      {% if include.level-2-key == "textbook" %}
+                        {% assign reason
+                          = site.data.lesson-textbook-section-alignment-reasons
+                          | find_exp: "item", "item.lesson == page.slug
+                          and item.textbook-section == level-4-item.slug"
+                        %}
+                        {% if reason %}
+                          <ul>
+                            <li>
+                              <strong>Reason for Alignment:</strong>
+                              {{ reason.reason }}
+                            </li>
+                          </ul>
+                        {% endif %}
+                      {% endif %}
+                    </li>
                   {% endfor %}
                 </ul>
               </li>
