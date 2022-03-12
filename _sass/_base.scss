@@ -7,9 +7,36 @@ body {
 }
 
 .h-center {
-  display: block;
   margin: 0 auto;
   text-align: center;
+
+  &:not(table) {
+    display: block;
+  }
+}
+
+table {
+  border-left: 1px dotted gray;
+  border-top: 1px dotted gray;
+  margin: 0 auto;
+
+  td {
+    background: #F9F9F9;
+    border-bottom: 1px dotted gray;
+    border-right: 1px dotted gray;
+    padding: 8px;
+  }
+
+  #appletContent &,
+  .gwt-PopupPanel & {
+    border: initial;
+
+    td {
+      background: initial;
+      border: initial;
+      padding: initial;
+    }
+  }
 }
 
 .v-center {

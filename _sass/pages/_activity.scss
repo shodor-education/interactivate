@@ -54,10 +54,13 @@
 
       #appletContent {
         background-color: white;
+        padding: 0;
         margin: 0 auto;
 
         /* From http://css-tricks.com/almanac/properties/u/user-select/ */
-        canvas, .noTextHighlight, .gwt-MenuItem {
+        canvas,
+        .noTextHighlight,
+        .gwt-MenuItem {
             -moz-user-select: none;
             -khtml-user-select: none;
             -webkit-user-select: none;
@@ -98,11 +101,6 @@
           background-color: rgb(107, 107, 107);
         }
 
-        .gwt-PopupPanel {
-          background-color: white;
-          border-style:solid;
-        }
-
         /* Glass behind modal popup panels.
          * From http://code.google.com/p/google-web-toolkit-incubator/wiki/GlassPanel
          */
@@ -131,6 +129,10 @@
           text-align: right;
         }
 
+        table {
+          border: initial;
+        }
+
         textarea {
           resize: none;
           outline: none;
@@ -142,5 +144,16 @@
         }
       }
     }
+
+    &#help-section {
+      h3 {
+        font-size: inherit;
+      }
+    }
   }
+}
+
+.gwt-PopupPanel {
+  background-color: white;
+  border-style: solid;
 }

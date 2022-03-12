@@ -49,6 +49,12 @@ layout: default
     <script src="{{ nocache-js-url | relative_url }}"></script>
   </section>
   <section id="help-section" class="tab-section">
+    <div>
+      {% unless page.has-no-help-section-description %}
+        <h2>How Do I Use This Activity?</h2>
+        {% include activity-help-section-descriptions/{{ page.slug }}.html %}
+      {% endunless %}
+    </div>
   </section>
   <section id="instructor-section" class="tab-section">
   </section>
