@@ -174,6 +174,45 @@ function echoTopics($resource) {
   );
 }
 
+function getActivityTab($name) {
+  global $snap2DbConn;
+  $files = array();
+  $activities = getSdrResources("Activity");
+  while ($activity = $activities->fetch_assoc()) {
+    $shortname = getShortname($activity);
+    echo "FILENAME::$shortname\n";
+
+    $query = <<<END
+select Version.`content`
+from Directory
+left join DirectoryLink on DirectoryLink.`childId` = Directory.`id`
+left join Resource on Resource.`canonParentId` = Directory.`id`
+left join ResourceLink on ResourceLink.`childId` = Resource.`id`
+left join Version on Version.`id` = Resource.`liveVersionId`
+where Directory.`canonParentId` = 2202
+and ResourceLink.`shortname` = "$name"
+and DirectoryLink.`shortName` = "$shortname"
+END;
+    $versions = $snap2DbConn->query($query);
+    $version = $versions->fetch_assoc();
+    $content = $version["content"];
+
+    $result = xmlToHtmlWithFiles(
+      $content,
+      $shortname,
+      "activities/$name",
+      "$name",
+      $files
+    );
+    $content = $result[0];
+    $files = $result[1];
+    echo "$content\n";
+  }
+  foreach ($files as $name => $path) {
+    echo "$name,$path\n";
+  }
+}
+
 function getPath($snapId) {
   global
     $snap2DbConn;
@@ -286,10 +325,33 @@ function xmlToHtmlWithFiles($content, $shortname, $imgDir, $imgInfix, $files) {
   $html = $content;
   $html = preg_replace("#\s+\n#", "\n", $html);
   $html = preg_replace("#\s*<XMLResource>\s*\n#", "", $html);
-  $html = preg_replace("#\s*<section mapping=\"content\">\s*\n#", "", $html);
-  $html = preg_replace("#<link base=\"PATH:dictionary\" href=\"/(.)#", "<a href=\"{{ '/dictionary/$1' | relative_url }}", $html);
-  $html = preg_replace("#<link href=\"http://www.shodor.org/interactivate/dictionary/(.)/#", "<a href=\"{{ '/dictionary/$1' | relative_url }}", $html);
-  $html = preg_replace("#<link href=\"/interactivate/dictionary/(.)/?#", "<a href=\"{{ '/dictionary/$1' | relative_url }}", $html);
+  $html = preg_replace("#\s*<section mapping=\".*\"\s*/?>\s*\n?#", "", $html);
+  $html = preg_replace(
+    "#<link base=\"PATH:dictionary\" href=\"/(.)#"
+  , "<a href=\"{{ '/dictionary/$1' | relative_url }}"
+  , $html
+  );
+  $html = preg_replace(
+    "#<link base=\"PATH:resources\" href=\"/(.*)\"#"
+  , "<a href=\"{{ '/resources/$1' | relative_url }}"
+  , $html
+  );
+  $html = preg_replace(
+    "#<link href=\"http://www.shodor.org/interactivate/dictionary/(.)/#"
+  , "<a href=\"{{ '/dictionary/$1' | relative_url }}"
+  , $html
+  );
+  $html = preg_replace(
+    "#<link href=\"/interactivate/dictionary/(.)/?#"
+  , "<a href=\"{{ '/dictionary/$1' | relative_url }}"
+  , $html
+  );
+  $html = preg_replace(
+    "#<p>\s*<span class=\"bold header\">(.*)</span>\s*</p>#"
+  , "<h3>$1</h3>"
+  , $html
+  );
+  $html = str_replace("<p/>", "", $html);
   $html = str_replace("<b>", "<strong>", $html);
   $html = str_replace("<i>", "<em>", $html);
   $html = str_replace("<u>", "<strong>", $html);
@@ -298,7 +360,7 @@ function xmlToHtmlWithFiles($content, $shortname, $imgDir, $imgInfix, $files) {
   $html = str_replace("</i>", "</em>", $html);
   $html = str_replace("</b>", "</strong>", $html);
   $html = str_replace("</link>", "</a>", $html);
-  $html = preg_replace("#\s*</section>\s*\n#", "", $html);
+  $html = preg_replace("#\s*</section>\s*\n?#", "", $html);
   $html = preg_replace("#</XMLResource>#", "", $html);
   preg_match_all("<link metaid=\"(\d*)\">", $html, $linkMatches);
   foreach ($linkMatches[1] as $cserdId) {
