@@ -35,15 +35,6 @@ END;
   }
 }
 
-function echoAlignedDictionaryTerms($resourceId) {
-  echoAlignment(
-    "aligned-dictionary-terms",
-    "TSDDictionaryAlignment",
-    "word",
-    $resourceId
-  );
-}
-
 function echoAlignedStandardsObjectives($resourceId) {
   echoAlignment(
     "aligned-standards-objectives",

@@ -17,57 +17,19 @@ while ($discussion = $discussions->fetch_assoc()) {
   echoAlignedTextbookSections($discussion["resourceId"]);
 
   // AUDIENCES
-  echo "audiences:\n";
-  $results = getTextValues(
-    $sdrDbConn,
-    $discussion["versionId"],
-    "Interactivate_Audience"
-  );
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[str]\"\n";
-  }
+  echoAudiences($discussion);
 
   // DESCRIPTION
-  echo "description: \"";
-  $results = getTextValues(
-    $sdrDbConn,
-    $discussion["versionId"],
-    "Description"
-  );
-  $result = $results->fetch_assoc();
-  echo "$result[str]\"\n";
+  echoDescription($discussion);
 
   // SUBJECTS
-  echo "subjects:\n";
-  $results = getTextValues(
-    $sdrDbConn,
-    $discussion["versionId"],
-    "Primary_Subject"
-  );
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[str]\"\n";
-  }
+  echoSubjects($discussion);
 
   // TITLE
-  echo "title: \"";
-  $results = getTextValues(
-    $sdrDbConn,
-    $discussion["versionId"],
-    "Title"
-  );
-  $result = $results->fetch_assoc();
-  echo "$result[str]\"\n";
+  echoTitle($discussion);
 
   // TOPICS
-  echo "topics:\n";
-  $results = getTextValues(
-    $sdrDbConn,
-    $discussion["versionId"],
-    "Related_Subject"
-  );
-  while ($result = $results->fetch_assoc()) {
-    echo "  - \"$result[str]\"\n";
-  }
+  echoTopics($discussion);
 
   echo "---\n";
 
