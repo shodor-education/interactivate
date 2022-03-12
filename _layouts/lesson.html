@@ -57,11 +57,23 @@ layout: default
         {% endfor %}
       </section>
     </section>
-    <section>
+    <section id="lesson-outline-section">
       <h2>Lesson Outline</h2>
       <ol>
         {% include lesson-outlines/{{ page.slug }}.html %}
       </ol>
     </section>
+    {% if page.alternate-outline %}
+      <section id="alternate-outline-section">
+        <h2>Alternate Outline</h2>
+        {% include lesson-alternate-outlines/{{ page.slug }}.html %}
+      </section>
+    {% endif %}
+    {% if page.suggested-follow-up %}
+      <section id="suggested-follow-up-section">
+        <h2>Suggested Follow-Up</h2>
+        {% include lesson-suggested-follow-ups/{{ page.slug }}.html %}
+      </section>
+    {% endif %}
   </div>
 </main>

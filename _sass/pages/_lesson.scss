@@ -1,4 +1,9 @@
 #lesson-main {
+  h3 {
+    font-size: inherit;
+    margin: 0;
+  }
+
   .alignment-section {
     margin-bottom: 15px;
 
@@ -24,11 +29,6 @@
       border: 1px solid gray;
       display: none;
       padding: 5px;
-
-      h3 {
-        font-size: inherit;
-        margin: 0;
-      }
 
       h4 {
         font: inherit;

@@ -10,14 +10,16 @@ while ($lesson = $lessons->fetch_assoc()) {
   echo "FILENAME::$shortname\n---\n";
   $json = getVersionContentJson($shortname, 2204);
 
-  // ALIGNED DICTIONARY TERMS
-  echoAlignedDictionaryTerms($lesson["resourceId"]);
-
   // ALIGNED STANDARDS OBJECTIVES
   echoAlignedStandardsObjectives($lesson["resourceId"]);
 
   // ALIGNED TEXTBOOK SECTIONS
   echoAlignedTextbookSections($lesson["resourceId"]);
+
+  // ALTERNATE OUTLINES
+  if (isset($json->alternate) && $json->alternate) {
+    echo "alternate-outline: true\n";
+  }
 
   // AUDIENCES
   echoAudiences($lesson);
@@ -57,6 +59,11 @@ while ($lesson = $lessons->fetch_assoc()) {
 
   // SUBJECTS
   echoSubjects($lesson);
+
+  // SUGGESTED FOLLOW-UP
+  if (isset($json->followUpIntro) && $json->followUpIntro) {
+    echo "suggested-follow-up: true\n";
+  }
 
   // TITLE
   echoTitle($lesson);
