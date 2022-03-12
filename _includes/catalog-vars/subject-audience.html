@@ -1,9 +1,11 @@
 {% if page.collection == "audience-catalogs" %}
   {% assign categories-label = "audience" %}
-  {% assign categories-list = site.data.audiences %}
+  {% assign categories-list = include.catalog-items-list | map: "audiences"
+    | uniq | sort %}
   {% assign filter-expression = "item.audiences contains category" %}
 {% else %}
   {% assign categories-label = "subject" %}
-  {% assign categories-list = site.data.subjects %}
+  {% assign categories-list = include.catalog-items-list | map: "subjects"
+    | uniq | sort  %}
   {% assign filter-expression = "item.subjects contains category" %}
 {% endif %}

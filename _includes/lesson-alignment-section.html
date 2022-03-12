@@ -4,14 +4,14 @@
     , "include.level-4-needle-list contains level-4-item.slug"
   %}
   {% assign level-2-id-list = level-4-items-in-level-1
-    | map: include.level-2-key | sort | uniq
+    | map: include.level-2-key | uniq | sort
   %}
   {% assign level-2-items-in-level-1 = include.level-2-list
     | where_exp: "level-2-item"
     , "level-2-id-list contains level-2-item.slug"
   %}
   {% assign level-1-items = level-2-items-in-level-1
-    | map: include.level-1-key | sort | uniq
+    | map: include.level-1-key | uniq | sort
   %}
   <h2>{{ include.h2 }}</h2>
   <select
@@ -40,7 +40,7 @@
              | where: include.level-2-key, level-2-item.slug
             %}
             {% assign level-3-items = level-4-items-in-level-2
-              | map: include.level-3-key | sort | uniq
+              | map: include.level-3-key | uniq | sort
             %}
             {% for level-3-item in level-3-items %}
               <li>
