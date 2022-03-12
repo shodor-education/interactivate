@@ -17,40 +17,49 @@ if ($sdrDbConn->connect_error) {
   die("Database connection failed: " . $sdrDbConn->connect_error);
 }
 
-function echoAlignedStandardsObjectives($resourceId) {
+function echoAlignment($label, $table, $column, $resourceId) {
   global $sdrDbConn;
   $query = <<<END
-select TSDStandardAlignment.`objectiveId` as objectiveId
-from TSDStandardAlignment
-where TSDStandardAlignment.`version` = "LIVE"
-and TSDStandardAlignment.`resourceId` = $resourceId
-order by TSDStandardAlignment.`objectiveId`
+select $table.`$column` as $column
+from $table
+where $table.`version` = "LIVE"
+and $table.`resourceId` = $resourceId
+order by $table.`$column`
 END;
   $results = $sdrDbConn->query($query);
   if ($results->num_rows > 0) {
-    echo "aligned-standards-objectives:\n";
+    echo "$label:\n";
     while ($result = $results->fetch_assoc()) {
-      echo "  - \"$result[objectiveId]\"\n";
+      echo "  - \"$result[$column]\"\n";
     }
   }
 }
 
+function echoAlignedDictionaryTerms($resourceId) {
+  echoAlignment(
+    "aligned-dictionary-terms",
+    "TSDDictionaryAlignment",
+    "word",
+    $resourceId
+  );
+}
+
+function echoAlignedStandardsObjectives($resourceId) {
+  echoAlignment(
+    "aligned-standards-objectives",
+    "TSDStandardAlignment",
+    "objectiveId",
+    $resourceId
+  );
+}
+
 function echoAlignedTextbookSections($resourceId) {
-  global $sdrDbConn;
-  $query = <<<END
-select TSDTextbookAlignment.`sectionId` as sectionId
-from TSDTextbookAlignment
-where TSDTextbookAlignment.`version` = "LIVE"
-and TSDTextbookAlignment.`resourceId` = $resourceId
-order by TSDTextbookAlignment.`sectionId`
-END;
-  $results = $sdrDbConn->query($query);
-  if ($results->num_rows > 0) {
-    echo "aligned-textbook-sections:\n";
-    while ($result = $results->fetch_assoc()) {
-      echo "  - \"$result[sectionId]\"\n";
-    }
-  }
+  echoAlignment(
+    "aligned-textbook-sections",
+    "TSDTextbookAlignment",
+    "sectionId",
+    $resourceId
+  );
 }
 
 function echoAudiences($resource) {

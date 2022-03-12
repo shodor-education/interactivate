@@ -27,8 +27,7 @@ layout: default
       level-3-key="category"
       level-4-haystack=site.standards-objectives
       level-4-needle-list=page.aligned-standards-objectives
-      level-4-output-property="description"
-    %}
+      level-4-output-property="description" %}
     {% include lesson-alignment-section.html
       h2="Textbooks Aligned"
       label="textbook"
@@ -40,7 +39,23 @@ layout: default
       level-3-key="chapter"
       level-4-haystack=site.textbook-sections
       level-4-needle-list=page.aligned-textbook-sections
-      level-4-output-property="title"
-    %}
+      level-4-output-property="title" %}
+    <section id="teacher-preparation-section">
+      <h2>Teacher Preparation</h2>
+      {% include lesson-teacher-preparations/{{ page.slug }}.html %}
+    </section>
+    <section id="key-terms-section" class="alignment-section">
+      <h2>Key Terms</h2>
+      <section class="level-1-section">
+        {% for aligned-dictionary-term in page.aligned-dictionary-terms %}
+          <section class="dictionary-term-section">
+            {% assign dictionary-item = site.data.dictionary-items
+              | find: "term", aligned-dictionary-term %}
+            {% include catalog-items/dictionary-term.html
+              catalog-item=dictionary-item %}
+          </section>
+        {% endfor %}
+      </section>
+    </section>
   </div>
 </main>

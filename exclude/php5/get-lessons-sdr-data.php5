@@ -10,6 +10,9 @@ while ($lesson = $lessons->fetch_assoc()) {
   echo "FILENAME::$shortname\n---\n";
   $json = getVersionContentJson($shortname, 2204);
 
+  // ALIGNED DICTIONARY TERMS
+  echoAlignedDictionaryTerms($lesson["resourceId"]);
+
   // ALIGNED STANDARDS OBJECTIVES
   echoAlignedStandardsObjectives($lesson["resourceId"]);
 

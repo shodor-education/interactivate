@@ -16,6 +16,48 @@
   min-height: 20px;
 }
 
+%side-by-side-catalog-item {
+  column-gap: 15px;
+  font-size: 11pt;
+  display: flex;
+  padding: 5px;
+
+  &:nth-child(odd) {
+    background-color: #F3F6FF;
+  }
+
+  &:nth-child(even) {
+    background-color: #F8F9FF;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px dashed gray;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .left-column {
+    flex-shrink: 0;
+    line-height: 120%;
+    width: 240px;
+
+    &.dictionary-term {
+      @extend %dictionary-text;
+    }
+  }
+
+  .right-column {
+    flex-grow: 1;
+    line-height: 130%;
+
+    &.dictionary-definition {
+      @extend %dictionary-text;
+    }
+  }
+}
+
 #catalog-main {
   @extend .folder;
 
@@ -62,22 +104,7 @@
     }
 
     .catalog-item {
-      column-gap: 15px;
-      font-size: 11pt;
-      display: flex;
-      padding: 5px;
-
-      &:nth-child(odd) {
-        background-color: #F3F6FF;
-      }
-
-      &:nth-child(even) {
-        background-color: #F8F9FF;
-      }
-
-      &:not(:last-child) {
-        border-bottom: 1px dashed gray;
-      }
+      @extend %side-by-side-catalog-item;
 
       &:last-child {
         border-bottom: 1px solid black;
@@ -99,28 +126,7 @@
         }
       }
 
-      p {
-        margin: 0;
-      }
-
-      .left-column {
-        flex-shrink: 0;
-        line-height: 120%;
-        width: 240px;
-
-        &.dictionary-term {
-          @extend %dictionary-text;
-        }
-      }
-
       .right-column {
-        flex-grow: 1;
-        line-height: 130%;
-
-        &.dictionary-definition {
-          @extend %dictionary-text;
-        }
-
         .description:not(:last-child) {
           margin-bottom: 15px;
         }
