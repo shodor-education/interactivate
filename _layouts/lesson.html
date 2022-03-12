@@ -47,15 +47,21 @@ layout: default
     <section id="key-terms-section" class="alignment-section">
       <h2>Key Terms</h2>
       <section class="level-1-section">
-        {% for aligned-dictionary-term in page.aligned-dictionary-terms %}
+        {% for key-term in page.key-terms %}
           <section class="dictionary-term-section">
             {% assign dictionary-item = site.data.dictionary-items
-              | find: "term", aligned-dictionary-term %}
+              | find: "term", key-term %}
             {% include catalog-items/dictionary-term.html
               catalog-item=dictionary-item %}
           </section>
         {% endfor %}
       </section>
+    </section>
+    <section>
+      <h2>Lesson Outline</h2>
+      <ol>
+        {% include lesson-outlines/{{ page.slug }}.html %}
+      </ol>
     </section>
   </div>
 </main>
