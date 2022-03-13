@@ -1,0 +1,55 @@
+<p>
+      <strong>Entering Data</strong>
+      <br/>First, the user needs to input their data. To do this, each line must contain 5 pieces of
+      data. First is the dependent variable. In our car example, this is where we would put the
+      price of each car. Next is the independent variable for dimension 1, then dimension 2, and so
+      on. In the past, you've probably seen similar coordinates for points on a plane, where the x-
+      and y-values represent certain qualities of the points (namely, their location). For this
+      applet, each dimension also represents some quality about the car. The five dimensions are
+      ("price", "cup holders", "engine (liters)", "resale value", and "safety rating"), so the line
+      of data for a car that has a price of $10,000, 4 cup holders, a six liter engine, a resale
+      value of half its original price, and a perfect safety rating on scale out of 10 would be (10,
+      4, 6, 5, 10).
+      <br/>
+      <img src="{{ 'img/DataEntryField.png' | relative_url }}" class="h-center"/>
+      <br/>After clicking
+      <strong>Update Data</strong>, each of the four dimensions will be graphed against the dependent variable and two lines
+      will appear on each graph.
+      <br/>
+      <img src="{{ 'img/updatedata.png' | relative_url }}" class="h-center"/>
+      <br/>
+      <strong>Green Best–Fit Line</strong>
+      <br/>To adjust the green best–fit line, use the purple and green slider bars to adjust the
+      slope and y–intercept respectively. The sliders' range is [–10,9.5]
+      thus making it impossible to graph a vertical line. If the best–fit line is a vertical
+      line, the red equation will output the equation of a vertical line (i.e. x=3).
+      <br/>
+      <img src="{{ 'img/Sliders.png' | relative_url }}" class="h-center"/>
+      <br/>To judge how accurate the user adjusted green best-fit line is, the sum of the squares of the
+      differences is shown in the lower right hand corner.
+      <br/>
+      <img src="{{ 'img/SumOfSquares.png' | relative_url }}" class="h-center"/>
+      <br/>These squares can be summed up over all four dimensions or viewed individually by selecting
+      and unselecting the
+      <strong>Include in sum of squares</strong> checkbox.
+      <br/>
+      <img src="{{ 'img/IncludeCheckbox.png' | relative_url }}" class="h-center"/>
+      <br/>
+      <strong>Red Best–Fit Line</strong>
+      <br/>The equation and correlation, r, are calculated for the red best fit line to determine how
+      well the data is represented by the line. For more information on correlation, view the
+      discussion on
+      <a href="{{ '/media/worksheets/303.doc' | relative_url }}">Correlation Coefficients</a>.
+      <br/>
+      <img src="{{ 'img/BestFitLine.png' | relative_url }}" class="h-center"/>
+      <br/>
+      <strong>Adjusting the Window</strong> To adjust the window of the graphs, input the desired values for minimum and maximum x and y
+      then click
+      <strong>Set Window</strong>. Note that
+      <strong>X Min</strong> must be less than
+      <strong>X Max</strong> and the same for
+      <strong>Y Min</strong> and
+      <strong>Y Max</strong>.
+      <br/>
+      <img src="{{ 'img/SetWindow.png' | relative_url }}" class="h-center"/>
+    </p>

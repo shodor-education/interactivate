@@ -1,0 +1,125 @@
+<p>
+      <ul>
+        <li>
+          The area at the top of the screen is where the plot is displayed.
+          <img src="{{ 'img/image1289.gif' | relative_url }}" class="h-center"/>
+        </li>
+        <li>
+          The text field labeled
+          <strong>Data</strong> is where you input the points you want to graph. The points should be in the form (x, y).
+          The parentheses are optional, the x and the y can be separated by a tab or a space and
+          there must be a carriage return between each coordinate pair.
+          <img src="{{ 'img/image1296.gif' | relative_url }}" class="h-center"/>
+          <p>
+            Note that if the
+            <strong>Auto Scale</strong> box is checked, Simple Plot will choose appropriate x- and y-axis values for you to
+            view all data on the graph. If you uncheck that box, you can override Simple Plot's
+            values with your own. This is explained below in the Set Window note.
+          </p>
+          <img src="{{ 'img/image1305.gif' | relative_url }}" class="h-center"/>
+          <p>
+            You can plot up to ten
+            <em>sets</em> of points. To do this, separate each set of points by the word
+            <strong>newgraph</strong> on a line by itself. You may also specify the color of your graphs by using the
+            following keywords in place of
+            <strong>newgraph</strong>:
+            <strong>redgraph</strong>,
+            <strong>bluegraph</strong>,
+            <strong>greengraph</strong>,
+            <strong>purplegraph</strong>,
+            <strong>crimsongraph</strong>,
+            <strong>magentagraph</strong>,
+            <strong>orangegraph</strong>,
+            <strong>blackgraph</strong>,
+            <strong>cyangraph</strong>,
+            <strong>graygraph</strong>, and
+            <strong>yellowgraph</strong>. If you specify
+            <strong>newgraph </strong> each time, the colors will iterate through the order listed.
+          </p>
+          <p>
+            If you have trouble copying data from the applet and pasting it into an Excel
+            spreadsheet, please see our
+            <a href="{{ '/resources/ExcelCopyPasteHelp/' | relative_url }}>Excel Copy/Paste Help</a>.
+          </p>
+          <p>
+            After you input the coordinates, you must press the
+            <strong>Plot/Update</strong> button to graph them.
+          </p>
+          <img src="{{ 'img/image1297.gif' | relative_url }}" class="h-center"/>
+        </li>
+        <li>
+          You can choose from two
+          <strong>plot types</strong>. "Connected" draws a line from one point to the next. (Note that before the line is drawn
+          the points are sorted by their x coordinates.) "Scatter Plot" just draws the points as
+          dots on the graph.
+          <img src="{{ 'img/image1290.gif' | relative_url }}" class="h-center"/>
+        </li>
+        <li>
+          There are three radio buttons which control the grid lines on the graph. You can chose no
+          grid, light grid lines, or dark grid lines by selecting the appropriate radio button.
+          <img src="{{ 'img/image421.gif' | relative_url }}" class="h-center"/>
+        </li>
+        <li>
+          Click the
+          <strong>Set Window</strong> button to determine how the graph will appear on your screen. A new browser window should
+          open after you push the button and inside that new window you will be able to adjust
+          values. X min and X max are the minimum and maximum x-values displayed on the graph.
+          Similarly, Y min and Y max are the minimum and maximum y-values displayed on the graph.
+          The X scale is the distance between vertical gridlines if
+          <strong>Show Grid</strong> is checked. The Y scale is the distance between horizontal gridlines if
+          <strong>Show Grid</strong> is checked. Any changes you make to the window parameters will take effect the next time
+          you click the
+          <strong>Plot/Update</strong> button. When you are finished, push the
+          <strong>Set</strong> button followed by the
+          <strong>Close</strong> button to set the changes and to leave the window. Also note that while the
+          <strong>Choose Scale Automatically</strong> box is checked, the X and Y scale text boxes are uneditable.
+          <img src="{{ 'img/image1291.gif' | relative_url }}" class="h-center"/>
+        </li>
+        <li>
+          The applet also can tell you the location of any click. Just click the mouse anywhere on
+          the graph that you want to know the coordinates of and the coordinates will appear in the
+          <strong>Mouse Position</strong> field.
+          <img src="{{ 'img/image1283.GIF' | relative_url }}" class="h-center"/>
+        </li>
+        <li>
+          By entering text into the
+          <strong>Title=</strong> field you can change the title of your graph. After changing the title hit
+          <strong>Plot/Update</strong> to see the new title at the top of your graph.
+          <img src="{{ 'img/image423.gif' | relative_url }}" class="h-center"/>
+        </li>
+        <li>
+          <em>Zoom/Pan buttons</em>. In the upper right corner of the graph, there are three buttons with pictures of
+          magnifying glasses. From top to bottom these buttons represent zoom in, zoom out, and pan,
+          respectively.
+          <ul>
+            <li>
+              To zoom in, click the top button to depress, then click and drag over the area of the
+              graph for which you wish to zoom to. The images below show the preimage as the user
+              drags over the area in which to zoom and the resulting zoomed image. Note that after
+              clicking and dragging over the selected area, the zoom in button is automatically
+              released.
+              <table>
+                <tr>
+                  <td>
+                    <img src="{{ 'img/image424.gif' | relative_url }}"/>
+                  </td>
+                  <td/>
+                  <td>
+                    <img src="{{ 'img/image425.gif' | relative_url }}"/>
+                  </td>
+                </tr>
+              </table>
+            </li>
+            <li>
+              To zoom out, simply click the middle button. The graph will automatically zoom out by
+              doubling the min and max values of the axes.
+            </li>
+            <li>
+              To use the pan feature, click the bottom magnifying glass button to depress it. Click
+              and drag over the graph and the graph will pan around according to the movement of the
+              mouse. Upon releasing the mouse, the pan button is released.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </p>

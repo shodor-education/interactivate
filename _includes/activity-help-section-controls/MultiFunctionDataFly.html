@@ -1,0 +1,544 @@
+<p>
+      Find out about...
+    </p>
+    <table>
+      <tr>
+        <td>
+          <a href="#functions">Entering Functions</a>
+        </td>
+        <td>
+          <a href="#sliders"> Graphed Functions: Sliders and Adjusting Parameters </a>
+        </td>
+        <td>
+          <a href="#multiple">Manipulating Multiple Functions</a>
+        </td>
+        <td>
+          <a href="#data">Plotting Data</a>
+        </td>
+        <td>
+          <a href="#showtbl">Showing and Plotting Tabular Function Data</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="#grid">Adding Grid Lines</a>
+        </td>
+        <td>
+          <a href="#setWindow">Changing X and Y scales</a>
+        </td>
+        <td>
+          <a href="#showTrace">Tracing Functions</a>
+        </td>
+        <td>
+          <a href="#asymptotes">Showing Asymptotes</a>
+        </td>
+        <td>
+          <a href="#deviations">Examining Data Deviations</a>
+        </td>
+      </tr>
+    </table>
+    <p>
+      <a name="functions">
+        <strong>Entering Functions</strong>
+      </a>
+    </p>
+    <ul>
+      <li>
+        The Multi-Function Data Flyer allows you to enter algebraic functions in the box labeled
+        <strong>f(x)=</strong>. For information on the syntax of entering functions and numbers with scientific notation,
+        see
+        <a href="{{ '/resources/functionhelp/' | relative_url }}">Interactivate Functions Help</a>.
+      </li>
+      <li>
+        <p>
+          Enter the function you want to graph in the box marked
+          <strong>f(x)=</strong>. Enter constants or coefficients as either a number or letter. The computer will
+          recognize anything in the equation that is not the independent variable as a parameter.
+          For instance, if you wish to experiment with the linear function f(x) = x + 8 and wish to
+          manipulate the coefficient of x as well as the constant, it is necessary to type the
+          equation as something like f(x) = 1x + 8 or f(x)=ax+b. If you want to experiment with the
+          sine function f(x) = sin(x) and be able to manipulate the parameters such as the
+          y-intercept, phase, frequency, and amplitude, it is necessary to type something like
+          1sin(1x+0)+0 or f(x)=asin(bx+c)+d. Click
+          <strong>Set Function</strong> to graph the function. At this point, radio buttons will appear, allowing you to change
+          the function to an inequality. The function will initially be graphed as an equality, but
+          as you click on the inequality radio buttons, the graph will change to reflect your
+          choice. See the picture below.
+          <div>
+            <img class="h-center" src="{{ 'img/MFDFInequalities.png' | relative_url }}"/>
+          </div>
+        </p>
+      </li>
+      <li>
+        If you wish to enter multiple functions, you do not need to retype
+        <strong>f(x)=</strong>. Simply place a semi-colon between the functions you want to graph. See the picture below.
+        <div>
+          <img class="h-center" src="{{ 'img/image1245.gif' | relative_url }}"/>
+        </div>
+      </li>
+      <li>
+        Note that numerical values entered should be accurately calculated from 10
+        <sup> -8 </sup>to 10
+        <sup> 8 </sup> . Numbers larger or smaller than these values produce unreliable results. If you enter a
+        number with a magnitude smaller than 10^-6 or larger than 10^6 it will automatically be
+        converted to scientific notation.
+      </li>
+      <li>
+        This activity also allows you to choose from pre-defined functions so you do not need to
+        type in the function. Click on the
+        <strong>Preset Functions</strong> button and then select the function you wish to graph from the window that opens. Click on
+        the image of the function and then click the
+        <strong>Set</strong> button. This inserts the equation of the function into the text box. Close the window by
+        clicking the
+        <strong>Close</strong> button and then click the
+        <strong>Set Function</strong> button to graph it.
+      </li>
+      <li>
+        There are several additional checkboxes on this screen that control various aspects of the
+        function. These checkboxes, located to the right of where the function is input, include:
+        <strong>Exponents Change</strong>,
+        <strong>Use Multi-Letter Variables</strong>, and
+        <strong>Unlink Variables</strong>.
+        <ul>
+          <li>
+            The
+            <strong>Exponents Change</strong> checkbox, when checked, will create a slider bar for any exponent in the function. If
+            left unchecked, a slider will not be available for the exponents when the function is
+            graphed.
+          </li>
+          <li>
+            The
+            <strong>Use Multi-letter Variables</strong> checkbox allows you to use two or more letters for the variables or parameters of the
+            function. For instance if you wish to use
+            <em>time</em> as your independent variable rather than
+            <em>t</em>, check this box.
+          </li>
+          <li>
+            The
+            <strong>Unlink Variables</strong> checkbox is for inputting multiple functions that contain the same letters as
+            parameters. If you do not wish for the sliders between these parameters to be linked,
+            then check this box. For example if
+            <em>ax+b; ax^2+b</em> is input for the functions and this checkbox is not checked, then the slider
+            controlling the parameter
+            <em>a</em> will control the
+            <em>a</em> in both functions. If it is checked, then each function will be controlled by its own
+            slider. See the section
+            <a href="#sliders"> Graphed Functions: Sliders and Adjusting Parameters </a> for more information about slider functionality and usage.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Once you have set the function, you may enter a different function by clicking the
+        <strong>New Function</strong> button or the
+        <strong>Change Function</strong> button. Both of these buttons will return you to the screen that allows you to input a
+        function but the
+        <strong>New Function</strong> will insert the original function you input into the
+        <em>f(x) =</em> text box, whereas
+        <strong>Change Function</strong> will default back to the function currently displayed if it has been manipulated by the
+        slider bars. For example, if you initially input and graphed f(x)=2x+0 and then manipulated
+        the sliders for the function to read f(x)=5x-7, the
+        <strong>New Function</strong> button would default to f(x)=2x+0 and the
+        <strong>Change Function</strong> would default back to f(x)=5x-7. See the section
+        <a href="#sliders"> Graphed Functions: Sliders and Adjusting Parameters </a> for more information about slider functionality and usage.
+      </li>
+      <li>
+        Once you
+        <strong>Set Function</strong>, the graph is displayed in the center of the screen.
+        <div>
+          <img class="h-center" src="{{ 'img/image1246.gif' | relative_url }}"/>
+        </div>
+      </li>
+    </ul>
+    <p>
+      <a name="sliders">
+        <strong>Graphed Functions: Sliders and Adjusting Parameters</strong>
+      </a>
+    </p>
+    <ul>
+      <li>
+        Once you have a function graphed, you may manipulate the coefficients and constants of the
+        function with sliders, or by clicking on one of the numbers in the equation and typing in a
+        new value. The numbers in the function will appear color-coded and match up with the same
+        colors of the resulting sliders. Manipulating the slider will result in manipulating both
+        the graph and the corresponding value in the function.
+      </li>
+      <li>
+        After changing the function with the sliders, you may set the sliders back to the original
+        values when the function was entered by clicking the
+        <strong>Reset Sliders</strong> button.
+        <div>
+          <img class="h-center" src="{{ 'img/image1247.gif' | relative_url }}"/>
+        </div>
+      </li>
+      <li>
+        You may manipulate the maximum, minimum, and increment of each slider in one of two ways.
+        The
+        <strong>Slider Limits</strong> button brings up a dialog box that allows you to set the minimum and maximum values of each
+        slider bar. You can also set the step size for each slider bar. The step size determines how
+        precisely you can control the value of the constant. For instance, if you set the minimum to
+        0, the maximum to 1, and the step to 0.1, moving the slider will step the constant from 0 to
+        0.1 to 0.2, and so on. However, if you set the step to 0.2, the slider will step the
+        constant to 0, 0.2, 0.4, etc.
+        <div>
+          <img class="h-center" src="{{ 'img/image1248.gif' | relative_url }}"/>
+        </div>
+      </li>
+      <li>
+        The number of increments must be smaller than 100. If you enter parameters such that the
+        number of increments is greater than 100, then an error message appears asking you to
+        readjust by changing the slider min, slider max, or step size.
+        <div>
+          <img class="h-center" src="{{ 'img/image1249.gif' | relative_url }}"/>
+        </div>
+      </li>
+      <li>
+        You may also choose to control how the slider is incremented by the rightmost significant
+        digit of the number that controls it. Inputting f(x)=1x as the function, the slider will
+        increment by 1, changing from 1 to 2 to 3, etc. Inputting f(x)=10x as the function, the
+        slider will increment by 10, jumping from 10 to 20 to 30, etc. Inputting f(x)=1.0x as the
+        function, the slider will increment by a tenth, changing from 1.0 to 1.1 to 1.2, etc.
+      </li>
+      <li>
+        <p>
+          If you would like to change a specific value in the function without returning to the
+          function input screen and without using the slider, you may also click on the value. This
+          will open a small text box where you can change the value.
+        </p>
+        <div>
+          <img class="h-center" src="{{ 'img/image1242.gif' | relative_url }}"/>
+        </div>
+        <p>
+          Click enter or on its slider for the activity to accept the value. This feature is
+          especially useful for changing the increment value of the slider (as described above)
+          because changing the right most significant digit controls the value by which the slider
+          increments.
+        </p>
+      </li>
+    </ul>
+    <p>
+      <a name="multiple">
+        <strong>Manipulating Multiple Functions</strong>
+      </a>
+    </p>
+    <ul>
+      <li>
+        <p>
+          You may enter and manipulate multiple functions with this version of Data Flyer. See the
+          section on
+          <a href="#functions">Entering Functions</a> for information on how to enter multiple functions. Once multiple functions have been
+          entered and graphed, the functions are controlled by individual tabs.
+        </p>
+        <div>
+          <img class="h-center" src="{{ 'img/image1243.gif' | relative_url }}"/>
+        </div>
+        <p>
+          Clicking on the tab labeled with the equation of the function will display the color-coded
+          function and its appropriate sliders.
+        </p>
+      </li>
+      <li>
+        <p>
+          If you entered multiple functions that contain the same letter parameter, the
+          corresponding slider on either tab will control both functions by default. If you do not
+          wish to control both functions in this manner, be sure the
+          <strong>Unlink Variables</strong> checkbox is checked on the screen where you enter the function.
+        </p>
+        <p>
+          Note that the original function that was input will appear on the tab.
+        </p>
+      </li>
+    </ul>
+    <p>
+      <a name="data">
+        <strong>Plotting Data</strong>
+      </a>
+    </p>
+    <ul>
+      <li>
+        The
+        <strong>Data</strong> area is for entering data as ordered pairs. Enter the ordered pairs by separating the x and
+        y of the ordered pair with a comma, a space, or a tab, and putting each pair on a separate
+        line. Many browsers will allow you to cut and paste data from two columns of a spreadsheet
+        application or html table.
+        <div>
+          <img class="h-center" src="{{ 'img/image1250.gif' | relative_url }}"/>
+        </div>
+      </li>
+      <li>
+        If you have trouble copying data from the applet and pasting it into an Excel spreadsheet,
+        please see our
+        <a href="{{ '/resources/ExcelCopyPasteHelp/' | relative_url }}>Excel Copy/Paste Help</a>.
+      </li>
+      <li>
+        You may also plot different sets of data in different colors. You may plot a total of twelve
+        data sets at once. Separate data sets by typing
+        <em>newgraph</em> on a line by itself in the
+        <strong>Data</strong> window. If you want to specify your own colors for the graphs you can replace
+        <em>newgraph</em> with the following keywords:
+        <em>bluegraph</em>,
+        <em>redgraph</em>,
+        <em>greengraph</em>,
+        <em>cyangraph</em>,
+        <em>graygraph</em>,
+        <em>magentagraph</em>,
+        <em>yellograph</em>,
+        <em>orangegraph</em>,
+        <em>purplegraph</em>,
+        <em>crimsongraph</em>.
+      </li>
+      <li>
+        After entering the data, plot it by pressing the
+        <strong>Plot Data</strong> button.
+        <div>
+          <img class="h-center" src="{{ 'img/image1251.gif' | relative_url }}"/>
+        </div>
+      </li>
+      <li>
+        You may clear the data by clicking the
+        <strong>Clear Data</strong> button.
+        <div>
+          <img class="h-center" src="{{ 'img/image1252.gif' | relative_url }}"/>
+        </div>
+      </li>
+      <li>
+        You may also plot data that appears in the
+        <strong>Show Tabular Data</strong> window. See
+        <a href="#showtbl">Show and Plot Tabular Function Data</a> for more information.
+      </li>
+    </ul>
+    <p>
+      <a name="showtbl">
+        <strong>Showing Tabular Function Data</strong>
+      </a>
+    </p>
+    <ul>
+      <li>
+        To view a table of values corresponding to the graphed functions, click the
+        <strong>Show Tabular Data</strong> button.
+        <div>
+          <img class="h-center" src="{{ 'img/image1244.gif' | relative_url }}"/>
+        </div>
+      </li>
+      <li>
+        <p>
+          The x values in the table increment equally and then give the corresponding f(x) values
+          for the functions. You can change these data values by entering a new
+          <strong>x min</strong> value, new
+          <strong>x max</strong> value, and
+          <strong>step size</strong>.
+        </p>
+        <p>
+          The
+          <strong>precision</strong> field allows you to adjust the number of decimal place values in the resulting points for
+          x and f(x).
+        </p>
+        <p>
+          Note that if you enter a step that does not divide evenly into the range, the table will
+          stop at the greatest multiple of the step that is less than the maximum.
+        </p>
+      </li>
+    </ul>
+    <p>
+      <a name="grid">
+        <strong>Adding Grid Lines</strong>
+      </a>
+    </p>
+    <ul>
+      <li>
+        There are three types of grids:
+        <strong>No Grid, Light Grid Lines</strong>, and
+        <strong>Dark Grid Lines</strong>. To activate any of these three options, highlight the circle next to the appropriate
+        option:
+        <div>
+          <img class="h-center" src="{{ 'img/image1253.gif' | relative_url }}"/>
+        </div>
+        <div class="h-center">
+          <table>
+            <tr>
+              <td>
+                <strong>No Grid</strong> graph:
+              </td>
+              <td>
+                <strong>Light Grid Lines</strong> graph:
+              </td>
+              <td>
+                <strong>Dark Grid Lines</strong> graph:
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div>
+                  <img class="h-center" src="{{ 'img/image541.jpg' | relative_url }}"/>
+                </div>
+              </td>
+              <td>
+                <div>
+                  <img class="h-center" src="{{ 'img/image542.jpg' | relative_url }}"/>
+                </div>
+              </td>
+              <td>
+                <div>
+                  <img class="h-center" src="{{ 'img/image543.jpg' | relative_url }}"/>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    </ul>
+    <p>
+      <a name="setWindow">
+        <strong>Changing X and Y Scales</strong>
+      </a>
+    </p>
+    <p>
+      The Interactivate graphing activities allow three ways to alter the range on the axes.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <em>Setting exact values for axis minimums and maximums:</em> You may set the graph boundaries by clicking the
+          <strong>Set Window</strong> button and entering new values for the x max, x min, y max, or y min. You can also set
+          how the x and y scales increment or you can choose to have the activity choose these
+          values automatically. Click the
+          <strong>Set Window</strong> button to set the values.
+        </p>
+        <p>
+          To return the values to their defaults, click the
+          <strong>Get Defaults</strong> button and then click the
+          <strong>Set</strong> button again. If you do not want to change the window settings you may click
+          <strong>Cancel</strong>.
+        </p>
+        <div>
+          <img class="h-center" src="{{ 'img/image1254.gif' | relative_url }}"/>
+        </div>
+      </li>
+      <li>
+        <em>Zoom/Pan buttons.</em> In the upper right corner of the graph, there are three buttons with pictures of magnifying
+        glasses. From top to bottom these buttons represent zoom in, zoom out, and pan,
+        respectively.
+        <ul>
+          <li>
+            To
+            <em>zoom in</em>, click the top button to depress it, then click and drag over the area of the graph
+            that you wish to magnify. The images below show first the process of dragging a box
+            around a desired zoom area with the mouse (left), and then the resulting zoomed image
+            after the mouse button is released (right). Note that after the zoom-in has been
+            performed, the zoom-in button at top right is no longer depressed.
+            <div>
+              <img class="h-center" src="{{ 'img/image545.gif' | relative_url }}"/>
+              <img class="h-center" src="{{ 'img/image546.gif' | relative_url }}"/>
+            </div>
+          </li>
+          <li>
+            To
+            <em>zoom out</em>, simply click the second of the three zoom buttons. The graph will automatically zoom
+            out by doubling the min and max values of the axes.
+          </li>
+          <li>
+            To
+            <em>pan</em>, click the bottom magnifying glass button to depress it. Click and drag over the graph
+            and the graph will pan around according to the movement of the mouse. Upon releasing the
+            mouse, the pan button is released.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <em>Auto Scales:</em> Checking the
+        <strong>Auto Scale</strong> check box gives you the smallest window possible so that all of the data points still fit
+        on the coordinate plane. Note that there must be data for this feature to work.
+        <div>
+          <img class="h-center" src="{{ 'img/image1255.gif' | relative_url }}"/>
+        </div>
+      </li>
+    </ol>
+    <p>
+      <a name="showTrace">
+        <strong>Tracing Functions</strong>
+      </a>
+    </p>
+    <ul>
+      <li>
+        <p>
+          Checking the
+          <strong>Show Trace</strong> box will cause old graph lines to remain visible (in a lighter gray) as you change the
+          function by moving the sliders. To remove the trace, click the
+          <strong>clear trace</strong> button. To stop the tracing, uncheck the
+          <strong>Show Trace</strong> check box.
+        </p>
+        <div>
+          <img class="h-center" src="{{ 'img/image1256.gif' | relative_url }}"/>
+        </div>
+      </li>
+      <li>
+        <p>
+          Note that when
+          <strong>Show Trace</strong> is checked, you will be unable to
+          <strong>Plot Data, Show Squares, Auto Scale, Show Vertical Asymptotes</strong>, use the pan/zoom features, or change the darkness of the grids. When any of these
+          options are checked, you will be unable to
+          <strong>Show Trace</strong>. You can have data points plotted before you turn the trace on but you will be unable to
+          add new data points using Plot Data.
+        </p>
+      </li>
+    </ul>
+    <p>
+      <a name="asymptotes">
+        <strong>Showing Asymptotes</strong>
+      </a>
+    </p>
+    <ul>
+      <li>
+        <p>
+          You may see the vertical asymptotes of a graph (if there are any) by checking the
+          <strong>Show Vertical Asymptotes</strong> check box. For example, the tangent graph with this option selected looks like:
+        </p>
+        <div>
+          <img class="h-center" src="{{ 'img/image1257.gif' | relative_url }}"/>
+        </div>
+        <p>
+          Note that due to the programming technique used to detect asymptotes, this program will
+          only detect those asymptotes that go from a large positive y value to a large negative y
+          value at the discontinuity. f(x)=log(x) is an example of a vertical asymptote Data Flyer
+          will not detect.
+        </p>
+      </li>
+    </ul>
+    <p>
+      <a name="deviations">
+        <strong>Examining Data Deviations</strong>
+      </a>
+    </p>
+    <ul>
+      <li>
+        The sum of squares of deviations is shown at the top of the applet. The closer this number
+        is to zero the more accurate your function is in relation to your data. You may see a data
+        table of these deviations by clicking the
+        <strong>Show Deviations</strong> button.
+        <div>
+          <img class="h-center" src="{{ 'img/image561.jpg' | relative_url }}"/>
+        </div>
+      </li>
+      <li>
+        Checking the
+        <strong>Show Squares</strong> check box draws squares from the data points to the function on the coordinate plane. The
+        length of each side of the square is equal to the vertical distance from the coordinate to
+        the function value at the x-value of the coordinate.
+        <div>
+          <img class="h-center" src="{{ 'img/image1258.gif' | relative_url }}"/>
+        </div>
+      </li>
+      <li>
+        Decreasing the sum of the squares of the deviations between the points and the function
+        (think of decreasing the sum of the areas of the squares shown above) produces a better
+        "fit" of the function to the data. Experiment by moving the sliders from side to side until
+        you find a value that you think minimizes the sum of squares of deviations:
+        <div>
+          <img class="h-center" src="{{ 'img/image1271.png' | relative_url }}"/>
+        </div>
+      </li>
+    </ul>
+    <p>
+      For directions on downloading individual activities and saving the state of a downloaded
+      activity, see
+      <a href="{{ '/resources/DownloadingInstructions' | relative_url }}>Downloading Interactivate Activities Help</a>.
+    </p>

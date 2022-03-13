@@ -1,0 +1,462 @@
+<ul>
+      <li>
+        <p>
+          The area at the top of the screen is where the plot is displayed.
+        </p>
+        <p>
+          <img src="{{ 'img/PolarCoord_Plot_Wndw.png' | relative_url }}" class="h-center"/>
+        </p>
+      </li>
+      <li>
+        <p>
+          The Function area is for entering functions. To graph a function, type the formula of the
+          function you want to graph in the space at the bottom of the applet, next to "f(t) ="
+          where t represents theta. You may graph up to 10 functions on the same plot. To graph
+          multiple functions enter one formula per line, as shown.
+        </p>
+        <p>
+          <img src="{{ 'img/PolarCoord_FuncTxBx.png' | relative_url }}" class="h-center"/>
+        </p>
+        <p>
+          Basic functions and their compositions can be typed as follows:
+          <div class="h-center">
+            <table>
+              <tr>
+                <td>
+                  <strong>Function</strong>
+                </td>
+                <td>
+                  <strong>Symbol</strong>
+                </td>
+                <td>
+                  <strong>Examples</strong>
+                </td>
+                <td>
+                  <strong>Meaning</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  addition
+                </td>
+                <td>
+                  +
+                </td>
+                <td>
+                  <strong>x + 3 </strong>
+                </td>
+                <td>
+                  x plus three
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  subtraction
+                </td>
+                <td>
+                  -
+                </td>
+                <td>
+                  <strong>5 - x </strong>
+                </td>
+                <td>
+                  five minus x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  multiplication
+                </td>
+                <td>
+                  *
+                </td>
+                <td>
+                  <strong>x*(x - 2) </strong>
+                </td>
+                <td>
+                  x times the quantity x minus two
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  division
+                </td>
+                <td>
+                  /
+                </td>
+                <td>
+                  <strong>3/x</strong>
+                </td>
+                <td>
+                  three divided by x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  power
+                </td>
+                <td>
+                  ^
+                </td>
+                <td>
+                  <strong>x^3</strong>
+                </td>
+                <td>
+                  x to the power of three
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  (pi)
+                </td>
+                <td>
+                  pi
+                </td>
+                <td>
+                  <strong>sin(pi*x) </strong>
+                </td>
+                <td>
+                  sin of the quantity (pi) times x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  square root
+                </td>
+                <td>
+                  sqrt(...)
+                </td>
+                <td>
+                  <strong>sqrt(x)</strong>
+                </td>
+                <td>
+                  square root of x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  nth root*
+                </td>
+                <td>
+                  x^(1/n)
+                </td>
+                <td>
+                  <strong>x^(1/3)</strong>
+                </td>
+                <td>
+                  cube root of x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  absolute value
+                </td>
+                <td>
+                  abs(...)
+                </td>
+                <td>
+                  <strong>abs(3 - x) </strong>
+                </td>
+                <td>
+                  absolute value of the quantity three minus x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  e to the power of x
+                </td>
+                <td>
+                  exp(...)
+                </td>
+                <td>
+                  <strong>exp(x)</strong>
+                </td>
+                <td>
+                  e to the power of x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  sine
+                </td>
+                <td>
+                  sin(...)
+                </td>
+                <td>
+                  <strong>sin(x)</strong>
+                </td>
+                <td>
+                  sine of x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  cosine
+                </td>
+                <td>
+                  cos(...)
+                </td>
+                <td>
+                  <strong>cos(5 - x) </strong>
+                </td>
+                <td>
+                  cosine of the quantity five minus x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  tangent
+                </td>
+                <td>
+                  tan(...)
+                </td>
+                <td>
+                  <strong>tan(x) </strong>
+                </td>
+                <td>
+                  tangent x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  arcsine
+                </td>
+                <td>
+                  asin(...)
+                </td>
+                <td>
+                  <strong>2*asin(x)</strong>
+                </td>
+                <td>
+                  two times arcsine x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  arccosine
+                </td>
+                <td>
+                  acos(...)
+                </td>
+                <td>
+                  <strong>acos(x)</strong>
+                </td>
+                <td>
+                  arccosine x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  arctangent
+                </td>
+                <td>
+                  atan(...)
+                </td>
+                <td>
+                  <strong>atan(x)</strong>
+                </td>
+                <td>
+                  arctangent of x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  hyperbolic sine
+                </td>
+                <td>
+                  sinh(...)
+                </td>
+                <td>
+                  <strong>sinh(x)</strong>
+                </td>
+                <td>
+                  hyperbolic sine of x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  hyperbolic cosine
+                </td>
+                <td>
+                  cosh(...)
+                </td>
+                <td>
+                  <strong>cosh(10/x)</strong>
+                </td>
+                <td>
+                  hyperbolic cosine of the quantity ten divided by x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  hyperbolic tangent
+                </td>
+                <td>
+                  tanh(...)
+                </td>
+                <td>
+                  <strong>tanh(x) </strong>
+                </td>
+                <td>
+                  hyperbolic tangent of x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  natural logarithm
+                </td>
+                <td>
+                  ln(...)
+                </td>
+                <td>
+                  <strong>ln(x) </strong>
+                </td>
+                <td>
+                  natural logarithm of x
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  base 10 logarithm
+                </td>
+                <td>
+                  log(...)
+                </td>
+                <td>
+                  <strong>log(x + 5)</strong>
+                </td>
+                <td>
+                  base ten logarithm of the quantity x plus five
+                </td>
+              </tr>
+            </table>
+          </div>
+        </p>
+        <p>
+          <strong>NOTE:</strong> For functions where there is a range of values for which the function is undefined, this
+          application will draw a straight line over the range which is undefined.
+        </p>
+      </li>
+      <li>
+        The
+        <strong>Data</strong> area is for entering data points. Data points should be in the form (r, theta). A space or
+        a carriage return is required to separate the data points from one another. After you input
+        the coordinates, you must press the
+        <strong>Plot/Update</strong> button to graph them.
+        <p>
+          <img src="{{ 'img/PolarCoord_Data_Area.png' | relative_url }}" class="h-center"/>
+        </p>
+        <p>
+          If you have trouble copying data from the applet and pasting it into an Excel spreadsheet,
+          please see our
+          <a href="{{ '/resources/ExcelCopyPasteHelp/' | relative_url }}>Excel Copy/Paste Help</a>.
+        </p>
+        <p>
+          If the
+          <strong>Use Radians</strong> option is chosen, values for theta can be input using the word pi, as in pi/4 or 2pi/3.
+          You can also use the functions listed in the table above to create values for r.
+        </p>
+        <p>
+          If the values for r or theta are negative, they will be converted to appropriate positive
+          values. If the value of theta is greater than 2 pi, then it will be converted to the
+          appropriate value less than or equal to 2 pi.
+        </p>
+      </li>
+      <li>
+        Just as you can plot up to 10 functions at once, you can also plot up to 12 data sets at the
+        same time. Separate multiple data sets by typing
+        <strong>newgraph</strong> on a line by itself in the
+        <strong>Data</strong> window. If you want to specify your own colors for the graphs you can replace
+        <strong>newgraph</strong> with the following keywords:
+        <strong>bluegraph</strong>,
+        <strong>redgraph</strong>,
+        <strong>greengraph</strong>,
+        <strong>graygraph</strong>,
+        <strong>magentagraph</strong>,
+        <strong>orangegraph</strong>,
+        <strong>purplegraph</strong>,
+        <strong>crimsongraph</strong>,
+        <strong>blackgraph</strong>,
+        <strong>browngraph</strong>,
+        <strong>darkbluegraph</strong>.
+      </li>
+      <li>
+        <p>
+          You can choose what you see on the graph. You can select to show all functions, all data,
+          and/or the grid lines by checking the appropriate box or radio button in the
+          <strong>Show</strong> box.
+          <img src="{{ 'img/PolarCoord_Show_Dilog.png' | relative_url }}" class="h-center"/>
+        </p>
+      </li>
+      <li>
+        The applet also can tell you the location of any click. Just click the mouse anywhere on the
+        graph and the coordinates will appear in the
+        <strong>Mouse Position</strong> box.
+        <img src="{{ 'img/PolarCoord_MousePos.png' | relative_url }}" class="h-center"/>
+      </li>
+      <li>
+        <strong>Auto Scale</strong>: Checking the Auto Scale check box gives the smallest window possible so that all of the
+        data points still fit on the coordinate plane. (
+        <strong>NOTE:</strong> There must be data for this feature to work. ) You can also choose whether data is given in
+        radians or degrees. If you choose degrees, the value of t will be given in degrees when you
+        choose to show tabular data.
+        <img src="{{ 'img/PolarCoord_AutoScale.png' | relative_url }}" class="h-center"/>
+      </li>
+      <li>
+        <strong>Theta Minimum</strong> and
+        <strong>Theta Maximum</strong> allow the user to adjust the range of the function.
+      </li>
+      <li>
+        <p>
+          The
+          <strong>Display Radius</strong> allows the user to manually adjust the size of the viewing window. The user may also use
+          the
+          <strong>Zoom In</strong> and
+          <strong> Zoom Out</strong> buttons to control this. Since polar coordinates are defined by distance from the pole
+          and angle from the polar axis, the viewing window always remains square with the pole at
+          the center.
+          <img src="{{ 'img/zoom.png' | relative_url }}" class="h-center"/>
+        </p>
+      </li>
+      <li>
+        <p>
+          To view a table of values corresponding to the graphed function, click the
+          <strong>Show Tabular Data</strong> button.
+          <img src="{{ 'img/PolarCoord_Tab_Data_Btn.png' | relative_url }}" class="h-center"/>
+        </p>
+      </li>
+      <li>
+        The t values in the table increment equally and then give the corresponding f(t) values for
+        each function plotted. You can change these data values by entering a new theta minimum
+        value, new theta maximum value, and step size, all of which should be expressed in radians.
+        If you enter a step that does not divide evenly into the range, the table will stop at the
+        greatest multiple of the step that is less than the maximum. The precision field allows you
+        to adjust the number of decimal points displayed.
+        <p>
+          <img src="{{ 'img/PolarCoord_Data_Tbl.png' | relative_url }}" which="medium" class="h-center"/>
+        </p>
+      </li>
+      <li>
+        <p>
+          When the
+          <strong>Plot Data</strong> button within the
+          <strong>Show Tabular Data</strong> window is pressed, the data listed in tabular form in the
+          <strong>Tabular Data</strong> window is plotted on the graph of the main screen.
+        </p>
+        <p>
+          Graph of
+          <strong>sin(.5*t)</strong> in red and
+          <strong>sin(2t)</strong> in blue:
+        </p>
+        <p>
+          <img src="{{ 'img/PolarCoord_DataFuncGrph.png' | relative_url }}" class="h-center"/>
+        </p>
+        <p>
+          In addition to plotting the data on the graph, the text area is populated with text
+          corresponding to the data points plotted.
+        </p>
+        <p>
+          <img src="{{ 'img/PolarCoord_Data_w_pts.png' | relative_url }}" class="h-center"/>
+        </p>
+      </li>
+    </ul>

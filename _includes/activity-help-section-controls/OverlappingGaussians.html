@@ -1,0 +1,167 @@
+<p>
+    <strong>Slider Bars </strong>
+    <ul>
+      <li>
+        Since the functions are already graphed, you may manipulate the coefficients and constants
+        of the function with sliders. Manipulating the slider will result in manipulating the graph
+        in different ways depending on the color of the slider.
+        <ul>
+          <li>
+            <strong>Purple Slider:</strong> Adjusts the amplitude or height of the curve. The larger the value of the purple
+            slider, the taller the function will be. This value should always be greater than zero.
+          </li>
+          <li>
+            <strong>Red Slider:</strong> Adjusts the standard deviation or width of the curve. As this value increases, the
+            graph will appear to stretch out horizontally. This value should always be greater than
+            zero.
+          </li>
+          <li>
+            <strong>Green Slider:</strong> Adjusts the mean or horizontal shift of the curve. As you adjust this slider, the graph
+            will slide horizontally. This variable can take on any value.
+          </li>
+        </ul>
+        <br/>
+      </li>
+      <li>
+        After changing the function with the sliders, you may set the sliders back to the original
+        values when the function was entered by clicking the
+        <strong>Reset Sliders</strong> button.
+        <br/>
+        <img src="{{ 'img/OGHResetSlider.png' | relative_url }}" class="h-center"/>
+      </li>
+      <li>
+        You may manipulate the maximum, minimum, and increment of each slider bar. The
+        <strong>Slider Limits</strong> button brings up a dialog box that allows you to set the minimum and maximum values of each
+        slider bar, as well as the step size for each adjustment of the slider. The step size
+        determines how precisely you can control the value of the constant. For instance, if you set
+        the minimum to 0, the maximum to 1, and the step to 0.1, moving the slider will step the
+        constant from 0 to 0.1 to 0.2, and so on. However, if you set the step to 0.2, the slider
+        will step the constant from 0 to 0.2, 0.4, etc.
+        <img src="{{ 'img/OGHSliderSetup.png' | relative_url }}" class="h-center"/>
+      </li>
+      <li>
+        The number of steps between the slider minimum and maximum must be smaller than 200. If you
+        enter parameters such that the number of steps is greater than 200, then an error message
+        appears asking you to readjust by changing the slider min, slider max, or step size.
+        <br/>
+        <img src="{{ 'img/OGHSliderIncrement.png' | relative_url }}" class="h-center"/>
+      </li>
+    </ul>
+    <strong>Black Slider</strong>
+    <ul>
+      <li>
+        The black slider bar sets a bound for integrals of the two Gaussian curves. For the red
+        curve, the black slider sets the lower bound for the integral with the upper bound being
+        infinity. For the blue curve, it sets the upper bound for the integral with the lower bound
+        being negative infinity. The results of these integrals are displayed in the box labeled
+        Gaussians.
+        <br/>
+        <img src="{{ 'img/OGHBlackSlider.png' | relative_url }}" class="h-center"/>
+      </li>
+    </ul>
+    <br/>
+    <strong>Grid Lines</strong>
+    <ul>
+      <li>
+        There are three types of grids:
+        <strong>No Grid, Light Grid Lines, and Dark Grid Lines</strong>. To activate any of these three options, highlight the circle next to the appropriate
+        option:
+      </li>
+    </ul>
+    <table class="h-center">
+      <tr>
+        <td>
+          No Grid Lines
+        </td>
+        <td>
+          Light Grid Lines
+        </td>
+        <td>
+          Dark Grid Lines
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="{{ 'img/OGHNoGrid.png' | relative_url }}" class="h-center"/>
+        </td>
+        <td>
+          <img src="{{ 'img/OGHLightGrid.png' | relative_url }}" class="h-center"/>
+        </td>
+        <td>
+          <img src="{{ 'img/OGHDarkGrid.png' | relative_url }}" class="h-center"/>
+        </td>
+      </tr>
+    </table>
+    <strong>Change X and Y Scales</strong>
+    <br/>This activity allows two ways to alter the range on the axes
+    <ul>
+      <li>
+        <em>Setting exact values for axis minimums and maximums</em>: You may set the graph boundaries by clicking the
+        <strong>Set Window</strong> button and entering new values for the x max, x min, y max, or y min. You can also set how
+        the x and y scales increment or you can choose to have the activity choose these values
+        automatically. Click the
+        <strong>Set Window</strong> button to set the values.
+        <br/>
+        <img src="{{ 'img/OGHSetWindow.png' | relative_url }}" class="h-center"/> To return the values to their defaults, click the
+        <strong>Get Defaults</strong> button and then click the
+        <strong>Set</strong> button again. If you do not want to change the window settings you may click
+        <strong>Cancel</strong>.
+      </li>
+      <li>
+        <em>Zoom/Pan buttons</em>. In the upper right corner of the graph, there are three buttons with pictures of
+        magnifying glasses. From top to bottom these buttons represent zoom in, zoom out, and pan,
+        respectively.
+        <ul>
+          <li>
+            To
+            <em>zoom in</em>, click the top button to depress it, then click and drag over the area of the graph
+            that you wish to magnify. The images below show first the process of dragging a box
+            around a desired zoom area with the mouse (left), and then the resulting zoomed image
+            after the mouse button is released (right). Note that after the zoom-in has been
+            performed, the zoom-in button at top right is no longer depressed.
+            <table class="h-center">
+              <tr>
+                <td>
+                  <img src="{{ 'img/OGHZoom.png' | relative_url }}" class="h-center"/>
+                </td>
+                <td>
+                  <img src="{{ 'img/OGHZoomResult.png' | relative_url }}" class="h-center"/>
+                </td>
+              </tr>
+            </table>
+          </li>
+          <li>
+            To
+            <em>zoom out</em>, simply click the second of the three zoom buttons. The graph will automatically zoom
+            out by doubling the min and max values of the axes.
+          </li>
+          <li>
+            To
+            <em>pan</em>, click the bottom magnifying glass button to depress it. Click and drag over the graph
+            and the graph will pan around according to the movement of the mouse. Upon releasing the
+            mouse, the pan button is released.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <strong>Trace Function</strong>
+    <ul>
+      <li>
+        Checking the
+        <strong>Show Trace</strong> box will cause old graph lines to remain visible (in a lighter gray) as you change the
+        function by moving the sliders. To remove the trace, click the
+        <strong>Clear Trace</strong> button. To stop the tracing, uncheck the
+        <strong>Show Trace</strong> check box.
+        <table class="h-center">
+          <tr>
+            <td>
+              <img src="{{ 'img/OGHTrace.png' | relative_url }}" class="h-center"/>
+            </td>
+            <td>
+              <img src="{{ 'img/OGHTraceGraph.png' | relative_url }}" class="h-center"/>
+            </td>
+          </tr>
+        </table>
+      </li>
+    </ul>
+  </p>

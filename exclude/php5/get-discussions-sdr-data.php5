@@ -36,8 +36,6 @@ while ($discussion = $discussions->fetch_assoc()) {
   $result = xmlToHtmlWithFiles(
     $content,
     $shortname,
-    "discussions",
-    "discussion",
     $files
   );
   $content = $result[0];

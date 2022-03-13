@@ -111,8 +111,6 @@ function echoLessonJsonHtml($property, $customFunc = "") {
         $result = xmlToHtmlWithFiles(
           $json->$property,
           $shortname,
-          "lessons",
-          "lesson",
           $files
         );
         $files = $result[1];
@@ -174,15 +172,40 @@ function echoTopics($resource) {
   );
 }
 
-function getActivityTab($name) {
-  global $snap2DbConn;
+function getActivityHelpSubsections($mapping, $override = false) {
   $files = array();
   $activities = getSdrResources("Activity");
   while ($activity = $activities->fetch_assoc()) {
     $shortname = getShortname($activity);
-    echo "FILENAME::$shortname\n";
+    $content = getActivitySection("help", $shortname);
+    $content = str_replace("&ndash;", "&#8211;", $content);
+    $content = str_replace("&ne;", "&#8800;", $content);
+    $xml = simplexml_load_string($content);
+    $section = $xml->xpath("//section[@mapping='$mapping']");
+    if ($section || $override) {
+      $sectionXml = $section
+        ? $section[0]->asXML()
+        : $xml->children()->asXML();
+      $result = xmlToHtmlWithFiles(
+        $sectionXml,
+        $shortname,
+        $files
+      );
+      if ($result[0]) {
+        $files = $result[1];
+        echo "FILENAME::$shortname\n";
+        echo "$result[0]\n";
+      }
+    }
+  }
+  foreach ($files as $name => $path) {
+    echo "$name,$path\n";
+  }
+}
 
-    $query = <<<END
+function getActivitySection($tabName, $shortname) {
+  global $snap2DbConn;
+  $query = <<<END
 select Version.`content`
 from Directory
 left join DirectoryLink on DirectoryLink.`childId` = Directory.`id`
@@ -190,18 +213,24 @@ left join Resource on Resource.`canonParentId` = Directory.`id`
 left join ResourceLink on ResourceLink.`childId` = Resource.`id`
 left join Version on Version.`id` = Resource.`liveVersionId`
 where Directory.`canonParentId` = 2202
-and ResourceLink.`shortname` = "$name"
+and ResourceLink.`shortname` = "$tabName"
 and DirectoryLink.`shortName` = "$shortname"
 END;
-    $versions = $snap2DbConn->query($query);
-    $version = $versions->fetch_assoc();
-    $content = $version["content"];
+  $versions = $snap2DbConn->query($query);
+  $version = $versions->fetch_assoc();
+  return $version["content"];
+}
 
+function getActivitySections($tabName) {
+  $files = array();
+  $activities = getSdrResources("Activity");
+  while ($activity = $activities->fetch_assoc()) {
+    $shortname = getShortname($activity);
+    echo "FILENAME::$shortname\n";
+    $xml = getActivitySection($tabName, $shortname);
     $result = xmlToHtmlWithFiles(
-      $content,
+      $xml,
       $shortname,
-      "activities/$name",
-      "$name",
       $files
     );
     $content = $result[0];
@@ -320,9 +349,9 @@ function getVersionContentJson($shortname, $parentId) {
   return json_decode($content);
 }
 
-function xmlToHtmlWithFiles($content, $shortname, $imgDir, $imgInfix, $files) {
+function xmlToHtmlWithFiles($xml, $shortname, $files) {
   global $sdrDbConn, $snap2DbConn;
-  $html = $content;
+  $html = $xml;
   $html = preg_replace("#\s+\n#", "\n", $html);
   $html = preg_replace("#\s*<XMLResource>\s*\n#", "", $html);
   $html = preg_replace("#\s*<section mapping=\".*\"\s*/?>\s*\n?#", "", $html);
@@ -351,6 +380,18 @@ function xmlToHtmlWithFiles($content, $shortname, $imgDir, $imgInfix, $files) {
   , "<h3>$1</h3>"
   , $html
   );
+  $html = preg_replace(
+    "#link href=\"../(.+)\"#"
+  , "a href=\"{{ '/resources/$1' | relative_url }}\""
+  , $html
+  );
+  $html = preg_replace(
+    "#link href=\"http://www.shodor.org/interactivate/activities/(.+)\"#"
+  , "a href=\"{{ '/activities/$1' | relative_url }}\""
+  , $html
+  );
+  $html = str_replace("<link href=\"#", "<a href=\"#", $html);
+  $html = str_replace("<link name=\"", "<a name=\"", $html);
   $html = str_replace("<p/>", "", $html);
   $html = str_replace("<b>", "<strong>", $html);
   $html = str_replace("<i>", "<em>", $html);
@@ -369,7 +410,6 @@ select url
 from SDRResource
 where cserdid = $cserdId
 END;
-
     $urlResults = $sdrDbConn->query($query);
     while ($urlResult = $urlResults->fetch_assoc()) {
       $url = str_replace("http://www.shodor.org/interactivate", "", $urlResult["url"]);
@@ -378,13 +418,13 @@ END;
       $html = str_replace("</link>", "</a>", $html);
     }
   }
-  $nFiles = 1;
   preg_match_all("<media .*snapid=\"(\d*)\">", $html, $mediaMatches);
   foreach ($mediaMatches[1] as $snapId) {
     $query = <<<END
-select Version.`content`, Resource.`contentType`
+select Version.`content`, Resource.`contentType`, ResourceLink.`shortName`
 from Version
 left join Resource on Resource.`id` = Version.`resourceId`
+left join ResourceLink on ResourceLink.`childId` = Resource.`id`
 where Version.`resourceId` = $snapId
 and Version.`status` = 3
 END;
@@ -394,22 +434,21 @@ END;
         $json = json_decode($mediaResult["content"]);
         $path = $json->original->path;
         $extension = end(explode(".", $path));
-        $imageName = "$shortname-$imgInfix-" . ($nFiles++) . "." . $extension;
+        $imageName = "$mediaResult[shortName].$extension";
         $files[$imageName] = "http://shodor.org/media/" . $path;
 
         $html = str_replace(
           "<media snapid=\"$snapId\"",
-          "<img src=\"{{ 'img/$imgDir/$imageName' | relative_url }}\"",
+          "<img src=\"{{ 'img/$imageName' | relative_url }}\"",
           $html
         );
         $html = str_replace(
           "<media class=\"h-center\" snapid=\"$snapId\"",
-          "<img class=\"h-center\" src=\"{{ 'img/$imgDir/$imageName' | relative_url }}\"",
+          "<img class=\"h-center\" src=\"{{ 'img/$imageName' | relative_url }}\"",
           $html
         );
       }
       else if ($mediaResult["contentType"] == 9) {
-
         $query = <<<END
 select ResourceLink.`parentId`
 from Resource

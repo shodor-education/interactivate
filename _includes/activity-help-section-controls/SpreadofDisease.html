@@ -1,0 +1,100 @@
+<p>
+      The main grid is where you can see your settings modeled on a population of people who are
+      either susceptible to a disease, infected with the disease or recovered from the disease. The
+      population always begins with one infected person, while the rest are susceptible. The grid
+      shown below shows a day in the progression of the disease when some people are susceptible
+      (orange), some are infected (green), and others are recovered (blue).
+      <img class="h-center" src="{{ 'img/Example.png' | relative_url }}"/>
+      <br/>
+    </p>
+    <p>
+      You can adjust the size of the grid by using the
+      <strong>Grid Size</strong> drop down menu:
+      <img class="h-center" src="{{ 'img/Size.png' | relative_url }}"/>
+    </p>
+    <p>
+      You can control how the borders of the grid behave by setting the
+      <strong>Grid Border</strong> to either
+      <strong>Island</strong> or
+      <strong>Toroid</strong>. The
+      <strong>Island</strong> border behaves like an island in that when a person encounters the border, they cannot
+      continue in the same direction. With a
+      <strong>Toroid</strong> border, when a person encounters a border and continues to move in the same direction, they
+      appear on the opposite side of the grid as if the two sides were connected. Toroid is similar
+      to viewing Earth on a flat map.
+      <img class="h-center" src="{{ 'img/Border.png' | relative_url }}"/>
+    </p>
+    <p>
+      Clicking on the
+      <strong>View Population Graph</strong> button will display a graph of the number of susceptible, infected, and recovered people over
+      time.
+      <img class="h-center" src="{{ 'img/Graph.png' | relative_url }}"/>
+      <br/>The legend below the graph explains which color represents each type of person.
+      <img class="h-center" src="{{ 'img/SIR_legend.png' | relative_url }}"/>
+      <br/>Clicking on
+      <strong>View Cumulative Stats</strong> brings up a popup box with the number of stages that have progressed and the current number
+      of susceptible, sick, and recovered people.
+      <br/>
+      <img class="h-center" src="{{ 'img/Cumulative_Stats.png' | relative_url }}"/>
+      <br/>Clicking on
+      <strong>View Simulation Key</strong> brings up a popup box with a legend of all the terms and icons needed to understand the SIR
+      Model.
+      <br/>
+      <img class="h-center" src="{{ 'img/Simulation_Key.png' | relative_url }}"/>
+      <br/>You change the settings of the model by clicking
+      <strong>View/Modify Parameters</strong>. This will open a dialog box where you can change settings using the input boxes.
+      <img src="{{ 'img/Parameters.png' | relative_url }}" class="h-center"/>
+      <ul>
+        <li>
+          The
+          <strong>Sick Rate</strong> box determines the probability that, when an infected person is next to a susceptible
+          person, the susceptible person will become infected.
+          <img class="h-center" src="{{ 'img/InfectionR.png' | relative_url }}"/>
+        </li>
+        <li>
+          You can change the population size using the
+          <strong>Initial Population</strong> box. The range is 2 to 1936, but the maximum depends on the size of the grid. This number
+          can be altered while the simulation is running, but changes will not take effect until the
+          simulation is reset.
+          <img class="h-center" src="{{ 'img/InitialPop.png' | relative_url }}"/>
+        </li>
+        <li>
+          You can adjust the recovery rate using the
+          <strong>Recovery Rate</strong> box. The recovery rate determines the probability that an infected person will recover
+          after the specified number of "days to recovery".
+          <img class="h-center" src="{{ 'img/RecoveryR.png' | relative_url }}"/>
+        </li>
+        <li>
+          You can determine how many days it takes someone to recover from the disease using the
+          <strong>Days to Recovery</strong> box. After that number of 'days' or timesteps, the person will either recover or remain
+          sick based on the recovery rate probability.
+          <img class="h-center" src="{{ 'img/RecoveryD.png' | relative_url }}"/>
+        </li>
+        <li>
+          The susceptibility rate is determined by the
+          <strong>Susceptibility Rate</strong> box, and it sets the probability that a recovered person will become susceptible again
+          after the number of 'days to susceptibility' that you specify.
+          <img class="h-center" src="{{ 'img/SuscpR.png' | relative_url }}"/>
+        </li>
+        <li>
+          The
+          <strong>Days to Susceptibility</strong> box controls the number of days someone must be recovered before they can again become
+          susceptible to the disease.
+          <img class="h-center" src="{{ 'img/SuscpD.png' | relative_url }}"/>
+        </li>
+      </ul> You can dictate how fast or slow the model will run using the
+      <strong>Speed</strong> slider bar.
+      <img class="h-center" src="{{ 'img/Speed.png' | relative_url }}"/>
+      <br/>The
+      <strong>Start Simulation</strong> button starts the model.
+      <img class="h-center" src="{{ 'img/Start.png' | relative_url }}"/> When the model is running, the start button toggles to say
+      <strong>Pause Simulation</strong>. This button pauses the model.
+      <img class="h-center" src="{{ 'img/Pause.png' | relative_url }}"/> When the model is paused, the button toggles to say
+      <strong>Resume Simulation</strong>. Click this button to resume the simulation where you paused it.
+      <img class="h-center" src="{{ 'img/Resume.png' | relative_url }}"/> The
+      <strong>Reset Simulation</strong> button will cause the population to return to having only one infected person, with the rest
+      susceptible. It will not change the parameters.
+      <img class="h-center" src="{{ 'img/Reset.png' | relative_url }}"/> The
+      <strong>Step Simulation</strong> button moves the simulation forward one time step each time you press the button.
+      <img class="h-center" src="{{ 'img/Step.png' | relative_url }}"/>
+    </p>

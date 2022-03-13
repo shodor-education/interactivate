@@ -6,8 +6,6 @@ function echoSections($sections, $shortname, $files) {
     $result = xmlToHtmlWithFiles(
       $content,
       $shortname,
-      "lessons",
-      "lesson",
       $files
     );
     $content = $result[0];

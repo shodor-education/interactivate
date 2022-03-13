@@ -51,9 +51,15 @@ layout: default
   <section id="help-section" class="tab-section">
     <div>
       {% unless page.has-no-help-section-description %}
-        <h2>How Do I Use This Activity?</h2>
-        {% include activity-help-section-descriptions/{{ page.slug }}.html %}
+        <section id="help-description-section">
+          <h2>How Do I Use This Activity?</h2>
+          {% include activity-help-section-descriptions/{{ page.slug }}.html %}
+        </section>
       {% endunless %}
+      <section id="help-controls-section">
+        <h2>Controls and Output</h2>
+        {% include activity-help-section-controls/{{ page.slug }}.html %}
+      </section>
     </div>
   </section>
   <section id="instructor-section" class="tab-section">

@@ -1,0 +1,69 @@
+<p>
+      To begin, the user should choose
+      <strong>View</strong> and
+      <strong>Guess</strong> mode.
+      <img src="{{ 'img/viewguess.png' | relative_url }}" class="h-center"/>
+    </p>
+    <p>
+      In view mode, the user enters data that is placed into a stem and leaf plot.
+      <ul>
+        <li>
+          A box in the middle right of the applet allows the user to enter the data to be plotted.
+          Numbers should be placed on separate lines or should be separated by spaces or commas.
+          Only whole numbers between 0 and 999 (inclusive) should be entered.
+          <img src="{{ 'img/Stem1.png' | relative_url }}" class="h-center"/>
+        </li>
+        <li>
+          Pressing the
+          <strong>Update Plot</strong> button will display the data as a stem and leaf plot in the large area at the left of the
+          applet. Pressing the
+          <strong>Clear Plot</strong> button will get rid of all data entered.
+          <img src="{{ 'img/Stem2.png' | relative_url }}" class="h-center"/>
+        </li>
+        <li>
+          The user has the option to choose between a vertical plot or a horizontal plot using a
+          drop down menu.
+          <img src="{{ 'img/vertical.png' | relative_url }}" class="h-center"/>
+        </li>
+      </ul>
+    </p>
+    <p>
+      In guess mode, the user attempts to calculate mean, median, and mode from a random data set.
+    </p>
+    <p>
+      <ul>
+        <li>
+          Once
+          <strong>Guess</strong> has been selected, a random data set will appear along with the corresponding plot. The
+          user can then enter the calculations for the mean, median, and mode of the data in the
+          three areas provided in the lower right of the applet. If there is more than one mode,
+          separate the answers with spaces or commas.
+          <img src="{{ 'img/Stem3.png' | relative_url }}" class="h-center"/>
+        </li>
+        <li>
+          Clicking on the
+          <strong>Check Answers</strong> button will tell the user if the answers are correct or incorrect. Answers must be
+          accurate to two decimal places to be considered correct. "Correct!" will be displayed in
+          each text box containing a correct answer. Otherwise, "Incorrect" will be displayed.
+          <img src="{{ 'img/Stem4.png' | relative_url }}" class="h-center"/>
+        </li>
+        <li>
+          Clicking on the
+          <strong>Show Answers</strong> button will display the correct answers for each of the mean, median, and mode.
+        </li>
+        <li>
+          The difficulty can be changed using the difficulty drop down menu.
+          <img src="{{ 'img/levels.png' | relative_url }}" class="h-center"/>
+        </li>
+        <li>
+          When finished with the calculations, press the "Next" button to proceed to another
+          problem.
+        </li>
+      </ul>
+    </p>
+    <p>
+      Because this activity randomly generates questions, a feature called
+      <strong>Seed Random</strong> has been implemented that allows multiple users using different computers to work on the same
+      problem. See
+      <a href="{{ '/resources/SeedRandom' | relative_url }}>Seed Random Help</a> for instructions on using this feature.
+    </p>
