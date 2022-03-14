@@ -91,12 +91,23 @@ function echoJsonArray($json, $property, $label) {
   }
 }
 
-function echoLessonJsonHtml($property, $customFunc = "") {
+function echoJsonHtml($type, $parentId, $property, $customFunc = ""
+  , $activitySectionType = "") {
   $files = array();
-  $lessons = getSdrResources("Lesson");
-  while ($lesson = $lessons->fetch_assoc()) {
-    $shortname = getShortname($lesson);
-    $json = getVersionContentJson($shortname, 2204);
+  $resources = getSdrResources($type);
+  while ($resource = $resources->fetch_assoc()) {
+    $shortname = getShortname($resource);
+    if ($type == "Activity") {
+      $json = json_decode(
+        getActivitySection(
+          $activitySectionType
+        , $shortname
+        )
+      );
+    }
+    else {
+      $json = getVersionContentJson($shortname, $parentId);
+    }
     if (isset($json->$property) && $json->$property) {
       echo "FILENAME::$shortname\n";
       if ($customFunc) {

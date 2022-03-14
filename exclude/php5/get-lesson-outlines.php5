@@ -14,6 +14,6 @@ function echoSections($sections, $shortname, $files) {
   }
   return $files;
 }
-echoLessonJsonHtml("sections", "echoSections");
+echoJsonHtml("Lesson", 2204, "sections", "echoSections");
 ?>
 
