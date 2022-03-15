@@ -13,23 +13,13 @@ layout: default
   </nav>
   <section id="learner-section" class="tab-section">
     <div>
-      <h2 id="what-is">What is {{ page.title }}?</h2>
-      {% include activity-learner-sections/{{ page.slug }}.html %}
-      <h2 id="related-resources">Related Resources</h2>
-      <ul>
-        {% include related-resource-links.html
-          related-resources=page.related-activities
-          url-prefix="/activities/" collection=site.activities
-          text="Activity" %}
-        {% include related-resource-links.html
-          related-resources=page.related-discussions
-          url-prefix="/discussions/" collection=site.discussions
-          text="Discussion about" %}
-        {% include related-resource-links.html
-          related-resources=page.related-worksheets
-          url-prefix="/media/worksheets/" collection=site.worksheets
-          text="Worksheet" %}
-      </ul>
+      <section id="what-is-section">
+        <h2>What is {{ page.title }}?</h2>
+        {% include activity-learner-sections/{{ page.slug }}.html %}
+      </section>
+      <section id="learner-related-resources">
+        {% include activity-related-resources.html %}
+      </section>
     </div>
   </section>
   <section id="activity-section" class="tab-section">
@@ -78,6 +68,15 @@ layout: default
       </section>
       {% include alignment-sections/standards-alignment-section.html %}
       {% include alignment-sections/textbook-alignment-section.html %}
+      <section id="instructor-preparations-section">
+        <h2>Be Prepared to</h2>
+        {% assign list = site.data.activity-instructor-preparations[page.slug]
+        %}
+        {% include activity-instructor-section-list-with-links.html list=list %}
+      </section>
+      <section id="instructor-related-resources">
+        {% include activity-related-resources.html lessons=true %}
+      </section>
     </div>
   </section>
 </main>

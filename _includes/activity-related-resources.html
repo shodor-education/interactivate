@@ -1,0 +1,25 @@
+<h2>Related Resources</h2>
+<ul>
+  {% include related-resource-links.html
+    related-resources=page.related-activities
+    url-prefix="/activities/" collection=site.activities
+    text="Activity"
+  %}
+  {% include related-resource-links.html
+    related-resources=page.related-discussions
+    url-prefix="/discussions/" collection=site.discussions
+    text="Discussion about"
+  %}
+  {% if include.lessons %}
+    {% include related-resource-links.html
+      related-resources=page.related-lessons
+      url-prefix="/lessons/" collection=site.lessons
+      text="Lesson on"
+    %}
+  {% endif %}
+  {% include related-resource-links.html
+    related-resources=page.related-worksheets
+    url-prefix="/media/worksheets/" collection=site.worksheets
+    text="Worksheet"
+  %}
+</ul>

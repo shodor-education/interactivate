@@ -17,6 +17,64 @@ if ($sdrDbConn->connect_error) {
   die("Database connection failed: " . $sdrDbConn->connect_error);
 }
 
+function echoActivityInstructorJsonHtml($property) {
+  echoJsonHtml("Activity", 2202, $property, "", "instructor");
+}
+
+function echoActivityInstructorJsonArray($property) {
+  global $sdrDbConn;
+  $activities = getSdrResources("Activity");
+  while ($activity = $activities->fetch_assoc()) {
+    $shortname = getShortname($activity);
+    $json = json_decode(
+      getActivitySection(
+        "instructor"
+      , $shortname
+      )
+    );
+    if (isset($json->$property)) {
+      echo "$shortname:\n";
+      foreach ($json->$property as $item) {
+        $item = preg_replace("#<p>\n\s*#", "", $item);
+        $item = preg_replace("#\s*\n</p>#", "", $item);
+        $item = preg_replace("#\n\s*<link#", " <link", $item);
+        $item = preg_replace("#\s*\n\s*#", "", $item);
+        $item = preg_replace("#\s+#", " ", $item);
+        $item = preg_replace(
+          "#<link base=\"PATH:dictionary\" href=\"/(.)\">#",
+          "<a href=\"/dictionary/$1\">",
+          $item
+        );
+        $item = preg_replace("#</link>#", "</a>", $item);
+        preg_match_all("<link metaid=\"(\d*)\">", $item, $linkMatches);
+        foreach ($linkMatches[1] as $cserdId) {
+    $query = <<<END
+select url
+from SDRResource
+where cserdid = $cserdId
+END;
+          $urlResults = $sdrDbConn->query($query);
+          while ($urlResult = $urlResults->fetch_assoc()) {
+            $url = str_replace(
+              "http://www.shodor.org/interactivate"
+            , ""
+            , $urlResult["url"]
+            );
+            $url = preg_replace("/\/$/", "", $url);
+            $item = str_replace(
+              "<link metaid=\"$cserdId\">"
+            , "<a href=\"$url\">"
+            , $item
+            );
+          }
+        }
+        $item = str_replace("\"", "\\\"", $item);
+        echo "- \"$item\"\n";
+      }
+    }
+  }
+}
+
 function echoAlignment($label, $table, $column, $resourceId) {
   global $sdrDbConn;
   $query = <<<END
@@ -425,8 +483,11 @@ END;
     while ($urlResult = $urlResults->fetch_assoc()) {
       $url = str_replace("http://www.shodor.org/interactivate", "", $urlResult["url"]);
       $url = preg_replace("/\/$/", "", $url);
-      $html = str_replace("<link metaid=\"$cserdId\">", "<a href=\"{{ '$url' | relative_url }}\">", $html);
-      $html = str_replace("</link>", "</a>", $html);
+      $html = str_replace(
+        "<link metaid=\"$cserdId\">"
+      , "<a href=\"{{ '$url' | relative_url }}\">"
+      , $html
+      );
     }
   }
   preg_match_all("<media .*snapid=\"(\d*)\">", $html, $mediaMatches);
