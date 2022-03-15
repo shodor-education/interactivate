@@ -1,5 +1,27 @@
 ---
 ---
+onload = function () {
+  const featuredActivities = [
+    "JuliaSets"
+  , "ShapeSorter"
+  , "FunctionRevolution"
+  , "Incline"
+  , "PolarCoordinates"
+  , "FireAssessment"
+  , "ParametricGraphIt"
+  , "SpreadofDisease"
+  , "CrossSectionFlyer"
+  , "AdvancedFire"
+  , "3DTransmographer"
+  , "VennDiagrams"
+  ];
+  const featuredActivity = featuredActivities[new Date().getMonth()];
+  document.getElementById("featured-img-link").href = "activities/"
+    + featuredActivity;
+  document.getElementById("featured-img").src = "img/activities/featured/"
+    + featuredActivity + ".jpg";
+}
+
 function changeMouseoverImg(id) {
   var mouseoverImgs = document.getElementsByClassName("mouseover-img");
   for (var i = 0; i < mouseoverImgs.length; i++) {
