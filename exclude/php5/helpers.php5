@@ -431,7 +431,7 @@ function xmlToHtmlWithFiles($xml, $shortname, $files) {
   );
   $html = preg_replace(
     "#<link base=\"PATH:resources\" href=\"/(.*)\"#"
-  , "<a href=\"{{ '/resources/$1' | relative_url }}"
+  , "<a href=\"{{ '/resources/$1' | relative_url }}\""
   , $html
   );
   $html = preg_replace(
