@@ -1,0 +1,13 @@
+{% include alignment-sections/alignment-section.html
+  h2="Standards Addressed"
+  label="standards"
+  level-1-label="org"
+  level-1-key="organization"
+  level-2-key="grade-band"
+  level-2-list=site.standards-grade-bands
+  level-2-output-property="label"
+  level-3-key="category"
+  level-4-haystack=site.standards-objectives
+  level-4-needle-list=page.aligned-standards-objectives
+  level-4-output-property="description"
+%}

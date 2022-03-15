@@ -13,7 +13,7 @@ title: "Home Page"
     <map name="main-img-map">
       {% for catalog in site.main-catalogs %}
 	      {% if catalog.main-img-map-coords %}
-		      <area shape="poly " coords="{{ catalog.main-img-map-coords }}"
+		      <area shape="poly" coords="{{ catalog.main-img-map-coords }}"
 		        href="{{ catalog.title | downcase | relative_url }}"
 		        onmouseover="changeMouseoverImg('{{ catalog.title | downcase }}');"
 		        onmouseout="changeMouseoverImg('goals');">

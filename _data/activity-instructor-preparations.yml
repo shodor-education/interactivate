@@ -1,0 +1,527 @@
+3DTransmographer:
+- "define translation, reflection, and rotation and show examples"
+- "explain net translation and net rotation"
+ABetterFire:
+- "give implicit directions on what they are to do. For example, \"Today we are going to study the nature of forest fires. We are going to determine the effect of different conditions on the outcome of a forest fire. The conditions we are going to study are wind direction, wind speed, and forest density ...\""
+- "discuss density, speed, direction, ..."
+AdjustableSpinner:
+- "give implicit directions on what they are to do. For example \"Today we are going to experimentwith the spinner applet and see how changing the number of sectors effects the chances that thesector will be landed on ...\""
+- "answer the question \"How do I figure out the measurement in degrees?\""
+- "discuss the geometry of circles"
+AdvancedFire:
+- "explain why the probability selected is not always similar to the percentage of trees burned"
+- "explain why a tree near a burning tree might not catch fire"
+- "explain the concept of \"control\" in a scientific experiment"
+AdvancedMontyHall:
+- "answer the question \"What is Monty Hall?\""
+- "discuss probability and conditional probability"
+AlgebraFour:
+- "Explain the difference between solving a quadratic equation vs. solving a linear one"
+- "Encourage students to try more difficult problems and decrease the allowed time"
+- "Prevent any disputes and taunting between winners and losers"
+AlgebraQuiz:
+- "Explain the difference between solving a quadratic equation vs. solving a linear one."
+- "Encourage students to try more difficult problems and decrease the allowed time."
+Angles:
+- "Define and give examples of alternate interior, alternate exterior, adjacent, and corresponding angles"
+- "Discuss parallel and perpendicular lines"
+- "Define and show examples of right angles, obtuse angles, and acute angles"
+- "Stop the students from classifying their peers as acute and obtuse people (it will happen)"
+AreaExplorer:
+- " define and describe the concept of area"
+- " walk the class through finding the pattern for area of the object using the information on the chart for question one of the <a href=\"/media/worksheets/88.pdf\">exploration questions</a>"
+ArithmeticFour:
+- "Explain the difference between whole numbers and integers"
+- "Encourage students to try more difficult problems and decrease the allowed time"
+- "Prevent any disputes and taunting between winners and losers"
+ArithmeticQuiz:
+- "Encourage students to try more difficult problems and decrease the allowed time"
+- "Teach students the differences between whole numbers and integers"
+BarGraph:
+- "Encourage students to enter in their own data or be ready to give them examples of data to enter"
+- "Explain how the scale can influence how the graph looks"
+- "Discuss how graphs can be misleading"
+- "Discuss the difference between categorical and quantitative data"
+BarGraphSorter:
+- "give directions on what they are to do. For example, let them know what settings you would likethem to use and what the differences between the settings are."
+- "explain tallies."
+- "discuss examples or other data that could be used in a bar graph and what types of data that couldnot be used in a bar graph."
+BasicSpinner:
+- "give implicit directions on what they are to do. For example \"Today we are going to experimentwith the spinner applet and see how changing the number of sectors effects the chances that thesector will be landed on ...\""
+- "answer the question \"How do I figure out the measurement in degrees?\""
+- "discuss the geometry of circles"
+BoundFractionFinder:
+- "give implicit directions on what they are to do. For example \"Today we are going to comparefractions and use the number line.\""
+- "discuss different methods to mentally approximate fractions."
+BoundFractionPointer:
+- "give implicit directions on what they are to do. For example \"Today we are going to comparefractions and use the number line.\""
+- "discuss different methods to mentally approximate fractions."
+BoxPlot:
+- "give implicit directions on what they are to do. For example \"Today we are going to explore boxplots. You are going to experiment with the box plot activity and see if you can answer the ...\""
+- "answer the question \"how does the computer figure out how to draw it?\""
+- "discuss what outliers are, what they mean, and why are they important."
+Buffon:
+- "give implicit directions on what they are to do. For example \"Today we are going to run trials onthis applet and see if a pattern appears...\""
+- "answer the question \"Why is the probability of the needle landing on a line related to Pi?\""
+- "show how Pi was created."
+CaesarCipher:
+- "explain in detail and show examples of how Caesar Cipher works."
+- "be flexible on the time spent on this activity."
+- "encourage the students that they can do this if they give it a good try even though it is tricky and involved."
+CaesarCipherThree:
+- "supply some structure for them to use to make reasonable guesses"
+- "show how to solve two step equations"
+- "be flexible on the time spent on this activity."
+- "encourage the students that they can do this if they give it a good try even though it is tricky and involved."
+CaesarCipherTwo:
+- "supply some structure for them to use to make reasonable guesses"
+- "help the lower ability groups"
+- "show how to solve two step equations"
+CantorComb:
+- "work through the first table on the <a href=\"/media/worksheets/11.pdf\">exploration questions</a> with the students"
+- "discuss the concepts of infinity and limit"
+- "review fraction multiplication"
+Chairs:
+- "give implicit directions on what they are to do. For example, \"Today we are going to experiment with the Tables and Chairs applet and see if we can identify any patterns. We will try to describe any patterns we find both verbally and mathematically. \""
+- "answer the question \"How do you describe a pattern mathematically?\""
+- "answer the question \"What is an equation?\""
+- "discuss finding patterns in numbers."
+CircleGraph:
+- "Encourage students to enter in their own data, be ready to give them examples of data to enter"
+- "Explain the relationship between circle graphs and percentages"
+- "Discuss how graphs can be misleading"
+ClockArithmetic:
+- "explain that not all people use a twelve hour clock."
+- "explain some of the benefits of military time."
+ClockWise:
+- "Explain how other types of clocks such as digital clocks keep time"
+- "Explain that not all people use a twelve hour clock"
+- "Explain some of the benefits of military time"
+Coin:
+- "Discuss the difference between theoretical and experimental probability"
+- "Discuss why the experimental probability of getting heads (or tails) is not one half, especiallywith a small sample."
+ColoringMultiples:
+- "explain how divisibility by a number is the same as being a multiple since the applet's name is coloring multiples but the directions say color the numbers divisible by the number rolled."
+- "discuss Sierpinski's triangle."
+ColoringRemainder:
+- "explain that they have to color all the numbers with one remainder before they color the numbers with a different remainder."
+- "explain how coloring remainders produces patterns similar to the ones noticed when coloring multiples in Pascal's triangle."
+ComparisonEstimator:
+- "Encourage the students to estimate rather than measure or count"
+- "Discuss how estimation is not as accurate as measurement"
+- "Explain the difference between close, really close, and almost perfect (almost perfect is the mostaccurate)"
+- "Suggest that the students eventually increase the difficulty level"
+ConicFlyer:
+- "answer the question \"Which is the x-axis and which is the y-axis?\""
+- "generalize the effects of changing the constants or coefficients in the type of conic section thestudents are studying"
+Converter:
+- "explain why fractions add, subtract, and multiply like they do. You may want to have fractioncircles or other manipulatives to convince your students."
+- "explain computer rounding errors."
+CrazyChoicesGame:
+- "give implicit directions on what they are to do. For example, \"Today we are going to learn thedifference between experimental and theoretical probabilities by ...\""
+- "answer the question \"What difference does it make what type of game I choose or what wins? Itdoesn't make a difference anyway.\""
+- "discuss the terms outcome, probability, theoretical probability, experimental probability, event,etc."
+CrossSectionFlyer:
+- "explain how the two representations are connected"
+- "explain how to predict what a given cross section will look like on a graph"
+- "physically demonstrate slicing solids to create cross sections"
+DataFlyer:
+- "explain how to decide what type of relationship a set of data have"
+- "give examples of real world situations where people try to fit a line to a set of data"
+- "generalize the effects of changing the constants in the type of function the students are studying"
+Derivate:
+- "Discuss the difference between an average rate and instantaneous rate"
+- "Relate what students experience on screen to real-world examples"
+- "Explain the controls and expected output of the activity"
+DiceTable:
+- "permit calculators or stop the whining about not having calculators quickly and permanently"
+- "answer the question \"How do I change a fraction to a decimal?\""
+- "discuss ways to convert from fractions to decimal to percentages and back."
+DirectableFire:
+- "give implicit directions on what they are to do. For example, \"Today we are going to run a set ofexperiments and answer the questions on the worksheet...\""
+- "answer the question \"What decimal will make the trees burn 3/4(some fraction) of the time?\""
+- "discuss decimals, percents, and fractions"
+ElapsedTime:
+- "Explain the connection between the center clock and the beginning and ending times."
+- "Explain several ways to determine elapsed time."
+- "Explain how to subtract one time from another."
+- "Explain that the applet doesn't show AM or PM times specifically but if the beginning time appears to be later than the ending time, then it will be necessary to pass the 12:00 time, hence switching over from AM to PM or PM to AM."
+ElapsedTimeTwo:
+- "Explain several ways to add and subtract time"
+- "Explain that the applet doesn't show AM or PM times specifically but sometimes the elapsed time and beginning time will be such that they require you to switch from AM to PM"
+EquationSolver:
+- "Explain the difference between the additive and multiplicative inverses."
+- "Explain the additive identity and multiplicative identity properties."
+- "Encourage students to try more difficult problems and complete problems in the fewest steps possible."
+EquivFractionFinder:
+- "give implicit directions on what they are to do. For example \"Today we are going to compareequivalent fractions and use the number line.\""
+- "discuss different methods to mentally approximate fractions."
+- "discuss reducing fractions and equivalent fractions."
+EquivFractionPointer:
+- "give implicit directions on what they are to do. For example \"Today we are going to compare equivalent fractions and use the number line.\""
+- "discuss different methods to mentally approximate fractions."
+- "discuss reducing fractions and equivalent fractions."
+Estimator:
+- "Encourage the students to estimate rather than measure or count"
+- "Discuss how estimation is not as accurate as measurement"
+- "Explain the difference between close, really close, and almost perfect (almost perfect is the most accurate)"
+- "Suggest that the students eventually increase the difficulty level"
+EstimatorFour:
+- "Encourage the students to estimate rather than trying to compute the values exactly"
+- "Discuss how estimation is not as accurate as calculation"
+- "Explain the difference between close, really close, and almost perfect (almost perfect is the mostaccurate)"
+- "Suggest that the students eventually increase the difficulty level"
+EstimatorQuiz:
+- "Encourage the students to estimate rather than trying to compute the values exactly"
+- "Discuss how estimation is not as accurate as calculation"
+- "Explain the difference between close, really close, and almost perfect (almost perfect is the mostaccurate)"
+- "Suggest that the students eventually increase the difficulty level"
+ExpProbability:
+- "answer the question \"Why does my experimental probability not equal my theoretical probability?\""
+- "discuss the difference between experimental and theoretical probablity"
+- "discuss how to determine the experimental probability"
+Factorize:
+- "Encourage students to enter in numbers that have many factors such as 12 or 24"
+- "Show students how to build the factorizations by dragging the mouse over the desired area"
+FactorizeTwo:
+- "Encourage students to enter in numbers that have many factors such as 12 or 24"
+- "Show students how to build the factorizations by dragging the mouse over the desired area"
+Fire:
+- "give implicit directions on what they are to do. For example, \"Today we are going to run a set ofexperiments and answer the questions on the worksheet...\""
+- "answer the question \"Why does it burn one or two trees but say that 0% was burned?\""
+FireAssessment:
+- "Explain why the probability selected is not always similar to the percentage of trees burned"
+- "Discuss how estimation is not as accurate as counting"
+- "Explain how to find the percentage when you know the number of trees burned"
+- "Explain how to find the number of trees burned when you know the percentage"
+- "Explain how to find the number of trees burned when you know the fraction"
+- "Explain the difference between close, really close, and almost perfect (almost perfect is the most accurate)"
+- "Encourage the students to increase the difficulty level and forest size as they improve"
+- "Encourage the students to estimate rather than count"
+FittedNormalDistr:
+- "answer the question: \"Why is the fitted Gaussian different from the original Gaussian?\""
+- "discuss sample size and its effects on the result of an experiment"
+- "discuss standard deviation and its effects on the result of an experiment"
+FlakeMaker:
+- "Give implicit directions on what they are to do. For example, \"Today we are going to discover how to make fractals using ...\""
+- "Discuss fractions and symmetry."
+FractalDimensions:
+- "give implicit directions on what they are to do. For example, \"Today we are going to fill out the table on the worksheet and see if we can ...\""
+- "answer the question \"How is dimension calculated?\""
+- "discuss logarithms and exponents"
+FractionFinder:
+- "give implicit directions on what they are to do. For example \"Today we are going to compare fractions and use the number line.\""
+- "discuss different methods to mentally approximate fractions."
+FractionFour:
+- "explain the rules of Fraction Four (i.e. the rules for Connect Four)"
+- "reassign partners! It will not be wise to keep a student in a loosing situation. Everyone should be able to win. This situation could cause classroom disturbances, negative social consequences, and negative attitudes towards math."
+- "supervise the weaker students. They may need help remembering how to do the calculations."
+FractionPointer:
+- "give implicit directions on what they are to do. For example \"Today we are going to compare fractions and use the number line.\""
+- "discuss different methods to mentally approximate fractions."
+FractionQuiz:
+- "explain the rules of Fraction Quiz"
+- "supervise the weaker students; they may need help remembering how to do the calculations."
+FractionSorter:
+- "give explicit directions on what they are to do. For example \"Today we are going to createfractions and then put them in order from least to greatest.\""
+- "answer the questions of why and how this will help them."
+- "discuss different strategies that they can use in making these fractions."
+- "discuss different strategies that they can use in determing their placement on the number line."
+FracturedPictures:
+- "give implicit directions on what they are to do. For example, \"Today we are going to discover how to make fractals using ...\""
+- "discuss fractions and symmetry"
+FunctionFlyer:
+- "answer the question \"Which is the x-axis and which is the y-axis?\""
+- "generalize the effects of changing the constants or coefficients in the type of function the students are studying"
+FunctionMachine:
+- "give implicit directions on what they are to do. For example, \"Today we are going to learn howfunctions work. We will figure out several important facts about functions...\""
+- "discuss the vocabulary, input, output, function rule..."
+FunctionRevolution:
+- "Explain how integration relates to volume and surface area of rotated solids"
+- "Describe the disk and washer method of calculating volume"
+- "Describe the shell method of calculating surface area"
+- "Explain how dy and dx factor into the calculation of surface area and volume"
+GeneralCoordinates:
+- "Answer the question \"Which is X and which is Y?\""
+- "discuss positive and negative coordinate, quadrants, etc."
+GeneralizedMontyHall:
+- "answer the question \"What is Monty Hall?\""
+- "discuss probability and conditional probability"
+Graphit:
+- "answer the question \"How do you fit a line to a set of data?\""
+- "discuss the concepts of trend lines, slope, and the y-intercept"
+GraphSketcher:
+- "answer the question \"How do you fit a line to a set of data?\""
+- "discuss the concepts of trend lines, slope, and the y-intercept"
+HilbertCurve:
+- "give implicit directions on what they are to do. For example, \"Today we are going to record datain the table on the worksheet and see if we can find a formula ...\""
+- "answer the question \"What does it mean by the n-th case?\""
+- "discuss infinity, length, finding patterns in numbers, ect."
+Histogram:
+- "answer the question \"How do I draw a histogram by hand?\""
+- "discuss mean, class interval, and misleading graphs"
+ImageTool:
+- "Explain the concept of ratio and proportion"
+- "Explain how changing the scale effect the length and area mesurements"
+- "Discuss how the scale relates to actual distance on each map"
+- "Show students how to move points and how to start over"
+Incline:
+- "explain how to predict the graph for a given path and initial velocity"
+- "discuss why the path is straight while the graph is curved"
+inequality:
+- "answer the question \"Why are the areas shaded below/above the line?\""
+- "answer the question \"Why are some of my lines solid and others dashed?\""
+- "discuss the concepts of multiple outputs for a single function"
+- "discuss a solution set for multiple inequalities"
+Integrate:
+- "Explain what an integral is"
+- "Explain the different integration techniques"
+- "Explain Small-Number Addition Error"
+- "Explain how the integral is related to area"
+JuliaSets:
+- "give implicit directions on what they are to do. For example \"Today we are going to find out about prisoners, escapees, and complex numbers by using the Julia set activity as well as the Two Variable Function Pump and the Julia set worksheet...\""
+- "answer the question \"What is a prisoner and what is an escapees?\""
+- "discuss complex numbers, and how to plot points"
+KochSnowflake:
+- "give implicit directions on what they are to do. For example, \"Today we are going to record datain the table on the worksheet and see if we can find patterns in the numbers ...\""
+- "answer the question \"What does it mean by the n-th case?\""
+- "discuss infinity, length, finding patterns in numbers, etc."
+Life:
+- "answer the question \"How can there be order in chaos; isn't that the opposite of the definition ofchaos?\""
+- "discuss the idea of chaos"
+LifeLite:
+- "give implicit directions on what they are to do. For example \"Today we are going to experimentwith chaos and try to answer the exploration questions...\""
+- "answer the question \"What are the rules of the Game of Life?\""
+- "discuss chaos, randomness, etc."
+LinearFunctMachine:
+- "answer the question \"How do I figure out what the numbers are supposed to be? I don't know how to figure it out.\""
+- "discuss pattern recognition, input, output, etc..."
+Marbles:
+- "give implicit directions on what they are to do. For example, \"Today we are going to experiment with conditional probability, theoretical probability, experimental probability,... after we have played with the applet we will try to answer the exploration questions...\""
+- "answer the question \"What is conditional probability?\""
+- "discuss graphical representations of data"
+MazeGame:
+- "answer the question \"How do you find distance?\""
+- "discuss distance, positive and negative coordinates, quadrants, etc"
+Measures:
+Mixtures:
+- "explain how to find the resulting percent from combining two sets"
+- "answer questions about finding percents"
+- "give several examples of percents in everyday life"
+MoreOrLessEstimator:
+- "Encourage the students to estimate rather than measuring or counting"
+- "Discuss how estimation is not as accurate as measurement"
+- "Explain the difference between close, really close, and almost perfect (almost perfect is the most"
+- "Suggest that the students eventually increase the difficulty level"
+MultiBarGraph:
+- "Encourage students to enter in their own data or be ready to give them examples of data to enter"
+- "Explain how the scale can influence how the graph looks"
+- "Discuss how graphs can be misleading"
+- "Discuss the difference between categorical and quantitative data"
+MultiFunctionDataFly:
+- "explain how to decide what type of relationship a set of data have"
+- "give examples of real world situations where people try to fit a line to a set of data"
+- "generalize the effects of changing the constants in the type of function the students are studying"
+MultipleLinearRegression:
+- "Explain positive/negative correlation and the correlation coefficient, r"
+- "Relate correlation and the best-fit line"
+- "Explain independent and dependent variables"
+- "Introduce independent variables as indicators/predictors"
+NormalDistribution:
+- "answer the question \"What makes a distribution normal?\""
+- "discuss sample size and its effects on the result of an experiment"
+NumberBaseClocks:
+- "Explain what a \"base\" is"
+- "Demonstrate how to convert a number in base 10 into a number in another base by hand"
+- "Explain the difference between numbering the clocks in base 10 and not numbering them in base 10"
+- "Answer the question, \"Why do some of the clocks have letters on them?\""
+- "Answer the question, \"Why do some bases have four clocks and some only have three?\""
+NumberCruncher:
+- "Encourage students to not give up and give hints if they are stuck"
+- "Explain the properties of a function"
+- "After the students have been working, explain a higher level strategy for finding the result: use 0 first and if the result is a whole number then that is the +/- component; if the result is 0, then it is a multiplication situation and plugging in 1 will find the solution."
+OperationsQuiz:
+- "Explain how to apply the order of operations."
+- "Encourage students to try more difficult problems and decrease the allowed time."
+- "Explain why an exponent takes higher precedence than a negation."
+- "Explain why negation is considered to be an operator."
+OrderedSimplePlot:
+- "Explain what the Cartesian coordinate system is"
+- "Demonstrate how to plot points on a graph"
+OrderOfOperationsFou:
+- "Explain how to apply the order of operations."
+- "Encourage students to try more difficult problems and decrease the allowed time."
+- "Prevent any disputes and taunting between winners and losers."
+- "Explain why an exponent takes higher precedence than a negation."
+- "Explain why negation is considered to be an operator."
+OverlappingGaussians:
+- "Explain Gaussian/Normal Curves"
+- "Explain Mean/Standard Deviation"
+- "Explain how P-values are calculated"
+- "Introduce Type I/Type II errors"
+ParametricGraphIt:
+- "Define parameter and parametric equation"
+- "Discuss and demonstrate the vertical line test"
+- "Evaluate compositions of functions"
+- "Explain direction and orientation"
+PatternGenerator:
+- "explain different critical thinking approaches to figuring out the patterns, such as counting the"
+PerimeterExplorer:
+- "define and describe the concept of perimeter"
+- "<a href=\"/media/worksheets/90.pdf\">exploration questions</a>."
+PieChart:
+- "answer the question \"Why does the pie chart always sum to one hundred percent?\""
+- "discuss pie charts, the idea of the whole, how to make predictions based on data"
+PlopIt:
+- "answer the question \"How are there three ways to measure the center? Is one way better than the other?"
+- "discuss mean, median, and mode"
+PolarCoordinates:
+- "explain the difference between cartesian coordinates and polar coordinates"
+- "explain the difference between radians and degrees"
+- "explain periodic functions"
+PositiveLinearFunct:
+- "answer the question \"How do I figure out what the numbers are supposed to be? I don't know how to"
+- "discuss pattern recognition, input, output, etc..."
+PossibleOrNot:
+- "answer the question \"What makes a graph not a function?\""
+- "discuss continuity and the vertical line test"
+PythagoreanExplorer:
+- "explain, in detail and with examples, which side of the triangle is the hypotenuse"
+- "explain how to solve the Pythagorean theorem for any unknown side length"
+- "explain inverse operations that may be used in solving the Pythagorean theorem."
+RabbitsAndWolves:
+- "answer the question \"Why does the bunny population grow so fast?\""
+- "discuss randomness, chaos, and probability"
+RacingGameWithOneDie:
+- "give implicit directions on what they are to do. For example \"Today we are going to play the racing game. We are going to try to determine the likelihood of the cars winning if they advance when certain numbers are rolled. I want you to figure out how often the red car wins when he advances on one number, two numbers,..., all six numbers on the die...\""
+- "answer the question \"What is the cumulative stats button for?\""
+- "discuss experimental probability and theoretical probability."
+RacingGameWithTwoDie:
+- "give implicit directions on what they are to do. For example \"Today we are going to play the racing game. We are going to try to determine the likelihood of the cars winning if they advance when certain numbers are rolled. I want you to figure out how often the red car wins he advances when he advances on one number, two numbers,..., all six numbers on the die...\""
+- "answer the question \"What it the cumulative stats button for?\""
+- "discuss experimental probability and theoretical probability."
+Recursion:
+- "provide a variety of recursive equations for students to try, for example experiment withmultiplying and dividing."
+- "encourage students to test different initial values"
+- "connect recursive equations to real life examples such as compounding interest"
+- "show students how to read the graph and trace the values of the recursive equation at each pointand switch from one equation to the next"
+Regression:
+- "correlation."
+- "residuals."
+- "how to interpret the residual table and plot"
+- "the linear correlation coefficient, r."
+- "independent and dependent variables."
+ScatterPlot:
+- "answer the question \"How can I tell if the data has a relationship?\""
+- "discuss the concepts of positive relationships, negative relationships, data collection, etc."
+Sequencer:
+- "give implicit directions on what students are to do. For example \"Today we are going to experiment with the Sequencer activity...\""
+- "explain what a starting number, multiplier, and add-on are and how they affect the sequence"
+- "answer the question \"How does the computer graph the sequence?\""
+ShapeBuilder:
+- "Discuss and demonstrate why shapes can have the same areas but different perimeters."
+- "Discuss and demonstrate why shapes can have the same perimeters but different areas."
+- "Emphasize the difference between the units to measure perimeter (linear) and area (square)."
+ShapeExplorer:
+- "define and describe the concepts of area and perimeter"
+- "walk the class through finding the pattern for area of the object using the intersections inquestion two of the <a href=\"/media/worksheets/84.pdf\">exploration questions</a>"
+ShapeSorter:
+- "explain all vocabulary words used in the applet."
+- "explain what happens when the object being classified does not fall under the categories of any of the circles"
+- "give the categories for the class Venn diagram for question three in the exploration questions."
+SierpinskiCarpet:
+- "explain in detail what infinity is."
+- "explain how to discover patterns from tables."
+SierpinskiTriangle:
+- "give implicit directions on what they are to do. For example, \"Today we are going to fill out the work sheet and see if we can find formulas...\""
+- "answer the question \"What does it mean by the n-th case?\""
+- "discuss how to find patterns in numbers"
+SimpleCoordinates:
+- "answer the question \"Which is X and which is Y?\""
+- "discuss positive and negative coordinate, quadrants, etc."
+SimpleMazeGame:
+- "answer the question \"How do you find distance?\""
+- "discuss distance, positive coordinates, integers etc"
+SimpleMontyHall:
+- "answer the question \"What is Monty Hall?\""
+- "discuss probability and conditional probability"
+SimplePlot:
+- "answer the question \"How can I tell if the data has a relationship?\""
+- "discuss the concepts of positive relationships, negative relationships, data collection, etc."
+SingleFractionFinder:
+- "give explicit directions on what they are to do. For example \"Today we are going to practicedividing shapes into fractions and use the number line.\""
+- "discuss different methods to mentally approximate fractions."
+SingleFractionPoint:
+- "Give explicit directions on what they are to do. For example \"Today we are going to use the numberline and practice dividing shapes into fractions.\""
+- "Discuss different methods to mentally approximate fractions."
+- "Answer the question, \"Why does the pointer point to zero at the beginning?\""
+SkewDistribution:
+- "answer the question \"What makes a distribution skewed?\""
+- "discuss sample size and its effects on the result of an experiment"
+SlopeSlider:
+- "answer the question \"Which is the x-axis and which is the y-axis?\""
+- "discuss slope, intercepts, and functions"
+SpreadofDisease:
+- "define susceptibility and explain how it is functioning in this activity"
+- "encourage students to experiment with different parameters"
+- "explain why the results are different even though the same parameters are used"
+- "help students interpret the graph that displays the model's results"
+SquaringTheTriangle:
+- "give implicit directions on what they are to do. For example \"Today we are going to play with the Squaring the Triangle applet. We will be looking for patterns in the area of the squares, the angles, ... and we are going to see what we can discover.\""
+- "discuss the Pythagorean Theorem and define hypotenuse"
+StemAndLeafPlotter:
+- "discuss stem-and-leaf plots, how to construct one, and how to interpret one."
+- "give implicit directions on what they are to do. For example \"Today we are going to practice making and interpreting stem-and-leaf plots.\""
+- "answer the question \"What is a mean/median/mode?\""
+Stopwatch:
+- "Prevent students from using the timer for any purposes other than the intended activity."
+SurfaceAreaAndVolume:
+- "answer the question \"What is a prism?\""
+- "discuss surface area and volume"
+- "<b />Define:<ul><li>base of the triangular prism</li><li>height of the triangular prism</li><li>width of the triangular prism</li><li>base depth of the triangular prism</li></ul>"
+Tessellate:
+- "give implicit directions on what they are to do. For example \"Today we are going to explore tessellations and try to answer the exploration questions...\""
+- "answer the question \"Why do some deformations not tessellate?\""
+TheChaosGame:
+- "give implicit directions on what they are to do. For example \"Today we are going to see whathappens when we play a random game. Here are the rules ...\""
+- "answer the question \"Why/how does this pattern occur?\""
+- "discuss chaos, infinity, etc."
+TheMandelbrotSet:
+- "give implicit directions on what they are to do. For example \"Today we are going to look at the Mandelbrot set and see what we can learn about it. We will try to answer the questions on the worksheet...\""
+- "answer the question \"What are we supposed to get from this?\""
+- "discuss how the Mandelbrot set is made"
+Tortoise:
+- "discuss infinity"
+- "explain average speed"
+Transmographer:
+- "Define translation, reflection, and rotation and show examples"
+- "Explain net translation and net rotation"
+TransmographerTwo:
+- "define translation, reflection, and rotation and show examples"
+- "explain net translation and net rotation"
+TriangleExplorer:
+- "explain and give examples of right triangles"
+- "explain and give examples of how to calculate the area of a right triangle"
+- "explain and give examples of how to calculate the area of a triangle that is not a right triangle"
+TripleVennDiagram:
+- "explain why some objects don't fall under the categories of any of the circles"
+- "help students figure out how to guess the rule without placing every shape in the diagram"
+TwoColors:
+- "answer the question \"How do I make expectations based on the data?\""
+- "discuss conditional probability"
+TwoVariableFunction:
+- "give implicit directions on what they are to do. For example \"Today we are going to find out about prisoners, escapees, and complex numbers by using the Two-Variable Function Pump activity and it's worksheet...\""
+- "answer the question \"What is a prisoner and what is an escapee?\""
+- "discuss complex numbers, and how to plot points"
+VennDiagrams:
+- "explain all vocabulary words used in the applet."
+- "explain what happens when the object being classified does not fall under the categories of any of the circles"
+- "give the categories for the class Venn diagram for question three in the exploration questions."
+VerticalLineTest:
+- "give implicit directions on what they are to do. For example, \"Today we are going to explore theworld of functions ... we are going to make lines and test them... then we will try to answer theexploration questions...\""
+- "answer the question \"Why does the vertical line test work\"?"
+- "discuss functions, inputs, and outputs"
+WholeNumberCruncher:
+- "Encourage students to not give up and give hints if they are stuck"
+- "Explain the properties of a function"
+- "After the students have been working, explain a higher level strategy for finding the result: use 0 first and if the result is a whole number then that is the +/- component; if the result is 0, then it is a multiplication situation and plugging in 1 will find the solution."

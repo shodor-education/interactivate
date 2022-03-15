@@ -1,0 +1,612 @@
+3DTransmographer:
+- "introduce the concepts of translating, reflecting, and rotating a graph"
+- "illustrate plotting basic shapes on the Cartesian coordinate system"
+- "develop students mental visualization skills"
+- "practice translating, reflecting, and rotating 3D objects on a coordinate plane"
+ABetterFire:
+- "demonstrate randomness"
+- "motivate the ideas of chaos"
+- "demonstrate the basic concepts of probability"
+AdjustableSpinner:
+- "introduce the notions of chance and probability"
+- "show the difference between experimental and theoretical probability"
+- "motivate the connection between probability and geometry"
+AdvancedFire:
+- "demonstrate the basic concepts of probability"
+- "demonstrate the concept of chaos"
+- "practice accurate scientific experimentation"
+- "learn and practice data analysis"
+AdvancedMontyHall:
+- "introduce the notions of chance and probability"
+- "motivate the notion of conditional probability"
+- "motivate the notion of random numbers"
+AlgebraFour:
+- "Allow students practice with solving various types of one-variable equations."
+AlgebraQuiz:
+- "Allow students practice with solving various types of one-variable equations."
+Angles:
+- "Identify pairs of angles with special relationships: supplementary, complementary, vertical, adjacent, etc."
+- "Discuss parallel lines."
+AnotherHilbertCurve:
+- "practice students' fraction manipulation skills"
+- "practice students' pattern finding skills"
+- "demonstrate the complexity of infinity"
+- "motivate the ideas of self-similarity and recursion"
+- "demonstrate fractal objects"
+- "motivate the idea of a limit"
+AreaExplorer:
+- " illustrate the notion of area"
+- " develop students' visualization skills"
+- " practice students' skills at calculating area"
+- " illustrate that shapes of the same perimeter have different areas"
+ArithmeticFour:
+- "Give students practice with basic math"
+- "Teach students the differences between whole numbers and integers"
+ArithmeticQuiz:
+- "Give students practice with basic math"
+- "Teach students the differences between whole numbers and integers"
+BarGraph:
+- "Demonstrate the idea of a bar graph"
+- "Create bar graphs"
+- "Give students practice in reading bar graphs"
+- "Display the purpose of visual representations of data"
+BarGraphSorter:
+- "Introduce bargraphs."
+- "Help students learn to sort by a particular attribute."
+BasicSpinner:
+- "introduce the notions of chance and probability"
+- "show the difference between experimental and theoretical probability"
+- "motivate the connection between probability and geometry"
+BoundFractionFinder:
+- "Practice simplifying fractions"
+- "Compare fractions and order them on a number line"
+- "Develop algorithms to estimate fractions"
+BoundFractionPointer:
+- "Practice simplifying fractions"
+- "Compare fractions and order them on a number line"
+- "Develop methods to estimate the value of fractions"
+BoxPlot:
+- "systematically collect, organize, and describe data"
+- "construct, read, and interpret tables, charts, and graphs"
+- "practice calculating median"
+- "explore outliers"
+Buffon:
+- "introduce the notions of chance and probability"
+- "show the difference between experimental and theoretical probability"
+- "motivate the connection between probability and geometry"
+CaesarCipher:
+- "practice students' long division skills"
+- "demonstrate the applications of modular arithmetic"
+- "practice the students' logical reasoning skills"
+CaesarCipherThree:
+- "practice students' long division skills"
+- "demonstrate the applications of modular arithmetic"
+- "practice the students' logical reasoning skills"
+CaesarCipherTwo:
+- "practice students' long division skills"
+- "demonstrate the applications of modular arithmetic"
+- "practice the students' logical reasoning skills"
+CantorComb:
+- "practice students' fraction manipulation skills"
+- "practice students' pattern finding skills"
+- "demonstrate the complexity of infinity"
+- "motivate the ideas of self-similarity and recursion"
+- "demonstrate fractal objects"
+- "motivate the idea of a limit"
+Chairs:
+- "practice students' pattern finding skills."
+- "practice students' ability to describe patterns verbally."
+- "introduce students to the idea of describing patterns mathematically through the use of equations."
+CircleGraph:
+- "Illustrate percent and how percents should add to 100 to represent a whole"
+- "Develop estimation skills"
+- "Demonstrate the idea of a circle graph"
+- "Give students practice in reading and drawing circle graphs"
+- "Develop recognitions and understanding of data representations"
+ClockArithmetic:
+- "practice students' long division skills"
+- "motivate the ideas of modular arithmetic"
+ClockWise:
+- "Give students an introduction to basic time keeping"
+- "Teach students how to tell time on a standard round clock"
+Coin:
+- "introduce the notions of chance and probability"
+- "show the difference between experimental and theoretical probability"
+- "motivate the idea of sample size"
+ColoringMultiples:
+- "practice students' multiplication skills"
+- "practice students' pattern recognition skills"
+- "introduce Pascal's triangle"
+- "motivate the ideas of fractals"
+ColoringRemainder:
+- "practice students' long division skills"
+- "practice students' pattern recognition skills"
+- "introduce Pascal's triangle"
+- "motivate the ideas of fractals"
+ComparisonEstimator:
+- "Introduce students to the uses and limits of estimation"
+- "Reinforce basic concepts in geometry such as simple shapes and area"
+- "Show students the importance of comparing scales on different graphical displays"
+ConicFlyer:
+- "experiment on the graph of a conic section by changing the coefficients and constants"
+- "visualize some of the possible cross sections of an infinite cone"
+Converter:
+- "convert fractions to decimals"
+- "convert decimals to fractions"
+- "develop number sense"
+CrazyChoicesGame:
+- "introduce the notions of chance and probability"
+- "shows the difference between experimental and theoretical probability"
+- "motivate the notion of random numbers"
+- "motivate ideas from combinatorics"
+CrossSectionFlyer:
+- "show the relationship between three-dimensional objects and two-dimensional representations"
+- "develop the ability to visualize movements on two- and three-dimensional objects"
+- "assist students in transitioning from concrete to abstract thinking"
+DataFlyer:
+- "Develop understanding of the Cartesian coordinate system"
+- "Explore how changing coefficients affects the shape of a graph."
+Derivate:
+- "Visualize the tangent line to a function at a point"
+- "Relate the slope of the tangent line to the derivative"
+DiceTable:
+- "practice students' fraction, decimal and percent manipulation skills"
+- "introduce the notions of chance and probability"
+- "motivate the notion of random numbers"
+- "motivate ideas from combinatorics"
+DirectableFire:
+- "demonstrate randomness"
+- "motivate the ideas of chaos"
+- "demonstrate the basic concepts of probability"
+ElapsedTime:
+- "Develop the idea of elapsed time."
+- "Practice calculating elapsed time between a starting and an ending time."
+- "Help students to understand number systems other than base ten."
+- "Help students practice reading a clock."
+- "Display the purpose of visual representations of data"
+ElapsedTimeTwo:
+- "Develop an understanding of addition and subtraction with time"
+- "Develop an understanding of number systems other than base ten"
+- "Help students practice reading a clock"
+EquationSolver:
+- "Allow students practice with using the additive and multiplicative inverses to solve algebraic problems."
+EquivFractionFinder:
+- "Practice simplifying fractions"
+- "Compare fractions and order them on a number line"
+- "Develop the concept of equivalent fractions"
+EquivFractionPointer:
+- "Practice simplifying fractions"
+- "Compare fractions and order them on a number line"
+- "Develop the concept of equivalent fractions."
+Estimator:
+- "Introduce students to the uses and limits of estimation"
+- "Reinforce basic concepts in geometry such as simple shapes and area"
+- "Show students the importance of comparing scales on different graphical displays"
+EstimatorFour:
+- "Introduce students to the uses and limits of estimation"
+- "Reinforce understanding of addition, multiplication, and percentage problems involving largenumbers"
+EstimatorQuiz:
+- "Introduce students to the uses and limits of estimation"
+- "Reinforce understanding of addition, multiplication, and percentage problems involving largenumbers"
+ExpProbability:
+- "give students experience generating sets of data using random number generators."
+- "manipulate random number generators to see the effects on experimental probabilities."
+Factorize:
+- "Teach students about <a href=\"/dictionary/f\">factors</a>"
+- "Visually show how factorizations make up various numbers"
+FactorizeTwo:
+- "Teach students about <a href=\"/dictionary/f\">factors</a>"
+- "Visually show how factorizations make up various numbers"
+Fire:
+- "demonstrate randomness"
+- "motivate the ideas of chaos"
+- "demonstrate the basic concepts of probability"
+FireAssessment:
+- "Introduce students to the uses and limits of estimation"
+- "Allow students to practice visually estimating numbers, fractions, and percent"
+- "Help students to understand the relationship between fractions and percentages"
+FittedNormalDistr:
+- "reinforce the relationship between sample size and accuracy of a random sample"
+- "reinforce the relationship between sample variability and accuracy of a random sample"
+- "demonstrate the difference between theoretical (infinite-trial) and actual (small or large sample)"
+FlakeMaker:
+- "Practice students' pattern recognition skills"
+- "Practice students' plane geometry skills"
+- "Illustrate the ideas of self-similarity and recursion"
+- "Demonstrate fractal objects"
+FloorTiles:
+- "recognize and explore the properties of tessellations"
+- "identify and examine symmetry in geometric figures"
+- "describe, and classify polygons"
+- "examine the role of mathematics in society and nature"
+FractalDimensions:
+- "practice students' geometry skills"
+- "practice students' logarithm skills (optional)"
+- "illustrate the definition of fractal dimension"
+- "demonstrate fractal objects"
+FractionFinder:
+- "Practice simplifying fractions"
+- "Compare fractions and order them on a number line"
+- "Develop methods to estimate the values of fractions"
+FractionFour:
+- "convert fraction, decimals, and percents"
+- "simplify fractions"
+- "develop number sense"
+FractionPointer:
+- "Practice simplifying fractions"
+- "Compare fractions and order them on a number line"
+- "Develop methods to estimate the values of fractions"
+FractionQuiz:
+- "convert fractions, decimals, and percents"
+- "simplify fractions"
+- "develop number sense"
+FractionSorter:
+- "understand numbers, ways of representing numbers, relationships among numbers, and number systems"
+- "compare and order fractions, decimals and percents efficiently and find their approximatelocations on the number line"
+- "compute fluently and make reasonable estimates"
+- "select appropriate methods and tools for computing with fractions and decimals from among mentalcomputation, estimation, calculators or computers, and paper and pencil, depending on thesituation, and apply the selected methods"
+- "develop and analyze algorithms for computing with fractions, decimals, and integers and developfluency in their use"
+FracturedPictures:
+- "practice students' pattern recognition skills"
+- "practice students' plane geometry skills"
+- "practice students' reasoning and deduction skills"
+- "illustrate the ideas of self-similarity and recursion"
+- "demonstrate fractal objects"
+FunctionFlyer:
+- "experiment on the graph of a function by changing the coefficients and constants in a given type of function."
+FunctionMachine:
+- "practice students' pattern finding skills"
+- "introduce basic notions from algebra"
+- "motivate the idea of a function of one variable"
+- "practice students' arithmetic skills"
+FunctionRevolution:
+- "Explore volumes and surface areas of unique solids"
+- "Introduce how to find volume and surface area using integration"
+- "Practice solving integrals for volume and surface area"
+- "Visualize the rotation of a function or pair of functions"
+GeneralCoordinates:
+- "introduce the Cartesian coordinate system"
+- "practice students' point plotting skills"
+- "practice students' graph reading skills"
+GeneralizedMontyHall:
+- "introduce the notions of chance and probability"
+- "motivate the notion of conditional probability"
+- "motivate the notion of random numbers"
+Graphit:
+- "illustrate the Cartesian coordinate system"
+- "practice students' pattern recognitions skills"
+- "practice students' graph reading skills"
+- "illustrate the relationship between graphical and algebraic representations of functions"
+GraphSketcher:
+- "illustrate the Cartesian coordinate system"
+- "practice students' pattern recognitions skills"
+- "practice students' graph reading skills"
+- "illustrate the relationship between graphical and algebraic representations of functions"
+HilbertCurve:
+- "practice students' fraction manipulation skills"
+- "practice students' pattern finding skills"
+- "demonstrate the complexity of infinity"
+- "motivate the ideas of self-similarity and recursion"
+- "demonstrate fractal objects"
+- "motivate the idea of a limit"
+Histogram:
+- "illustrate the idea of averages, both through numerical and geometrical methods"
+- "develop estimating skills"
+- "introduce the idea of a histogram"
+- "practice students skills at reading histograms"
+- "give students insight into drawing histograms that illustrate a data set well"
+- "develop recognition and understanding of data representations"
+ImageTool:
+- "Teach students about measurement of angles"
+- "Show how area is measured"
+- "Teach how travel distance is not the same as straight line distance"
+- "Demonstrate ratio and proportion"
+- "Teach students about scale measurements"
+Incline:
+- "introduce the concept of computational modeling"
+- "demonstrate the basic concepts of kinetic and potential energy"
+- "demonstrate the relationship between independent and dependent variables"
+- "introduce the concept of a nonlinear relationships between variables"
+- "give students practice at reading and interpreting graphs"
+inequality:
+- "illustrate inequalities on the Cartesian coordinate system"
+- "practice students' pattern recognition skills"
+- "practice students' graph reading skills"
+- "illustrate the relationship between graphical and algebraic representations of functions"
+Integrate:
+- "learn about different integration techniques"
+- "experiment with computational error"
+JuliaSets:
+- "practice students' arithmetic skills"
+- "practice students' point plotting skills"
+- "introduce students to complex numbers"
+- "investigate the notions of Julia sets, prisoners and escapees"
+- "motivate the Mandelbrot set"
+KochSnowflake:
+- "practice students' fraction manipulation skills"
+- "practice students' pattern finding skills"
+- "practice students' area and perimeter skills"
+- "demonstrate the complexity of infinity"
+- "motivate the ideas of self-similarity and recursion"
+- "demonstrate fractal objects"
+- "motivate the idea of a limit"
+Life:
+- "demonstrate randomness"
+- "motivate the ideas of chaos"
+- "introduce the idea of order/patterns in chaos"
+LifeLite:
+- "demonstrate randomness"
+- "motivate the ideas of chaos"
+LinearFunctMachine:
+- "practice students' pattern finding skills"
+- "introduce basic notions from algebra"
+- "motivate the idea of a function of one variable"
+- "practice students' arithmetic skills"
+Marbles:
+- "introduce the notions of chance and probability"
+- "motivate the notion of conditional probability"
+- "motivate the notion of sampling with and without replacement"
+- "motivate the notion of random numbers"
+MazeGame:
+- "introduce the Cartesian coordinate system"
+- "practice students' point plotting skills"
+- "practice students' graph reading skills"
+- "motivate the concept of slope"
+Measures:
+- "introduce and/or develop fractions"
+- "develop the idea of averages, both through numerical and geometrical methods"
+- "develop estimating skills"
+- "introduce and/or reinforce the ideas of mean, median, and mode"
+- "introduce and/or reinforce the ideas of variance and standard deviation"
+- "develop recognition and understanding of data representations"
+Mixtures:
+- "help students understand and apply algorithms for mixture problems presented in many math textbooks"
+- "explore and create students own mixture problems"
+MoreOrLessEstimator:
+- "Introduce students to the uses and limits of estimation"
+- "Reinforce basic concepts in geometry such as simple shapes and area"
+MultiBarGraph:
+- "Demonstrate the idea of a multiple bar graph"
+- "Create multiple bar graphs"
+- "Give students practice in reading multiple bar graphs"
+- "Display the purpose of visual representations of data"
+MultiFunctionDataFly:
+- "Develop understanding of the Cartesian coordinate system"
+- "Explore how changing coefficients affects the shape of a graph."
+MultipleLinearRegression:
+- "Teach students about how data influences the line of best fit"
+- "Provide students with practice in determining the line of best fit"
+- "Allow students exploration with the linear correlation coefficient"
+- "Teach students about the uses of multiple regression"
+- "Continue the distinction between independent and dependent variables"
+NormalDistribution:
+- "reinforce graphically the concepts of median and standard deviation"
+- "demonstrate the difference between theoretical (infinite-trial) and actual (small or large sample)"
+NumberBaseClocks:
+- "Understand modular arithmetic"
+- "Introduce the idea of systems other than base 10"
+- "Learn how to convert from base 10 to other bases"
+- "Practice long division and dealing with remainders"
+NumberCruncher:
+- "Teach properties of linear functions"
+- "Explore problem solving techniques"
+OperationsQuiz:
+- "Give students practice with basic math skills."
+- "Develop students mental math skills."
+OrderedSimplePlot:
+- "illustrate the Cartesian coordinate system"
+- "practice students' pattern recognitions skills"
+- "practice students' graph reading skills"
+OrderOfOperationsFou:
+- "Give students practice with basic math skills."
+- "Develop students mental math skills."
+OverlappingGaussians:
+- "Calculate P-values for normal curves"
+- "Teach students how changing different parameters affects a Gaussian curve"
+- "Teach students how the area under a Gaussian curve relates to probability"
+- "Introduce students to Type I and Type II errors"
+ParametricGraphIt:
+- "Introduce students to parametric equations"
+- "Practice graphing skills"
+- "Illustrate the relationship between functions and parametric equations"
+- "Evaluate algebraic expressions"
+- "Determine whether or not a given graph shows a function"
+PatternGenerator:
+- "introduce the concept of patterns, further developed in the Coloring Multiples Pascal's Triangle"
+- "lead any classroom discussion of what patterns are and how to figure them out."
+- "develop critical thinking skills and logical reasoning ability."
+PerimeterExplorer:
+- "illustrate the notion of perimeter"
+- "develop students' visualization skills"
+- "practice students' skills at calculating perimeter"
+PieChart:
+- "illustrate the percentages and how they should add to 100%"
+- "develop estimating skills"
+- "introduce the idea of a pie chart"
+- "practice students skills at reading pie charts"
+- "give students insight into drawing pie charts"
+- "develop recognition and understanding of data representations"
+PlopIt:
+- "introduce and reinforce the concepts of mean, median, and mode"
+PolarCoordinates:
+- "introduce the polar coordinate system"
+- "practice students' point plotting skills"
+- "demonstrate conversion between radians and degrees"
+PositiveLinearFunct:
+- "practice students' pattern finding skills"
+- "introduce basic notions from algebra"
+- "motivate the idea of a function of one variable"
+- "practice students' arithmetic skills"
+PossibleOrNot:
+- "practice students' function skills"
+- "practice students' deductive reasoning skills"
+- "practice students' graphing skills"
+PythagoreanExplorer:
+- "practice the Pythagorean theorem"
+- "practice identifying the hypotenuse"
+- "practice the order of operations"
+- "practice solving one step equations"
+RabbitsAndWolves:
+- "demonstrate randomness"
+- "motivate the ideas of chaos"
+RacingGameWithOneDie:
+- "introduce the notions of chance and probability"
+- "allow students to experiment with probability and the notion of a fair game"
+- "motivate the notion of conditional probability"
+- "motivate the notion of random numbers"
+RacingGameWithTwoDie:
+- "<a href=\"/dictionary/p\">probability</a>"
+- "allow students to experiment with probability and the notion of a fair game"
+- "<a href=\"/dictionary/c\">conditional probability</a>"
+- "<a href=\"/dictionary/r\">random numbers</a>"
+- "motivate ideas from combinatorics"
+Recursion:
+- "Teach students about recursive equations"
+- "Show up to three recursive equations on a graph"
+- "Trace individual values of a recursive equation using a graph"
+Regression:
+- "Teach students about how data influences the line of best fit."
+- "Provide students with practice in determining the line of best fit for some data."
+- "Introduce students to residuals."
+- "Allow students exploration with the linear correlation coefficient, r."
+ScatterPlot:
+- "illustrate the Cartesian coordinate system"
+- "practice students' pattern recognition skills"
+- "practice students' graph reading skills"
+- "illustrate the relationship between graphical and algebraic representations of functions"
+Sequencer:
+- "introduce sequences"
+- "allow students to create sequences by varying the starting number, multiplier, or add-on"
+- "reinforce previously obtained knowledge regarding the behavior of sequences"
+- "practice computational skills"
+ShapeBuilder:
+- "illustrate the notion of area"
+- "develop students' visualization skills"
+- "practice students' skills at calculating area"
+- "illustrate shapes of the same perimeter have different areas"
+ShapeExplorer:
+- "illustrate notions of perimeter and area"
+- "develop students visualization skills"
+- "practice students skills at calculating area and perimeter"
+ShapeSorter:
+- "introduce the concept of Venn Diagrams."
+- "explore different types of Diagrams."
+- "apply Venn Diagrams as a tool for exploring various academic subjects"
+SierpinskiCarpet:
+- "practice students' area and perimeter skills"
+- "demonstrate fractal objects"
+SierpinskiTriangle:
+- "practice students' area and perimeter skills"
+- "demonstrate fractal objects"
+SimpleCoordinates:
+- "introduce the Cartesian coordinate system"
+- "practice students' point plotting skills"
+- "practice students' graph reading skills"
+SimpleMazeGame:
+- "introduce the Cartesian coordinate system"
+- "practice students' point plotting skills"
+- "practice students' graph reading skills"
+- "motivate the concept of slope"
+SimpleMontyHall:
+- "introduce the notions of chance and probability"
+- "motivate the notion of conditional probability"
+- "motivate the notion of random numbers"
+SimplePlot:
+- "illustrate the Cartesian coordinate system"
+- "practice students' pattern recognition skills"
+- "practice students' graph reading skills"
+- "illustrate the relationship between graphical and algebraic representations of functions"
+SingleFractionFinder:
+- "Practice dividing a whole into a fraction"
+- "Visualize fractions on a number line"
+- "Develop methods to estimate the values of fractions"
+SingleFractionPoint:
+- "Practice dividing a whole into a fraction"
+- "Visualize fractions on a number line"
+- "Develop methods to estimate the values of fractions"
+SkewDistribution:
+- "reinforce graphically the concepts of median and standard deviation"
+- "demonstrate the difference between theoretical (infinite-trial) and actual (small or large sample) data"
+SlopeSlider:
+- "introduce slope-intercept form of a line"
+- "introduce slope and y-intercept"
+SpreadofDisease:
+- "demonstrate randomness"
+- "motivate the idea of chaos"
+- "demonstrate concepts of probability"
+- "motivate data analysis"
+- "provide a data set for use with graphing tools"
+SquaringTheTriangle:
+- "introduce the Pythagorean Theorem"
+- "explore the concept of area"
+- "explore the nature of the angles in triangles"
+StemAndLeafPlotter:
+- "introduce the idea of a stem-and-leaf plot."
+- "introduce or reinforce the process of finding the mean, median, and mode of a set of data."
+Stopwatch:
+- "Facilitate measurement of time in a wide variety of experiments."
+SurfaceAreaAndVolume:
+- "illustrate notions of surface area and volume"
+- "develop students visualization skills"
+- "practice students skills at estimating surface area and volume"
+Tessellate:
+- "recognize and explore the properties of tessellations"
+- "identify and examine symmetry in geometric figures"
+- "describe, and classify polygons"
+- "examine the role of mathematics in society and nature"
+TheChaosGame:
+- "practice students' fraction manipulation skills"
+- "practice students' measurement skills"
+- "practice students' geometric probablility skills"
+- "demonstrate randomness"
+- "motivate the ideas of chaos"
+- "demonstrate fractal objects"
+TheMandelbrotSet:
+- "practice students' arithmetic skills"
+- "practice students' point plotting skills"
+- "introduce students to complex numbers"
+- "investigate the notions of Julia sets, prisoners and escapees"
+- "explore the Mandelbrot set"
+Tortoise:
+- "demonstrate non-terminating sequences of fractions and decimals"
+- "motivate the notion of infinity"
+- "motivate the notion of self-similarity"
+Transmographer:
+- "Illustrate plotting basic shapes on the Cartesian coordinate system"
+- "Develop students mental visualization skills"
+- "Introduce the ideas of translation, reflection and rotation"
+- "Practice students skills at translation, reflection and rotation"
+TransmographerTwo:
+- "illustrate plotting basic shapes on the Cartesian coordinate system"
+- "develop students mental visualization skills"
+- "introduce the ideas of translation, reflection and rotation"
+- "practice students skills at translation, reflection and rotation"
+TriangleExplorer:
+- "introduce the concept of area"
+- "explore different types of triangles"
+- "discuss problem solving strategies"
+TripleVennDiagram:
+- "introduce the concept of Venn Diagrams"
+- "explore different types of diagrams"
+- "develop logical thinking"
+- "use Venn Diagrams as a tool for describing relationships in various academic subjects"
+TwoColors:
+- "introduce the notions of chance and probability"
+- "motivate the notion of conditional probability"
+- "motivate the notion of random numbers"
+TwoVariableFunction:
+- "practice students' arithmetic skills"
+- "practice students' point plotting skills"
+- "introduce students to complex numbers"
+- "motivate the notions of Julia sets, prisoners and escapees"
+VennDiagrams:
+- "introduce the concept of Venn Diagrams."
+- "explore different types of Diagrams."
+- "apply Venn Diagrams as a tool for exploring various academic subjects"
+VerticalLineTest:
+- "practice students' function skills"
+- "practice students' deductive reasoning skills"
+- "familiarize students with the vertical line test for functions"
+WholeNumberCruncher:
+- "Teach properties of linear functions"
+- "Explore problem solving techniques"

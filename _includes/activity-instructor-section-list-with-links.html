@@ -1,0 +1,14 @@
+<ul>
+  {% for item in include.list %}
+    {% capture split-string %}<a href="{% endcapture %}
+    {% if item contains split-string %}
+      {% capture url %}{{ item | split: split-string | last | split: '"'
+        | first }}{% endcapture %}
+      {% assign relative-url = url | relative_url %}
+      {% assign item-text = item | replace: url, relative-url %}
+    {% else %}
+      {% assign item-text = item %}
+    {% endif %}
+    <li>{{ item-text }}</li>
+  {% endfor %}
+</ul>

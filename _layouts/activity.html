@@ -68,6 +68,16 @@ layout: default
         <h2>Description</h2>
         {% include activity-instructor-descriptions/{{ page.slug }}.html %}
       </section>
+      <section id="instructor-placements-section">
+        <h2>Place in Mathematics Curriculum</h2>
+        <p>
+          This activity can be used to:
+        </p>
+        {% assign list = site.data.activity-instructor-placements[page.slug] %}
+        {% include activity-instructor-section-list-with-links.html list=list %}
+      </section>
+      {% include alignment-sections/standards-alignment-section.html %}
+      {% include alignment-sections/textbook-alignment-section.html %}
     </div>
   </section>
 </main>

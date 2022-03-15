@@ -1,0 +1,13 @@
+{% include alignment-sections/alignment-section.html
+  h2="Textbooks Aligned"
+  label="textbook"
+  level-1-label="series"
+  level-1-key="series"
+  level-2-key="textbook"
+  level-2-list=site.textbooks
+  level-2-output-property="book"
+  level-3-key="chapter"
+  level-4-haystack=site.textbook-sections
+  level-4-needle-list=page.aligned-textbook-sections
+  level-4-output-property="title"
+%}
