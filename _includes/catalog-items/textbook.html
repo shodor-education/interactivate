@@ -1,2 +1,8 @@
+{% capture img-url %}img/textbooks/{{
+  include.catalog-item.slug }}.gif{% endcapture %}
+{% capture alt-text %}Textbook cover for {{ include.catalog-item.title }}{%
+  endcapture %}
 {% include catalog-items/simple-single-column-link.html
-  catalog-item=include.catalog-item text=include.catalog-item.title %}
+  catalog-item=include.catalog-item text=include.catalog-item.title
+  img-url=img-url alt-text=alt-text
+%}

@@ -1,3 +1,12 @@
+{% assign href = include.catalog-item.url | relative_url %}
 <div class="single-column">
-  <a href="{{ include.catalog-item.url | relative_url }}">{{ include.text }}</a>
+  {% if include.img-url %}
+    <div>
+      <a href="{{ href }}"><img src="{{ img-url | relative_url }}"
+        alt="{{ include.alt-text }}"/></a>
+    </div>
+  {% endif %}
+  <div>
+    <a href="{{ href }}">{{ include.catalog-item.title }}</a>
+  </div>
 </div>

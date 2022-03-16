@@ -37,6 +37,7 @@ collections:
   textbooks:
     output: true
     permalink: "/textbooks/:name"
+    sort_by: "index"
   worksheets:
     output: false
     permalink: "/media/worksheets/:name"
