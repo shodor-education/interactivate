@@ -73,6 +73,7 @@ defaults:
       type: "standards-grade-bands"
     values:
       catalog-type: "standards-objectives"
+      has-additional-breadcrumbs: true
       layout: "catalog"
   - scope:
       type: "standards-objectives"
