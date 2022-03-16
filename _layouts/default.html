@@ -34,8 +34,8 @@
             {% assign catalog-page = site.main-catalogs
               | find: "slug", page.collection %}
             {% if catalog-page %}
-              <a href="{{ catalog-page.url | relative_url }}">{{
-                catalog-page.title }}</a> ▸
+              <a href="{{ catalog-page.url
+                | relative_url }}">{{ catalog-page.title }}</a> ▸
             {% endif %}
           {% endif %}
           {% if page.has-additional-breadcrumbs %}
