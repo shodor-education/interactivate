@@ -96,7 +96,26 @@ defaults:
       catalog-type: "textbook-sections"
       layout: "catalog"
 exclude:
+  - "_activities"
+  - "_audience-catalogs"
+  - "_data"
+  - "_dictionary-sections"
+  - "_discussions"
+  - "_includes"
+  - "_layouts"
+  - "_lessons"
+  - "_main-catalogs"
+  - "_sass"
+  - "_standards-grade-bands"
+  - "_standards-objectives"
+  - "_textbook-sections"
+  - "_textbooks"
+  - "_worksheets"
+  - "css"
   - "exclude"
+  - "img"
+  - "js"
+
 include:
   - "_3dtransmographer"
 plugins:
