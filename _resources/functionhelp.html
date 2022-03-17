@@ -1,0 +1,193 @@
+---
+redirect_from: "/activities/functionhelp"
+table-data:
+  - function: "addition"
+    symbol: "+"
+    examples: "<strong> x+3 </strong>"
+    meaning: "<em>x</em> plus three"
+  - function: "subtraction"
+    symbol: "-"
+    examples: "<strong> 5-x </strong>"
+    meaning: "five minus <em>x</em>"
+  - function: "multiplication"
+    symbol: "*"
+    examples: "<strong> x*(x-2) </strong>"
+    meaning: "<em>x</em> times the quantity <em>x</em> minus two"
+  - function: "division"
+    symbol: "/"
+    examples: "<strong> 3/x </strong>"
+    meaning: "three divided by <em>x</em>"
+  - function: "power"
+    symbol: "^"
+    examples: "<strong> x^3 </strong>"
+    meaning: "<em>x</em> to the power of three"
+  - function: "power"
+    symbol: "**"
+    examples: "<strong> x**3 </strong>"
+    meaning: "<em>x</em> to the power of three"
+  - function: "&pi;"
+    symbol: "pi"
+    examples: "<strong> sin(pi*x) </strong>"
+    meaning: "sine of the quantity &pi; times <em>x</em>"
+  - function: "square root"
+    symbol: "sqrt(...)"
+    examples: "<strong> sqrt(x) </strong>"
+    meaning: "square root of <em>x</em>"
+  - function: "nth root*"
+    symbol: "x^(1/n)"
+    examples: "<strong> x^(1/3) </strong>"
+    meaning: "cube root of <em>x</em>"
+  - function: "absolute value"
+    symbol: "abs(...)"
+    examples: "<strong> abs(3-x) </strong>"
+    meaning: "absolute value of the quantity three minus <em>x</em>"
+  - function: "e to the power of <em>x</em>"
+    symbol: "exp(...)"
+    examples: "<strong> exp(x) </strong>"
+    meaning: "e to the power of <em>x</em>"
+  - function: "sine"
+    symbol: "sin(...)"
+    examples: "<strong> sin(2x) </strong>"
+    meaning: "sine of the product 2 times <em>x</em>"
+  - function: "cosine"
+    symbol: "cos(...)"
+    examples: "<strong> cos(5-x) </strong>"
+    meaning: "cosine of the quantity five minus <em>x</em>"
+  - function: "tangent"
+    symbol: "tan(...)"
+    examples: "<strong> tan(x) </strong>"
+    meaning: "tangent of <em>x</em>"
+  - function: "arcsine"
+    symbol: "asin(...)"
+    examples: "<strong> asin(x) </strong>"
+    meaning: "returns a value between -&pi;/2 and &pi;/2"
+  - function: "arccosine"
+    symbol: "acos(...)"
+    examples: "<strong> acos(x) </strong>"
+    meaning: "returns a value between 0 and &pi;"
+  - function: "arctangent"
+    symbol: "atan(...)"
+    examples: "<strong> atan(x) </strong>"
+    meaning: "returns a value between -&pi;/2 and &pi;/2"
+  - function: "secant"
+    symbol: "sec(...)"
+    examples: "<strong> sec(x) </strong>"
+    meaning: "returns the secant of <em>x</em>, that is, 1/cos(x) if cos(x) &ne; 0"
+  - function: "cosecant"
+    symbol: "csc(...)"
+    examples: "<strong> csc(x) </strong>"
+    meaning: "returns the cosecant of <em>x</em>, that is, 1/sin(x) if sin(x) &ne; 0"
+  - function: "cotangent"
+    symbol: "cot(...)"
+    examples: "<strong> cot(x) </strong>"
+    meaning: "returns the cotangent of <em>x</em>, that is, 1/tan(x) if tan(x) &ne; 0"
+  - function: "hyperbolic sine"
+    symbol: "sinh(...)"
+    examples: "<strong> sinh(x) </strong>"
+    meaning: "hyperbolic sine of <em>x</em>"
+  - function: "hyperbolic cosine"
+    symbol: "cosh(...)"
+    examples: "<strong> cosh(10/x) </strong>"
+    meaning: "hyperbolic cosine of the quantity ten divided by <em>x</em>"
+  - function: "hyperbolic tangent"
+    symbol: "tanh(...)"
+    examples: "<strong> tanh(x) </strong>"
+    meaning: "hyperbolic tangent of <em>x</em>"
+  - function: "natural logarithm"
+    symbol: "ln(...)"
+    examples: "<strong> ln(x) </strong>"
+    meaning: "natural logarithm of <em>x</em>"
+  - function: "base 10 logarithm"
+    symbol: "log(...)"
+    examples: "<strong> log(x+5) </strong>"
+    meaning: "base ten logarithm of the quantity <em>x</em> plus five"
+  - function: "positive part of the operand"
+    symbol: "ppo(...)"
+    examples: "<strong> ppo(x+2) </strong>"
+    meaning: "returns x+2 if x+2&gt;0 and 0 if x+2&lt;0"
+  - function: "step"
+    symbol: "step(...)"
+    examples: "<strong> step(x) </strong>"
+    meaning: "returns 0 if <em>x</em> &le; 0 and 1 if <em>x</em> &gt; 0"
+  - function: "floor"
+    symbol: "floor(...)"
+    examples: "<strong> floor(x) </strong>"
+    meaning: "returns <em>x</em> rounded down to the nearest integer"
+  - function: "ceiling"
+    symbol: "ceil(...)"
+    examples: "<strong> ceil(x) </strong>"
+    meaning: "returns <em>x</em> rounded up to the nearest integer"
+  - function: "factorial"
+    symbol: "fac(...)"
+    examples: "<strong> fac(x) </strong>"
+    meaning: "returns 0 if <em>x</em> &lt; 0, 1 if 0 &le; <em>x</em> &lt; 1, and 1&times;2&times; . . . &times;floor(x) if <em>x</em> &ge; 1"
+  - function: "sawtooth"
+    symbol: "saw(...)"
+    examples: "<strong> saw(x) </strong>"
+    meaning: "returns x - floor(x), that is, the fractional part of <em>x</em>."
+  - function: "derivative"
+    symbol: "diff(...)"
+    examples: "<strong> diff(2x^2 + 3x - 5) </strong>"
+    meaning: "returns 4x + 3"
+  - function: "Area under curve from 0 to <em>x</em>"
+    symbol: "integ(...)"
+    examples: "<strong> integ(sin(x)) </strong>"
+    meaning: "returns 1-cos(x)"
+  - function: "sign"
+    symbol: "sign(...)"
+    examples: "<strong> sign(x) </strong>"
+    meaning: "returns -1 if <em>x</em> &lt; 0, 0 if <em>x</em> = 0, and 1 if <em>x</em> &gt; 0"
+  - function: "square wave"
+    symbol: "square(...)"
+    examples: "<strong> square(x) </strong>"
+    meaning: "returns sign(sin(x))"
+  - function: "round <em>x</em> to the nearest integer"
+    symbol: "round(...)"
+    examples: "<strong> round(x) </strong>"
+    meaning: "returns floor(x + 0.5)"
+title: "Interactivate Syntax Reference"
+---
+<main id="function-help-main" class="folder-main">
+  <div>
+    <section>
+      <h2>Syntax for Entering Functions in Interactivate Activities</h2>
+      <ul>
+        <li>
+          Numerical values entered should be accurately calculated from 10
+          <sup>-8</sup> to 10 <sup>8</sup>. Numbers larger or smaller than these
+          values produce unreliable results. You may use scientific notation for
+          entering functions in the form: mantissa followed by an e followed by
+          10 raised to the desired power. For example 0.000032 would be input as
+          3.2e10^-5.
+        </li>
+        <li>
+          Functions and their compositions can be typed as follows:
+        </li>
+      </ul>
+      <table>
+        <thead>
+          <td>Function</td>
+          <td>Symbol</td>
+          <td>Examples</td>
+          <td>Meaning</td>
+        </thead>
+        <tbody>
+          {% for tr in page.table-data %}
+            <tr>
+              <td>{{ tr.function }}</td>
+              <td>{{ tr.symbol }}</td>
+              <td>{{ tr.examples }}</td>
+              <td>{{ tr.meaning }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p>
+        * When <em>x</em> is less than zero, the exponent must be written as a
+        whole number or in fraction form, not a decimal. For instance, if you
+        want to graph the fifth root of negative numbers, you must write
+        x^(1/5), <strong>not</strong> x^(0.2).
+      </p>
+    </section>
+  </div>
+</main>

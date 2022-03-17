@@ -23,6 +23,9 @@ collections:
     output: true
     permalink: "/:path"
     sort_by: "jump-to-index"
+  resources:
+    output: true
+    permalink: "/resources/:path"
   standards-grade-bands:
     output: true
     permalink: "/standards/organization/:path"
@@ -73,6 +76,10 @@ defaults:
     values:
       layout: "catalog"
   - scope:
+      type: "resources"
+    values:
+      layout: "default"
+  - scope:
       type: "standards-grade-bands"
     values:
       has-additional-breadcrumbs: true
@@ -114,6 +121,7 @@ exclude:
 #  - "_layouts"
 #  - "_lessons"
 #  - "_main-catalogs"
+#  - "_resources"
 #  - "_sass"
 #  - "_standards-grade-bands"
 #  - "_standards-objectives"
