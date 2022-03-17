@@ -1,18 +1,52 @@
 #browse-main {
+  h2 {
+    border: none;
+    font: inherit;
+    font-weight: bold;
+  }
+
   #top-section {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
+
     .select-section {
-      display: inline-block;
-      width: 24%;
-
-      h2 {
-        border: inherit;
-        font: inherit;
-        font-weight: bold;
-      }
-
+      flex: 1;
       select {
         height: 150px;
         width: 100%;
+      }
+    }
+  }
+
+  #bottom-section {
+    border: 1px solid gray;
+    border-bottom: 0;
+    margin-bottom: 10px;
+
+    #no-results {
+      display: none;
+    }
+
+    #no-results,
+    .resource-section {
+      border-bottom: 1px solid gray;
+      padding: 10px;
+
+      &[data-type="Activity"] .resource-type {
+        color: #F26B6B;
+      }
+
+      &[data-type="Discussion"] .resource-type {
+        color: #5E8AE0;
+      }
+
+      &[data-type="Lesson"] .resource-type {
+        color: #78C370;
+      }
+
+      p {
+        margin: 0;
       }
     }
   }

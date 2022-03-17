@@ -1,7 +1,10 @@
 <section id="{{ include.heading | slugify }}-select-section"
   class="select-section">
   <h2>{{ include.heading }}</h2>
-  <select multiple>
+  <select id="{{ include.heading | slugify }}-select"
+    multiple
+    onchange="selectBrowseOption();"
+  >
     {% for option in include.options %}
       <option>{{ option }}</option>
     {% endfor %}

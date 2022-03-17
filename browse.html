@@ -2,17 +2,25 @@
 layout: "default"
 title: "Browse"
 ---
-{% assign all-resources = site.activities | concat: site.discussions
-  | concat: site.lessons | concat: site.worksheets | sort: "title"
+{% assign groups-of-resource-titles = site.activities | concat: site.discussions
+  | concat: site.lessons | concat: site.worksheets
+  | group_by_exp: "item", "item.title | slugify | replace: '-', ''"
+  | sort: "name"
 %}
+{% assign all-resources = "" | split: "" %}
+{% for group in groups-of-resource-titles %}
+  {% assign all-resources = all-resources | concat: group.items %}
+{% endfor %}
 {% assign all-subjects = all-resources | map: "subjects" | uniq | compact
   | sort
 %}
 {% assign all-topics = all-resources | map: "topics" | uniq | compact | sort %}
 {% assign all-audiences = all-resources | map: "audiences" | uniq | compact
-  | sort %}
+  | sort
+%}
 {% assign all-types = "Activity,Discussion,Lesson,Worksheet"
-  | split: "," %}
+  | split: ","
+%}
 <main id="browse-main" class="folder-main">
   <section id="top-section">
     {% include browse-select.html heading="Subject"
@@ -29,8 +37,25 @@ title: "Browse"
     %}
   </section>
   <section id="bottom-section">
+    <section id="no-results">
+      <p>No results</p>
+    </section>
     {% for resource in all-resources %}
-      <p>{{ resource.title }} ({{ resource.item-type }})</p>
+      <section
+        class="resource-section"
+        data-subject="{{ resource.subjects | join: ',' }}"
+        data-topic="{{ resource.topics | join: ',' }}"
+        data-audience="{{ resource.audiences | join: ',' }}"
+        data-type="{{ resource.resource-type | capitalize }}"
+      >
+        <h2>
+          <a href="{{ resource.url | relative_url }}">{{ resource.title }}</a>
+          <span class="resource-type">
+            ({{ resource.resource-type | capitalize }})
+          </span>
+        </h2>
+        <p>{{ resource.description }}</p>
+      </section>
     {% endfor %}
   </section>
 </main>
