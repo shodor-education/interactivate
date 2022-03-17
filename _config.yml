@@ -54,8 +54,8 @@ defaults:
   - scope:
       type: "dictionary-sections"
     values:
-      catalog-type: "dictionary-terms"
       has-additional-breadcrumbs: true
+      item-type: "dictionary-item"
       layout: "catalog"
   - scope:
       type: "discussions"
@@ -72,49 +72,51 @@ defaults:
   - scope:
       type: "standards-grade-bands"
     values:
-      catalog-type: "standards-objectives"
       has-additional-breadcrumbs: true
+      item-type: "standards-objective"
       layout: "catalog"
   - scope:
       type: "standards-objectives"
     values:
-      catalog-type: "standards-aligned-resources"
       has-additional-breadcrumbs: true
+      item-type: "standards-aligned-resource"
       layout: "catalog"
       page-description: true
       title: "Aligned Resources"
   - scope:
       type: "textbook-sections"
     values:
-      catalog-type: "textbook-aligned-resources"
       has-additional-breadcrumbs: true
+      item-type: "textbook-aligned-resource"
       layout: "catalog"
       page-description: true
   - scope:
       type: "textbooks"
     values:
-      catalog-type: "textbook-sections"
+      item-type: "textbook-section"
       layout: "catalog"
 exclude:
-  - "_activities"
-  - "_audience-catalogs"
-  - "_data"
-  - "_dictionary-sections"
-  - "_discussions"
-  - "_includes"
-  - "_layouts"
-  - "_lessons"
-  - "_main-catalogs"
-  - "_sass"
-  - "_standards-grade-bands"
-  - "_standards-objectives"
-  - "_textbook-sections"
-  - "_textbooks"
-  - "_worksheets"
-  - "css"
   - "exclude"
-  - "img"
-  - "js"
+# During dev, uncomment dirs below you don't need to generate — speeds up build
+#  - "_activities"
+#  - "_audience-catalogs"
+#  - "_data"
+#  - "_dictionary-sections"
+#  - "_discussions"
+#  - "_includes"
+#  - "_layouts"
+#  - "_lessons"
+#  - "_main-catalogs"
+#  - "_sass"
+#  - "_standards-grade-bands"
+#  - "_standards-objectives"
+#  - "_textbook-sections"
+#  - "_textbooks"
+#  - "_worksheets"
+#  - "css"
+#  - "img"
+#  - "js/activities"
+#  - "media"
 
 include:
   - "_3dtransmographer"

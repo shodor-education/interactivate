@@ -1,0 +1,36 @@
+---
+layout: "default"
+title: "Browse"
+---
+{% assign all-resources = site.activities | concat: site.discussions
+  | concat: site.lessons | concat: site.worksheets | sort: "title"
+%}
+{% assign all-subjects = all-resources | map: "subjects" | uniq | compact
+  | sort
+%}
+{% assign all-topics = all-resources | map: "topics" | uniq | compact | sort %}
+{% assign all-audiences = all-resources | map: "audiences" | uniq | compact
+  | sort %}
+{% assign all-types = "Activity,Discussion,Lesson,Worksheet"
+  | split: "," %}
+<main id="browse-main" class="folder-main">
+  <section id="top-section">
+    {% include browse-select.html heading="Subject"
+      options=all-subjects
+    %}
+    {% include browse-select.html heading="Topic"
+      options=all-topics
+    %}
+    {% include browse-select.html heading="Audience"
+      options=all-audiences
+    %}
+    {% include browse-select.html heading="Type"
+      options=all-types
+    %}
+  </section>
+  <section id="bottom-section">
+    {% for resource in all-resources %}
+      <p>{{ resource.title }} ({{ resource.item-type }})</p>
+    {% endfor %}
+  </section>
+</main>

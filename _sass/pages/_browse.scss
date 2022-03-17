@@ -1,0 +1,19 @@
+#browse-main {
+  #top-section {
+    .select-section {
+      display: inline-block;
+      width: 24%;
+
+      h2 {
+        border: inherit;
+        font: inherit;
+        font-weight: bold;
+      }
+
+      select {
+        height: 150px;
+        width: 100%;
+      }
+    }
+  }
+}
