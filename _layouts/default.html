@@ -11,18 +11,24 @@
   </head>
   <body>
     <header>
-      <div id="logo-bar">
+      <nav id="logo-bar" aria-label="Site navigation">
         <a id="header-logo" href="{{ site.baseurl }}"><img
           src="{{ 'img/header-logo.gif' | relative_url }}"
           alt="Interactivate logo"/></a>
-        <select class="v-center" onchange="jumpTo(event);">
-          <option disabled selected>Jump To:</option>
-          {% for catalog in site.main-catalogs %}
-          <option data-catalog="{{ catalog.url
-            | relative_url }}">{{ catalog.title }}</option>
-          {% endfor %}
-        </select>
-      </div>
+        <div id="jump-to-container">
+          <select class="v-center" onchange="jumpTo(event);">
+            <option disabled selected>Jump To:</option>
+            {% for catalog in site.main-catalogs %}
+            <option data-catalog="{{ catalog.url
+              | relative_url }}">{{ catalog.title }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div id="browse-link-container">
+          <a id="browse-link" class="v-center"
+            href="{{ 'browse' | relative_url }}">Browse</a>
+        </div>
+      </nav>
       {% unless page.hide-h1 %}
       <h1>{{ page.title }}</h1>
       {% endunless %}
