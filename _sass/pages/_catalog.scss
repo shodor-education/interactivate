@@ -85,8 +85,6 @@
 
   nav {
     @extend %category-headings;
-
-    border-bottom: 0;
     font-weight: normal;
 
     a:link,
@@ -98,6 +96,10 @@
 
   .category-section {
     border-bottom: 0;
+
+    &:not(:first-child) {
+      border-top: 0;
+    }
 
     h2 {
       @extend %category-headings;
