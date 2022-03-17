@@ -27,7 +27,7 @@ layout: "default"
   </fieldset>
   {% endif %}
   {% if categories-list.size > 1 %}
-  <nav aria-label="Filter by {{ categories-label }}">
+  <section id="category-filters-section">
     {% for category in categories-list %}
     <a href="javascript:selectCatalogCategory('{{ category | replace: ' ', '_'
       | downcase }}');"/>{{ category }}</a>
@@ -35,7 +35,7 @@ layout: "default"
     {% endfor %}
     <a class="bold"
       href="javascript:selectCatalogCategory('all');"/>Show All</a>
-  </nav>
+  </section>
   {% endif %}
   {% assign no-items = true %}
   {% for category in categories-list %}

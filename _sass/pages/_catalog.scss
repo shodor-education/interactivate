@@ -64,7 +64,7 @@
   padding: 5px 0;
 
   #subject-audience-fieldset,
-  nav,
+  #category-filters-section,
   .category-section {
     border: 1px solid black;
     margin: 0 5px;
@@ -83,7 +83,7 @@
     width: 150px;
   }
 
-  nav {
+  #category-filters-section {
     @extend %category-headings;
     font-weight: normal;
 
