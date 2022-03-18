@@ -20,10 +20,14 @@ layout: "default"
   {% endif %}
   {% if page.subject-audience-sorter %}
   <fieldset id="subject-audience-fieldset">
-    {% include subject-audience-radio-button.html id="subject"
-      categories-label=categories-label %}
-    {% include subject-audience-radio-button.html id="audience"
-      categories-label=categories-label %}
+    {% include subject-audience-radio-button.html
+      id="subject"
+      categories-label=categories-label
+    %}
+    {% include subject-audience-radio-button.html
+      id="audience"
+      categories-label=categories-label
+    %}
   </fieldset>
   {% endif %}
   {% if categories-list.size > 1 %}
