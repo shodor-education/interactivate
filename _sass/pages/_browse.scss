@@ -10,20 +10,13 @@
     display: flex;
     flex-wrap: nowrap;
 
-    .filter-section {
+    .filter {
       flex: 1;
 
-      fieldset {
-        border: 1px solid gray;
-        padding: 0;
-        margin: 0;
-        height: 150px;
+      .options {
+        height: 110px;
+        margin-top: 10px;
         overflow-y: scroll;
-        width: 100%;
-      }
-
-      &:not(:last-child) fieldset {
-        border-right: 0;
       }
     }
   }
@@ -35,7 +28,7 @@
 
     #results {
       border: 1px solid gray;
-      height: 200px;
+      height: 310px;
       margin-bottom: 10px;
       overflow-y: scroll;
 

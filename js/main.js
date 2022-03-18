@@ -53,15 +53,24 @@ function selectBrowseOption() {
   }
   for (let i = 0; i < filters.length; i++) {
     const filter = filters[i];
+    const filterType = document.querySelector(
+      "input[type='radio'][name='" + filter + "-filter-type']:checked"
+    )
+    .value;
     const checkboxes = document.querySelectorAll(
-      "input[type='checkbox'][name='" + filter + "-cbs']:checked"
+      "input[type='checkbox'][name='" + filter + "-options']:checked"
     );
     for (let j = 0; j < selectedResources.length; j++) {
       const resource = selectedResources[j];
       const filterValues = resource.dataset[filter].split(",");
-      let hide = false;
+      let hide = (filterType == "OR" && checkboxes.length > 0);
       for (let k = 0; k < checkboxes.length; k++) {
-        if (!filterValues.includes(checkboxes[k].value)) {
+        const match = filterValues.includes(checkboxes[k].value);
+        if (match && filterType == "OR") {
+          hide = false;
+          break;
+        }
+        else if (!match && filterType == "AND") {
           hide = true;
           break;
         }
