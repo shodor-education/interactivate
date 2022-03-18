@@ -23,39 +23,39 @@ title: "Browse"
 %}
 <main id="browse-main" class="folder-main">
   <section id="top-section">
-    {% include browse-select.html heading="Subject"
+    {% include browse-fieldset.html heading="Subject"
       options=all-subjects
     %}
-    {% include browse-select.html heading="Topic"
+    {% include browse-fieldset.html heading="Topic"
       options=all-topics
     %}
-    {% include browse-select.html heading="Audience"
+    {% include browse-fieldset.html heading="Audience"
       options=all-audiences
     %}
-    {% include browse-select.html heading="Type"
+    {% include browse-fieldset.html heading="Type"
       options=all-types
     %}
   </section>
   <section id="bottom-section">
-    <section id="no-results">
-      <p>No results</p>
-    </section>
-    {% for resource in all-resources %}
-      <section
-        class="resource-section"
-        data-subject="{{ resource.subjects | join: ',' }}"
-        data-topic="{{ resource.topics | join: ',' }}"
-        data-audience="{{ resource.audiences | join: ',' }}"
-        data-type="{{ resource.resource-type | capitalize }}"
-      >
-        <h2>
-          <a href="{{ resource.url | relative_url }}">{{ resource.title }}</a>
-          <span class="resource-type">
-            ({{ resource.resource-type | capitalize }})
-          </span>
-        </h2>
-        <p>{{ resource.description }}</p>
-      </section>
-    {% endfor %}
+    <h2 id="results-count">{{ all-resources.size | count }} results</h2>
+    <div id="results">
+      {% for resource in all-resources %}
+        <section
+          class="resource-section"
+          data-subject="{{ resource.subjects | join: ',' }}"
+          data-topic="{{ resource.topics | join: ',' }}"
+          data-audience="{{ resource.audiences | join: ',' }}"
+          data-type="{{ resource.resource-type | capitalize }}"
+        >
+          <h3>
+            <a href="{{ resource.url | relative_url }}">{{ resource.title }}</a>
+            <span class="resource-type">
+              ({{ resource.resource-type | capitalize }})
+            </span>
+          </h3>
+          <p>{{ resource.description }}</p>
+        </section>
+      {% endfor %}
+    </div>
   </section>
 </main>

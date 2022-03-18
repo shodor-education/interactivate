@@ -1,6 +1,7 @@
 #browse-main {
   h2 {
     border: none;
+    padding: 0;
     font: inherit;
     font-weight: bold;
   }
@@ -8,45 +9,61 @@
   #top-section {
     display: flex;
     flex-wrap: nowrap;
-    margin-bottom: 10px;
 
-    .select-section {
+    .fieldset-section {
       flex: 1;
-      select {
+
+      fieldset {
+        border: 1px solid gray;
+        padding: 0;
+        margin: 0;
         height: 150px;
+        overflow-y: scroll;
         width: 100%;
+      }
+
+      &:not(:last-child) fieldset {
+        border-right: 0;
       }
     }
   }
 
   #bottom-section {
-    border: 1px solid gray;
-    border-bottom: 0;
-    margin-bottom: 10px;
-
-    #no-results {
-      display: none;
+    h2 {
+      margin: 10px 0;
     }
 
-    #no-results,
-    .resource-section {
-      border-bottom: 1px solid gray;
-      padding: 10px;
+    #results {
+      border: 1px solid gray;
+      border-top: 1px solid transparent;
+      height: 200px;
+      margin-bottom: 10px;
+      overflow-y: scroll;
 
-      &[data-type="Activity"] .resource-type {
-        color: #F26B6B;
-      }
-
-      &[data-type="Discussion"] .resource-type {
-        color: #5E8AE0;
-      }
-
-      &[data-type="Lesson"] .resource-type {
-        color: #78C370;
-      }
-
-      p {
+      h3 {
+        font-size: inherit;
         margin: 0;
+      }
+
+      .resource-section {
+        border-top: 1px solid gray;
+        padding: 10px;
+
+        &[data-type="Activity"] .resource-type {
+          color: #F26B6B;
+        }
+
+        &[data-type="Discussion"] .resource-type {
+          color: #5E8AE0;
+        }
+
+        &[data-type="Lesson"] .resource-type {
+          color: #78C370;
+        }
+
+        p {
+          margin: 0;
+        }
       }
     }
   }

@@ -45,8 +45,6 @@ function selectBrowseOption() {
   , "audience"
   , "type"
   ];
-  const noResults = document.getElementById("no-results");
-  noResults.style.display = "none";
   const selectedResources = Array.prototype.slice.call(
     document.getElementsByClassName("resource-section")
   );
@@ -55,14 +53,15 @@ function selectBrowseOption() {
   }
   for (let i = 0; i < fields.length; i++) {
     const field = fields[i];
-    const select = document.getElementById(field + "-select");
+    const checkboxes = document.querySelectorAll(
+      "input[type='checkbox'][name='" + field + "-cbs']:checked"
+    );
     for (let j = 0; j < selectedResources.length; j++) {
       const resource = selectedResources[j];
       const fieldValues = resource.dataset[field].split(",");
       let hide = false;
-      for (let k = 0; k < select.selectedOptions.length; k++) {
-        const selectedOption = select.selectedOptions[k].value;
-        if (!fieldValues.includes(selectedOption)) {
+      for (let k = 0; k < checkboxes.length; k++) {
+        if (!fieldValues.includes(checkboxes[k].value)) {
           hide = true;
           break;
         }
@@ -74,9 +73,14 @@ function selectBrowseOption() {
       }
     }
   }
-  if (selectedResources.length == 0) {
-    noResults.style.display = "block";
-  }
+  document.getElementById("results-count").innerHTML
+    = selectedResources.length + " results";
+  document.getElementById("results").style.borderTop
+    = "1px solid " + (
+      selectedResources.length == 0
+      ? "gray"
+      : "transparent"
+    );
 }
 
 function selectCatalogCategory(categoryName) {

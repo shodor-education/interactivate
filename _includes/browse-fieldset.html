@@ -1,0 +1,18 @@
+{% assign heading-slug = include.heading | slugify %}
+<section id="{{ heading-slug }}-fieldset-section"
+  class="fieldset-section">
+  <h2>{{ include.heading }}</h2>
+  <fieldset id="{{ heading-slug }}-fieldset">
+    {% for option in include.options %}
+      <input
+        type="checkbox"
+        id="{{ option }}-cb"
+        name="{{ heading-slug }}-cbs"
+        value="{{ option }}"
+        onchange="selectBrowseOption();"
+      />
+      <label for="{{ option }}-cb">{{ option }}</label>
+      <br/>
+    {% endfor %}
+  </fieldset>
+</section>

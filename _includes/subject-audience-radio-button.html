@@ -1,4 +1,5 @@
 <input type="radio" id="{{ include.id }}-rb" name="sort-rbs"
   onchange="window.location.href = 'by{{ include.id | capitalize }}'"
   {% if include.id == include.categories-label %}checked{% endif %}>
-<label for="{{ include.id }}-rb">Sort by {{ include.id | capitalize}}</label><br/>
+<label for="{{ include.id }}-rb">Sort by {{ include.id | capitalize }}</label>
+<br/>
