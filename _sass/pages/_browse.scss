@@ -6,11 +6,11 @@
     font-weight: bold;
   }
 
-  #top-section {
+  #filters-section {
     display: flex;
     flex-wrap: nowrap;
 
-    .fieldset-section {
+    .filter-section {
       flex: 1;
 
       fieldset {
@@ -28,14 +28,13 @@
     }
   }
 
-  #bottom-section {
+  #results-section {
     h2 {
       margin: 10px 0;
     }
 
     #results {
       border: 1px solid gray;
-      border-top: 1px solid transparent;
       height: 200px;
       margin-bottom: 10px;
       overflow-y: scroll;
@@ -45,9 +44,13 @@
         margin: 0;
       }
 
-      .resource-section {
+      .resource {
         border-top: 1px solid gray;
         padding: 10px;
+
+        &:first-child {
+          border-top: 0;
+        }
 
         &[data-type="Activity"] .resource-type {
           color: #F26B6B;

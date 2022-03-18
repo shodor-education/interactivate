@@ -1,8 +1,8 @@
 {% assign heading-slug = include.heading | slugify %}
-<section id="{{ heading-slug }}-fieldset-section"
-  class="fieldset-section">
+<section id="{{ heading-slug }}-filter-section"
+  class="filter-section">
   <h2>{{ include.heading }}</h2>
-  <fieldset id="{{ heading-slug }}-fieldset">
+  <fieldset>
     {% for option in include.options %}
       <input
         type="checkbox"

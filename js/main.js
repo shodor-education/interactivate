@@ -39,29 +39,29 @@ function jumpTo(evt) {
 }
 
 function selectBrowseOption() {
-  const fields = [
+  const filters = [
     "subject"
   , "topic"
   , "audience"
   , "type"
   ];
   const selectedResources = Array.prototype.slice.call(
-    document.getElementsByClassName("resource-section")
+    document.getElementsByClassName("resource")
   );
   for (let i = 0; i < selectedResources.length; i++) {
     selectedResources[i].style.display = "block";
   }
-  for (let i = 0; i < fields.length; i++) {
-    const field = fields[i];
+  for (let i = 0; i < filters.length; i++) {
+    const filter = filters[i];
     const checkboxes = document.querySelectorAll(
-      "input[type='checkbox'][name='" + field + "-cbs']:checked"
+      "input[type='checkbox'][name='" + filter + "-cbs']:checked"
     );
     for (let j = 0; j < selectedResources.length; j++) {
       const resource = selectedResources[j];
-      const fieldValues = resource.dataset[field].split(",");
+      const filterValues = resource.dataset[filter].split(",");
       let hide = false;
       for (let k = 0; k < checkboxes.length; k++) {
-        if (!fieldValues.includes(checkboxes[k].value)) {
+        if (!filterValues.includes(checkboxes[k].value)) {
           hide = true;
           break;
         }
@@ -75,12 +75,9 @@ function selectBrowseOption() {
   }
   document.getElementById("results-count").innerHTML
     = selectedResources.length + " results";
-  document.getElementById("results").style.borderTop
-    = "1px solid " + (
-      selectedResources.length == 0
-      ? "gray"
-      : "transparent"
-    );
+  if (selectedResources.length > 0) {
+    selectedResources[0].style.borderTop = "0";
+  }
 }
 
 function selectCatalogCategory(categoryName) {
