@@ -138,10 +138,10 @@ include:
 plugins:
   - "jekyll-redirect-from"
 ## Uncomment two lines below for live, comment out for local dev
-#sass:
-#  style: compressed
+sass:
+  style: compressed
 tab-img-dir: "img/activities/tabs"
 ## Uncomment below for live, comment out for local dev
-#url: "https://shodor-education.github.io/"
+url: "https://shodor-education.github.io/"
 whitelist:
   - "jekyll-redirect-from"
