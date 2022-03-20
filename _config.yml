@@ -131,13 +131,14 @@ exclude:
 #  - "css"
 #  - "img"
 #  - "js/activities"
-#  - "media"
+#  - "media/worksheets"
 include:
   - "_3dtransmographer"
 plugins:
   - "jekyll-redirect-from"
 sass:
   style: compressed
+shodor-url: "http://www.shodor.org"
 tab-img-dir: "img/activities/tabs"
 url: "https://shodor-education.github.io/"
 whitelist:

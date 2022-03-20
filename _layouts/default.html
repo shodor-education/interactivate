@@ -34,7 +34,7 @@
       {% endunless %}
       <nav id="breadcrumb" aria-label="Breadcrumbs">
         <p>
-          <a href="{{ site.url }}">Shodor</a> ▸
+          <a href="{{ site.shodor-url }}">Shodor</a> ▸
           <a href="{{ site.baseurl }}">Interactivate</a> ▸
           {% if page.collection and page.collection != "main-catalogs" %}
             {% assign catalog-page = site.main-catalogs
@@ -57,7 +57,8 @@
     </header>
     {{ content }}
     <footer>
-      &copy; 1994–{{ "now" | date: "%Y" }} <a href="{{ site.url }}">Shodor</a>
+      &copy; 1994–{{ "now" | date: "%Y" }}
+      <a href="{{ site.shodor-url }}">Shodor</a>
       <img id="footer-logos" class="v-center"
         src="{{ 'img/footer-logos.gif' | relative_url }}"
         alt="A resource from CSERD, a pathway portal of NSDL"
