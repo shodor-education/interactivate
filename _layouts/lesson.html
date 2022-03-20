@@ -46,7 +46,7 @@ layout: "default"
         {% for key-term in page.key-terms %}
           <section class="dictionary-item-section">
             {% assign dictionary-item = site.data.dictionary-items
-              | find: "term", key-term
+              | where: "term", key-term | first
             %}
             {% include catalog-items/dictionary-item.html
               catalog-item=dictionary-item

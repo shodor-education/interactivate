@@ -38,7 +38,7 @@
           <a href="{{ site.baseurl }}">Interactivate</a> ▸
           {% if page.collection and page.collection != "main-catalogs" %}
             {% assign catalog-page = site.main-catalogs
-              | find: "slug", page.collection %}
+              | where: "slug", page.collection | first %}
             {% if catalog-page %}
               <a href="{{ catalog-page.url
                 | relative_url }}">{{ catalog-page.title }}</a> ▸

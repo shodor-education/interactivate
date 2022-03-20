@@ -1,6 +1,10 @@
 {% for related-resource in include.related-resources %}
-  {% assign resource = include.collection | find: "slug", related-resource %}
-  <li>{{ include.text }} <a
-    href="{{ include.url-prefix | append: related-resource
-    | relative_url }}">{{ resource.title }}</a></li>
+  {% assign resource = include.collection
+    | where: "slug", related-resource | first
+  %}
+  <li>
+    {{ include.text }}
+    <a href="{{ include.url-prefix | append: related-resource
+      | relative_url }}">{{ resource.title }}</a>
+  </li>
 {% endfor %}
