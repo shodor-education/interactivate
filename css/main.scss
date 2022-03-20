@@ -3,6 +3,7 @@
 $img-dir-url: {{ 'img' | relative_url }};
 
 @import 'base';
+@import 'components/alignment-section';
 @import 'layout/body';
 @import 'layout/folder';
 @import 'layout/footer';
