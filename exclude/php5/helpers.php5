@@ -471,7 +471,7 @@ function xmlToHtmlWithFiles($xml, $shortname, $files) {
   $html = str_replace("<i>", "<em>", $html);
   $html = str_replace("<u>", "<strong>", $html);
   $html = str_replace("class=\"center\"", "class=\"h-center\"", $html);
-  $html = str_replace("</u>", "</u>", $html);
+  $html = str_replace("</u>", "</strong>", $html);
   $html = str_replace("</i>", "</em>", $html);
   $html = str_replace("</b>", "</strong>", $html);
   $html = str_replace("</link>", "</a>", $html);
