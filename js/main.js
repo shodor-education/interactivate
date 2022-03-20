@@ -86,6 +86,9 @@ function selectBrowseOption() {
     = selectedResources.length + " results";
   if (selectedResources.length > 0) {
     selectedResources[0].style.borderTop = "0";
+    for (let i = 1; i < selectedResources.length; i++) {
+      selectedResources[i].style.borderTop = "";
+    }
   }
 }
 
