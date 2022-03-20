@@ -4,12 +4,16 @@ footer {
   padding: 10px;
   position: relative;
 
+  #footer-copyright {
+    margin-right: 15px;
+  }
+
   a:visited,
   a:link {
     color: white;
     text-decoration: underline;
   }
- 
+
   #footer-logos {
     right: 5px;
   }

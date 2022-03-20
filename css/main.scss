@@ -13,5 +13,6 @@ $img-dir-url: {{ 'img' | relative_url }};
 @import 'pages/browse';
 @import 'pages/catalog';
 @import 'pages/discussion';
+@import 'pages/feedback';
 @import 'pages/home';
 @import 'pages/lesson';
