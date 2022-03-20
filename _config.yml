@@ -112,36 +112,33 @@ defaults:
 exclude:
   - "exclude"
 # During dev, uncomment dirs below you don't need to generate — speeds up build
-  - "_activities"
-  - "_audience-catalogs"
+#  - "_activities"
+#  - "_audience-catalogs"
 #  - "_data"
-  - "_dictionary-sections"
-  - "_discussions"
+#  - "_dictionary-sections"
+#  - "_discussions"
 #  - "_includes"
 #  - "_layouts"
-  - "_lessons"
+#  - "_lessons"
 #  - "_main-catalogs"
-  - "_resources"
+#  - "_resources"
 #  - "_sass"
-  - "_standards-grade-bands"
-  - "_standards-objectives"
-  - "_textbook-sections"
-  - "_textbooks"
-  - "_worksheets"
+#  - "_standards-grade-bands"
+#  - "_standards-objectives"
+#  - "_textbook-sections"
+#  - "_textbooks"
+#  - "_worksheets"
 #  - "css"
 #  - "img"
-  - "js/activities"
-  - "media"
-
+#  - "js/activities"
+#  - "media"
 include:
   - "_3dtransmographer"
 plugins:
   - "jekyll-redirect-from"
-## Uncomment two lines below for live, comment out for local dev
 sass:
   style: compressed
 tab-img-dir: "img/activities/tabs"
-## Uncomment below for live, comment out for local dev
 url: "https://shodor-education.github.io/"
 whitelist:
   - "jekyll-redirect-from"
