@@ -4,28 +4,37 @@
   <legend>{{ include.heading }}</legend>
   <fieldset>
     <legend>Filter type</legend>
-    <input
-      type="radio"
-      id="{{ heading-slug }}-and"
-      name="{{ heading-slug }}-filter-type"
-      value="AND"
-      onchange="{{ onchange }}"
-      checked
-    />
-    <label for="{{ heading-slug }}-and">AND</label>
+    {% unless include.type == "OR" %}
+      <input
+        type="radio"
+        id="{{ heading-slug }}-and"
+        name="{{ heading-slug }}-filter-type"
+        value="AND"
+        onchange="{{ onchange }}"
+        checked
+      />
+      <label for="{{ heading-slug }}-and">AND</label>
+    {% endunless %}
     <input
       type="radio"
       id="{{ heading-slug }}-or"
       name="{{ heading-slug }}-filter-type"
       value="OR"
       onchange="{{ onchange }}"
+      {% if include.type == "OR" %}
+        checked
+      {% endif %}
     />
     <label for="{{ heading-slug }}-or">OR</label>
   </fieldset>
   <div class="options">
     {% for option in include.options %}
     <input
-      type="checkbox"
+      {% if include.type == "OR" %}
+        type="radio"
+      {% else %}
+        type="checkbox"
+      {% endif %}
       id="{{ option }}-option"
       name="{{ heading-slug }}-options"
       value="{{ option }}"
