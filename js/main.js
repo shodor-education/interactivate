@@ -83,7 +83,8 @@ function selectBrowseOption() {
     }
   }
   document.getElementById("results-count").innerHTML
-    = selectedResources.length + " results";
+    = selectedResources.length + " result"
+    + (selectedResources.length > 1 ? "s" : "");
   if (selectedResources.length > 0) {
     selectedResources[0].style.borderTop = "0";
     for (let i = 1; i < selectedResources.length; i++) {
