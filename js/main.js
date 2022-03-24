@@ -58,7 +58,7 @@ function selectBrowseOption() {
     )
     .value;
     const checkboxes = document.querySelectorAll(
-      "input[name='" + filter + "-options']:checked"
+      "input[type='checkbox'][name='" + filter + "-options']:checked"
     );
     for (let j = 0; j < selectedResources.length; j++) {
       const resource = selectedResources[j];
