@@ -1,0 +1,8 @@
+{% assign categories-list = "Curriculum Materials,Additional Tools" 
+  | split: "," 
+%}
+{% assign categories-label = "page type" %}
+{% assign catalog-items-list = site.main-catalogs %}
+{% assign filter-expression = "item.page-type == category" %}
+{% assign catalog-item-type = "main-catalog" %}
+

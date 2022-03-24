@@ -3,8 +3,10 @@ layout: "default"
 ---
 {% if page.catalog-type %}
   {% assign catalog-type = page.catalog-type %}
+{% elsif page.slug %}
+  {% assign catalog-type = page.slug %}
 {% else %}
-  {% capture catalog-type %}{{ page.slug }}{% endcapture %}
+  {% assign catalog-type = page.name | split: "." | first %}
 {% endif %}
 {% include catalog-vars/{{ catalog-type }}.html %}
 <main id="catalog-main">
@@ -24,8 +26,7 @@ layout: "default"
   {% if categories-list.size > 1 %}
   <nav aria-label="Filter by {{ categories-label }}">
     {% for category in categories-list %}
-    <a href="javascript:selectCatalogCategory('{{ category | replace: ' ', '_'
-      | downcase }}');"/>{{ category }}</a>
+    <a href="javascript:selectCatalogCategory('{{ category | slugify }}');"/>{{ category }}</a>
     &nbsp;&bull;&nbsp;
     {% endfor %}
     <a class="bold"
@@ -34,7 +35,7 @@ layout: "default"
   {% endif %}
   {% assign no-items = true %}
   {% for category in categories-list %}
-  <section id="category-section-{{ category | replace: ' ', '_' | downcase }}"
+  <section id="category-section-{{ category | slugify }}"
     class="category-section">
     {% assign category-downcase = category | downcase %}
     {% assign category-items-list = catalog-items-list
@@ -46,7 +47,8 @@ layout: "default"
     {% for catalog-item in category-items-list %}
     <section class="catalog-item {{ catalog-item-type }}-catalog-item">
       {% include catalog-items/{{ catalog-item-type }}.html
-        catalog-item=catalog-item %}
+        catalog-item=catalog-item 
+      %}
     </section>
     {% endfor %}
     {% if no-items %}
