@@ -1,37 +1,44 @@
 ---
 layout: "default"
 ---
-{% if page.catalog-type %}
-  {% assign catalog-type = page.catalog-type %}
-{% elsif page.slug %}
-  {% assign catalog-type = page.slug %}
+{% if page.item-type %}
+  {% assign item-type = page.item-type %}
 {% else %}
-  {% assign catalog-type = page.name | split: "." | first %}
+  {% assign item-type = page.slug %}
 {% endif %}
-{% include catalog-vars/{{ catalog-type }}.html %}
+{% assign last-letter = item-type | slice: -1 %}
+{% if last-letter == "s" %}
+  {% assign str-len = item-type | size | minus: 1 %}
+  {% assign item-type = item-type | slice: 0, str-len %}
+{% endif %}
+{% include catalog-vars/{{ item-type }}.html %}
 <main id="catalog-main">
   {% if page.page-description %}
   <p id="page-description">
-    {% include page-descriptions/{{ catalog-type }}.html %}
+    {% include page-descriptions/{{ item-type }}.html %}
   </p>
   {% endif %}
   {% if page.subject-audience-sorter %}
   <fieldset id="subject-audience-fieldset">
-    {% include subject-audience-radio-button.html id="subject"
-      categories-label=categories-label %}
-    {% include subject-audience-radio-button.html id="audience"
-      categories-label=categories-label %}
+    {% include subject-audience-radio-button.html
+      id="subject"
+      categories-label=categories-label
+    %}
+    {% include subject-audience-radio-button.html
+      id="audience"
+      categories-label=categories-label
+    %}
   </fieldset>
   {% endif %}
   {% if categories-list.size > 1 %}
-  <nav aria-label="Filter by {{ categories-label }}">
+  <section id="category-filters-section">
     {% for category in categories-list %}
     <a href="javascript:selectCatalogCategory('{{ category | slugify }}');"/>{{ category }}</a>
     &nbsp;&bull;&nbsp;
     {% endfor %}
     <a class="bold"
       href="javascript:selectCatalogCategory('all');"/>Show All</a>
-  </nav>
+  </section>
   {% endif %}
   {% assign no-items = true %}
   {% for category in categories-list %}
@@ -45,9 +52,9 @@ layout: "default"
     {% endif %}
     <h2>{{ category }} ({{ category-items-list | size }})</h2>
     {% for catalog-item in category-items-list %}
-    <section class="catalog-item {{ catalog-item-type }}-catalog-item">
-      {% include catalog-items/{{ catalog-item-type }}.html
-        catalog-item=catalog-item 
+    <section class="catalog-item {{ item-type }}-catalog-item">
+      {% include catalog-items/{{ item-type }}.html
+        catalog-item=catalog-item
       %}
     </section>
     {% endfor %}

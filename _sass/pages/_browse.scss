@@ -1,0 +1,66 @@
+#browse-main {
+  h2 {
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-weight: bold;
+  }
+
+  #filters-section {
+    display: flex;
+    flex-wrap: nowrap;
+
+    .filter {
+      flex: 1;
+
+      .options {
+        height: 110px;
+        margin-top: 10px;
+        overflow-y: scroll;
+      }
+    }
+  }
+
+  #results-section {
+    h2 {
+      margin: 10px 0;
+    }
+
+    #results {
+      border: 1px solid gray;
+      height: 310px;
+      margin-bottom: 10px;
+      overflow-y: scroll;
+
+      h3 {
+        font-size: inherit;
+        margin: 0;
+      }
+
+      .resource {
+        border-top: 1px solid gray;
+        padding: 10px;
+
+        &:first-child {
+          border-top: 0;
+        }
+
+        &[data-type="Activity"] .resource-type {
+          color: #F26B6B;
+        }
+
+        &[data-type="Discussion"] .resource-type {
+          color: #5E8AE0;
+        }
+
+        &[data-type="Lesson"] .resource-type {
+          color: #78C370;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

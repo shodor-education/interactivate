@@ -3,49 +3,53 @@ baseurl: "/interactivate"
 collections:
   activities:
     output: true
-    permalink: "/activities/:name"
+    permalink: "/activities/:path"
     sort_by: "title"
   audience-catalogs:
     output: true
-    permalink: "/:name/byAudience"
+    permalink: "/:path/byAudience"
   dictionary-sections:
     output: true
-    permalink: "/dictionary/:name"
+    permalink: "/dictionary/:path"
   discussions:
     output: true
-    permalink: "/discussions/:name"
+    permalink: "/discussions/:path"
     sort_by: "title"
   lessons:
     output: true
-    permalink: "/lessons/:name"
+    permalink: "/lessons/:path"
     sort_by: "title"
   main-catalogs:
     output: true
-    permalink: "/:name"
+    permalink: "/:path"
     sort_by: "jump-to-index"
+  resources:
+    output: true
+    permalink: "/resources/:path"
   standards-grade-bands:
     output: true
-    permalink: "/standards/organization/:name"
+    permalink: "/standards/organization/:path"
     sort_by: "index"
   standards-objectives:
     output: true
-    permalink: "/standards/organization/objective/:name"
+    permalink: "/standards/organization/objective/:path"
     sort_by: "description"
   textbook-sections:
     output: true
-    permalink: "/textbooks/section/:name"
+    permalink: "/textbooks/section/:path"
   textbooks:
     output: true
-    permalink: "/textbooks/:name"
+    permalink: "/textbooks/:path"
     sort_by: "index"
   worksheets:
     output: false
-    permalink: "/media/worksheets/:name"
+    permalink: "/media/worksheets/:path"
 defaults:
   - scope:
       type: "activities"
     values:
       layout: "activity"
+      resource-type: "activity"
   - scope:
       type: "audience-catalogs"
     values:
@@ -54,77 +58,111 @@ defaults:
   - scope:
       type: "dictionary-sections"
     values:
-      catalog-type: "dictionary-terms"
       has-additional-breadcrumbs: true
+      item-type: "dictionary-item"
       layout: "catalog"
   - scope:
       type: "discussions"
     values:
       layout: "discussion"
+      resource-type: "discussion"
   - scope:
       type: "lessons"
     values:
       layout: "lesson"
+      resource-type: "lesson"
   - scope:
       type: "main-catalogs"
     values:
       layout: "catalog"
   - scope:
+      type: "resources"
+    values:
+      layout: "default"
+  - scope:
       type: "standards-grade-bands"
     values:
-      catalog-type: "standards-objectives"
       has-additional-breadcrumbs: true
+      item-type: "standards-objective"
       layout: "catalog"
   - scope:
       type: "standards-objectives"
     values:
-      catalog-type: "standards-aligned-resources"
       has-additional-breadcrumbs: true
+      item-type: "standards-aligned-resource"
       layout: "catalog"
       page-description: true
       title: "Aligned Resources"
   - scope:
       type: "textbook-sections"
     values:
-      catalog-type: "textbook-aligned-resources"
       has-additional-breadcrumbs: true
+      item-type: "textbook-aligned-resource"
       layout: "catalog"
       page-description: true
   - scope:
       type: "textbooks"
     values:
-      catalog-type: "textbook-sections"
+      item-type: "textbook-section"
       layout: "catalog"
+  - scope:
+      type: "worksheets"
+    values:
+      resource-type: "worksheet"
 exclude:
+<<<<<<< Updated upstream
+  - "exclude"
+# During dev, uncomment dirs below you don't need to generate — speeds up build
+#  - "_activities"
+#  - "_audience-catalogs"
+#  - "_data"
+#  - "_dictionary-sections"
+#  - "_discussions"
+#  - "_includes"
+#  - "_layouts"
+#  - "_lessons"
+#  - "_main-catalogs"
+#  - "_resources"
+#  - "_sass"
+#  - "_standards-grade-bands"
+#  - "_standards-objectives"
+#  - "_textbook-sections"
+#  - "_textbooks"
+#  - "_worksheets"
+#  - "css"
+#  - "img"
+#  - "js/activities"
+#  - "media/worksheets"
+=======
   - "_activities"
   - "_audience-catalogs"
   - "_data"
   - "_dictionary-sections"
   - "_discussions"
-  - "_includes"
-  - "_layouts"
+  # - "_includes"
+  # - "_layouts"
   - "_lessons"
-  - "_main-catalogs"
-  - "_sass"
+  # - "_main-catalogs"
+  # - "_sass"
   - "_standards-grade-bands"
   - "_standards-objectives"
   - "_textbook-sections"
   - "_textbooks"
   - "_worksheets"
-  - "css"
+  # - "css"
   - "exclude"
-  - "img"
-  - "js"
-
+  # - "img"
+  - "js/activities"
+  - "media"
+>>>>>>> Stashed changes
 include:
   - "_3dtransmographer"
 plugins:
   - "jekyll-redirect-from"
-## Uncomment two lines below for live, comment out for local dev
-#sass:
-#  style: compressed
+sass:
+  style: compressed
+shodor-url: "http://www.shodor.org"
 tab-img-dir: "img/activities/tabs"
-## Uncomment below for live, comment out for local dev
-#url: "https://shodor-education.github.io/"
+url: "https://shodor-education.github.io/"
 whitelist:
   - "jekyll-redirect-from"

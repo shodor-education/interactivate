@@ -1,0 +1,61 @@
+---
+layout: "default"
+title: "Browse"
+---
+{% assign groups-of-resource-titles = site.activities | concat: site.discussions
+  | concat: site.lessons | concat: site.worksheets
+  | group_by_exp: "item", "item.title | slugify | replace: '-', ''"
+  | sort: "name"
+%}
+{% assign all-resources = "" | split: "" %}
+{% for group in groups-of-resource-titles %}
+  {% assign all-resources = all-resources | concat: group.items %}
+{% endfor %}
+{% assign all-subjects = all-resources | map: "subjects" | uniq | compact
+  | sort
+%}
+{% assign all-topics = all-resources | map: "topics" | uniq | compact | sort %}
+{% assign all-audiences = all-resources | map: "audiences" | uniq | compact
+  | sort
+%}
+{% assign all-types = "Activity,Discussion,Lesson,Worksheet"
+  | split: ","
+%}
+<main id="browse-main" class="folder-main">
+  <section id="filters-section">
+    {% include browse-filter.html heading="Subject"
+      options=all-subjects
+    %}
+    {% include browse-filter.html heading="Topic"
+      options=all-topics
+    %}
+    {% include browse-filter.html heading="Audience"
+      options=all-audiences
+    %}
+    {% include browse-filter.html heading="Type"
+      options=all-types
+    %}
+  </section>
+  <section id="results-section">
+    <h2 id="results-count">{{ all-resources.size | count }} results</h2>
+    <div id="results">
+      {% for resource in all-resources %}
+        <article
+          class="resource"
+          data-subject="{{ resource.subjects | join: ',' }}"
+          data-topic="{{ resource.topics | join: ',' }}"
+          data-audience="{{ resource.audiences | join: ',' }}"
+          data-type="{{ resource.resource-type | capitalize }}"
+        >
+          <h3>
+            <a href="{{ resource.url | relative_url }}">{{ resource.title }}</a>
+            <span class="resource-type">
+              ({{ resource.resource-type | capitalize }})
+            </span>
+          </h3>
+          <p>{{ resource.description }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>

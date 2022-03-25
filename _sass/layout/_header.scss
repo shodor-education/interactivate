@@ -4,13 +4,27 @@ header {
   border-right: 1px solid gray;
 
   #logo-bar {
+    display: flex;
     height: 54px;
-    position: relative;
 
     #header-logo {
-      display: inline-block;
+      flex: 5;
       height: 54px;
-      width: 80%;
+    }
+
+    #jump-to-container,
+    #browse-link-container {
+      flex: 1;
+      position: relative;
+    }
+
+    #browse-link {
+      background-color: white;
+      border: 1px solid gray;
+      color: black;
+      font-size: 10pt;
+      padding: 2px 5px;
+      text-decoration: none;
     }
   }
 

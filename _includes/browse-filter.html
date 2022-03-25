@@ -1,0 +1,38 @@
+{% assign heading-slug = include.heading | slugify %}
+{% assign onchange = "selectBrowseOption();" %}
+<fieldset class="filter">
+  <legend>{{ include.heading }}</legend>
+  <fieldset>
+    <legend>Filter type</legend>
+    <input
+      type="radio"
+      id="{{ heading-slug }}-and"
+      name="{{ heading-slug }}-filter-type"
+      value="AND"
+      onchange="{{ onchange }}"
+      checked
+    />
+    <label for="{{ heading-slug }}-and">AND</label>
+    <input
+      type="radio"
+      id="{{ heading-slug }}-or"
+      name="{{ heading-slug }}-filter-type"
+      value="OR"
+      onchange="{{ onchange }}"
+    />
+    <label for="{{ heading-slug }}-or">OR</label>
+  </fieldset>
+  <div class="options">
+    {% for option in include.options %}
+    <input
+      type="checkbox"
+      id="{{ option }}-option"
+      name="{{ heading-slug }}-options"
+      value="{{ option }}"
+      onchange="{{ onchange }}"
+    />
+    <label for="{{ option }}-option">{{ option }}</label>
+    <br/>
+    {% endfor %}
+  </div>
+</fieldset>

@@ -3,13 +3,16 @@
 $img-dir-url: {{ 'img' | relative_url }};
 
 @import 'base';
+@import 'components/alignment-section';
 @import 'layout/body';
 @import 'layout/folder';
 @import 'layout/footer';
 @import 'layout/header';
 @import 'pages/404';
 @import 'pages/activity';
+@import 'pages/browse';
 @import 'pages/catalog';
 @import 'pages/discussion';
+@import 'pages/feedback';
 @import 'pages/home';
 @import 'pages/lesson';

@@ -11,28 +11,34 @@
   </head>
   <body>
     <header>
-      <div id="logo-bar">
+      <nav id="logo-bar" aria-label="Site navigation">
         <a id="header-logo" href="{{ site.baseurl }}"><img
           src="{{ 'img/header-logo.gif' | relative_url }}"
           alt="Interactivate logo"/></a>
-        <select class="v-center" onchange="jumpTo(event);">
-          <option disabled selected>Jump To:</option>
-          {% for catalog in site.main-catalogs %}
-          <option data-catalog="{{ catalog.url
-            | relative_url }}">{{ catalog.title }}</option>
-          {% endfor %}
-        </select>
-      </div>
+        <div id="jump-to-container">
+          <select class="v-center" onchange="jumpTo(event);">
+            <option disabled selected>Jump To:</option>
+            {% for catalog in site.main-catalogs %}
+            <option data-catalog="{{ catalog.url
+              | relative_url }}">{{ catalog.title }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div id="browse-link-container">
+          <a id="browse-link" class="v-center"
+            href="{{ 'browse' | relative_url }}">Browse</a>
+        </div>
+      </nav>
       {% unless page.hide-h1 %}
       <h1>{{ page.title }}</h1>
       {% endunless %}
       <nav id="breadcrumb" aria-label="Breadcrumbs">
         <p>
-          <a href="{{ site.url }}">Shodor</a> ▸
+          <a href="{{ site.shodor-url }}">Shodor</a> ▸
           <a href="{{ site.baseurl }}">Interactivate</a> ▸
           {% if page.collection and page.collection != "main-catalogs" %}
             {% assign catalog-page = site.main-catalogs
-              | find: "slug", page.collection %}
+              | where: "slug", page.collection | first %}
             {% if catalog-page %}
               <a href="{{ catalog-page.url
                 | relative_url }}">{{ catalog-page.title }}</a> ▸
@@ -51,11 +57,15 @@
     </header>
     {{ content }}
     <footer>
-      &copy; 1994–{{ "now" | date: "%Y" }} <a href="{{ site.url }}">Shodor</a>
+      <span id="footer-copyright">
+        &copy; 1994–{{ "now" | date: "%Y" }}
+        <a href="{{ site.shodor-url }}">Shodor</a>
+      </span>
+      <a href="{{ '/feedback' | relative_url }}">Website Feedback</a>
       <img id="footer-logos" class="v-center"
-        src="{{ 'img/footer-logos.gif' | relative_url }}"
-        alt="A resource from CSERD, a pathway portal of NSDL"
-        usemap="#nsdl-logo"/>
+          src="{{ 'img/footer-logos.gif' | relative_url }}"
+          alt="A resource from CSERD, a pathway portal of NSDL"
+          usemap="#nsdl-logo"/>
       <map name="nsdl-logo">
         <area shape="rect" coords="392,2,493,28"
           href="https://nsdl.oercommons.org/" alt="NSDL" target="_blank">

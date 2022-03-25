@@ -440,6 +440,11 @@ function xmlToHtmlWithFiles($xml, $shortname, $files) {
   , $html
   );
   $html = preg_replace(
+    "#<link href=\"http://www.shodor.org/interactivate/discussions/(.*)\.html#"
+  , "<a href=\"{{ '/discussions/$1' | relative_url }}"
+  , $html
+  );
+  $html = preg_replace(
     "#<link href=\"/interactivate/dictionary/(.)/?#"
   , "<a href=\"{{ '/dictionary/$1' | relative_url }}"
   , $html
@@ -466,7 +471,7 @@ function xmlToHtmlWithFiles($xml, $shortname, $files) {
   $html = str_replace("<i>", "<em>", $html);
   $html = str_replace("<u>", "<strong>", $html);
   $html = str_replace("class=\"center\"", "class=\"h-center\"", $html);
-  $html = str_replace("</u>", "</u>", $html);
+  $html = str_replace("</u>", "</strong>", $html);
   $html = str_replace("</i>", "</em>", $html);
   $html = str_replace("</b>", "</strong>", $html);
   $html = str_replace("</link>", "</a>", $html);
@@ -482,6 +487,7 @@ END;
     $urlResults = $sdrDbConn->query($query);
     while ($urlResult = $urlResults->fetch_assoc()) {
       $url = str_replace("http://www.shodor.org/interactivate", "", $urlResult["url"]);
+      $url = str_replace("http://shodor.org/interactivate", "", $url);
       $url = preg_replace("/\/$/", "", $url);
       $html = str_replace(
         "<link metaid=\"$cserdId\">"

@@ -1,0 +1,81 @@
+turtles-own [days-sick]
+globals [ sick-day ]
+
+to setup
+  ca; clear all
+  crt pop0;
+  set sick-day 0.175;
+
+  ask turtles [
+    set shape "face neutral"
+    setxy random-xcor random-ycor
+    set color white
+  ]
+
+  ask one-of turtles [
+    set shape "face sad"
+    set color green
+  ]
+
+  ;ask one-of turtles [
+  ;    set shape "face happy"
+  ;    set color orange
+  ;]
+end
+
+
+to go
+ask turtles [
+  if color = green
+  [
+     set days-sick days-sick + sick-day;
+  ]
+  move
+  infect
+  recover
+]
+do-plot
+end
+
+to move
+  fd .2
+  rt random 20
+  lt random 20
+end
+
+to infect
+  if color = white
+    and any? turtles-here with [color = green]
+    and random 100 < infectionRate
+    [
+      set color green
+      set shape "face sad"
+    ]
+end
+
+to recover
+  if color = green
+    and days-sick > days_to_recover
+    and random 100 < recoveryRate
+    [
+      set color orange
+      set shape "face happy"
+    ]
+end
+
+to do-plot
+  set-current-plot "SickPlot"
+
+  set-current-plot-pen "Not_Yet_Sick"
+  plot (count turtles with [color = white])
+
+  set-current-plot-pen "Present_Sick"
+  plot (count turtles with [color = green])
+
+  set-current-plot-pen "Became_Sick"
+  plot (count turtles with [(color = green or color = orange)])
+
+  set-current-plot-pen "Recovered"
+  plot (count turtles with [color = orange])
+
+end

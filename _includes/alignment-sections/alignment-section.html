@@ -54,10 +54,13 @@
                       <li>
                         {{ level-4-item[include.level-4-output-property] }}
                         {% if include.level-2-key == "textbook" %}
-                          {% assign reason
+                          {% assign lesson-reasons
                             = site.data.lesson-textbook-section-alignment-reasons
-                            | find_exp: "item", "item.lesson == page.slug
-                            and item.textbook-section == level-4-item.slug"
+                            | where_exp: "item", "item.lesson == page.slug"
+                          %}
+                          {% assign reason
+                            = lesson-reasons | where_exp: "item",
+                            "item.textbook-section == level-4-item.slug" | first
                           %}
                           {% if reason %}
                             <ul>

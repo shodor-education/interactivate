@@ -1,5 +1,6 @@
 {% assign grade-band = site.standards-grade-bands
-  | find: "slug", page.grade-band %}
+  | where: "slug", page.grade-band | first
+%}
 {{ grade-band.organization }}<br/>
 {{ grade-band.label }}<br/>
 {{ page.category }}<br/>
