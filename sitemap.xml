@@ -1,0 +1,26 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for document in site.documents %}
+  <url>
+    <loc>{{ document.url | absolute_url }}</loc>
+  </url>
+{% endfor %}
+
+  <url>
+    <loc>{{ "" | absolute_url }}</loc>
+  </url>
+
+  <url>
+    <loc>{{ "browse" | absolute_url }}</loc>
+  </url>
+
+  <url>
+    <loc>{{ "feedback" | absolute_url }}</loc>
+  </url>
+
+  <url>
+    <loc>{{ "sitemap" | absolute_url }}</loc>
+  </url>
+</urlset>
