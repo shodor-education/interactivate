@@ -140,6 +140,6 @@ sass:
   style: compressed
 shodor-url: "http://www.shodor.org"
 tab-img-dir: "img/activities/tabs"
-url: "https://shodor-education.github.io/"
+url: "https://shodor-education.github.io"
 whitelist:
   - "jekyll-redirect-from"
