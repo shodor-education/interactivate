@@ -496,8 +496,9 @@ END;
       );
     }
   }
-  preg_match_all("<media .*snapid=\"(\d*)\">", $html, $mediaMatches);
-  foreach ($mediaMatches[1] as $snapId) {
+  preg_match_all("#<media .*snapid=\"(\d+)\".*>#", $html, $mediaMatches);
+  for ($i = 0; $i < count($mediaMatches[0]); $i++) {
+    $snapId = $mediaMatches[1][$i];
     $query = <<<END
 select Version.`content`, Resource.`contentType`, ResourceLink.`shortName`
 from Version
@@ -507,43 +508,52 @@ where Version.`resourceId` = $snapId
 and Version.`status` = 3
 END;
     $mediaResults = $snap2DbConn->query($query);
-    while ($mediaResult = $mediaResults->fetch_assoc()) {
-      if ($mediaResult["contentType"] == 2) {
-        $json = json_decode($mediaResult["content"]);
-        $path = $json->original->path;
-        $extension = end(explode(".", $path));
-        $imageName = "$mediaResult[shortName].$extension";
-        $files[$imageName] = "http://shodor.org/media/" . $path;
-
-        $html = str_replace(
-          "<media snapid=\"$snapId\"",
-          "<img src=\"{{ 'img/$imageName' | relative_url }}\"",
-          $html
-        );
-        $html = str_replace(
-          "<media class=\"h-center\" snapid=\"$snapId\"",
-          "<img class=\"h-center\" src=\"{{ 'img/$imageName' | relative_url }}\"",
-          $html
-        );
+    $mediaResult = $mediaResults->fetch_assoc();
+    //In the SNAP2 database, 2 means the content item is an image.
+    if ($mediaResult["contentType"] == 2) {
+      $json = json_decode($mediaResult["content"]);
+      preg_match("#which=\"([a-z]+)\"#", $mediaMatches[0][$i], $whichMatches);
+      if (empty($whichMatches)) {
+        $which = "original";      
       }
-      else if ($mediaResult["contentType"] == 9) {
-        $query = <<<END
+      else {
+        $which = $whichMatches[1];
+      }
+      preg_match("#class=\"h-center\"#", $mediaMatches[0][$i], $hCenterMatches);
+      if (empty($hCenterMatches)) {
+        $hCenter = "";      
+      }
+      else {
+        $hCenter = $hCenterMatches[1];
+      }
+      $path = $json->$which->path;
+      $extension = end(explode(".", $path));
+      $imageName = "$mediaResult[shortName]-$which.$extension";
+      $files[$imageName] = "http://shodor.org/media/" . $path;
+
+      $html = preg_replace(
+        "#<media.*?snapid=\"$snapId\".*?>#",
+        "<img $hCenter src=\"{{ '/img/$imageName' | relative_url }}\"/>",
+        $html
+      );
+    }
+    else if ($mediaResult["contentType"] == 9) {
+      $query = <<<END
 select ResourceLink.`parentId`
 from Resource
 left join ResourceLink on ResourceLink.`childId` = Resource.`id`
 where Resource.`id` = $snapId
 END;
-        $json = json_decode($mediaResult["content"]);
-        $filename = $json->file->name;
-        $results = $snap2DbConn->query($query);
-        while ($result = $results->fetch_assoc()) {
-          $path = getPath($result["parentId"]) . "/" . $filename;
-          $html = str_replace(
-            "<media snapid=\"$snapId\" />",
-            "<a href=\"http://shodor.org/media/content/$path\">Download File</a>",
-            $html
-          );
-        }
+      $json = json_decode($mediaResult["content"]);
+      $filename = $json->file->name;
+      $results = $snap2DbConn->query($query);
+      while ($result = $results->fetch_assoc()) {
+        $path = getPath($result["parentId"]) . "/" . $filename;
+        $html = str_replace(
+          "<media snapid=\"$snapId\" />",
+          "<a href=\"http://shodor.org/media/content/$path\">Download File</a>",
+          $html
+        );
       }
     }
   }
