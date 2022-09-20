@@ -1,4 +1,5 @@
-{% capture href %}{{ page.slug | relative_url }}/by{{ include.id | capitalize }}{% endcapture %}
+{% capture href %}{{ page.slug | relative_url }}/by{{ include.id
+  | capitalize }}/{% endcapture %}
 <input type="radio" id="{{ include.id }}-rb" name="sort-rbs"
   onchange="window.location.href = '{{ href }}'"
   {% if include.id == include.categories-label %}checked{% endif %}>

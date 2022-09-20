@@ -3,47 +3,47 @@ baseurl: "/interactivate"
 collections:
   activities:
     output: true
-    permalink: "/activities/:path"
+    permalink: "/:path/"
     sort_by: "title"
   audience-catalogs:
     output: true
-    permalink: "/:path/byAudience"
+    permalink: "/:path/byAudience/"
   dictionary-sections:
     output: true
-    permalink: "/dictionary/:path"
+    permalink: "/dictionary/:path/"
   discussions:
     output: true
-    permalink: "/discussions/:path"
+    permalink: "/:path/"
     sort_by: "title"
   lessons:
     output: true
-    permalink: "/lessons/:path"
+    permalink: "/:path/"
     sort_by: "title"
   main-catalogs:
     output: true
-    permalink: "/:path"
+    permalink: "/:path/"
     sort_by: "jump-to-index"
   resources:
     output: true
-    permalink: "/resources/:path"
+    permalink: "/:path/"
   standards-grade-bands:
     output: true
-    permalink: "/standards/organization/:path"
+    permalink: "/standards/organization/:path/"
     sort_by: "index"
   standards-objectives:
     output: true
-    permalink: "/standards/organization/objective/:path"
+    permalink: "/standards/organization/objective/:path/"
     sort_by: "description"
   textbook-sections:
     output: true
-    permalink: "/textbooks/section/:path"
+    permalink: "/textbooks/section/:path/"
   textbooks:
     output: true
-    permalink: "/textbooks/:path"
+    permalink: "/:path/"
     sort_by: "index"
   worksheets:
     output: false
-    permalink: "/media/worksheets/:path"
+    permalink: "/media/worksheets/:path/"
 defaults:
   - scope:
       type: "activities"
