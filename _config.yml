@@ -3,7 +3,7 @@ baseurl: "/interactivate"
 collections:
   activities:
     output: true
-    permalink: "/:path/"
+    permalink: "/activities/:path/"
     sort_by: "title"
   audience-catalogs:
     output: true
@@ -13,11 +13,11 @@ collections:
     permalink: "/dictionary/:path/"
   discussions:
     output: true
-    permalink: "/:path/"
+    permalink: "/discussions/:path/"
     sort_by: "title"
   lessons:
     output: true
-    permalink: "/:path/"
+    permalink: "/lessons/:path/"
     sort_by: "title"
   main-catalogs:
     output: true
@@ -25,7 +25,7 @@ collections:
     sort_by: "jump-to-index"
   resources:
     output: true
-    permalink: "/:path/"
+    permalink: "/resources/:path/"
   standards-grade-bands:
     output: true
     permalink: "/standards/organization/:path/"
@@ -39,7 +39,7 @@ collections:
     permalink: "/textbooks/section/:path/"
   textbooks:
     output: true
-    permalink: "/:path/"
+    permalink: "/textbooks/:path/"
     sort_by: "index"
   worksheets:
     output: false
