@@ -27,6 +27,9 @@ collections:
   resources:
     output: true
     permalink: "/resources/:path/"
+  single-pages:
+    output: true
+    permalink: "/:path/"
   standards-grade-bands:
     output: true
     permalink: "/standards/organization/:path/"
@@ -78,6 +81,10 @@ defaults:
       layout: "catalog"
   - scope:
       type: "resources"
+    values:
+      layout: "default"
+  - scope:
+      type: "single-pages"
     values:
       layout: "default"
   - scope:
