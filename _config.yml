@@ -1,5 +1,6 @@
 ## Uncomment below for live, comment out for local dev
 baseurl: "/interactivate"
+collections_dir: "collections"
 collections:
   activities:
     output: true

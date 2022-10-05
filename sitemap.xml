@@ -21,6 +21,10 @@
   </url>
 
   <url>
+    <loc>{{ "guide" | absolute_url }}</loc>
+  </url>
+
+  <url>
     <loc>{{ "sitemap" | absolute_url }}</loc>
   </url>
 </urlset>
