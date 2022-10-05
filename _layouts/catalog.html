@@ -14,55 +14,50 @@ layout: "default"
 {% include catalog-vars/{{ item-type }}.html %}
 <main id="catalog-main">
   {% if page.page-description %}
-  <p id="page-description">
-    {% include page-descriptions/{{ item-type }}.html %}
-  </p>
+    <p id="page-description">
+      {% include page-descriptions/{{ item-type }}.html %}
+    </p>
   {% endif %}
   {% if page.subject-audience-sorter %}
-  <fieldset id="subject-audience-fieldset">
-    {% include subject-audience-radio-button.html
-      id="subject"
-      categories-label=categories-label
-    %}
-    {% include subject-audience-radio-button.html
-      id="audience"
-      categories-label=categories-label
-    %}
-  </fieldset>
+    <fieldset id="subject-audience-fieldset">
+      {% include subject-audience-radio-button.html
+        id="subject"
+        categories-label=categories-label
+      %}
+      {% include subject-audience-radio-button.html
+        id="audience"
+        categories-label=categories-label
+      %}
+    </fieldset>
   {% endif %}
   {% if categories-list.size > 1 %}
-  <section id="category-filters-section">
-    {% for category in categories-list %}
-    <a href="javascript:selectCatalogCategory('{{ category | slugify }}');"/>{{ category }}</a>
-    &nbsp;&bull;&nbsp;
-    {% endfor %}
-    <a class="bold"
-      href="javascript:selectCatalogCategory('all');"/>Show All</a>
-  </section>
+    <section id="category-filters-section">
+      {% for category in categories-list %}
+        <a href="javascript:selectCatalogCategory('{{ category
+            | slugify }}');"/>{{ category }}</a>
+        &nbsp;&bull;&nbsp;
+      {% endfor %}
+      <a class="bold"
+          href="javascript:selectCatalogCategory('all');"/>Show All</a>
+    </section>
   {% endif %}
-  {% assign no-items = true %}
   {% for category in categories-list %}
-  <section id="category-section-{{ category | slugify }}"
-    class="category-section">
-    {% assign category-downcase = category | downcase %}
-    {% assign category-items-list = catalog-items-list
-      | where_exp: "item", filter-expression %}
-    {% if category-items-list.size > 0 %}
-      {% assign no-items = false %}
-    {% endif %}
-    <h2>{{ category }} ({{ category-items-list | size }})</h2>
-    {% for catalog-item in category-items-list %}
-    <section class="catalog-item {{ item-type }}-catalog-item">
-      {% include catalog-items/{{ item-type }}.html
-        catalog-item=catalog-item
-      %}
+    <section id="category-section-{{ category | slugify }}"
+          class="category-section">
+      {% assign category-downcase = category | downcase %}
+      {% assign category-items-list = catalog-items-list
+          | where_exp: "item", filter-expression %}
+      <h2>{{ category }} ({{ category-items-list | size }})</h2>
+      {% for catalog-item in category-items-list %}
+        <section class="catalog-item {{ item-type }}-catalog-item">
+          {% include catalog-items/{{ item-type }}.html
+              catalog-item=catalog-item %}
+        </section>
+      {% else %}
+        <section class="catalog-item">
+          <p>No items</p>
+        </section>
+      {% endfor %}
     </section>
-    {% endfor %}
-    {% if no-items %}
-    <section class="catalog-item">
-      <p>No items</p>
-    </section>
-    {% endif %}
-  </section>
   {% endfor %}
 </main>

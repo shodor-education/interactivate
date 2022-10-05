@@ -43,7 +43,7 @@ collections:
     sort_by: "index"
   worksheets:
     output: false
-    permalink: "/media/worksheets/:path/"
+    permalink: "/media/worksheets/:path"
 defaults:
   - scope:
       type: "activities"
