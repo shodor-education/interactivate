@@ -53,11 +53,9 @@ layout: "default"
           {% include catalog-items/{{ item-type }}.html
               catalog-item=catalog-item %}
         </section>
-      {% else %}
-        <section class="catalog-item">
-          <p>No items</p>
-        </section>
       {% endfor %}
     </section>
+  {% else %}
+    <p id="no-items"><em>No items</em></p>
   {% endfor %}
 </main>
