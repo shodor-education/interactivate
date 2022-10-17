@@ -1,4 +1,4 @@
-{% assign catalog-items-list = site.textbook-sections %}
+{% assign catalog-items-list = site.textbook-sections | sort: "title" %}
 {% assign categories-label = "chapter" %}
 {% assign categories-list = page.chapters %}
 {% assign filter-expression = "item.chapter == category" %}
