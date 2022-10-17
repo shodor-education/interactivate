@@ -1,5 +1,5 @@
 {% assign catalog-items-list = site.standards-objectives
-  | where: "grade-band", page.slug %}
+  | where: "grade-band", page.slug | sort: "description" %}
 {% assign categories-label = "category" %}
 {% assign categories-list = page.categories %}
 {% assign filter-expression = "item.category == category" %}
