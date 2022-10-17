@@ -40,7 +40,7 @@ header {
         border: 0;
         padding: 0;
 
-        .gsc-input {
+        td.gsc-input {
           background-color: transparent;
           border: 0;
           padding-right: 0;
@@ -49,12 +49,20 @@ header {
           .gsc-input-box {
             background-color: transparent;
             border: 0;
+
+            .gsib_b {
+              padding: 0;
+            }
           }
         }
 
         td.gsc-search-button {
           background-color: transparent;
           border: 0;
+
+          button.gsc-search-button {
+            cursor: pointer;
+          }
         }
       }
     }
