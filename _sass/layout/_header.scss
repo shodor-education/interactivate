@@ -1,3 +1,5 @@
+$header-height: 54px;
+
 header {
   background: url('#{$img-dir-url}/header-bg.gif');
   border-left: 1px solid gray;
@@ -5,11 +7,11 @@ header {
 
   #logo-bar {
     display: flex;
-    height: 54px;
+    height: $header-height;
 
     #header-logo {
       flex: 3;
-      height: 54px;
+      height: $header-height;
     }
 
     .v-center {
